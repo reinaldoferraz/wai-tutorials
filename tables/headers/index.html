@@ -1,0 +1,353 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Header Cells
+  
+    
+       | Tables
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="/"><img src="http://w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
+      <a href="/" class="wai"><img src="http://www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content editors-draft">
+  <header class="tutorial-heading">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <p>
+        <span class="home"><a class="" href="../../">Tutorials home</a></span> <span class="icon icon-chevron-right"></span>
+        <span class="other">
+        
+          <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
+        
+        
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Header Cells</span>
+        </span>
+      </p>
+    </nav>
+    <h1>
+      Header Cells
+    </h1>
+  </header>
+
+  
+  
+  <div class="status">
+    <p><strong>Status:</strong> This is not ready for detailed review. It is an in-progress, unapproved editor’s draft.</p>
+  </div>
+  
+
+
+  <div class="inner">
+
+  
+
+  
+
+
+    <p>Header cells are those that contain the information that is critical to understanding the raw data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for a) the number of properties in b) a given street. The <code>&lt;th&gt;</code> element needs to be used for header cells so that they are distinguishable from and can be associated with the correct data <code>&lt;td&gt;</code> cells.</p>
+
+<h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
+
+<p>This table of concert dates only needs the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is
+distinctly different in each column.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<p><strong>Concert dates:</strong></p>
+
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Event</th>
+		<th>Venue</th>
+	</tr>
+	<tr>
+		<td>12 Feb</td>
+		<td>Waltz with Strauss</td>
+		<td>Main Hall</td>
+	</tr>
+	<tr>
+		<td>24 Mar</td>
+		<td>The Obelisks</td>
+		<td>West Wing</td>
+	</tr>
+	<tr>
+		<td>14 Apr</td>
+		<td>The What</td>
+		<td>Main Hall</td>
+	</tr>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Date<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Event<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Venue<span class="nt">&lt;/th&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span>12 Feb<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Waltz with Strauss<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Main Hall<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	[…]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+</figure>
+
+<p><a href="../examples/headertoprow/">Full code for “Table with header cells in the top row only”</a></p>
+
+<h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
+
+<p>This table of opening times has header information contained in both the
+top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code>
+cells.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table>
+	<tr>
+		<th>Delivery slots</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+	</tr>
+	<tr>
+		<th>09:00 - 11:00</th>
+		<td>Closed</td>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Closed</td>
+		<td>Closed</td>
+	</tr>
+	<tr>
+		<th>11:00 - 13:00</th>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Closed</td>
+		<td>Closed</td>
+		<td>Closed</td>
+	</tr>
+	<tr>
+		<th>13:00 - 15:00</th>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Closed</td>
+		<td>Closed</td>
+	</tr>
+	<tr>
+		<th>15:00 - 17:00</th>
+		<td>Closed</td>
+		<td>Closed</td>
+		<td>Closed</td>
+		<td>Open</td>
+		<td>Open</td>
+	</tr>
+</table>
+
+  </div></figure>
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Delivery slots<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span>09:00 - 11:00<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span>11:00 - 13:00<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	[…]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+</figure>
+
+<p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
+
+<h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
+
+<p>The following WCAG 2.0 technique was used in the examples above:</p>
+
+<ul>
+  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H51">H51 : Using table markup to present tabular
+data</a></li>
+</ul>
+
+
+<div role="navigation" id="tools">
+  <ul>
+    
+      
+        <li class="prev">
+          <span><a class="" href="../"><span class="dir">Previous:</span><span class="title">Tables Concepts</span></a></span>
+        </li>
+      
+      
+        
+        
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../caption/"><span class="dir">Next:</span><span class="title">Caption</span></a></span>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  </ul>
+</div>
+
+<aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+</aside>
+
+                  </div>
+                </div>
+                <div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <p class="list-heading" id="list-heading-tutorials">
+      
+        Tables Tutorial
+      
+    </p>
+    <ul aria-labelled-by="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../">Tables Concepts</a></li>
+        
+      
+      
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Header Cells</span></li>
+      
+      
+      
+      <li><a class="" href="../caption/">Caption</a></li>
+      
+      
+      
+      <li><a class="" href="../scope/">Scope of Headers</a></li>
+      
+      
+      
+      <li><a class="" href="../id-headers/">Multi-level Tables</a></li>
+      
+      
+      
+      <li><a class="" href="../summary/">Table Summary</a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../tips/">Tips and FAQ</a></li>
+      
+      
+      
+    </ul>
+    <p class="list-heading" id="list-heading-topics">
+  All Tutorials
+</p>
+<ul class="topics" aria-labelled-by="list-heading-topics">
+	<li><a href="../../images/">Images</a></li>
+	<li><span class="current-a"><span class="visuallyhidden">Current: </span>Tables</span></li>
+	<li><a href="../../forms/">Forms</a></li>
+	<li><a href="../../sliders/">Sliders/Carousels</a></li>
+	<li><a href="../../more/">More on the way…</a></li>
+</ul>
+
+  </nav>
+</div>
+                </main>
+	<footer role="contentinfo">
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 3 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+
+	</footer>
+	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	</body>
+</html>
+

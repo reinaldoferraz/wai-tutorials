@@ -1,0 +1,301 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Structure
+  
+    
+       | Sliders & Carousels
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="/"><img src="http://w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
+      <a href="/" class="wai"><img src="http://www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content editors-draft">
+  <header class="tutorial-heading">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <p>
+        <span class="home"><a class="" href="../../">Tutorials home</a></span> <span class="icon icon-chevron-right"></span>
+        <span class="other">
+        
+          <a class="" href="../">Sliders & Carousels</a> <span class="icon icon-chevron-right"></span>
+        
+        
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Structure</span>
+        </span>
+      </p>
+    </nav>
+    <h1>
+      Structure
+    </h1>
+  </header>
+
+  
+  
+  <div class="status">
+    <p><strong>Status:</strong> This is not ready for detailed review. It is an in-progress, unapproved editor’s draft.</p>
+  </div>
+  
+
+
+  <div class="inner">
+
+  
+
+  
+
+
+    <ul>
+  <li><strong>What to do:</strong>provide structural markup to identify the carousel on the page and each individual slide;</li>
+  <li><strong>Why:</strong> to enable screen reader users to understand the relationship between the carousel and other page content and distinguish between slides;</li>
+  <li><strong>How:</strong> position a heading at the start of the carousel and if slides contain text, a lower level heading at the start of each slide: if there is little or no text, then use list markup to distinguish between slides;</li>
+  <li><strong>Conformance:</strong> required to meet <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">SC 1.3.1: Info and Relationships</a> and <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-descriptive">SC 2.4.6 Headings and Labels</a>.</li>
+</ul>
+
+<p><strong class="todo">Overall description of examples</strong></p>
+
+<h2 id="head-up-the-carousel">Head up the carousel</h2>
+
+<p>The following heading might be used at the start of a carousel highlighting specific web pages:</p>
+
+<h3 id="featured-pages">Featured pages</h3>
+
+<p><img alt="Screenshot of carousel" src="../../img/placeholder.gif" /> [screenshot of carousel needed here]</p>
+
+<p>The content that follows the carousel should then have a heading at the same level or higher:</p>
+
+<h3 id="upcoming-events-example">Upcoming events (example)</h3>
+
+<p><strong class="todo">(List of events)</strong></p>
+
+<h3 id="code-snippet">Code snippet</h3>
+
+<p>Showing both the carousel heading and the one following the carousel:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;h3&gt;</span>Featured pages<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"carousel"</span><span class="nt">&gt;</span>
+	… carousel slides and controls …
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;h3&gt;</span>Upcoming events<span class="nt">&lt;/h3&gt;</span>
+</pre>
+</figure>
+
+<h2 id="headings-for-slides">Headings for slides</h2>
+
+<p>If slides contain enough text to require structure, each slide could begin with a heading at one level below the overall carousel heading:</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+
+<h3 id="featured-products">Featured products</h3>
+
+<h4 id="clematis">Clematis</h4>
+
+<p>Scented or unperfumed, evergreen or deciduous, we have clematis for all aspects in your garden (slide 1 content)</p>
+
+<h4 id="fruit-bushes">Fruit bushes</h4>
+
+<p>Year after year, these shrubs will fill your garden with succulent fruit, choose from apricot, blueberry and raspberry (slide 2 content).</p>
+
+  </div></figure>
+
+<p>Slide structure using headings:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;h3&gt;</span>Featured products<span class="nt">&lt;/h3&gt;</span>
+	<span class="nt">&lt;h4&gt;</span>Slide 1 heading<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;p&gt;</span>Slide 1 description<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;h4&gt;</span>Slide 2 heading<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;p&gt;</span>Slide 2 description<span class="nt">&lt;/p&gt;</span>
+</pre></figure>
+
+<h2 id="list-of-slides">List of slides</h2>
+
+<p>If slides contain just images, or images plus just a word or two of text, they can be presented in a list:</p>
+
+<h3 id="featured-products-1">Featured products</h3>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<ul>
+  <li><img alt="" src="../../img/placeholder.gif" /> Clematis</li>
+  <li><img alt="" src="../../img/placeholder.gif" /> Fruit bushes</li>
+  <li><img alt="" src="../../img/placeholder.gif" /> Vegetables</li>
+</ul>
+
+  </div></figure>
+
+<h3 id="code-snippet-1">Code snippet</h3>
+
+<p>Using a list where don’t contain much content:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;h3&gt;</span>Featured products<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"slide1img.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span> Slide 1 name<span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"slide2img.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span> Slide 2 name<span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"slide3img.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span> Slide 3 name<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre>
+</figure>
+
+<h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques:</h2>
+
+<ul>
+  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/G130">G130: Providing descriptive headings</a></li>
+  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42">H42: Using h1-h6 to identify headings</a></li>
+  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H48.html">H48: Using ol, ul and dl for lists or groups of links</a></li>
+</ul>
+
+
+<div role="navigation" id="tools">
+  <ul>
+    
+      
+        <li class="prev">
+          <span><a class="" href="../"><span class="dir">Previous:</span><span class="title">Slider/Carousel Concepts</span></a></span>
+        </li>
+      
+      
+        
+        
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../controls/"><span class="dir">Next:</span><span class="title">Controls</span></a></span>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  </ul>
+</div>
+
+<aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+</aside>
+
+                  </div>
+                </div>
+                <div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <p class="list-heading" id="list-heading-tutorials">
+      
+        Sliders & Carousels Tutorial
+      
+    </p>
+    <ul aria-labelled-by="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../">Slider/Carousel Concepts</a></li>
+        
+      
+      
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Structure</span></li>
+      
+      
+      
+      <li><a class="" href="../controls/">Controls</a></li>
+      
+      
+      
+      <li><a class="" href="../actions/">Actions</a></li>
+      
+      
+      
+      <li><a class="" href="../scrolling/">Scrolling</a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../tips/">Tips and FAQ</a></li>
+      
+      
+      
+    </ul>
+    <p class="list-heading" id="list-heading-topics">
+  All Tutorials
+</p>
+<ul class="topics" aria-labelled-by="list-heading-topics">
+	<li><a href="../../images/">Images</a></li>
+	<li><a href="../../tables/">Tables</a></li>
+	<li><a href="../../forms/">Forms</a></li>
+	<li><span class="current-a"><span class="visuallyhidden">Current: </span>Sliders/Carousels</span></li>
+	<li><a href="../../more/">More on the way…</a></li>
+</ul>
+
+  </nav>
+</div>
+                </main>
+	<footer role="contentinfo">
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 3 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+
+	</footer>
+	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	</body>
+</html>
+

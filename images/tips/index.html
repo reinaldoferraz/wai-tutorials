@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Tips and Frequently asked questions
+  
+    
+       | Images
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="/"><img src="http://w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
+      <a href="/" class="wai"><img src="http://www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content draft">
+  <header class="tutorial-heading">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <p>
+        <span class="home"><a class="" href="../../">Tutorials home</a></span> <span class="icon icon-chevron-right"></span>
+        <span class="other">
+        
+          <a class="" href="../">Images</a> <span class="icon icon-chevron-right"></span>
+        
+        
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Tips and Frequently asked questions</span>
+        </span>
+      </p>
+    </nav>
+    <h1>
+      Tips and Frequently asked questions
+    </h1>
+  </header>
+
+  
+  <div class="status">
+    <p><strong>Status:</strong> This is an in-progress, unapproved draft.</p>
+  </div>
+  
+  
+
+
+  <div class="inner">
+
+  
+
+  
+
+
+    <p>Feedback on this page is welcome, if you have a question about images
+that isn’t answered by this tutorial, you can send it to
+<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#119;&#097;&#105;&#045;&#101;&#111;&#045;&#101;&#100;&#105;&#116;&#111;&#114;&#115;&#064;&#119;&#051;&#046;&#111;&#114;&#103;">&#119;&#097;&#105;&#045;&#101;&#111;&#045;&#101;&#100;&#105;&#116;&#111;&#114;&#115;&#064;&#119;&#051;&#046;&#111;&#114;&#103;</a>.</p>
+
+<h2 id="tips">Tips</h2>
+
+<ul>
+  <li><strong>Logos:</strong> Images of text that are used as logos are exempt from some of the accessibility guidance that applies to other images of text, for instance there is no minimum color contrast requirement;</li>
+  <li><strong>Prioritize information in <code>alt</code> values:</strong> Aim to put the most important information at the start of the <code>alt</code> value, as people using high screen magnification may be unable to see more than the first two or three words in the <code>alt</code> “tooltip” and people who can’t read quickly may not be able to read as far as the important part of the text alternative before the "tooltip" disappears.</li>
+  <li><strong>Choosing appropriate text alternatives:</strong> Imagine that you are reading the web page aloud over the phone to someone who needs to understand the page. This should help you decide what (if any) information or function the images have. If they appear to have no informative value and aren’t links or buttons, it is probably safe to treat them as <a href="../decorative/">decorative</a>.</li>
+  <li><strong>Punctuation within <code>alt</code> attributes:</strong> As in visible text, using punctuation within the text alternative can make it easier to understand. In addition, a space character may be needed within the <code>alt</code> value if there is no space between the image and adjacent text, to avoid having words run together when read by a screen reader.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+
+<ul>
+  <li>
+    <p><strong>I've been told to remove the <code>alt</code> from most of the images in my template, is that right?</strong></p>
+
+    <p>No that's incorrect, the <code>alt</code> is a required attribute. If the images are part of the page design, and don’t convey information, you can remove any text values, leaving just the quotes (<code>alt=""</code>).</p>
+  </li>
+  <li>
+    <p><strong>I can’t remember – should the alt be a space or null (empty) if a description is not needed?</strong></p>
+
+    <p>It should be null (empty) <code>alt</code> text (<code>alt=""</code>), with no space between the quotes. Having a space between the quotes doesn’t effectively hide the image from all assistive technologies, for instance some screen readers will still announce the presence of an image if a space is put between the quotes.</p>
+  </li>
+  <li>
+    <p><strong>My CMS system puts in a default <code>alt</code> of “image of”, can I just add to that?</strong></p>
+
+    <p>It will depend on the function of the image, but default values may result in inappropriate alternative text. Normally there's no need to include words like “image”, “icon” or “picture” in the <code>alt</code> text, people who can see will know this already and screen readers announce the presence of an image. There's a good case for including text that describes the type of image if it is a painting, photograph or illustration, but it's best to avoid the more generic terms.</p>
+  </li>
+  <li>
+    <p><strong>How long can the <code>alt</code> text be, is it up to 90 words?</strong></p>
+
+    <p>The <code>alt</code> text should be the briefest, most concise description of the image's purpose as possible. If anything more than a short phrase or sentence is needed, it would be better to use one of the long description methods discussed on the <a href="../complex/">complex images</a> page. People using high screen magnification may be able to see only two or three short words in their magnified view of the <code>alt</code>: tooltip and screen readers are likely to truncate or break any long <code>alt</code> value.</p>
+  </li>
+</ul>
+
+<h2 id="other-w3c-resources">Other W3C Resources</h2>
+
+<ul>
+  <li>Background information on <a href="http://www.w3.org/WAI/intro/people-use-web/principles#alternatives">providing text alternatives for non-text content</a> in How People with Disabilities Use the Web</li>
+  <li>Further examples and a helpful decision tree: <a href="http://www.w3.org/TR/html-alt-techniques/">HTML5: Techniques for providing useful text alternatives</a></li>
+  <li>Test the accessibility of images on your site: <a href="http://www.w3.org/WAI/EO/Drafts/eval/checks#images">Quick Checks Image text alternatives</a></li>
+  <li>Examples of good and bad practice in selecting text alternatives can be found in the <a href="http://www.w3.org/WAI/demos/bad/">Before and After Demonstration</a> (BAD)</li>
+</ul>
+
+
+<div role="navigation" id="tools">
+  <ul>
+    
+      
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+          <li class="prev">
+            <span><a class="" href="../decision-tree/"><span class="dir">Previous:</span><span class="title"><code>alt</code> Decision Tree</span></a></span>
+          </li>
+        
+        
+      
+        
+        
+        
+      
+    
+  </ul>
+</div>
+
+<aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+</aside>
+
+                  </div>
+                </div>
+                <div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <p class="list-heading" id="list-heading-tutorials">
+      
+        Images Tutorial
+      
+    </p>
+    <ul aria-labelled-by="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../">Images Concepts</a></li>
+        
+      
+      
+      <li><a class="" href="../informative/">Informative Images</a></li>
+      
+      
+      
+      <li><a class="" href="../decorative/">Decorative Images</a></li>
+      
+      
+      
+      <li><a class="" href="../functional/">Functional Images</a></li>
+      
+      
+      
+      <li><a class="" href="../textual/">Images of Text</a></li>
+      
+      
+      
+      <li><a class="" href="../complex/">Complex Images</a></li>
+      
+      
+      
+      <li><a class="" href="../groups/">Groups of Images</a></li>
+      
+      
+      
+      <li><a class="" href="../imagemap/">Image Maps</a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../decision-tree/"><code>alt</code> Decision Tree</a></li>
+      
+      
+      
+      <li class="tips"><span class="current-a"><span class="visuallyhidden">Current: </span>Tips and FAQ</span></li>
+      
+      
+      
+    </ul>
+    <p class="list-heading" id="list-heading-topics">
+  All Tutorials
+</p>
+<ul class="topics" aria-labelled-by="list-heading-topics">
+	<li><span class="current-a"><span class="visuallyhidden">Current: </span>Images</span></li>
+	<li><a href="../../tables/">Tables</a></li>
+	<li><a href="../../forms/">Forms</a></li>
+	<li><a href="../../sliders/">Sliders/Carousels</a></li>
+	<li><a href="../../more/">More on the way…</a></li>
+</ul>
+
+  </nav>
+</div>
+                </main>
+	<footer role="contentinfo">
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 3 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+
+	</footer>
+	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	</body>
+</html>
+

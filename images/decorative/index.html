@@ -1,0 +1,358 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Decorative Images
+  
+    
+       | Images
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="/"><img src="http://w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
+      <a href="/" class="wai"><img src="http://www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content draft">
+  <header class="tutorial-heading">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <p>
+        <span class="home"><a class="" href="../../">Tutorials home</a></span> <span class="icon icon-chevron-right"></span>
+        <span class="other">
+        
+          <a class="" href="../">Images</a> <span class="icon icon-chevron-right"></span>
+        
+        
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Decorative Images</span>
+        </span>
+      </p>
+    </nav>
+    <h1>
+      Decorative Images
+    </h1>
+  </header>
+
+  
+  <div class="status">
+    <p><strong>Status:</strong> This is an in-progress, unapproved draft.</p>
+  </div>
+  
+  
+
+
+  <div class="inner">
+
+  
+
+  
+
+
+    <p>Decorative images are those that do not add information, for example because the information provided by the image is already provided by adjacent text or because the image is included for visual interest only. In these cases, a null (empty) <code>alt</code> text needs to be provided (<code>alt=""</code>) so that they can be ignored by assistive technologies such as screen readers. This is because text values used for this type of image would add audible clutter to the screen reader output, or could distract users if the topic is different from that in adjacent text.</p>
+
+<p>If the <code>alt</code> attribute is not included (even though empty) some screen readers will announce the image's file name. Whether to treat an image as decorative or <a href="../informative/">informative</a> is a judgement that only the author can make, based on the reason for including the image on the page. Images may be decorative when they are:</p>
+
+<ul>
+  <li>Visual styling such as borders, spacers, and corners</li>
+  <li>Supplementary to link text to improve its appearance or increase the clickable area</li>
+  <li>Illustrative of adjacent text but do not contribute information (“eye-candy”)</li>
+  <li>Identified and described by surrounding text</li>
+</ul>
+
+  <div class="notes ">
+<p><strong>Note:</strong> Where possible decorative images should be part of the CSS
+styling rather than being in the HTML.</p>
+
+  </div>
+
+<h2 class="ex" id="image-used-as-part-of-page-design">Image used as part of page design</h2>
+
+<p>This image is used as a border in the page design and has a purely
+decorative purpose.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<p><img alt="" src="../../img/topinfo_bg.png" /></p>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"topinfo_bg.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+</pre>
+</figure>
+
+<p>Screen readers also allow the use of WAI-ARIA to hide elements by using <code>role="presentation"</code>. Note that this feature is not as widely supported as using a null <code>alt</code> attribute.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"topinfo_bg.png"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;</span>
+</pre>
+</figure>
+
+<h2 class="ex" id="decorative-image-as-part-of-a-text-link">Decorative image as Part of a text link</h2>
+
+<p>This illustration of a crocus bulb is used to make the link easier to
+identify and to increase the clickable area, but does not add to the
+information given in adjacent link text.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<p><a href="../../beyond/"><img alt="" style="vertical-align: middle; margin-right: 1em;" src="../../img/crocus.jpg" /><strong>Crocus bulbs</strong></a></p>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"crocuspage.html"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"crocus.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;strong&gt;</span> Crocus bulbs<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</pre>
+</figure>
+
+  <div class="notes ">
+<p><strong>Note:</strong> The null or empty <code>alt</code> value can only be used on linked images
+if the image and text are part of a single link anchor and the image
+does not add visual information to the link.</p>
+
+  </div>
+
+<h2 class="ex" id="image-with-adjacent-text-alternative">Image with adjacent text alternative</h2>
+
+<p>This picture of “Poppy the guide dog” is already identified by the
+adjacent caption, this acts as the text alternative, which does not need
+to be repeated in the <code>alt</code> attribute.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+
+<p><img alt="" style="float:left; margin-right: 1em;" src="../../img/sleeping.jpg" /> <strong>Let sleeping dogs lie:</strong> A proverb meaning
+don't initiate trouble, if something that could be troublesome is quiet,
+then leave it alone.</p>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;p&gt;</span>
+	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"sleepingdog.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;strong&gt;</span>Let sleeping dogs lie:<span class="nt">&lt;/strong&gt;</span> ...
+<span class="nt">&lt;/p&gt;</span>
+</pre>
+</figure>
+
+<h2 class="ex" id="image-used-for-ambience-eye-candy">Image used for ambience (eye-candy)</h2>
+
+<p>This image is used to add ambience or visual interest to the page.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<p><img alt="" style="float:left; margin-right: 1em;" src="../../img/kew.jpg" /> Don't miss the impressive Tropical House, which is a
+huge greenhouse building that displays examples of exotic plant-life
+from every tropical environment on the planet.</p>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"tropical.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+</pre>
+</figure>
+
+  <div class="notes ">
+<p><strong>Note:</strong> If the purpose of this image was to identify a plant, or
+convey other information , rather than only to improve the look of the
+page, it should probably be treated as <a href="../informative/">informative</a>. The
+purpose for using the image needs to be determined by the author.</p>
+
+  </div>
+
+<h2 id="related-wcag20-technique">Related WCAG2.0 Technique:</h2>
+
+<ul>
+  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H67">H67: Using null alt text and no title attribute on img elements for images that AT should ignore</a></li>
+  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H2">H2: Combining adjacent image and text links for the same resource.</a></li>
+</ul>
+
+
+<div role="navigation" id="tools">
+  <ul>
+    
+      
+      
+        
+        
+          <li class="prev">
+            <span><a class="" href="../informative/"><span class="dir">Previous:</span><span class="title">Informative Images</span></a></span>
+          </li>
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../functional/"><span class="dir">Next:</span><span class="title">Functional Images</span></a></span>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  </ul>
+</div>
+
+<aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+</aside>
+
+                  </div>
+                </div>
+                <div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <p class="list-heading" id="list-heading-tutorials">
+      
+        Images Tutorial
+      
+    </p>
+    <ul aria-labelled-by="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../">Images Concepts</a></li>
+        
+      
+      
+      <li><a class="" href="../informative/">Informative Images</a></li>
+      
+      
+      
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Decorative Images</span></li>
+      
+      
+      
+      <li><a class="" href="../functional/">Functional Images</a></li>
+      
+      
+      
+      <li><a class="" href="../textual/">Images of Text</a></li>
+      
+      
+      
+      <li><a class="" href="../complex/">Complex Images</a></li>
+      
+      
+      
+      <li><a class="" href="../groups/">Groups of Images</a></li>
+      
+      
+      
+      <li><a class="" href="../imagemap/">Image Maps</a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../decision-tree/"><code>alt</code> Decision Tree</a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../tips/">Tips and FAQ</a></li>
+      
+      
+      
+    </ul>
+    <p class="list-heading" id="list-heading-topics">
+  All Tutorials
+</p>
+<ul class="topics" aria-labelled-by="list-heading-topics">
+	<li><span class="current-a"><span class="visuallyhidden">Current: </span>Images</span></li>
+	<li><a href="../../tables/">Tables</a></li>
+	<li><a href="../../forms/">Forms</a></li>
+	<li><a href="../../sliders/">Sliders/Carousels</a></li>
+	<li><a href="../../more/">More on the way…</a></li>
+</ul>
+
+  </nav>
+</div>
+                </main>
+	<footer role="contentinfo">
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 3 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+
+	</footer>
+	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	</body>
+</html>
+

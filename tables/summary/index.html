@@ -1,0 +1,352 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Table Summary
+  
+    
+       | Tables
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="/"><img src="http://w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
+      <a href="/" class="wai"><img src="http://www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content editors-draft">
+  <header class="tutorial-heading">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <p>
+        <span class="home"><a class="" href="../../">Tutorials home</a></span> <span class="icon icon-chevron-right"></span>
+        <span class="other">
+        
+          <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
+        
+        
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Table Summary</span>
+        </span>
+      </p>
+    </nav>
+    <h1>
+      Table Summary
+    </h1>
+  </header>
+
+  
+  
+  <div class="status">
+    <p><strong>Status:</strong> This is not ready for detailed review. It is an in-progress, unapproved editor’s draft.</p>
+  </div>
+  
+
+
+  <div class="inner">
+
+  
+
+  
+
+
+    <p>A summary is a brief description of how data is organized in a table. It
+may not be necessary in very simple tables but can be important where
+the data is laid out in an unusual order or the table structure is
+complex. In these cases, a summary should be provided to give brief
+orientation clues. In HTML4 the description can be marked up in the
+<code>summary</code> attribute of the <code>&lt;table&gt;</code> element, but as this is made
+obsolete in HTML5, the second example on this page shows how to put the
+description within the <code>&lt;caption&gt;</code> element.</p>
+
+<h2 class="ex" id="table-with-data-on-both-sides-of-a-header-column">Table with data on both sides of a header column</h2>
+
+<p>This table has an unusual table structure, the days of the week are in
+the center column, morning times to the left and afternoon times to the
+right. It has the <code>summary</code> attribute “Days are shown in the second
+column, morning opening hours in the first column and afternoon opening
+hours are in the third column”, explaining the way the table is laid
+out.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table summary="Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column">
+	<caption>
+		Surgery opening times
+	</caption>
+	<tr>
+		<th scope="col" id="m"> Morning</th>
+		<th scope="col" id="d">Day</th>
+		<th id="a"> Afternoon</th>
+	</tr>
+	<tr>
+		<td headers="m d1">Closed</td>
+		<th scope="row" id="d1"> Sunday</th>
+		<td headers="a d1"> 14:00 to 15:00</td>
+	</tr>
+	<tr>
+		<td headers="m d2"> 08:00 to 11:30</td>
+		<th id="d2"> Mon to Fri</th>
+		<td headers="a d2">15:00 to 19:00</td>
+	</th>
+	<tr>
+		<td headers="d3 m">09:30 to 12:00</td>
+		<th id="d3">Saturday</th>
+		<td headers="a d3">Closed</td>
+	</tr>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;table</span>
+	<span class="na">summary=</span><span class="s">"Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column"</span><span class="nt">&gt;</span>
+</pre>
+</figure>
+
+<h2 class="ex" id="table-with-a-complex-structure">Table with a complex structure</h2>
+
+<p>This is a complex table showing availability of different types and
+sizes of accommodation in two different locations. The <code>&lt;caption&gt;</code>
+element is used to describe the table layout as well as act as a heading
+for the table.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table>
+<caption style="text-align: left;">
+  Availability of holiday accommodation<br />
+            <span style="font-size: .75em;">Column one has the location and size of accommodation, other columns show the type and number of properties available</span>
+            </caption>
+<thead>
+              <tr>
+                <td></td>
+                <th id="stud" scope="col"> Studio </th>
+                <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
+                <th id="chal" scope="col"> Chalet </th>
+                <th id="villa" scope="col"> Villa </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th id="par" class="span" colspan="5" scope="colgroup"> Paris </th>
+              </tr>
+              <tr>
+                <th headers="par" id="pbed1"> 1 bedroom </th>
+                <td headers="par pbed1 stud"> 11 </td>
+                <td headers="par pbed1 apt"> 20 </td>
+                <td headers="par pbed1 chal"> 25 </td>
+                <td headers="par pbed1 villa"> 23 </td>
+              </tr>
+              <tr>
+                <th headers="par" id="pbed2"> 2 bedroom </th>
+                <td headers="par pbed2 stud"> - </td>
+                <td headers="par pbed2 apt"> 43 </td>
+                <td headers="par pbed2 chal"> 52 </td>
+                <td headers="par pbed2 villa"> 32 </td>
+              </tr>
+              <tr>
+                <th headers="par" id="pbed3"> 3 bedroom </th>
+                <td headers="par pbed3 stud"> - </td>
+                <td headers="par pbed3 apt"> 13 </td>
+                <td headers="par pbed3 chal"> 15 </td>
+                <td headers="par pbed3 villa"> 40 </td>
+              </tr>
+              <tr>
+                <th id="rome" class="span" colspan="5" scope="colgroup"> Rome </th>
+              </tr>
+              <tr>
+                <th id="rbed1" headers="rome"> 1 bedroom </th>
+                <td headers="rome rbed1 stud"> 13 </td>
+                <td headers="rome rbed1 apt"> 21 </td>
+                <td headers="rome rbed1 chal"> 22 </td>
+                <td headers="rome rbed1 villa"> 3 </td>
+              </tr>
+              <tr>
+                <th id="rbed2" headers="rome"> 2 bedroom </th>
+                <td headers="rome rbed2 stud"> - </td>
+                <td headers="rome rbed2 apt"> 23 </td>
+                <td headers="rome rbed2 chal"> 43 </td>
+                <td headers="rome rbed2 villa"> 30 </td>
+              </tr>
+              <tr>
+                <th id="rbed3" headers="rome"> 3 bedroom </th>
+                <td headers="rome rbed3 stud"> - </td>
+                <td headers="rome rbed3 apt"> 16 </td>
+                <td headers="rome rbed3 chal"> 32 </td>
+                <td headers="rome rbed3 villa"> 40 </td>
+              </tr>
+            </tbody>
+          </table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;caption&gt;</span>Availability of holiday accommodation <span class="nt">&lt;br&gt;</span>
+	<span class="nt">&lt;span&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/caption&gt;</span>
+</pre>
+</figure>
+
+<p><strong>Note:</strong> The technique used for example 2 is valid for both HTML4 and HTML5. <strong class="todo">@@@Should I also link here to the <a href="http://www.w3.org/TR/html5/tabular-data.html#table-descriptions-techniques">other HTML5 table description techniques</a>?</strong></p>
+
+<h2 id="related-wcag20-technique">Related WCAG2.0 Technique</h2>
+
+<p>The following WCAG 2.0 technique was used in the example above:</p>
+
+<ul>
+  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H73">H73: Using the summary attribute of the table element</a></li>
+</ul>
+
+
+<div role="navigation" id="tools">
+  <ul>
+    
+      
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+          <li class="prev">
+            <span><a class="" href="../id-headers/"><span class="dir">Previous:</span><span class="title">Multi-level Tables</span></a></span>
+          </li>
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../tips/"><span class="dir">Next:</span><span class="title">Tips and FAQ</span></a></span>
+          </li>
+        
+      
+    
+  </ul>
+</div>
+
+<aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+</aside>
+
+                  </div>
+                </div>
+                <div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <p class="list-heading" id="list-heading-tutorials">
+      
+        Tables Tutorial
+      
+    </p>
+    <ul aria-labelled-by="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../">Tables Concepts</a></li>
+        
+      
+      
+      <li><a class="" href="../headers/">Header Cells</a></li>
+      
+      
+      
+      <li><a class="" href="../caption/">Caption</a></li>
+      
+      
+      
+      <li><a class="" href="../scope/">Scope of Headers</a></li>
+      
+      
+      
+      <li><a class="" href="../id-headers/">Multi-level Tables</a></li>
+      
+      
+      
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Table Summary</span></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../tips/">Tips and FAQ</a></li>
+      
+      
+      
+    </ul>
+    <p class="list-heading" id="list-heading-topics">
+  All Tutorials
+</p>
+<ul class="topics" aria-labelled-by="list-heading-topics">
+	<li><a href="../../images/">Images</a></li>
+	<li><span class="current-a"><span class="visuallyhidden">Current: </span>Tables</span></li>
+	<li><a href="../../forms/">Forms</a></li>
+	<li><a href="../../sliders/">Sliders/Carousels</a></li>
+	<li><a href="../../more/">More on the way…</a></li>
+</ul>
+
+  </nav>
+</div>
+                </main>
+	<footer role="contentinfo">
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 3 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+
+	</footer>
+	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	</body>
+</html>
+

@@ -1,0 +1,493 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Multi-level Tables
+  
+    
+       | Tables
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="/"><img src="http://w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
+      <a href="/" class="wai"><img src="http://www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content editors-draft">
+  <header class="tutorial-heading">
+    <nav class="breadcrumb" aria-label="Breadcrumbs">
+      <p>
+        <span class="home"><a class="" href="../../">Tutorials home</a></span> <span class="icon icon-chevron-right"></span>
+        <span class="other">
+        
+          <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
+        
+        
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Multi-level Tables</span>
+        </span>
+      </p>
+    </nav>
+    <h1>
+      Multi-level Tables
+    </h1>
+  </header>
+
+  
+  
+  <div class="status">
+    <p><strong>Status:</strong> This is not ready for detailed review. It is an in-progress, unapproved editor’s draft.</p>
+  </div>
+  
+
+
+  <div class="inner">
+
+  
+
+  
+
+
+    <p>Multi-level tables are those that have a structure that is too complex
+to support strict horizontal or vertical association between header and
+data cells. In each case, the relationship between header and data cells
+needs to be defined by giving each <code>&lt;th&gt;</code> cell a unique id attribute,
+and each <code>&lt;td&gt;</code> a headers attribute that lists related id values,
+without any comma separation. Table structures that need to be marked up
+this way include:</p>
+
+<ul>
+  <li>Where column headers are repeated or changed part-way through the
+table;</li>
+  <li>Those with three or more header cells related to each data cell;</li>
+  <li>Where some of the header cells aren't in direct horizontal or
+vertical alignment to related data cells.</li>
+</ul>
+
+<h2 id="example-1-table-with-multiple-column-headers-in-each-column">Example 1: Table with multiple column headers in each column</h2>
+
+<p>This table shows contact details for six suppliers. To avoid producing
+an overly wide table the first row has <code>&lt;th&gt;</code> cells identifying the
+first three supply firms and the fourth row has the <code>&lt;th&gt;</code> cells
+identifying the other three. To ensure that data cells are associated
+with the correct firm, each <code>&lt;th&gt;</code> cell has a unique <em>id</em> and each <code>&lt;td&gt;</code>
+cell has a headers attribute listing the <em>id</em> values that relate to it.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table>
+  <caption>
+    Supplier contacts
+  </caption>
+  <tr>
+    <td>&nbsp;</td>
+    <th id="co1">Example1 Ltd</th>
+    <th id="co2">Example2 Co</th>
+    <th id="co3">Example 3 Inc</th>
+  </tr>
+  <tr>
+    <th id="c1">Contact</th>
+    <td headers="co1 c1">James Phillips</td>
+    <td headers="co2 c1">Marie Beauchamp</td>
+    <td headers="co3 c1">Andrew Bruce</td>
+  </tr>
+  <tr>
+    <th id="p1">Position</th>
+    <td headers="co1 p1">Sales Director</td>
+    <td headers="co2 p1">Sales Manager</td>
+    <td headers="co3 p1">Client Support Officer</td>
+  </tr>
+  <tr>
+    <th id="e1">Email</th>
+    <td headers="co1 e1">jp@example1.co.uk</td>
+    <td headers="co2 e1">marie@example2.co.fr</td>
+    <td headers="co3 e1">sales@example3.com</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <th id="co4">Example 4 Ltd</th>
+    <th id="co5">Example 5Inc</th>
+    <th id="co6">Example 6 Co</th>
+  </tr>
+  <tr>
+    <th id="c2">Contact</th>
+    <td headers="co4 c2">Suzette Jones</td>
+    <td headers="co5 c2">Alex Howe</td>
+    <td headers="co6 c2">Axel Gaunt</td>
+  </tr>
+  <tr>
+    <th id="p2">Position</th>
+    <td headers="co4 p2">Sales Officer</td>
+    <td headers="co5 p2">Sales Director</td>
+    <td headers="co6 p2">Proprietor</td>
+  </tr>
+  <tr>
+    <th id="e2">Email</th>
+    <td headers="co4 e2">Suz@example4.co.uk</td>
+    <td headers="co5 e2">howe@example5.com</td>
+    <td headers="co6 e2">sales@example6.co.eu</td>
+  </tr>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: Assigning <strong>id</strong> attributes to <code>&lt;th></code> cells</figcaption>
+
+<pre class="highlight html">[…]
+<span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co1"</span><span class="nt">&gt;</span>Example1 Ltd<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co2"</span><span class="nt">&gt;</span>Example2 Co<span class="nt">&lt;/th&gt;</span>
+[…]
+<span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"c1"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/th&gt;</span>
+[…]
+</pre>
+</figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: Assigning <strong>header</strong> attributes to <code>&lt;td></code> cells</figcaption>
+
+<pre class="highlight html">[…]
+<span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co1 c1"</span><span class="nt">&gt;</span>James Phillips<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co2 c1"</span><span class="nt">&gt;</span>Marie Beauchamp<span class="nt">&lt;/td&gt;</span>
+[…]
+</pre>
+</figure>
+
+<p><a href="example4.txt">Full code for Example 1: Table with multiple column headers in each
+column <img alt="(new window)" src="../../graphics/new-win-icon.gif" /></a></p>
+
+<h2 id="example-2-table-with-three-headers-related-to-each-data-cell">Example 2: Table with three headers related to each data cell</h2>
+
+<p>This example shows availability of accommodation of a given type and
+size in two different locations. For the data to be understood, each
+<code>&lt;td&gt;</code> cell needs to be associated to three <code>&lt;td&gt;</code> cells (location, size
+and type of accommodation). To define these complex associations, each
+<code>&lt;th&gt;</code> cell has a unique <em>id</em> attribute and all data cells have a
+<em>headers</em> attribute listing the related cell <em>id</em> values.</p>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table summary="Column one has the location and size of accommodation, other columns show the type and number of properties available">
+<caption>
+    Availability of holiday accommodation
+</caption>
+<thead>
+    <tr>
+        <td></td>
+        <th id="stud" scope="col">
+            Studio
+        </th>
+        <th id="apt" scope="col">
+            <abbr title="Apartment">Apt</abbr>
+        </th>
+        <th id="chal" scope="col">
+            Chalet
+        </th>
+        <th id="villa" scope="col">
+            Villa
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th id="par" class="span" colspan="5" scope="colgroup">
+            Paris
+        </th>
+    </tr>
+    <tr>
+        <th headers="par" id="pbed1">
+            1 bedroom
+        </th>
+        <td headers="par pbed1 stud">
+            11
+        </td>
+        <td headers="par pbed1 apt">
+            20
+        </td>
+        <td headers="par pbed1 chal">
+            25
+        </td>
+        <td headers="par pbed1 villa">
+            23
+        </td>
+    </tr>
+    <tr>
+        <th headers="par" id="pbed2">
+            2 bedroom
+        </th>
+        <td headers="par pbed2 stud">
+            -
+        </td>
+        <td headers="par pbed2 apt">
+            43
+        </td>
+        <td headers="par pbed2 chal">
+            52
+        </td>
+        <td headers="par pbed2 villa">
+            32
+        </td>
+    </tr>
+    <tr>
+        <th headers="par" id="pbed3">
+            3 bedroom
+        </th>
+        <td headers="par pbed3 stud">
+            -
+        </td>
+        <td headers="par pbed3 apt">
+            13
+        </td>
+        <td headers="par pbed3 chal">
+            15
+        </td>
+        <td headers="par pbed3 villa">
+            40
+        </td>
+    </tr>
+    <tr>
+        <th id="rome" class="span" colspan="5" scope="colgroup">
+            Rome
+        </th>
+    </tr>
+    <tr>
+        <th id="rbed1" headers="rome">
+            1 bedroom
+</th>
+        <td headers="rome rbed1 stud">
+            13
+        </td>
+        <td headers="rome rbed1 apt">
+            21
+        </td>
+        <td headers="rome rbed1 chal">
+            22
+        </td>
+        <td headers="rome rbed1 villa">
+            3
+        </td>
+    </tr>
+    <tr>
+        <th id="rbed2" headers="rome">
+            2 bedroom
+</th>
+        <td headers="rome rbed2 stud">
+            -
+        </td>
+        <td headers="rome rbed2 apt">
+            23
+        </td>
+        <td headers="rome rbed2 chal">
+            43
+        </td>
+        <td headers="rome rbed2 villa">
+            30
+        </td>
+    </tr>
+    <tr>
+        <th id="rbed3" headers="rome">
+            3 bedroom
+</th>
+        <td headers="rome rbed3 stud">
+            -
+        </td>
+        <td headers="rome rbed3 apt">
+            16
+        </td>
+        <td headers="rome rbed3 chal">
+            32
+        </td>
+        <td headers="rome rbed3 villa">
+            40
+        </td>
+    </tr>
+</tbody>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: Assigning <strong>id</strong> attributes to <code>&lt;th></code> cells</figcaption>
+
+<pre class="highlight html">[…]
+	<span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"par"</span> <span class="na">colspan=</span><span class="s">"5"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Paris<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+	<span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"pbed1"</span><span class="nt">&gt;</span>1 bedroom<span class="nt">&lt;/th&gt;</span>
+[…]
+</pre>
+</figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: Assigning <strong>header</strong> attributes to <code>&lt;td></code> cells</figcaption>
+
+<pre class="highlight html">[…]
+<span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"par pbed1 stud"</span><span class="nt">&gt;</span>11<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"par pbed1 apt"</span><span class="nt">&gt;</span> 20<span class="nt">&lt;/td&gt;</span>
+[…]
+</pre>
+</figure>
+
+<p><a href="example4.txt">Full code for Example 2: Table with three headers related to each data
+cell <img alt="(new window)" src="../../graphics/new-win-icon.gif" /></a></p>
+
+<h2 id="related-wcag20-technique">Related WCAG2.0 Technique</h2>
+
+<p>The following WCAG 2.0 technique was used in the examples above:</p>
+
+<ul>
+  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H43.html">H43: Using id and headers attributes to associate data cells with
+header cells in data
+tables</a></li>
+</ul>
+
+
+<div role="navigation" id="tools">
+  <ul>
+    
+      
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+          <li class="prev">
+            <span><a class="" href="../scope/"><span class="dir">Previous:</span><span class="title">Scope of Headers</span></a></span>
+          </li>
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../summary/"><span class="dir">Next:</span><span class="title">Table Summary</span></a></span>
+          </li>
+        
+      
+        
+        
+        
+      
+    
+  </ul>
+</div>
+
+<aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+</aside>
+
+                  </div>
+                </div>
+                <div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <p class="list-heading" id="list-heading-tutorials">
+      
+        Tables Tutorial
+      
+    </p>
+    <ul aria-labelled-by="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../">Tables Concepts</a></li>
+        
+      
+      
+      <li><a class="" href="../headers/">Header Cells</a></li>
+      
+      
+      
+      <li><a class="" href="../caption/">Caption</a></li>
+      
+      
+      
+      <li><a class="" href="../scope/">Scope of Headers</a></li>
+      
+      
+      
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Multi-level Tables</span></li>
+      
+      
+      
+      <li><a class="" href="../summary/">Table Summary</a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../tips/">Tips and FAQ</a></li>
+      
+      
+      
+    </ul>
+    <p class="list-heading" id="list-heading-topics">
+  All Tutorials
+</p>
+<ul class="topics" aria-labelled-by="list-heading-topics">
+	<li><a href="../../images/">Images</a></li>
+	<li><span class="current-a"><span class="visuallyhidden">Current: </span>Tables</span></li>
+	<li><a href="../../forms/">Forms</a></li>
+	<li><a href="../../sliders/">Sliders/Carousels</a></li>
+	<li><a href="../../more/">More on the way…</a></li>
+</ul>
+
+  </nav>
+</div>
+                </main>
+	<footer role="contentinfo">
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 3 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+
+	</footer>
+	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	</body>
+</html>
+
