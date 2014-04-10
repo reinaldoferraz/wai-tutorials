@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Header Cells
+  Simple Tables
   
     
        | Tables
@@ -37,12 +37,12 @@
           <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="visuallyhidden">Current: </span>Header Cells</span>
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Simple Tables</span>
         </span>
       </p>
     </nav>
     <h1>
-      Header Cells
+      Simple Tables
     </h1>
   </header>
 
@@ -61,12 +61,13 @@
   
 
 
-    <p>Header cells are those that contain the information that is critical to understanding the raw data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for a) the number of properties in b) a given street. The <code>&lt;th&gt;</code> element needs to be used for header cells so that they are distinguishable from and can be associated with the correct data <code>&lt;td&gt;</code> cells.</p>
+    <p>If a table only contains zero or one row and zero or one column of headings which are in the first row/column, it is considered a simple table.</p>
+
+<p>Use header cells (<code>&lt;th&gt;</code>) as those that contain the information that is critical to understand the raw data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for a) the number of properties in b) a given street. The <code>&lt;th&gt;</code> element needs to be used for header cells so that they are distinguishable from and can be associated with the correct data <code>&lt;td&gt;</code> cells.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
-<p>This table of concert dates only needs the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is
-distinctly different in each column.</p>
+<p>This table of concert dates only needs the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -101,7 +102,11 @@ distinctly different in each column.</p>
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;p&gt;</span>
+	<span class="nt">&lt;strong&gt;</span>Concert dates:<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;table&gt;</span>
 	<span class="nt">&lt;tr&gt;</span>
 		<span class="nt">&lt;th&gt;</span>Date<span class="nt">&lt;/th&gt;</span>
 		<span class="nt">&lt;th&gt;</span>Event<span class="nt">&lt;/th&gt;</span>
@@ -115,15 +120,14 @@ distinctly different in each column.</p>
 	[…]
 <span class="nt">&lt;/table&gt;</span>
 </pre>
+
 </figure>
 
 <p><a href="../examples/headertoprow/">Full code for “Table with header cells in the top row only”</a></p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
 
-<p>This table of opening times has header information contained in both the
-top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code>
-cells.</p>
+<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells.</p>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -203,17 +207,151 @@ cells.</p>
 	[…]
 <span class="nt">&lt;/table&gt;</span>
 </pre>
+
 </figure>
 
 <p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
+
+<h2 class="ex" id="caption-used-as-a-table-heading"><code>&lt;caption&gt;</code> used as a table heading</h2>
+
+<p>We use different ways to provide headings in the above examples, a simple paragraph or using the top left cell.</p>
+
+<p>A table caption can be used to provide a heading for the table as a whole. This is not required to meet WCAG 2.0, but is considered best
+practice because the <code>&lt;caption&gt;</code> element is explicitly associated with the table. The <code>&lt;caption&gt;</code> value should be a succinct description of the content of the table.</p>
+
+<p>While the examples above don’t use it, this and all other examples in this tutorial apply the <code>&lt;caption&gt;</code> element to tables.</p>
+
+<p>This example has the table heading marked up using the <code>&lt;caption&gt;</code> element, its value "Concert dates" tells users what information the table contains.</p>
+
+<h3 id="header-cells-in-the-top-row-only">Header cells in the top row only:</h3>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table>
+	<caption>Concert dates</caption>
+	<tr>
+		<th>Date</th>
+		<th>Event</th>
+		<th>Venue</th>
+	</tr>
+	<tr>
+		<td>12 Feb</td>
+		<td>Waltz with Strauss</td>
+		<td>Main Hall</td>
+	</tr>
+	<tr>
+		<td>24 Mar</td>
+		<td>The Obelisks</td>
+		<td>West Wing</td>
+	</tr>
+	<tr>
+		<td>14 Apr</td>
+		<td>The What</td>
+		<td>Main Hall</td>
+	</tr>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+	<span class="nt">&lt;caption&gt;</span>Concert dates<span class="nt">&lt;/caption&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span>12 Feb<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Waltz with Strauss<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Main Hall<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span>24 Mar<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>The Obelisks<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>West Wing<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	[…]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+
+</figure>
+
+<h3 id="header-cells-in-the-top-row-and-first-column">Header cells in the top row and first column:</h3>
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table>
+	<caption>Delivery slots</caption>
+	<tr>
+		<th>&nbsp;</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+	</tr>
+	<tr>
+		<th>09:00 - 11:00</th>
+		<td>Closed</td>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Closed</td>
+		<td>Closed</td>
+	</tr>
+	<tr>
+		<th>11:00 - 13:00</th>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Closed</td>
+		<td>Closed</td>
+		<td>Closed</td>
+	</tr>
+	<tr>
+		<th>13:00 - 15:00</th>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Open</td>
+		<td>Closed</td>
+		<td>Closed</td>
+	</tr>
+	<tr>
+		<th>15:00 - 17:00</th>
+		<td>Closed</td>
+		<td>Closed</td>
+		<td>Closed</td>
+		<td>Open</td>
+		<td>Open</td>
+	</tr>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+	<span class="nt">&lt;caption&gt;</span>Delivery slots<span class="nt">&lt;/caption&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	[…]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+
+</figure>
 
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
 
 <p>The following WCAG 2.0 technique was used in the examples above:</p>
 
 <ul>
-  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H51">H51 : Using table markup to present tabular
-data</a></li>
+  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H51">H51: Using table markup to present tabular data</a></li>
+  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
 </ul>
 
 
@@ -228,14 +366,6 @@ data</a></li>
       
         
         
-        
-      
-        
-        
-        
-          <li class="next">
-            <span><a class="" href="../caption/"><span class="dir">Next:</span><span class="title">Caption</span></a></span>
-          </li>
         
       
         
@@ -279,11 +409,7 @@ data</a></li>
         
       
       
-      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Header Cells</span></li>
-      
-      
-      
-      <li><a class="" href="../caption/">Caption</a></li>
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Simple Tables</span></li>
       
       
       
@@ -321,7 +447,7 @@ data</a></li>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 6 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
