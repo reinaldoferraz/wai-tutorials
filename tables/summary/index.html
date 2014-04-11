@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Table Summary
+  Summarize Tables
   
     
        | Tables
@@ -37,12 +37,12 @@
           <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="visuallyhidden">Current: </span>Table Summary</span>
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Summarize Tables</span>
         </span>
       </p>
     </nav>
     <h1>
-      Table Summary
+      Summarize Tables
     </h1>
   </header>
 
@@ -61,23 +61,12 @@
   
 
 
-    <p>A summary is a brief description of how data is organized in a table. It
-may not be necessary in very simple tables but can be important where
-the data is laid out in an unusual order or the table structure is
-complex. In these cases, a summary should be provided to give brief
-orientation clues. In HTML4 the description can be marked up in the
-<code>summary</code> attribute of the <code>&lt;table&gt;</code> element, but as this is made
-obsolete in HTML5, the second example on this page shows how to put the
-description within the <code>&lt;caption&gt;</code> element.</p>
+    <p>A summary is a brief description of how data is organized in a table. It may not be necessary in very simple tables but can be important where the data is laid out in an unusual order or the table structure is complex. In these cases, a summary should be provided to give brief orientation clues. In HTML4 the description can be marked up in the <code class="attrib">summary</code> attribute of the <code class="elem">&lt;table&gt;</code> element, but as this is made obsolete in HTML5, the second example on this page shows how to put the description within the <code class="elem">&lt;caption&gt;</code> element.</p>
 
 <h2 class="ex" id="table-with-data-on-both-sides-of-a-header-column">Table with data on both sides of a header column</h2>
 
-<p>This table has an unusual table structure, the days of the week are in
-the center column, morning times to the left and afternoon times to the
-right. It has the <code>summary</code> attribute “Days are shown in the second
-column, morning opening hours in the first column and afternoon opening
-hours are in the third column”, explaining the way the table is laid
-out.</p>
+<p>This table has an <em>unusual table structure</em>, the days of the week are in the center column, morning times to the left and afternoon times to the right. It has the <code class="attrib">summary</code> attribute “Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column”, explaining the way the table is laid out.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -108,23 +97,20 @@ out.</p>
 	</tr>
 </table>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;table</span>
 	<span class="na">summary=</span><span class="s">"Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column"</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
 <h2 class="ex" id="table-with-a-complex-structure">Table with a complex structure</h2>
 
-<p>This is a complex table showing availability of different types and
-sizes of accommodation in two different locations. The <code>&lt;caption&gt;</code>
-element is used to describe the table layout as well as act as a heading
-for the table.</p>
+<p>This is a complex table showing availability of different types and sizes of accommodation in two different locations. The <code class="elem">&lt;caption&gt;</code> element is used to describe the table layout as well as act as a heading for the table.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -132,7 +118,7 @@ for the table.</p>
 <table>
 <caption style="text-align: left;">
   Availability of holiday accommodation<br />
-            <span style="font-size: .75em;">Column one has the location and size of accommodation, other columns show the type and number of properties available</span>
+            <span style="font-size: .75em; display:block; line-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available</span>
             </caption>
 <thead>
               <tr>
@@ -195,18 +181,17 @@ for the table.</p>
             </tbody>
           </table>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;caption&gt;</span>Availability of holiday accommodation <span class="nt">&lt;br&gt;</span>
 	<span class="nt">&lt;span&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/caption&gt;</span>
 </pre>
 
 </figure>
-
 <p><strong>Note:</strong> The technique used for example 2 is valid for both HTML4 and HTML5. <strong class="todo">@@@Should I also link here to the <a href="http://www.w3.org/TR/html5/tabular-data.html#table-descriptions-techniques">other HTML5 table description techniques</a>?</strong></p>
 
 <h2 id="related-wcag20-technique">Related WCAG2.0 Technique</h2>
@@ -234,7 +219,7 @@ for the table.</p>
         
         
           <li class="prev">
-            <span><a class="" href="../id-headers/"><span class="dir">Previous:</span><span class="title">Multi-level Tables</span></a></span>
+            <span><a class="" href="../multi-level/"><span class="dir">Previous:</span><span class="title">Multi-level Tables</span></a></span>
           </li>
         
         
@@ -280,15 +265,15 @@ for the table.</p>
       
       
       
-      <li><a class="" href="../scope/">Scope of Headers</a></li>
+      <li><a class="" href="../ambiguous/">Ambiguous Tables</a></li>
       
       
       
-      <li><a class="" href="../id-headers/">Multi-level Tables</a></li>
+      <li><a class="" href="../multi-level/">Multi-level Tables</a></li>
       
       
       
-      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Table Summary</span></li>
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Summarize Tables</span></li>
       
       
       
@@ -314,7 +299,7 @@ for the table.</p>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

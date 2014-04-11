@@ -61,30 +61,18 @@
   
 
 
-    <p>Multi-level tables are those that have a structure that is too complex
-to support strict horizontal or vertical association between header and
-data cells. In each case, the relationship between header and data cells
-needs to be defined by giving each <code>&lt;th&gt;</code> cell a unique id attribute,
-and each <code>&lt;td&gt;</code> a headers attribute that lists related id values,
-without any comma separation. Table structures that need to be marked up
-this way include:</p>
+    <p>Multi-level tables are those that have a structure that is too complex to support strict horizontal or vertical association between header and data cells. In each case, the relationship between header and data cells needs to be defined by giving each <code class="elem">&lt;th&gt;</code> cell a unique id attribute, and each <code class="elem">&lt;td&gt;</code> a headers attribute that lists related id values, without any comma separation. Table structures that need to be marked up this way include:</p>
 
 <ul>
-  <li>Where column headers are repeated or changed part-way through the
-table;</li>
-  <li>Those with three or more header cells related to each data cell;</li>
-  <li>Where some of the header cells aren't in direct horizontal or
-vertical alignment to related data cells.</li>
+  <li>Where column headers are repeated or changed part-way through the table</li>
+  <li>Those with three or more header cells related to each data cell</li>
+  <li>Where some of the header cells aren't in direct horizontal or vertical alignment to related data cells.</li>
 </ul>
 
-<h2 id="example-1-table-with-multiple-column-headers-in-each-column">Example 1: Table with multiple column headers in each column</h2>
+<h2 class="ex" id="table-with-multiple-column-headers-in-each-column">Table with multiple column headers in each column</h2>
 
-<p>This table shows contact details for six suppliers. To avoid producing
-an overly wide table the first row has <code>&lt;th&gt;</code> cells identifying the
-first three supply firms and the fourth row has the <code>&lt;th&gt;</code> cells
-identifying the other three. To ensure that data cells are associated
-with the correct firm, each <code>&lt;th&gt;</code> cell has a unique <em>id</em> and each <code>&lt;td&gt;</code>
-cell has a headers attribute listing the <em>id</em> values that relate to it.</p>
+<p>This table shows contact details for six suppliers. To avoid producing an overly wide table the first row has <code class="elem">&lt;th&gt;</code> cells identifying the first three supply firms and the fourth row has the <code class="elem">&lt;th&gt;</code> cells identifying the other three. To ensure that data cells are associated with the correct firm, each <code class="elem">&lt;th&gt;</code> cell has a unique <code class="attrib">id</code> and each <code class="elem">&lt;td&gt;</code> cell has a headers attribute listing the <code class="attrib">id</code> values that relate to it.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -143,11 +131,11 @@ cell has a headers attribute listing the <em>id</em> values that relate to it.</
   </tr>
 </table>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: Assigning <strong>id</strong> attributes to <code>&lt;th></code> cells</figcaption>
-
 <pre class="highlight html">[…]
 <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co1"</span><span class="nt">&gt;</span>Example1 Ltd<span class="nt">&lt;/th&gt;</span>
 <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co2"</span><span class="nt">&gt;</span>Example2 Co<span class="nt">&lt;/th&gt;</span>
@@ -157,10 +145,8 @@ cell has a headers attribute listing the <em>id</em> values that relate to it.</
 </pre>
 
 </figure>
-
 <figure class="code ">
   <figcaption>Code snippet: Assigning <strong>header</strong> attributes to <code>&lt;td></code> cells</figcaption>
-
 <pre class="highlight html">[…]
 <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co1 c1"</span><span class="nt">&gt;</span>James Phillips<span class="nt">&lt;/td&gt;</span>
 <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co2 c1"</span><span class="nt">&gt;</span>Marie Beauchamp<span class="nt">&lt;/td&gt;</span>
@@ -168,18 +154,14 @@ cell has a headers attribute listing the <em>id</em> values that relate to it.</
 </pre>
 
 </figure>
-
 <p><a href="example4.txt">Full code for Example 1: Table with multiple column headers in each
 column <img alt="(new window)" src="../../graphics/new-win-icon.gif" /></a></p>
 
-<h2 id="example-2-table-with-three-headers-related-to-each-data-cell">Example 2: Table with three headers related to each data cell</h2>
+<h2 class="ex" id="table-with-three-headers-related-to-each-data-cell">Table with three headers related to each data cell</h2>
 
-<p>This example shows availability of accommodation of a given type and
-size in two different locations. For the data to be understood, each
-<code>&lt;td&gt;</code> cell needs to be associated to three <code>&lt;td&gt;</code> cells (location, size
-and type of accommodation). To define these complex associations, each
-<code>&lt;th&gt;</code> cell has a unique <em>id</em> attribute and all data cells have a
-<em>headers</em> attribute listing the related cell <em>id</em> values.</p>
+<p>This example shows availability of accommodation of a given type and size in two different locations. For the data to be understood, each
+<code class="elem">&lt;td&gt;</code> cell needs to be associated to three <code class="elem">&lt;td&gt;</code> cells (location, size and type of accommodation). To define these complex associations, each <code class="elem">&lt;th&gt;</code> cell has a unique <code class="attrib">id</code> attribute and all data cells have a <code class="attrib">headers</code> attribute listing the related cell <code class="attrib">id</code> values.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -270,7 +252,7 @@ and type of accommodation). To define these complex associations, each
     <tr>
         <th id="rbed1" headers="rome">
             1 bedroom
-</th>
+        </th>
         <td headers="rome rbed1 stud">
             13
         </td>
@@ -287,7 +269,7 @@ and type of accommodation). To define these complex associations, each
     <tr>
         <th id="rbed2" headers="rome">
             2 bedroom
-</th>
+        </th>
         <td headers="rome rbed2 stud">
             -
         </td>
@@ -304,7 +286,7 @@ and type of accommodation). To define these complex associations, each
     <tr>
         <th id="rbed3" headers="rome">
             3 bedroom
-</th>
+        </th>
         <td headers="rome rbed3 stud">
             -
         </td>
@@ -321,11 +303,11 @@ and type of accommodation). To define these complex associations, each
 </tbody>
 </table>
 
+
   </div></figure>
 
 <figure class="code ">
-  <figcaption>Code snippet: Assigning <strong>id</strong> attributes to <code>&lt;th></code> cells</figcaption>
-
+  <figcaption>Code snippet: Assigning <code class="attrib">id</code> attributes to <code class="elem">&lt;th></code> cells</figcaption>
 <pre class="highlight html">[…]
 	<span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"par"</span> <span class="na">colspan=</span><span class="s">"5"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Paris<span class="nt">&lt;/th&gt;</span>
 <span class="nt">&lt;/tr&gt;</span>
@@ -335,10 +317,8 @@ and type of accommodation). To define these complex associations, each
 </pre>
 
 </figure>
-
 <figure class="code ">
-  <figcaption>Code snippet: Assigning <strong>header</strong> attributes to <code>&lt;td></code> cells</figcaption>
-
+  <figcaption>Code snippet: Assigning <code class="attrib">header</code> attributes to <code class="elem">&lt;td></code> cells</figcaption>
 <pre class="highlight html">[…]
 <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"par pbed1 stud"</span><span class="nt">&gt;</span>11<span class="nt">&lt;/td&gt;</span>
 <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"par pbed1 apt"</span><span class="nt">&gt;</span> 20<span class="nt">&lt;/td&gt;</span>
@@ -346,9 +326,170 @@ and type of accommodation). To define these complex associations, each
 </pre>
 
 </figure>
-
 <p><a href="example4.txt">Full code for Example 2: Table with three headers related to each data
 cell <img alt="(new window)" src="../../graphics/new-win-icon.gif" /></a></p>
+
+<h2 class="ex" id="split-up-multi-level-tables">Split up multi-level tables</h2>
+
+<p>Most of the time it is possible to split complex tables up into simpler ones, which allows to have simpler and more easy to maintain HTML code. Also simple tables are much better supported by WYSIWYG editors (“What you see is what you get”).</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content"><p style="text-align:center;"><strong>Availability of holiday accommodation</strong></p>
+<table summary="Column one has the location and size of accommodation, other columns show the type and number of properties available">
+<caption>
+    Paris
+</caption>
+<thead>
+    <tr>
+        <td></td>
+        <th scope="col">
+            Studio
+        </th>
+        <th scope="col">
+            <abbr title="Apartment">Apt</abbr>
+        </th>
+        <th scope="col">
+            Chalet
+        </th>
+        <th scope="col">
+            Villa
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th scope="row">
+            1 bedroom
+        </th>
+        <td>
+            11
+        </td>
+        <td>
+            20
+        </td>
+        <td>
+            25
+        </td>
+        <td>
+            23
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            2 bedroom
+        </th>
+        <td>
+            -
+        </td>
+        <td>
+            43
+        </td>
+        <td>
+            52
+        </td>
+        <td>
+            32
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            3 bedroom
+        </th>
+        <td>
+            -
+        </td>
+        <td>
+            13
+        </td>
+        <td>
+            15
+        </td>
+        <td>
+            40
+        </td>
+    </tr>
+  </tbody>
+</table>
+<table style="margin-top:1em;">
+<caption>
+    Rome
+</caption>
+<thead>
+    <tr>
+        <td></td>
+        <th scope="col">
+            Studio
+        </th>
+        <th scope="col">
+            <abbr title="Apartment">Apt</abbr>
+        </th>
+        <th scope="col">
+            Chalet
+        </th>
+        <th scope="col">
+            Villa
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th id="rbed1">
+            1 bedroom
+        </th>
+        <td>
+            13
+        </td>
+        <td>
+            21
+        </td>
+        <td>
+            22
+        </td>
+        <td>
+            3
+        </td>
+    </tr>
+    <tr>
+        <th id="rbed2">
+            2 bedroom
+        </th>
+        <td>
+            -
+        </td>
+        <td>
+            23
+        </td>
+        <td>
+            43
+        </td>
+        <td>
+            30
+        </td>
+    </tr>
+    <tr>
+        <th id="rbed3">
+            3 bedroom
+        </th>
+        <td>
+            -
+        </td>
+        <td>
+            16
+        </td>
+        <td>
+            32
+        </td>
+        <td>
+            40
+        </td>
+    </tr>
+</tbody>
+</table>
+
+
+  </div></figure>
 
 <h2 id="related-wcag20-technique">Related WCAG2.0 Technique</h2>
 
@@ -373,7 +514,7 @@ tables</a></li>
         
         
           <li class="prev">
-            <span><a class="" href="../scope/"><span class="dir">Previous:</span><span class="title">Scope of Headers</span></a></span>
+            <span><a class="" href="../ambiguous/"><span class="dir">Previous:</span><span class="title">Ambiguous Tables</span></a></span>
           </li>
         
         
@@ -386,7 +527,7 @@ tables</a></li>
         
         
           <li class="next">
-            <span><a class="" href="../summary/"><span class="dir">Next:</span><span class="title">Table Summary</span></a></span>
+            <span><a class="" href="../summary/"><span class="dir">Next:</span><span class="title">Summarize Tables</span></a></span>
           </li>
         
       
@@ -423,7 +564,7 @@ tables</a></li>
       
       
       
-      <li><a class="" href="../scope/">Scope of Headers</a></li>
+      <li><a class="" href="../ambiguous/">Ambiguous Tables</a></li>
       
       
       
@@ -431,7 +572,7 @@ tables</a></li>
       
       
       
-      <li><a class="" href="../summary/">Table Summary</a></li>
+      <li><a class="" href="../summary/">Summarize Tables</a></li>
       
       
       
@@ -457,7 +598,7 @@ tables</a></li>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

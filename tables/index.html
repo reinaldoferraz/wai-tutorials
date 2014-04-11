@@ -59,30 +59,32 @@
   
 
     
+    <div class="technologies">
+      <p><strong>Technologies covered in this Tutorial:</strong>
+        
+          <span class="tech">HTML4</span>
+        
+          <span class="tech">HTML5</span>
+        
+      </p>
+    </div>
+    
   
 
 
-    <p>All data tables need to have structural markup (coding) - elements and
-attributes that distinguish between header and data cells and define the
-relationships between them. This tutorial shows you how to apply
-appropriate structural table markup. It includes the following pages:</p>
+    <p>All data tables need to have structural markup (coding): elements and attributes that distinguish between header and data cells and define the relationships between them. This tutorial shows you how to apply appropriate structural table markup. It includes the following pages:</p>
 
 <ul>
   <li>
-    <p><strong><a href="headers.html">Header cells</a>:</strong> Identify the topic of a row or column –
-header cells need to be marked up as <code>&lt;th&gt;</code> cells;</p>
+    <p><strong><a href="simple/">Simple Tables</a>:</strong> Identify the topic of a row or column and denote those header cells with <code class="elem">&lt;th&gt;</code> elements in the markup. Also use the <code class="elem">&lt;caption&gt;</code> element to describe the overall topic of a table.</p>
   </li>
   <li>
-    <p><strong><a href="caption.html">Captions</a>:</strong> Describe the overall topic of a table —
-best practice is to use the <code>&lt;caption&gt;</code> element;</p>
-  </li>
-  <li>
-    <p><strong><a href="scope/">Scope of header cells</a>:</strong> Defines the range and
+    <p><strong><a href="scope.html">Scope of header cells</a>:</strong> Defines the range and
 direction of the data cells to which a header applies – use
 <em>scope</em>values that identify the appropriate scope;</p>
   </li>
   <li>
-    <p><strong><a href="id-headers/">Multi-level tables</a>:</strong> A complex table structure
+    <p><strong><a href="id-headers.html">Multi-level tables</a>:</strong> A complex table structure
 where a data cell needs to reference several levels of header cells – assign each header cell an <em>id</em> and each data cell a <em>headers</em>
 attribute that lists all relevant header cell <em>id</em> values;</p>
   </li>
@@ -94,14 +96,13 @@ table's <code>&lt;caption&gt;</code> element.</p>
   </li>
 </ul>
 
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> The techniques in this tutorial should be applied only when a
 table is being used to display data in a grid: if a table is used for
 layout, (which is discouraged), none of these elements and attributes
 should be applied.</p>
 
-  </div>
-
+</div>
 <h2 id="why-is-this-important">Why is this important?</h2>
 
 <p>When data is presented in tabular format, the position and styling of
@@ -214,15 +215,15 @@ text. (Level A)</p>
       
       
       
-      <li><a class="" href="scope/">Scope of Headers</a></li>
+      <li><a class="" href="ambiguous/">Ambiguous Tables</a></li>
       
       
       
-      <li><a class="" href="id-headers/">Multi-level Tables</a></li>
+      <li><a class="" href="multi-level/">Multi-level Tables</a></li>
       
       
       
-      <li><a class="" href="summary/">Table Summary</a></li>
+      <li><a class="" href="summary/">Summarize Tables</a></li>
       
       
       
@@ -248,7 +249,7 @@ text. (Level A)</p>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

@@ -85,10 +85,12 @@ can be used to provide both short and long descriptions.</p>
 
 <p>This bar chart of website visitor statistics has the short description “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3” as the <code>alt</code> attribute, identifying the image. The long description details the information, including scales, values, relationships and trends, that are represented visually. For example, the declining values for site 1, consistent values for site 2, and increasing values for site 3 are highlighted through the bar chart representation. This information needs to be made available in the <a href="../examples/2014-first-qtr/">long text description</a> as well.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img src="../../img/chart.png" alt="Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3" longdesc="../examples/2014-first-qtr/" /></p>
+
 
   </div></figure>
 
@@ -98,7 +100,6 @@ can be used to provide both short and long descriptions.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span>
 		<span class="na">src=</span><span class="s">"chart.png"</span>
@@ -108,15 +109,13 @@ can be used to provide both short and long descriptions.</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> Both Firefox and Chrome browsers are working on
 implementations that will make the <em>longdesc linked</em> long description
 location reachable by all users. In older or other browsers it is only
 available to screen reader users.</p>
 
-  </div>
-
+</div>
 <h3 class="ap" id="a-text-link-to-the-long-description-adjacent-to-the-image">A text link to the long description adjacent to the image</h3>
 
 <p>This approach provides a text link next to the image. The link text
@@ -124,7 +123,6 @@ makes both the destination and the association with the image clear.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span>
 		<span class="na">src=</span><span class="s">"chart.png"</span>
@@ -135,14 +133,12 @@ makes both the destination and the association with the image clear.</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> This approach is well supported in all browsers and ensures
 that everyone has access to the data as well as the image, no matter
 what browser or assistive technologies they may use.</p>
 
-  </div>
-
+</div>
 <h3 class="ap" id="describing-the-location-of-the-long-description-in-the-alt-attribute">Describing the location of the long description in the <code>alt</code> attribute</h3>
 
 <p>If the long description is on the same page as the image and its
@@ -151,7 +147,6 @@ location can be accurately pinpointed by being described, the
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span>
 		<span class="na">src=</span><span class="s">"chart.png"</span>
@@ -162,7 +157,6 @@ location can be accurately pinpointed by being described, the
 </pre>
 
 </figure>
-
 <h3 class="ap" id="structurally-associating-the-image-and-its-adjacent-long-description-html5">Structurally associating the image and its adjacent long description (HTML5)</h3>
 
 <p>The HTML5 <code>&lt;figure&gt;</code> element can be used to enclose both the image and
@@ -172,7 +166,6 @@ and a table, is explicitly associated to the image by using
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;figure</span> <span class="na">role=</span><span class="s">"group"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span>
 		<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3, described in full below."</span><span class="nt">&gt;</span>
@@ -187,14 +180,12 @@ and a table, is explicitly associated to the image by using
 </pre>
 
 </figure>
-
 <h3 class="ap" id="structurally-associating-image-and-long-description-with-aria-described-by">Structurally associating image and long description with <code>aria-described-by</code></h3>
 
 <p>The WAI-ARIA <code>aria-described-by</code> attribute can be used to link the description to the image. The value of the attribute is the <code>ID</code> of the element with the description.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span>
 	<span class="na">aria-described-by=</span><span class="s">"image-description"</span>
 	<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3."</span><span class="nt">&gt;</span>
@@ -210,7 +201,6 @@ and a table, is explicitly associated to the image by using
 </pre>
 
 </figure>
-
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
 
 <p>The following WCAG 2.0 techniques were used in the examples above:</p>
@@ -352,7 +342,7 @@ and a table, is explicitly associated to the image by using
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

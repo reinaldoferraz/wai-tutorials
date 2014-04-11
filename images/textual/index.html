@@ -77,21 +77,21 @@ realized with CSS styling. The text alternative is the same as that
 presented in the image: “Your access to the city”. The decorative
 effects (stylized text and green line) should not be described.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img alt="City Lights: your access to the city." src="../../img/bad-top-text.png" /></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"access-city.png"</span> <span class="na">alt=</span><span class="s">"Your access to the city."</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
 <h3 id="alternative-approach">Alternative approach</h3>
 
 <aside class="annotation">
@@ -106,6 +106,7 @@ effects (stylized text and green line) should not be described.</p>
 </aside>
 
 <p>The visual effects in the above image can be produced using CSS3 and an embedded font. However some authors and developers may need to support older browsers and may find the image example useful.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -144,11 +145,11 @@ effects (stylized text and green line) should not be described.</p>
 	}
 </style>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <p><strong>HTML:</strong></p>
 
 <pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tagline"</span><span class="nt">&gt;&lt;span&gt;</span>Your access to the city<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
@@ -177,61 +178,58 @@ effects (stylized text and green line) should not be described.</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note 1:</strong> The code snippet doesn’t show any <a href="http://www.w3.org/TR/css-2010/#experimental">vendor prefixes</a>. These should be added to increase compatibility with older versions of browsers.</p>
 
 <p><strong>Note 2:</strong> The specific <code>@font-face</code> rule was left out intentionally as it is not important for the example.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-of-text-used-as-an-unlinked-logo">Image of text used as an unlinked logo</h2>
 
 <p>The following image is the logo for the Web Accessibility Initiative. It is not part of a link so the text alternative is “Web Accessibility Initiative”. There is no need to mention that it is a logo:</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img alt="Web Accessibility Initiative" src="../../img/wai.png" /></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"wai.png"</span> <span class="na">alt=</span><span class="s">"Web Accessibility initiative"</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note 1:</strong> Images used as logos are exempt from some of the accessibility guidance that applies to other images of text, for instance there are no minimum color contrast and text size requirements.</p>
 
 <p><strong>Note 2:</strong> If this logo were linked then it would become a functional image; See <a href="../functional/#image-used-alone-as-a-linked-logo">“Functional Images”: “Image used alone as a linked logo”</a>.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-of-a-mathematical-expression">Image of a mathematical expression</h2>
 
 <p>This math expression shows how to signify that a number is recurring. The <code>alt</code> text is “0.3333 recurring, (the recurrence is indicated by a line over the ‘3’ in the fourth decimal place)”. In this instance the way that the recurrence is shown is important, so forms part of the text alternative, this isn't the case with all math expressions.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img alt="0.3333 recurring, (the recurrence is indicated by a line over the '3' in the fourth decimal place)" src="../../img/repeat1.png" /></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span>
 	<span class="na">src=</span><span class="s">"0dot3333recurring.png"</span>
 	<span class="na">alt=</span><span class="s">"0.3333 recurring, (the recurrence is indicated by a line over the ‘3’ in the fourth decimal place)"</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
 <h3 id="mathml">MathML</h3>
 
 <p>Images of math expressions should only be used in <em>exceptional circumstances</em>, for instance where the expression is an exception to the normal content for the page or website.</p>
@@ -248,6 +246,7 @@ effects (stylized text and green line) should not be described.</p>
 
 <p>The simple example above illustrates the difficulty of describing both the content and presentation (the position and location of the over-line) in mathematical expressions succinctly and clearly, for more complex expressions or equations image text alternatives are unlikely to provide sufficient detail succinctly.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
@@ -258,11 +257,11 @@ effects (stylized text and green line) should not be described.</p>
 	</mstack>
 </math>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;math&gt;</span>
 	<span class="nt">&lt;mstack</span> <span class="na">stackalign=</span><span class="s">"right"</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;msline</span> <span class="na">length=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
@@ -272,12 +271,10 @@ effects (stylized text and green line) should not be described.</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> The above code includes semantic information that conveys both content and presentation to assistive technologies.</p>
 
-  </div>
-
+</div>
 <h2 id="related-wcag20-technique">Related WCAG2.0 Technique</h2>
 
 <ul>
@@ -415,7 +412,7 @@ effects (stylized text and green line) should not be described.</p>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

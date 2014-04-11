@@ -82,19 +82,16 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"carousel"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
 	Previous slide
 <span class="nt">&lt;/button&gt;</span>
 </pre>
 
 </figure>
-
 <p>Applying the WAI-ARIA button <code>role</code> attribute to a link:</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;ul&gt;</span>
 	<span class="nt">&lt;li&gt;</span>
 		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#1"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
@@ -110,17 +107,18 @@
 </pre>
 
 </figure>
-
 <h2 id="previous-and-next-buttons">Previous and Next buttons</h2>
 
 <p>Images of left and right arrows are most commonly used to visually distinguish between “Previous” and “Next” buttons,these need appropriate <code>alt</code> attributes.</p>
 
 <h4 id="featured-products">Featured products</h4>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><a style="vertical-align:middle;" href="#prev"><img alt="Previous product" src="../../img/chevron-left.png" /></a> Current product slide <a style="vertical-align:middle;" href="#next"><img alt="Next product" src="../../img/chevron-right.png" /></a></p>
+
 
   </div></figure>
 
@@ -128,7 +126,6 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#prev"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"prev.png"</span> <span class="na">width=</span><span class="s">"60"</span> <span class="na">height=</span><span class="s">"80"</span> <span class="na">alt=</span><span class="s">"Previous product"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
@@ -139,7 +136,6 @@
 </pre>
 
 </figure>
-
 <h2 id="slide-list-buttons">Slide list buttons</h2>
 
 <p>When a list of slide specific buttons are provided, they convey a variety of information, such as identifying how many slides are available, distinguishing between inactive slides, the current slide and whether or not a slide button is in tab focus. All of this information needs to be conveyed both visually and in a way that screen readers can recognize.</p>
@@ -152,16 +148,14 @@
 
 <p>The script should be capable of identifying the current slide and rendering its identification within the text or text alternative for the current button.</p>
 
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> The buttons in the above image are numbered which is important for speech recognition software users. Unless each button has a visible label, these users cannot know what command to give their software to navigate to the desired slide.</p>
 
-  </div>
-
+</div>
 <p>Where the generated code creates text links that the script then renders as images:</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;ul&gt;</span>
 	<span class="nt">&lt;li&gt;</span>
 		<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"carousel"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Article 1<span class="nt">&lt;/button&gt;</span>
@@ -180,7 +174,6 @@
 </pre>
 
 </figure>
-
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques:</h2>
 
 <ul>
@@ -284,7 +277,7 @@
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

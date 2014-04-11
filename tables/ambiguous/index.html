@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Scope of Headers
+  Ambiguous Tables
   
     
        | Tables
@@ -37,12 +37,12 @@
           <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="visuallyhidden">Current: </span>Scope of Headers</span>
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Ambiguous Tables</span>
         </span>
       </p>
     </nav>
     <h1>
-      Scope of Headers
+      Ambiguous Tables
     </h1>
   </header>
 
@@ -61,7 +61,11 @@
   
 
 
-    <p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example a header cell that spans three columns with the <code>scope</code> value "colgroup" associates the header with the data cells in all three columns. The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated. <strong class="todo">@@@Or always?@@@.</strong> Possible values for the <code>scope</code> attribute are “<code>row</code>”, “<code>col</code>”, “<code>rowgroup</code>” or “<code>colgroup</code>”.</p>
+    <p>Sometimes it is hard for assistive technology to determine which columns or row to associate with a specific header cell.</p>
+
+<p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example a header cell that spans three columns with the <code>scope</code> value “<code>colgroup</code>” associates the header with the data cells in all three columns. The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
+
+<p>Possible values for the <code>scope</code> attribute are “<code>row</code>”, “<code>col</code>”, “<code>rowgroup</code>” or “<code>colgroup</code>”.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
 
@@ -69,6 +73,7 @@
 table. The <code>scope</code> value “<code>row</code>” is used on each <code>&lt;th&gt;</code> cell to ensure
 that it cannot be mistaken as a header for other cells in the same
 column.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -103,11 +108,11 @@ column.</p>
   </tr>
 </table>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;table&gt;</span>
   <span class="nt">&lt;caption&gt;</span>Capital cities<span class="nt">&lt;/caption&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
@@ -124,16 +129,12 @@ column.</p>
 </pre>
 
 </figure>
-
 <p><a href="../examples/scope-simple/">Full code Example “Table with header cells in one column only”</a></p>
 
-<h2 class="ex" id="table-with-an-offset-internal-column-of-header-cells">Table with an offset (@@@internal?@@@) column of header cells</h2>
+<h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
 
-<p>In this table the row header cells are in the second column rather than
-the first. The <code>scope</code> values "row" and has been used on the <code>&lt;th&gt;</code>
-second column cells to ensure that data cells in the first column, as
-well as those in cells to the right of the headers are correctly
-associated.</p>
+<p>In this table the row header cells are in the second column rather than the first. The <code>scope</code> values “<code>row</code>” and has been used on the <code>&lt;th&gt;</code> cells in the second column to ensure that data cells in the first column, as well as those in cells to the right of the headers are correctly associated.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -146,7 +147,7 @@ associated.</p>
   <thead>
 
   <tr>
-    <th scope="col">PayrollRef.   </th>
+    <th scope="col"><abbr title="Identification Number">ID</abbr></th>
     <th scope="col">Name</th>
     <th scope="col">Jul</th>
     <th scope="col">Aug</th>
@@ -215,11 +216,11 @@ associated.</p>
   </tbody>
 </table>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html">[…]
 <span class="nt">&lt;tr&gt;</span>
   <span class="nt">&lt;td&gt;</span>215<span class="nt">&lt;/td&gt;</span>
@@ -235,13 +236,13 @@ associated.</p>
 </pre>
 
 </figure>
-
 <p><a href="../examples/scope-offset/">Full code for “Table with an offset column of header cells”</a></p>
 
 <h2 class="ex" id="table-with-headers-spanning-multiple-rows-or-columns">Table with headers spanning multiple rows or columns</h2>
 
 <p>In this example, some of the row header cells span two or more rows of
 data cells and one column header spans three columns.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -289,11 +290,11 @@ data cells and one column header spans three columns.</p>
   </tr>
 </table>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html">[…]
 <span class="nt">&lt;tr&gt;</span>
   <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Poster name<span class="nt">&lt;/th&gt;</span>
@@ -311,7 +312,6 @@ data cells and one column header spans three columns.</p>
 </pre>
 
 </figure>
-
 <p><a href="../examples/scope-multiple/">Full code for “Table with headers spanning multiple rows or columns”</a></p>
 
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
@@ -331,6 +331,10 @@ cells in data tables</a></li>
       
         
         
+          <li class="prev">
+            <span><a class="" href="../simple/"><span class="dir">Previous:</span><span class="title">Simple Tables</span></a></span>
+          </li>
+        
         
       
         
@@ -341,7 +345,7 @@ cells in data tables</a></li>
         
         
           <li class="next">
-            <span><a class="" href="../id-headers/"><span class="dir">Next:</span><span class="title">Multi-level Tables</span></a></span>
+            <span><a class="" href="../multi-level/"><span class="dir">Next:</span><span class="title">Multi-level Tables</span></a></span>
           </li>
         
       
@@ -382,15 +386,15 @@ cells in data tables</a></li>
       
       
       
-      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Scope of Headers</span></li>
+      <li><span class="current-a"><span class="visuallyhidden">Current: </span>Ambiguous Tables</span></li>
       
       
       
-      <li><a class="" href="../id-headers/">Multi-level Tables</a></li>
+      <li><a class="" href="../multi-level/">Multi-level Tables</a></li>
       
       
       
-      <li><a class="" href="../summary/">Table Summary</a></li>
+      <li><a class="" href="../summary/">Summarize Tables</a></li>
       
       
       
@@ -416,7 +420,7 @@ cells in data tables</a></li>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

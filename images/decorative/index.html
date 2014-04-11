@@ -72,58 +72,56 @@
   <li>Identified and described by surrounding text</li>
 </ul>
 
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> Where possible decorative images should be part of the CSS
 styling rather than being in the HTML.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-used-as-part-of-page-design">Image used as part of page design</h2>
 
 <p>This image is used as a border in the page design and has a purely
 decorative purpose.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img alt="" src="../../img/topinfo_bg.png" /></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"topinfo_bg.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
 <p>Screen readers also allow the use of WAI-ARIA to hide elements by using <code>role="presentation"</code>. Note that this feature is not as widely supported as using a null <code>alt</code> attribute.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"topinfo_bg.png"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
 <h2 class="ex" id="decorative-image-as-part-of-a-text-link">Decorative image as Part of a text link</h2>
 
 <p>This illustration of a crocus bulb is used to make the link easier to
 identify and to increase the clickable area, but does not add to the
 information given in adjacent link text.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><a href="../../beyond/"><img alt="" style="vertical-align: middle; margin-right: 1em;" src="../../img/crocus.jpg" /><strong>Crocus bulbs</strong></a></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"crocuspage.html"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"crocus.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;strong&gt;</span> Crocus bulbs<span class="nt">&lt;/strong&gt;</span>
@@ -131,33 +129,29 @@ information given in adjacent link text.</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> The null or empty <code>alt</code> value can only be used on linked images
 if the image and text are part of a single link anchor and the image
 does not add visual information to the link.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-with-adjacent-text-alternative">Image with adjacent text alternative</h2>
 
 <p>This picture of “Poppy the guide dog” is already identified by the
 adjacent caption, this acts as the text alternative, which does not need
 to be repeated in the <code>alt</code> attribute.</p>
 
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
+<p>&lt;%= sample_start %&gt;</p>
 
 <p><img alt="" style="float:left; margin-right: 1em;" src="../../img/sleeping.jpg" /> <strong>Let sleeping dogs lie:</strong> A proverb meaning
 don't initiate trouble, if something that could be troublesome is quiet,
 then leave it alone.</p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"sleepingdog.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;strong&gt;</span>Let sleeping dogs lie:<span class="nt">&lt;/strong&gt;</span> ...
@@ -165,10 +159,10 @@ then leave it alone.</p>
 </pre>
 
 </figure>
-
 <h2 class="ex" id="image-used-for-ambience-eye-candy">Image used for ambience (eye-candy)</h2>
 
 <p>This image is used to add ambience or visual interest to the page.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -177,24 +171,22 @@ then leave it alone.</p>
 huge greenhouse building that displays examples of exotic plant-life
 from every tropical environment on the planet.</p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"tropical.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> If the purpose of this image was to identify a plant, or
 convey other information , rather than only to improve the look of the
 page, it should probably be treated as <a href="../informative/">informative</a>. The
 purpose for using the image needs to be determined by the author.</p>
 
-  </div>
-
+</div>
 <h2 id="related-wcag20-technique">Related WCAG2.0 Technique:</h2>
 
 <ul>
@@ -331,7 +323,7 @@ purpose for using the image needs to be determined by the author.</p>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

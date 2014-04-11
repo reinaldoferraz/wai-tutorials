@@ -78,6 +78,7 @@ Each image is followed by a phone number. Consistent with the visual
 presentation the text alternatives “Telephone:” and “Fax:” are used to
 identify which number is which.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
@@ -85,11 +86,11 @@ identify which number is which.</p>
 
 <p><img alt="Fax:" style="vertical-align:middle;" src="../../img/fax.png" /> 0123 456 7891</p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"phone.png"</span> <span class="na">alt=</span><span class="s">"Telephone:"</span><span class="nt">&gt;</span> 0123 456 7890
 <span class="nt">&lt;/p&gt;</span>
@@ -99,7 +100,6 @@ identify which number is which.</p>
 </pre>
 
 </figure>
-
 <h2 class="ex" id="image-with-informative-action">Image with informative action</h2>
 
 <p>The following image shows a dog wearing a bell. It supplements the
@@ -108,16 +108,17 @@ alternative is sufficient to describe the information that is visually
 evident but not explained in the text; in this case the text alternative
 is “Dog with a bell attached to its collar.”.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img alt="Dog with a bell attached to its collar." style="float: left; margin-right: 1em;" src="../../img/dog.jpg" /> Off-duty guide dogs often wear a bell, it's ring helps the blind owner keep track of the dog's location</p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dog.jpg"</span> <span class="na">alt=</span><span class="s">"Dog with a bell attached to its collar."</span><span class="nt">&gt;</span>
 	Off-duty guide dogs often wear ...
@@ -125,26 +126,25 @@ is “Dog with a bell attached to its collar.”.</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> If the text included an explanation of how the dog wears a bell, the image might be considered <a href="../decorative/">decorative</a>. As this isn’t mentioned in the text, the image is deemed to be informative.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-conveying-succinct-information">Image conveying succinct information</h2>
 
 <p>This simple diagram illustrates an anti-clockwise direction for unscrewing a bottle top or cap. The information can be described in a short sentence, so the text alternative “Anti-clockwise diagram: Push the cap down and turn it from right to left” is given in the <code>alt</code> attribute.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img src="../../img/counter-clockwise.jpg" alt="Anti-clockwise diagram: Push the cap down and turn it from right to left." style="vertical-align: middle; margin-right: .5em;" /></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"cap.png"</span> <span class="na">alt=</span><span class="s">"Anti-clockwise diagram: Push the cap down and turn
 it from right to left."</span><span class="nt">&gt;</span>
@@ -152,8 +152,7 @@ it from right to left."</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note 1:</strong> An alternative technique would be to include all of the
 information in the visible text, using the image as a redundant
 (<a href="../decorative/">decorative</a>) effect, in which case the visual text could
@@ -164,8 +163,7 @@ visual clues for people who find text more difficult to understand.</p>
 <p><strong>Note 2:</strong> If the information conveyed by the image is substantial, use
 one of the approaches described in <a href="../complex/">Complex images</a>.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-conveying-an-impression-or-emotion">Image conveying an impression or emotion</h2>
 
 <p>This photograph shows a smiling family group, it is a stock image so the
@@ -174,28 +172,27 @@ impression that the website or the company it represents is family
 friendly. The text alternative is “We're family friendly” as this best
 describes the intended impression.</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><img alt="We're family friendly." src="../../img/family.jpg" /></p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"family.jpg"</span> <span class="na">alt=</span><span class="s">"We're family friendly. "</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/p&gt;</span>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note:</strong> If the purpose of this image was simply to improve the look of a page rather than convey an impression, it could be deemed to be decorative, as shown in <a href="../decorative/#image-used-for-ambience-eye-candy">“Decorative Images”: “Image used for ambience”</a>. The purpose for using the image needs to be determined by the author.</p>
 
-  </div>
-
+</div>
 <h2 class="ex" id="image-conveying-file-format">Image conveying file format</h2>
 
 <p>In this example, a document is available to download in three different
@@ -203,16 +200,17 @@ formats identified by format icons within text links. They have the text
 alternatives “HTML”, “Word document” and “PDF” to distinguish the file
 type for each link:</p>
 
+
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><a href="../../beyond/">2012 Annual report and accounts <img alt="HTML" src="../../img/html5logo.png" /> (43KB)</a>, also available in <a href="../../beyond/"><img alt="Word document" src="../../img/worddocument.png" /> (254KB)</a> or <a href="../../beyond/"><img alt="PDF" src="../../img/pdfdocument.png" /> (353KB)</a> format.</p>
 
+
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-
 <pre class="highlight html"><span class="nt">&lt;p&gt;</span>
 	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>
 		2012 Annual report and accounts
@@ -230,14 +228,12 @@ type for each link:</p>
 </pre>
 
 </figure>
-
-  <div class="notes ">
+<div class="notes ">
 <p><strong>Note 1:</strong> If the format identification were written as part of the link text, the image may be considered <a href="../decorative/">decorative</a> and have a null (empty) <code>alt</code> attribute (<code>alt=""</code>) but must be in the same link anchor as the text, as in <a href="../functional/#logo-image-within-link-text">“Functional Images”: “Logo image within link text”</a>.</p>
 
 <p><strong>Note 2:</strong> This particular example is similar to the <a href="../functional/#icon-image-conveying-information-within-link-text">icon within linked text in Functional Images</a> in that the image conveys information that isn’t given in the link text.</p>
 
-  </div>
-
+</div>
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
 
 <p>The following WCAG 2.0 techniques were used in the examples above:</p>
@@ -379,7 +375,7 @@ non-text content</a></li>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 10 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
