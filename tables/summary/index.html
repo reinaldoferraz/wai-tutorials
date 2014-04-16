@@ -109,6 +109,8 @@
 </figure>
 <h2 class="ex" id="table-with-a-complex-structure">Table with a complex structure</h2>
 
+<h3 class="ap" id="nest-summary-into-the-captionelem-element">Nest summary into the <code class="elem">&lt;caption&gt;</code> element</h3>
+
 <p>This is a complex table showing availability of different types and sizes of accommodation in two different locations. The <code class="elem">&lt;caption&gt;</code> element is used to describe the table layout as well as act as a heading for the table.</p>
 
 
@@ -116,70 +118,73 @@
   <figcaption>Example</figcaption>
   <div class="box-content">
 <table>
-<caption style="text-align: left;">
-  Availability of holiday accommodation<br />
-            <span style="font-size: .75em; display:block; line-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available</span>
-            </caption>
-<thead>
-              <tr>
-                <td></td>
-                <th id="stud" scope="col"> Studio </th>
-                <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
-                <th id="chal" scope="col"> Chalet </th>
-                <th id="villa" scope="col"> Villa </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th id="par" class="span" colspan="5" scope="colgroup"> Paris </th>
-              </tr>
-              <tr>
-                <th headers="par" id="pbed1"> 1 bedroom </th>
-                <td headers="par pbed1 stud"> 11 </td>
-                <td headers="par pbed1 apt"> 20 </td>
-                <td headers="par pbed1 chal"> 25 </td>
-                <td headers="par pbed1 villa"> 23 </td>
-              </tr>
-              <tr>
-                <th headers="par" id="pbed2"> 2 bedroom </th>
-                <td headers="par pbed2 stud"> - </td>
-                <td headers="par pbed2 apt"> 43 </td>
-                <td headers="par pbed2 chal"> 52 </td>
-                <td headers="par pbed2 villa"> 32 </td>
-              </tr>
-              <tr>
-                <th headers="par" id="pbed3"> 3 bedroom </th>
-                <td headers="par pbed3 stud"> - </td>
-                <td headers="par pbed3 apt"> 13 </td>
-                <td headers="par pbed3 chal"> 15 </td>
-                <td headers="par pbed3 villa"> 40 </td>
-              </tr>
-              <tr>
-                <th id="rome" class="span" colspan="5" scope="colgroup"> Rome </th>
-              </tr>
-              <tr>
-                <th id="rbed1" headers="rome"> 1 bedroom </th>
-                <td headers="rome rbed1 stud"> 13 </td>
-                <td headers="rome rbed1 apt"> 21 </td>
-                <td headers="rome rbed1 chal"> 22 </td>
-                <td headers="rome rbed1 villa"> 3 </td>
-              </tr>
-              <tr>
-                <th id="rbed2" headers="rome"> 2 bedroom </th>
-                <td headers="rome rbed2 stud"> - </td>
-                <td headers="rome rbed2 apt"> 23 </td>
-                <td headers="rome rbed2 chal"> 43 </td>
-                <td headers="rome rbed2 villa"> 30 </td>
-              </tr>
-              <tr>
-                <th id="rbed3" headers="rome"> 3 bedroom </th>
-                <td headers="rome rbed3 stud"> - </td>
-                <td headers="rome rbed3 apt"> 16 </td>
-                <td headers="rome rbed3 chal"> 32 </td>
-                <td headers="rome rbed3 villa"> 40 </td>
-              </tr>
-            </tbody>
-          </table>
+  <caption style="text-align: left;">
+    Availability of holiday accommodation<br>
+    <span style="font-size: .75em; display:block; line-height: 1.5;">
+      Column one has the location and size of accommodation, other columns show the type and number of properties available
+    </span>
+  </caption>
+  <thead>
+    <tr>
+      <td></td>
+      <th id="stud" scope="col"> Studio </th>
+      <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
+      <th id="chal" scope="col"> Chalet </th>
+      <th id="villa" scope="col"> Villa </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="par" class="span" colspan="5" scope="colgroup"> Paris </th>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed1"> 1 bedroom </th>
+      <td headers="par pbed1 stud"> 11 </td>
+      <td headers="par pbed1 apt"> 20 </td>
+      <td headers="par pbed1 chal"> 25 </td>
+      <td headers="par pbed1 villa"> 23 </td>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed2"> 2 bedroom </th>
+      <td headers="par pbed2 stud"> - </td>
+      <td headers="par pbed2 apt"> 43 </td>
+      <td headers="par pbed2 chal"> 52 </td>
+      <td headers="par pbed2 villa"> 32 </td>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed3"> 3 bedroom </th>
+      <td headers="par pbed3 stud"> - </td>
+      <td headers="par pbed3 apt"> 13 </td>
+      <td headers="par pbed3 chal"> 15 </td>
+      <td headers="par pbed3 villa"> 40 </td>
+    </tr>
+    <tr>
+      <th id="rome" class="span" colspan="5" scope="colgroup"> Rome </th>
+    </tr>
+    <tr>
+      <th id="rbed1" headers="rome"> 1 bedroom </th>
+      <td headers="rome rbed1 stud"> 13 </td>
+      <td headers="rome rbed1 apt"> 21 </td>
+      <td headers="rome rbed1 chal"> 22 </td>
+      <td headers="rome rbed1 villa"> 3 </td>
+    </tr>
+    <tr>
+      <th id="rbed2" headers="rome"> 2 bedroom </th>
+      <td headers="rome rbed2 stud"> - </td>
+      <td headers="rome rbed2 apt"> 23 </td>
+      <td headers="rome rbed2 chal"> 43 </td>
+      <td headers="rome rbed2 villa"> 30 </td>
+    </tr>
+    <tr>
+      <th id="rbed3" headers="rome"> 3 bedroom </th>
+      <td headers="rome rbed3 stud"> - </td>
+      <td headers="rome rbed3 apt"> 16 </td>
+      <td headers="rome rbed3 chal"> 32 </td>
+      <td headers="rome rbed3 villa"> 40 </td>
+    </tr>
+  </tbody>
+</table>
+
 
 
   </div></figure>
@@ -192,7 +197,134 @@
 </pre>
 
 </figure>
-<p><strong>Note:</strong> The technique used for example 2 is valid for both HTML4 and HTML5. <strong class="todo">@@@Should I also link here to the <a href="http://www.w3.org/TR/html5/tabular-data.html#table-descriptions-techniques">other HTML5 table description techniques</a>?</strong></p>
+<p>Note: The technique used for approach 1 is valid for both HTML4 and HTML5.</p>
+
+<h3 class="ap" id="use-aria-described-byattrib-to-provide-a-table-summary">Use <code class="attrib">aria-described-by</code> to provide a table summary</h3>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+
+<p id="tblDesc" style="margin: 0 auto; max-width: 25.333333333em; font-size: .75em; lin-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
+<table aria-described-by="tblDesc" tabindex="0">
+  <caption style="text-align: left;">
+    Paris: Availability of holiday accommodation<br>
+  </caption>
+  <thead>
+    <tr>
+      <td></td>
+      <th id="stud" scope="col"> Studio </th>
+      <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
+      <th id="chal" scope="col"> Chalet </th>
+      <th id="villa" scope="col"> Villa </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th headers="par" id="pbed1"> 1 bedroom </th>
+      <td headers="par pbed1 stud"> 11 </td>
+      <td headers="par pbed1 apt"> 20 </td>
+      <td headers="par pbed1 chal"> 25 </td>
+      <td headers="par pbed1 villa"> 23 </td>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed2"> 2 bedroom </th>
+      <td headers="par pbed2 stud"> - </td>
+      <td headers="par pbed2 apt"> 43 </td>
+      <td headers="par pbed2 chal"> 52 </td>
+      <td headers="par pbed2 villa"> 32 </td>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed3"> 3 bedroom </th>
+      <td headers="par pbed3 stud"> - </td>
+      <td headers="par pbed3 apt"> 13 </td>
+      <td headers="par pbed3 chal"> 15 </td>
+      <td headers="par pbed3 villa"> 40 </td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"tblDesc"</span><span class="nt">&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">aria-described-by=</span><span class="s">"tblDesc"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+[…]
+</pre>
+
+<p><strong>Note:</strong> it is important to set the <code class="attrib">tabindex</code> to the value <code class="value">0</code> to make the text discoverable by screen readers.</p>
+
+</figure>
+<p><strong>Note:</strong> The technique used for approach 2 is valid HTML5.</p>
+
+<h3 class="ap" id="useing-the-figureelem-element-to-mark-up-a-table-summary">Useing the <code class="elem">&lt;figure&gt;</code> element to mark up a table summary</h3>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+
+<figure>
+  <figcaption style="max-width: 19em; margin: 0 auto">
+    <strong>Paris: Availability of holiday accommodation</strong><br>Column one has the location and size of accommodation, other columns show the type and number of properties available.
+  </figcaption>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th id="stud" scope="col"> Studio </th>
+        <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
+        <th id="chal" scope="col"> Chalet </th>
+        <th id="villa" scope="col"> Villa </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th headers="par" id="pbed1"> 1 bedroom </th>
+        <td headers="par pbed1 stud"> 11 </td>
+        <td headers="par pbed1 apt"> 20 </td>
+        <td headers="par pbed1 chal"> 25 </td>
+        <td headers="par pbed1 villa"> 23 </td>
+      </tr>
+      <tr>
+        <th headers="par" id="pbed2"> 2 bedroom </th>
+        <td headers="par pbed2 stud"> - </td>
+        <td headers="par pbed2 apt"> 43 </td>
+        <td headers="par pbed2 chal"> 52 </td>
+        <td headers="par pbed2 villa"> 32 </td>
+      </tr>
+      <tr>
+        <th headers="par" id="pbed3"> 3 bedroom </th>
+        <td headers="par pbed3 stud"> - </td>
+        <td headers="par pbed3 apt"> 13 </td>
+        <td headers="par pbed3 chal"> 15 </td>
+        <td headers="par pbed3 villa"> 40 </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;figure&gt;</span>
+  <span class="nt">&lt;figcaption&gt;</span>
+    <span class="nt">&lt;strong&gt;</span>Paris: Availability of holiday accommodation<span class="nt">&lt;/strong&gt;&lt;br&gt;</span>
+    Column one has the location and size of accommodation, other columns show the type and number of properties available.
+  <span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;table&gt;</span>
+[…]
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</pre>
+
+</figure>
+<p><strong>Note:</strong> The technique used for approach 3 is valid HTML5.</p>
 
 <h2 id="related-wcag20-technique">Related WCAG2.0 Technique</h2>
 
@@ -299,7 +431,7 @@
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 16 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

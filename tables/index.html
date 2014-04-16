@@ -76,67 +76,42 @@
 
 <ul>
   <li>
-    <p><strong><a href="simple/">Simple Tables</a>:</strong> Identify the topic of a row or column and denote those header cells with <code class="elem">&lt;th&gt;</code> elements in the markup. Also use the <code class="elem">&lt;caption&gt;</code> element to describe the overall topic of a table.</p>
+    <p><strong><a href="simple/">Simple tables</a>:</strong> Identify the topic of a row or column and denote those header cells with <code class="elem">&lt;th&gt;</code> elements in the markup. Also use the <code class="elem">&lt;caption&gt;</code> element to describe the overall topic of a table.</p>
   </li>
   <li>
-    <p><strong><a href="scope.html">Scope of header cells</a>:</strong> Defines the range and
-direction of the data cells to which a header applies – use
-<em>scope</em>values that identify the appropriate scope;</p>
+    <p><strong><a href="ambiguous/">Ambiguous tables</a>:</strong> For tables where identifying header cells programmatically is not that easy, they can be defined using the <code class="attrib">scope</code> attribute.</p>
   </li>
   <li>
-    <p><strong><a href="id-headers.html">Multi-level tables</a>:</strong> A complex table structure
-where a data cell needs to reference several levels of header cells – assign each header cell an <em>id</em> and each data cell a <em>headers</em>
-attribute that lists all relevant header cell <em>id</em> values;</p>
+    <p><strong><a href="multi-level/">Multi-level tables</a>:</strong> If the table structure is so complex that a data cell needs to reference several levels of header cells, each header cell is assigned an <code class="attrib">id</code> and each data cell a <code class="attrib">headers</code> attribute that lists all relevant header cell <code class="attrib">id</code> values.</p>
   </li>
   <li>
-    <p><strong><a href="summary/">Summary</a>:</strong> Provides orientation or navigation hints
-in complex tables – give a brief overview as the value of the
-<em>summary</em> attribute of the <code>&lt;table&gt;</code> element or as part of the
-table's <code>&lt;caption&gt;</code> element.</p>
+    <p><strong><a href="summary/">Summarize tables</a>:</strong> To provide orientation or navigation hints in complex tables, there are different techniques to provide a brief summary for the table’s layout.</p>
   </li>
 </ul>
 
 <div class="notes ">
-<p><strong>Note:</strong> The techniques in this tutorial should be applied only when a
-table is being used to display data in a grid: if a table is used for
-layout, (which is discouraged), none of these elements and attributes
-should be applied.</p>
+<p><strong>Note:</strong> The techniques in this tutorial should be applied only when a table is being used to display <em>data</em> in a grid and don’t apply to presentational (layout) tables. You shouldn’t use tables for layout purposes.</p>
 
 </div>
 <h2 id="why-is-this-important">Why is this important?</h2>
 
-<p>When data is presented in tabular format, the position and styling of
-header cells may be sufficient to let most people know that these
-contain key information that gives meaning to related data cell content.
-However, the published style is not available to people who need to use
-personal stylesheets, and the position alone can't help screen readers
-identify the cells that contain the header information. The header cells
-need to be explicitly identified so that correct associations can be
-made to data cells. Correctly marked up tables mean that:</p>
+<p>When data is presented in tabular format, the position and styling of header cells may be sufficient to let most people know that these contain key information that gives meaning to related data cell content. However, the published style is not available to people who need to use personal stylesheets, and the position alone can't help screen readers identify the cells that contain the header information. The header cells need to be explicitly identified so that correct associations can be made to data cells. Correctly marked up tables mean that:</p>
 
 <ul>
-  <li><strong>People using a screen reader:</strong> Can have the row and column headers
-read aloud as they navigate through the table. Screen readers speak
-one cell at a time and can only distinguish header cells from data
-cells if they are properly marked up.</li>
-  <li><strong>People using personal stylesheets:</strong> Can have header cells more
-prominently styled for easy recognition when there is a difference
-between the elements used for header and data cells.</li>
+  <li>
+    <p><strong>People using a screen reader</strong> can have the row and column headers read aloud as they navigate through the table. Screen readers speak one cell at a time and can only distinguish header cells from data cells if they are properly marked up.</p>
+  </li>
+  <li>
+    <p><strong>People using personal stylesheets</strong> can have header cells more prominently styled for easy recognition when there is a difference between the elements used for header and data cells.</p>
+  </li>
 </ul>
 
 <h2 id="how-to-make-tables-accessible">How to make tables accessible</h2>
 
-<p>Accessible tables have their header cells marked up using <code>&lt;th&gt;</code> and
-their data cells marked up using <code>&lt;td&gt;</code>. For more complex tables
-directional and explicit associations may be needed, using scope, id and
-headers attributes so that they can be interpreted by assistive
-technologies. The structural coding can also be used to represent data
-in different ways, for example by larger or differently colored text or
-backgrounds, Braille, speech and symbols. Many web authoring tools and
-content management systems (CMS) provide functions to define header
-cells during table creation without having to manually edit the code.
-Other formats available on the Web such as ODF, Word and PDF have
-similar mechanisms to mark-up table structure.</p>
+<p>Accessible tables have their header cells marked up using <code class="elem">&lt;th&gt;</code> and their data cells marked up using <code class="elem">&lt;td&gt;</code>. For more complex tables directional and explicit associations may be needed, using <code class="attrib">scope</code>, <code class="attrib">id</code> and <code class="attrib">headers</code> attributes so that they can be interpreted by assistive
+technologies. The structural coding can also be used to represent data in different ways, for example by larger or differently colored text or backgrounds, Braille, speech and symbols. Many web authoring tools and content management systems (CMS) provide functions to define header cells during table creation without having to manually edit the code.</p>
+
+<p>Other formats available on the Web such as ODF, Word and PDF have similar mechanisms to mark-up table structure.</p>
 
 <h2 id="relationship-to-wcag-20">Relationship to WCAG 2.0</h2>
 
@@ -249,7 +224,7 @@ text. (Level A)</p>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 11 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 16 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
