@@ -63,11 +63,11 @@
 
     <p>If a table only contains zero or one row and zero or one column of headings which are in the first row/column, it is considered a simple table.</p>
 
-<p>Use header cells (<code>&lt;th&gt;</code>) as those that contain the information that is critical to understand the raw data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for a) the number of properties in b) a given street. The <code>&lt;th&gt;</code> element needs to be used for header cells so that they are distinguishable from and can be associated with the correct data <code>&lt;td&gt;</code> cells.</p>
+<p>Use header cells (<code class="elem">&lt;th&gt;</code>) as those that contain the information that is critical to understand the raw data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for a) the number of properties in b) a given street. The <code class="elem">&lt;th&gt;</code> element needs to be used for header cells so that they are distinguishable from and can be associated with the correct data <code class="elem">&lt;td&gt;</code> cells.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
-<p>This table of concert dates only needs the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
+<p>This table of concert dates only needs the cells in the top row marked up as <code class="elem">&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
 
 
   <figure class="sample ">
@@ -127,7 +127,7 @@
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
 
-<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells.</p>
+<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code class="elem">&lt;th&gt;</code> cells.</p>
 
 
   <figure class="sample ">
@@ -178,6 +178,7 @@
 
 
   </div></figure>
+
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;table&gt;</span>
@@ -212,16 +213,16 @@
 </figure>
 <p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
 
-<h2 class="ex" id="caption-used-as-a-table-heading"><code>&lt;caption&gt;</code> used as a table heading</h2>
+<h2 class="ex" id="captionelem-used-as-a-table-heading"><code class="elem">&lt;caption&gt;</code> used as a table heading</h2>
 
 <p>We use different ways to provide headings in the above examples, a simple paragraph or using the top left cell.</p>
 
 <p>A table caption can be used to provide a heading for the table as a whole. This is not required to meet WCAG 2.0, but is considered best
-practice because the <code>&lt;caption&gt;</code> element is explicitly associated with the table. The <code>&lt;caption&gt;</code> value should be a succinct description of the content of the table.</p>
+practice because the <code class="elem">&lt;caption&gt;</code> element is explicitly associated with the table. The <code class="elem">&lt;caption&gt;</code> value should be a succinct description of the content of the table.</p>
 
-<p>While the examples above don’t use it, this and all other examples in this tutorial apply the <code>&lt;caption&gt;</code> element to tables.</p>
+<p>While the examples above don’t use it, this and all other examples in this tutorial apply the <code class="elem">&lt;caption&gt;</code> element to tables.</p>
 
-<p>This example has the table heading marked up using the <code>&lt;caption&gt;</code> element, its value "Concert dates" tells users what information the table contains.</p>
+<p>This example has the table heading marked up using the <code class="elem">&lt;caption&gt;</code> element, its value "Concert dates" tells users what information the table contains.</p>
 
 <h3 id="header-cells-in-the-top-row-only">Header cells in the top row only:</h3>
 

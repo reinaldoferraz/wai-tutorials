@@ -63,14 +63,14 @@
 
     <p>Sometimes it is hard for assistive technology to determine which columns or row to associate with a specific header cell.</p>
 
-<p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example a header cell that spans three columns with the <code>scope</code> value “<code>colgroup</code>” associates the header with the data cells in all three columns. The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
+<p><code class="attrib">Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example a header cell that spans three columns with the <code class="attrib">scope</code> value <code class="value">colgroup</code> associates the header with the data cells in all three columns. The <code class="attrib">scope</code> attribute should be used for all <code class="elem">&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
 
-<p>Possible values for the <code>scope</code> attribute are “<code>row</code>”, “<code>col</code>”, “<code>rowgroup</code>” or “<code>colgroup</code>”.</p>
+<p>Possible values for the <code class="attrib">scope</code> attribute are <code class="value">row</code>, <code class="value">col</code>, <code class="value">rowgroup</code> or <code class="value">colgroup</code>.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
 
-<p>This example has <code>&lt;th&gt;</code> elements for all cells in the left column of a
-table. The <code>scope</code> value “<code>row</code>” is used on each <code>&lt;th&gt;</code> cell to ensure
+<p>This example has <code class="elem">&lt;th&gt;</code> elements for all cells in the left column of a
+table. The <code class="attrib">scope</code> value <code class="value">row</code> is used on each <code class="elem">&lt;th&gt;</code> cell to ensure
 that it cannot be mistaken as a header for other cells in the same
 column.</p>
 
@@ -133,7 +133,7 @@ column.</p>
 
 <h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
 
-<p>In this table the row header cells are in the second column rather than the first. The <code>scope</code> values “<code>row</code>” and has been used on the <code>&lt;th&gt;</code> cells in the second column to ensure that data cells in the first column, as well as those in cells to the right of the headers are correctly associated.</p>
+<p>In this table the row header cells are in the second column rather than the first. The <code class="attrib">scope</code> values <code class="value">row</code> and has been used on the <code class="elem">&lt;th&gt;</code> cells in the second column to ensure that data cells in the first column, as well as those in cells to the right of the headers are correctly associated.</p>
 
 
   <figure class="sample ">
@@ -142,7 +142,7 @@ column.</p>
 <table>
   <caption>
     Holidays taken in the last six months
-  </caption>
+  </caption >
 
   <thead>
 
@@ -319,8 +319,7 @@ data cells and one column header spans three columns.</p>
 <p>The following WCAG 2.0 technique was used in the examples above:</p>
 
 <ul>
-  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H63.html">H63: Using the scope attribute to associate header cells and data
-cells in data tables</a></li>
+  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H63.html">H63: Using the scope attribute to associate header cells and data cells in data tables</a></li>
 </ul>
 
 
