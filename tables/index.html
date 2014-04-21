@@ -18,8 +18,8 @@
 <body class="texts">
   <header role="banner">
     <div class="w3c-wai-header">
-      <a href="/"><img src="//w3.org/2008/site/images/logo-w3c-mobile-lg" alt="W3C" height="53" width="90"></a>
-      <a href="/" class="wai"><img src="//www.w3.org/WAI/images/wai-temp" alt="Web Accessibility Initiative"></a>
+      <a href="http://w3.org/"><img alt="W3C" src="../img/w3c.png" /></a>
+      <a href="http://w3.org/WAI/" class="wai"><img alt="Web Accessibility Initiative" src="../img/wai.png" /></a>
     </div>
   </header>
   <main role="main" class="with-side-menu">
@@ -66,6 +66,8 @@
         
           <span class="tech">HTML5</span>
         
+          <span class="tech">WAI-ARIA</span>
+        
       </p>
     </div>
     
@@ -85,7 +87,7 @@
     <p><strong><a href="multi-level/">Multi-level tables</a>:</strong> If the table structure is so complex that a data cell needs to reference several levels of header cells, each header cell is assigned an <code class="attrib">id</code> and each data cell a <code class="attrib">headers</code> attribute that lists all relevant header cell <code class="attrib">id</code> values.</p>
   </li>
   <li>
-    <p><strong><a href="summary/">Summarize tables</a>:</strong> To provide orientation or navigation hints in complex tables, there are different techniques to provide a brief summary for the table’s layout.</p>
+    <p><strong><a href="summary/">Table Summary</a>:</strong> To provide orientation or navigation hints in complex tables, there are different techniques to provide a brief summary for the table’s layout.</p>
   </li>
 </ul>
 
@@ -95,7 +97,7 @@
 </div>
 <h2 id="why-is-this-important">Why is this important?</h2>
 
-<p>When data is presented in tabular format, the position and styling of header cells may be sufficient to let most people know that these contain key information that gives meaning to related data cell content. However, the published style is not available to people who need to use personal stylesheets, and the position alone can't help screen readers identify the cells that contain the header information. The header cells need to be explicitly identified so that correct associations can be made to data cells. Correctly marked up tables mean that:</p>
+<p>When data is presented in tabular format, the position and styling of header cells may be sufficient to let most people know that these contain key information that gives meaning to related data cell content. However, the published style is not available to people who need to use personal stylesheets, and the position alone can't help screen readers identify the cells that contain the header information. The header cells need to be explicitly identified so that correct associations can be made to data cells, especially in more complex tables. Correctly marked up tables mean that:</p>
 
 <ul>
   <li>
@@ -108,11 +110,14 @@
 
 <h2 id="how-to-make-tables-accessible">How to make tables accessible</h2>
 
-<p>Accessible tables have their header cells marked up using <code class="elem">&lt;th&gt;</code> and their data cells marked up using <code class="elem">&lt;td&gt;</code>. For more complex tables directional and explicit associations may be needed, using <code class="attrib">scope</code>, <code class="attrib">id</code> and <code class="attrib">headers</code> attributes so that they can be interpreted by assistive
-technologies. The structural coding can also be used to represent data in different ways, for example by larger or differently colored text or backgrounds, Braille, speech and symbols. Many web authoring tools and content management systems (CMS) provide functions to define header cells during table creation without having to manually edit the code.</p>
+<p>Accessible tables have their header cells marked up using <code class="elem">&lt;th&gt;</code> and their data cells marked up using <code class="elem">&lt;td&gt;</code>. For more complex tables directional and explicit associations may be needed, using <code class="attrib">scope</code>, <code class="attrib">id</code> and <code class="attrib">headers</code> attributes so that they can be interpreted by assistive technologies.</p>
 
-<p>Other formats available on the Web such as ODF, Word and PDF have similar mechanisms to mark-up table structure.</p>
+<p>The structural coding can also be used to represent data in different ways, for example by larger or differently colored text or backgrounds, Braille, speech and symbols. Many web authoring tools and content management systems (CMS) provide functions to define header cells during table creation without having to manually edit the code.</p>
 
+<div class="notes ">
+<p><strong>Note:</strong> Other formats available on the Web such as <abbr title="Open Document Format">ODF</abbr>, <abbr title="Portable Document Format">PDF</abbr> and Word have similar mechanisms to mark-up table structure.</p>
+
+</div>
 <h2 id="relationship-to-wcag-20">Relationship to WCAG 2.0</h2>
 
 <p>Accessible tables are required by the following WCAG 2.0 Success Criterion:</p>
@@ -193,7 +198,7 @@ technologies. The structural coding can also be used to represent data in differ
       
       
       
-      <li><a class="" href="summary/">Summarize Tables</a></li>
+      <li><a class="" href="summary/">Table Summary</a></li>
       
       
       
@@ -219,7 +224,7 @@ technologies. The structural coding can also be used to represent data in differ
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 17 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 21 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
