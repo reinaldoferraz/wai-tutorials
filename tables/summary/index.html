@@ -65,19 +65,14 @@
 
 <h2 class="ex" id="table-with-a-complex-structure">Table with a complex structure</h2>
 
-<div class="notes ">{/:nomarkdown}
+<h3 class="ap" id="nest-summary-into-the-captionelem-element">Nest summary into the <code class="elem">&lt;caption&gt;</code> element</h3>
 
-**Note:** The following approaches are only valid in HTML5.
+<p>This is a complex table showing availability of different types and sizes of accommodation in two different locations. The <code class="elem">&lt;caption&gt;</code> element is used to describe the table layout as well as act as a heading for the table.</p>
 
-{::nomarkdown}
-</div>{/:nomarkdown}
+<div class="notes ">
+<p><strong>Note: The technique used for approach 1 is valid for both HTML4 and HTML5.</strong></p>
 
-### Nest summary into the `<caption>`{:.elem} element
-{:.ap}
-
-This is a complex table showing availability of different types and sizes of accommodation in two different locations. The `<caption>`{:.elem} element is used to describe the table layout as well as act as a heading for the table.
-
-{::nomarkdown}
+</div>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -162,10 +157,12 @@ This is a complex table showing availability of different types and sizes of acc
 </pre>
 
 </figure>
-<p>Note: The technique used for approach 1 is valid for both HTML4 and HTML5.</p>
-
 <h3 class="ap" id="use-aria-described-byattrib-to-provide-a-table-summary">Use <code class="attrib">aria-described-by</code> to provide a table summary</h3>
 
+<div class="notes ">
+<p><strong>Note: The technique used for approach 2 is only valid in HTML5.</strong></p>
+
+</div>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -223,10 +220,12 @@ This is a complex table showing availability of different types and sizes of acc
 <p><strong>Note:</strong> it is important to set the <code class="attrib">tabindex</code> to the value <code class="value">0</code> to make the text discoverable by screen readers.</p>
 
 </figure>
-<p><strong>Note:</strong> The technique used for approach 2 is valid HTML5.</p>
-
 <h3 class="ap" id="useing-the-figureelem-element-to-mark-up-a-table-summary">Useing the <code class="elem">&lt;figure&gt;</code> element to mark up a table summary</h3>
 
+<div class="notes ">
+<p><strong>Note: The technique used for approach 3 is only valid in HTML5.</strong></p>
+
+</div>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -289,11 +288,13 @@ This is a complex table showing availability of different types and sizes of acc
 </pre>
 
 </figure>
-<p><strong>Note:</strong> The technique used for approach 3 is valid HTML5.</p>
-
 <h2 class="ex" id="table-with-data-on-both-sides-of-a-header-column">Table with data on both sides of a header column</h2>
 
-<p>(HTML4 only) This table has an <em>unusual table structure</em>, the days of the week are in the center column, morning times to the left and afternoon times to the right. It has the <code class="attrib">summary</code> attribute “Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column”, explaining the way the table is laid out.</p>
+<div class="notes ">
+<p><strong>Note: This example is valid in HTML4 only.</strong></p>
+
+</div>
+<p>This table has an unusual table structure, the days of the week are in the center column, morning times to the left and afternoon times to the right. It has the <code class="attrib">summary</code> attribute “Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column”, explaining the way the table is laid out.</p>
 
 
   <figure class="sample ">
@@ -445,7 +446,7 @@ This is a complex table showing availability of different types and sizes of acc
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 21 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 22 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
