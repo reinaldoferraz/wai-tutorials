@@ -12,14 +12,14 @@
   | WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act.css" media="screen" rel="stylesheet" type="text/css" />
-  <script src="../../javascripts/modernizr.js" type="text/javascript"></script>
+  <link href="../../stylesheets/wai-act-2c4b7608.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
   <header role="banner">
     <div class="w3c-wai-header">
-      <a href="http://w3.org/"><img alt="W3C" src="../../img/w3c.png" /></a>
-      <a href="http://w3.org/WAI/" class="wai"><img alt="Web Accessibility Initiative" src="../../img/wai.png" /></a>
+      <a href="http://w3.org/"><img alt="W3C" src="../../img/w3c-0b234adc.png" /></a>
+      <a href="http://w3.org/WAI/" class="wai"><img alt="Web Accessibility Initiative" src="../../img/wai-2723e460.png" /></a>
     </div>
   </header>
   <main role="main" class="with-side-menu">
@@ -157,7 +157,7 @@
 </pre>
 
 </figure>
-<h3 class="ap" id="use-aria-described-byattrib-to-provide-a-table-summary">Use <code class="attrib">aria-described-by</code> to provide a table summary</h3>
+<h3 class="ap" id="use-aria-describedbyattrib-to-provide-a-table-summary">Use <code class="attrib">aria-describedby</code> to provide a table summary</h3>
 
 <div class="notes ">
 <p><strong>Note: The technique used for approach 2 is only valid in HTML5.</strong></p>
@@ -169,7 +169,7 @@
   <div class="box-content">
 
 <p id="tblDesc" style="margin: 0 auto; max-width: 25.333333333em; font-size: .75em; lin-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
-<table aria-described-by="tblDesc" tabindex="0">
+<table aria-describedby="tblDesc" tabindex="0">
   <caption style="text-align: left;">
     Paris: Availability of holiday accommodation<br>
   </caption>
@@ -213,11 +213,11 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"tblDesc"</span><span class="nt">&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;table</span> <span class="na">aria-described-by=</span><span class="s">"tblDesc"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">aria-describedby=</span><span class="s">"tblDesc"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>
 […]
 </pre>
 
-<p><strong>Note:</strong> it is important to set the <code class="attrib">tabindex</code> to the value <code class="value">0</code> to make the text discoverable by screen readers.</p>
+<p><strong>Note:</strong> To discover the description text the table needs to be in keyboard focus order, which we enable by adding a <code class="attrib">tabindex</code> attribute with the value <code class="value">0</code>.</p>
 
 </figure>
 <h3 class="ap" id="useing-the-figureelem-element-to-mark-up-a-table-summary">Useing the <code class="elem">&lt;figure&gt;</code> element to mark up a table summary</h3>
@@ -446,7 +446,7 @@
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 22 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 23 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
@@ -472,7 +472,7 @@
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
 
 	</footer>
-	<script src="../../javascripts/main.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-1ca4954b.js" type="text/javascript"></script>
 	</body>
 </html>
 
