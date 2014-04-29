@@ -12,7 +12,7 @@
   | WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-ec37d735.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-a4f1b751.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,9 +61,7 @@
   
 
 
-    <p>A simple table consists of not more than one header row and/or header column.</p>
-
-<p>Use header cell elements (<code class="elem">&lt;th&gt;</code>) to point out the information that is critical to understand the data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for <em>a)</em> the number of properties in <em>b)</em> a given street.</p>
+    <p>Use header cell elements (<code class="elem">&lt;th&gt;</code>) to point out the information that is critical to understand the data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for <em>a)</em> the number of properties in <em>b)</em> a given street.</p>
 
 <p>Those <code class="elem">&lt;th&gt;</code> elements make header cells distinguishable from and associated with the correct data cells (<code class="elem">&lt;td&gt;</code>).</p>
 
@@ -76,7 +74,6 @@
   <figcaption>Example</figcaption>
   <div class="box-content">
 <p><strong>Concert dates:</strong></p>
-
 <table>
 	<tr>
 		<th>Date</th>
@@ -105,11 +102,7 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;p&gt;</span>
-	<span class="nt">&lt;strong&gt;</span>Concert dates:<span class="nt">&lt;/strong&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;table&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
 	<span class="nt">&lt;tr&gt;</span>
 		<span class="nt">&lt;th&gt;</span>Date<span class="nt">&lt;/th&gt;</span>
 		<span class="nt">&lt;th&gt;</span>Event<span class="nt">&lt;/th&gt;</span>
@@ -215,139 +208,6 @@
 </figure>
 <p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
 
-<h2 class="ex" id="captionelem-used-as-a-table-heading"><code class="elem">&lt;caption&gt;</code> used as a table heading</h2>
-
-<p>We use different ways to provide headings in the above examples, a simple paragraph or using the top left cell.</p>
-
-<p>A table caption can be used to provide a heading for the table as a whole. This is not required to meet WCAG 2.0, but is considered best
-practice because the <code class="elem">&lt;caption&gt;</code> element is explicitly associated with the table. The <code class="elem">&lt;caption&gt;</code> value should be a succinct description of the content of the table.</p>
-
-<p>While the examples above don’t use it, this and all other examples in this tutorial apply the <code class="elem">&lt;caption&gt;</code> element to tables.</p>
-
-<p>This example has the table heading marked up using the <code class="elem">&lt;caption&gt;</code> element, its value "Concert dates" tells users what information the table contains.</p>
-
-<h3 id="header-cells-in-the-top-row-only">Header cells in the top row only:</h3>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<table>
-	<caption>Concert dates</caption>
-	<tr>
-		<th>Date</th>
-		<th>Event</th>
-		<th>Venue</th>
-	</tr>
-	<tr>
-		<td>12 Feb</td>
-		<td>Waltz with Strauss</td>
-		<td>Main Hall</td>
-	</tr>
-	<tr>
-		<td>24 Mar</td>
-		<td>The Obelisks</td>
-		<td>West Wing</td>
-	</tr>
-	<tr>
-		<td>14 Apr</td>
-		<td>The What</td>
-		<td>Main Hall</td>
-	</tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-	<span class="nt">&lt;caption&gt;</span>Concert dates<span class="nt">&lt;/caption&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;td&gt;</span>12 Feb<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Waltz with Strauss<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Main Hall<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;td&gt;</span>24 Mar<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>The Obelisks<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>West Wing<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	[…]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<h3 id="header-cells-in-the-top-row-and-first-column">Header cells in the top row and first column:</h3>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<table>
-	<caption>Delivery slots</caption>
-	<tr>
-		<th>&nbsp;</th>
-		<th>Monday</th>
-		<th>Tuesday</th>
-		<th>Wednesday</th>
-		<th>Thursday</th>
-		<th>Friday</th>
-	</tr>
-	<tr>
-		<th>09:00 - 11:00</th>
-		<td>Closed</td>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th>11:00 - 13:00</th>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th>13:00 - 15:00</th>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th>15:00 - 17:00</th>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Open</td>
-		<td>Open</td>
-	</tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-	<span class="nt">&lt;caption&gt;</span>Delivery slots<span class="nt">&lt;/caption&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	[…]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
 
 <p>The following WCAG 2.0 technique was used in the examples above:</p>
@@ -375,7 +235,7 @@ practice because the <code class="elem">&lt;caption&gt;</code> element is explic
         
         
           <li class="next">
-            <span><a class="" href="../ambiguous/"><span class="dir">Next:</span><span class="title">Ambiguous Tables</span></a></span>
+            <span><a class="" href="../ambiguous/"><span class="dir">Next:</span><span class="title">Irregular Tables</span></a></span>
           </li>
         
       
@@ -425,7 +285,7 @@ practice because the <code class="elem">&lt;caption&gt;</code> element is explic
       
       
       
-      <li><a class="" href="../ambiguous/">Ambiguous Tables</a></li>
+      <li><a class="" href="../ambiguous/">Irregular Tables</a></li>
       
       
       
@@ -433,7 +293,7 @@ practice because the <code class="elem">&lt;caption&gt;</code> element is explic
       
       
       
-      <li><a class="" href="../summary/">Table Summary</a></li>
+      <li><a class="" href="../caption-summary/">Caption & Summary</a></li>
       
       
       
@@ -459,7 +319,7 @@ practice because the <code class="elem">&lt;caption&gt;</code> element is explic
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 23 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 29 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
