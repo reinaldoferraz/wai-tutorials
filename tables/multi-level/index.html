@@ -12,7 +12,7 @@
   | WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-a4f1b751.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-803873e1.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,7 +61,7 @@
   
 
 
-    <p>Multi-level tables are those that have a structure that is too complex to support strict horizontal or vertical association between header and data cells. In each case, the relationship between header and data cells needs to be defined by giving each <code class="elem">&lt;th&gt;</code> cell a unique id attribute, and each <code class="elem">&lt;td&gt;</code> a headers attribute that lists related id values, without any comma separation. Table structures that need to be marked up this way include:</p>
+    <p>Multi-level tables are those that have a structure that is too complex to support strict horizontal or vertical association between header and data cells. In each case, the relationship between header and data cells needs to be defined by giving each <code>&lt;th&gt;</code> cell a unique id attribute, and each <code>&lt;td&gt;</code> a headers attribute that lists related id values, without any comma separation. Table structures that need to be marked up this way include:</p>
 
 <ul>
   <li>Where column headers are repeated or changed part-way through the table.</li>
@@ -72,7 +72,7 @@
 
 <h2 class="ex" id="table-with-multiple-column-headers-in-each-column">Table with multiple column headers in each column</h2>
 
-<p>This table shows contact details for six suppliers. To avoid producing an overly wide table the first row has <code class="elem">&lt;th&gt;</code> cells identifying the first three supply firms and the fourth row has the <code class="elem">&lt;th&gt;</code> cells identifying the other three. To ensure that data cells are associated with the correct firm, each <code class="elem">&lt;th&gt;</code> cell has a unique <code class="attrib">id</code> and each <code class="elem">&lt;td&gt;</code> cell has a headers attribute listing the <code class="attrib">id</code> values that relate to it.</p>
+<p>This table shows contact details for six suppliers. To avoid producing an overly wide table the first row has <code>&lt;th&gt;</code> cells identifying the first three supply firms and the fourth row has the <code>&lt;th&gt;</code> cells identifying the other three. To ensure that data cells are associated with the correct firm, each <code>&lt;th&gt;</code> cell has a unique <code>id</code> and each <code>&lt;td&gt;</code> cell has a headers attribute listing the <code>id</code> values that relate to it.</p>
 
 
   <figure class="sample ">
@@ -161,7 +161,7 @@ column <img alt="(new window)" src="../../graphics/new-win-icon.gif" /></a></p>
 <h2 class="ex" id="table-with-three-headers-related-to-each-data-cell">Table with three headers related to each data cell</h2>
 
 <p>This example shows availability of accommodation of a given type and size in two different locations. For the data to be understood, each
-<code class="elem">&lt;td&gt;</code> cell needs to be associated to three <code class="elem">&lt;td&gt;</code> cells (location, size and type of accommodation). To define these complex associations, each <code class="elem">&lt;th&gt;</code> cell has a unique <code class="attrib">id</code> attribute and all data cells have a <code class="attrib">headers</code> attribute listing the related cell <code class="attrib">id</code> values.</p>
+<code>&lt;td&gt;</code> cell needs to be associated to three <code>&lt;td&gt;</code> cells (location, size and type of accommodation). To define these complex associations, each <code>&lt;th&gt;</code> cell has a unique <code>id</code> attribute and all data cells have a <code>headers</code> attribute listing the related cell <code>id</code> values.</p>
 
 
   <figure class="sample ">
@@ -604,7 +604,7 @@ tables</a></li>
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 29 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 30 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

@@ -12,7 +12,7 @@
   | WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-a4f1b751.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-803873e1.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -75,13 +75,13 @@ that isn’t answered by this tutorial, you can send it to
     <p><strong>Data separation:</strong> Make sure that each separate piece of data has its own cell, otherwise it will be impossible for screen readers to work out the relationships between data across columns. In addition, if the table can’t be viewed full-screen by sighted visitors, the data in the pseudo-rows may no longer align correctly. Don’t use headers in one column and all data in a second column.</p>
   </li>
   <li>
-    <p><strong>Table separation:</strong> If several tables follow one another, don’t use a single table and put in an additional row of <code class="elem">&lt;th&gt;</code> cells. Screen readers may read aloud all <code class="elem">&lt;th&gt;</code> cells in a column, resulting in confusion. Start a new <code class="elem">&lt;table&gt;</code> when the topic changes.</p>
+    <p><strong>Table separation:</strong> If several tables follow one another, don’t use a single table and put in an additional row of <code>&lt;th&gt;</code> cells. Screen readers may read aloud all <code>&lt;th&gt;</code> cells in a column, resulting in confusion. Start a new <code>&lt;table&gt;</code> when the topic changes.</p>
   </li>
   <li>
     <p><strong>Alignment:</strong> Align text to the left and financial data to the right, so that people using screen magnification, larger text sizes or smaller screens will be able to find it. especially when a cell spans more than one column. It’s also helpful to give column headings the same alignment as the data in the cells below.</p>
   </li>
   <li>
-    <p><strong>Styling header cells:</strong> Consider visually distinguishing the <code class="elem">&lt;th&gt;</code> cells to make them more obvious.</p>
+    <p><strong>Styling header cells:</strong> Consider visually distinguishing the <code>&lt;th&gt;</code> cells to make them more obvious.</p>
   </li>
   <li>
     <p><strong>Layout tables:</strong> If you’re using a table for layout, rather than as a grid to display data with headers, don’t use any of the structural elements and attributes discussed in this tutorial. Using tables for layout is discouraged, it’s much better to use Cascading Style Sheets (CSS) for layout.</p>
@@ -94,7 +94,7 @@ that isn’t answered by this tutorial, you can send it to
   <li>
     <p><strong>My site uses a table layout for pages, a complete redesign using CSS layout is planned for next year, is there something I can do right now to make the layout tables more accessible?</strong></p>
 
-    <p>Yes there is. You can give the <code class="elem">&lt;table&gt;</code> element a WAI-ARIA <code class="attrib">role</code> attribute of <code class="value">presentation</code> (<code class="attrib">role</code>=<code class="value">"presentation"</code>). This will hide it from most screen readers in most modern browsers.</p>
+    <p>Yes there is. You can give the <code>&lt;table&gt;</code> element a WAI-ARIA <code>role</code> attribute of <code>presentation</code> (<code>role</code>=<code>"presentation"</code>). This will hide it from most screen readers in most modern browsers.</p>
   </li>
   <li>
     <p><strong>I’ve used CSS to give a different background color for odd and even rows in my tables, is this OK?</strong></p>
@@ -207,7 +207,7 @@ that isn’t answered by this tutorial, you can send it to
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 29 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 30 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

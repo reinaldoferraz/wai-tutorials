@@ -12,7 +12,7 @@
   | WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-a4f1b751.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-803873e1.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,13 +61,15 @@
   
 
 
-    <p>Use header cell elements (<code class="elem">&lt;th&gt;</code>) to point out the information that is critical to understand the data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for <em>a)</em> the number of properties in <em>b)</em> a given street.</p>
+    <p>Use header cell elements (<code>&lt;th&gt;</code>) to point out the information that is critical to understand the data in a table. For example the number 210 is meaningless on its own, but becomes information if you know that it is the data for <em>a)</em> the number of properties in <em>b)</em> a given street.</p>
 
-<p>Those <code class="elem">&lt;th&gt;</code> elements make header cells distinguishable from and associated with the correct data cells (<code class="elem">&lt;td&gt;</code>).</p>
+<p>Those <code>&lt;th&gt;</code> elements make header cells distinguishable from and associated with the correct data cells (<code>&lt;td&gt;</code>).</p>
+
+<p>Additionally, <code>&lt;caption&gt;</code> elements may be used to identify a table in the document which is a way for meeting WCAG 2.0 requirements in <a href="../caption-summary/">specific situations</a>.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
-<p>This table of concert dates only needs the cells in the top row marked up as <code class="elem">&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
+<p>This table of concert dates only needs the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
 
 
   <figure class="sample ">
@@ -122,7 +124,7 @@
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
 
-<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code class="elem">&lt;th&gt;</code> cells.</p>
+<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells.</p>
 
 
   <figure class="sample ">
@@ -214,7 +216,6 @@
 
 <ul>
   <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H51">H51: Using table markup to present tabular data</a></li>
-  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
 </ul>
 
 
@@ -319,7 +320,7 @@
 	<footer role="contentinfo">
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 29 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 30 April 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
