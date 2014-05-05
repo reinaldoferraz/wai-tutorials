@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Complete “Table with multiple column headers in each column” Example
+  
+    
+  
+  | WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../../stylesheets/wai-act-d205c2cb.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="http://w3.org/"><img alt="W3C" src="../../../img/w3c-0b234adc.png" /></a>
+      <a href="http://w3.org/WAI/" class="wai"><img alt="Web Accessibility Initiative" src="../../../img/wai-2723e460.png" /></a>
+    </div>
+  </header>
+  <main role="main" class="with-side-menu">
+    <div class="page-title">
+      <a class="" href="../../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+    <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
+<div class="content editors-draft">
+  <header class="tutorial-heading">
+    <div class="breadcrumb">&nbsp;</div>
+    <h1>
+      Complete “Table with multiple column headers in each column” Example
+    </h1>
+  </header>
+
+  
+
+  <div class="inner">
+
+    <pre class="highlight html">
+<span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>
+    Supplier contacts
+  <span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">id=</span><span class="s">"blank"</span><span class="nt">&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co1"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Example 1 Ltd<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co2"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Example 2 Co<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co3"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Example 3 Inc<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"c1"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co1 c1"</span><span class="nt">&gt;</span>James Phillips<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co2 c1"</span><span class="nt">&gt;</span>Marie Beauchamp<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co3 c1"</span><span class="nt">&gt;</span>Andrew Bruce<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"p1"</span>  <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Position<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co1 p1"</span><span class="nt">&gt;</span>Sales Director<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co2 p1"</span><span class="nt">&gt;</span>Sales Manager<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co3 p1"</span><span class="nt">&gt;</span>Client Support Officer<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"e1"</span>  <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co1 e1"</span><span class="nt">&gt;</span>jp@example1.co.uk<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co2 e1"</span><span class="nt">&gt;</span>marie@example2.co.fr<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co3 e1"</span><span class="nt">&gt;</span>sales@example3.com<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co4"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Example 4 Ltd<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co5"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Example 5 Inc<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"co6"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Example 6 Co<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"c2"</span>  <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co4 c2"</span><span class="nt">&gt;</span>Suzette Jones<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co5 c2"</span><span class="nt">&gt;</span>Alex Howe<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co6 c2"</span><span class="nt">&gt;</span>Axel Gaunt<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"p2"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Position<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co4 p2"</span><span class="nt">&gt;</span>Sales Officer<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co5 p2"</span><span class="nt">&gt;</span>Sales Director<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co6 p2"</span><span class="nt">&gt;</span>Proprietor<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"e2"</span> <span class="na">headers=</span><span class="s">"blank"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co4 e2"</span><span class="nt">&gt;</span>Suz@example4.co.uk<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co5 e2"</span><span class="nt">&gt;</span>howe@example5.com<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">"co6 e2"</span><span class="nt">&gt;</span>sales@example6.co.eu<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+
+</pre>
+
+  </div>
+</div>
+<div class="navigation" id="nav">
+  <nav role="navigation">
+    <a class="" href="../../multi-level/#table-with-multiple-column-headers-in-each-column">Back to the example</a>
+  </nav>
+</div>
+  </main>
+	<footer role="contentinfo">
+    <div>
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Status:</strong> [DRAFT] 5 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			</li>
+      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../../attributions/">Attributions</a>].</li>
+      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    </p>
+    <div class="copyright">
+      <p>
+      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(
+					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+    </div>
+	</footer>
+	<script src="../../../javascripts/main-5e9d079e.js" type="text/javascript"></script>
+	</body>
+</html>
