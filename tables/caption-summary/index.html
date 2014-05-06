@@ -61,26 +61,26 @@
   
 
 
-    <p>Captions and summaries are accessibility hints that can be added to tables to help navigating to and between them. They are not required for every table but are a convenient way to meet WCAG 2.0 requirements.</p>
+    <p>Captions and summaries provide information that can help navigate and understand tables. While not required in every case to meet WCAG2.0, captions and summaries are relatively simple ways to add information that help many.</p>
 
 <ul>
   <li>
-    <p><strong>Captions</strong> can be used to identify tables more easily by associating a table identifier (that acts like a heading) to a table. For example, they are important if a screen reader user who chooses to navigate from table to table directly, as they will miss the context of the table if no caption is present.</p>
+    <p><strong>Captions</strong> can be used to identify tables more easily by associating a table identifier (that acts like a heading) to a table. For example, if a screen reader user chooses to navigate from table to table directly the table may be explicitly identified by the caption. HTML has a dedicated <code>&lt;caption&gt;</code> element for this use case.</p>
 
     <p>Captions are recommended in WCAG 2.0 technique <a href="http://www.w3.org/TR/WCAG20-TECHS/H39">H39: Using caption elements to associate data table captions with data tables</a>.</p>
   </li>
   <li>
-    <p>A <strong>summary</strong> conveys information about the organization of the data in a table and helps users navigate the table. For example, if a table has an unconventional structure (as in this example below), the user can be told in which row or column content can be found. It is usually needed with more complex tables.</p>
+    <p>A <strong>summary</strong> conveys information about the organization of the data in a table and helps users navigate the table. For example, if a table has an unconventional structure (as in the examples below), the user can be told in which row or column content can be found. It is usually needed with more complex tables. HTML4 (and XHTML 1.x) provides a <code>summary</code> attribute, take a look at the examples below to see <a href="#summaries-for-more-complex-tables">solutions for HTML5</a>.</p>
 
-    <p>Using summaries is recommended in WCAG 2.0 technique <a href="http://www.w3.org/TR/WCAG20-TECHS/H73">H73: Using the summary attribute of the table element to give an overview of data tables</a>.</p>
+    <p>Summaries are recommended in WCAG 2.0 technique <a href="http://www.w3.org/TR/WCAG20-TECHS/H73">H73: Using the summary attribute of the table element to give an overview of data tables</a>.</p>
   </li>
 </ul>
 
-<p>If both, caption and summary, are used in one table, the summary should not duplicate the caption.</p>
+<p>If both caption and summary are provided in one table, the summary should not duplicate the caption.</p>
 
 <h2 class="ex" id="identifying-a-table-using-a-caption">Identifying a table using a caption</h2>
 
-<p>If used, the caption should be a succinct description of the content of the table. HTML has a dedicated <code>caption</code> element and in this example “Concert dates” tells users what information the table contains as the table otherwise may be ambiguous and could also apply to an art exhibition, for example.</p>
+<p>If used, the caption should be a succinct description of the content of the table. In this example “Concert dates” tells users what information the table contains as the table otherwise may be ambiguous and could also apply to an art exhibition, for example.</p>
 
 
   <figure class="sample ">
@@ -340,11 +340,9 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"tblDesc"</span><span class="nt">&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;table</span> <span class="na">aria-describedby=</span><span class="s">"tblDesc"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">aria-describedby=</span><span class="s">"tblDesc"</span><span class="nt">&gt;</span>
 […]
 </pre>
-
-<p><strong>Note:</strong> To discover the description text the table needs to be in keyboard focus order, which we enable by adding a <code>tabindex</code> attribute with the value <code>0</code>.</p>
 
 </figure>
 <h3 class="ap" id="using-the-figure-element-to-mark-up-a-table-summary">Using the <code>&lt;figure&gt;</code> element to mark up a table summary</h3>
@@ -527,7 +525,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 5 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 6 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

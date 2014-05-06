@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Tips and Frequently asked questions
+  Tips and Frequently Asked Questions (FAQ)
   
     
        &bullet; Tables
@@ -37,12 +37,12 @@
           <a class="" href="../">Tables</a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="visuallyhidden">Current: </span>Tips and Frequently asked questions</span>
+          <span class="current-a"><span class="visuallyhidden">Current: </span>Tips and Frequently Asked Questions (FAQ)</span>
         </span>
       </p>
     </nav>
     <h1>
-      Tips and Frequently asked questions
+      Tips and Frequently Asked Questions (FAQ)
     </h1>
   </header>
 
@@ -61,45 +61,53 @@
   
 
 
-    <p>Feedback on this page is welcome, if you have a question about tables
-that isn’t answered by this tutorial, you can send it to
-<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#119;&#097;&#105;&#045;&#101;&#111;&#045;&#101;&#100;&#105;&#116;&#111;&#114;&#115;&#064;&#119;&#051;&#046;&#111;&#114;&#103;">&#119;&#097;&#105;&#045;&#101;&#111;&#045;&#101;&#100;&#105;&#116;&#111;&#114;&#115;&#064;&#119;&#051;&#046;&#111;&#114;&#103;</a>.</p>
-
-<h2 id="tips">Tips</h2>
+    <h2 id="tips">Tips</h2>
 
 <ul>
   <li>
-    <p><strong>Keep it simple:</strong> Complex tables are more work for you as well as being more confusing for users. It’s better to use multiple simple tables, each containing the data for one sub-topic.</p>
+    <p><strong>Keep it simple:</strong> Complex tables are more work for you as well as being more confusing for users. It’s better to <a href="../multi-level/#split-up-multi-level-tables">break them up into simple tables</a>, each containing the data for one sub-topic.</p>
   </li>
   <li>
-    <p><strong>Data separation:</strong> Make sure that each separate piece of data has its own cell, otherwise it will be impossible for screen readers to work out the relationships between data across columns. In addition, if the table can’t be viewed full-screen by sighted visitors, the data in the pseudo-rows may no longer align correctly. Don’t use headers in one column and all data in a second column.</p>
+    <p><strong>Table separation:</strong> If several tables follow one another, don’t use a single table and put in an additional row of <code>&lt;th&gt;</code> cells. Screen readers may read aloud all <code>&lt;th&gt;</code> cells in a column, resulting in confusion. <a href="../multi-level/#split-up-multi-level-tables">Start a new <code>&lt;table&gt;</code> when the topic changes.</a></p>
   </li>
   <li>
-    <p><strong>Table separation:</strong> If several tables follow one another, don’t use a single table and put in an additional row of <code>&lt;th&gt;</code> cells. Screen readers may read aloud all <code>&lt;th&gt;</code> cells in a column, resulting in confusion. Start a new <code>&lt;table&gt;</code> when the topic changes.</p>
+    <p><strong>Data separation:</strong> </p>
+
+    <ol>
+      <li>
+        <p><em>Make sure that each separate piece of data has its own cell.</em> Don’t use headers in one column and all data in a second column as it will make it impossible for screen readers to work out the relationships between data across columns.</p>
+
+        <p><img alt="On the left, a table with two columns is shown. The header for the first column reads “Shirt” and the header for the second column reads “Sizes and amount in stock”. The second row reads “Blue” in the first column and “S: 6; M: 13, XL: 10”. In the second row, Sizes for a “Red” shirt are “M: 2; L: 9; XL: 10; XXL: 1”. On the right the table is split up in “Shirt”, “Size” and “Stock” columns." src="../../img/headers-in-one-column-all-data-in-second-5b95e1bb.png" /></p>
+      </li>
+      <li>
+        <p>You should not use line breaks (<code>&lt;br&gt;</code>) to create table rows as the data in the pseudo-rows may no longer align correctly when resizing the text.</p>
+      </li>
+    </ol>
   </li>
   <li>
-    <p><strong>Alignment:</strong> Align text to the left and financial data to the right, so that people using screen magnification, larger text sizes or smaller screens will be able to find it. especially when a cell spans more than one column. It’s also helpful to give column headings the same alignment as the data in the cells below.</p>
+    <p><strong>Alignment:</strong> Align text to the left and financial data to the right, so that people using screen magnification, larger text sizes or smaller screens will be able to find it, especially when a cell spans more than one column. It’s  helpful to give column headings the same alignment as the data in the cells below.</p>
   </li>
   <li>
-    <p><strong>Styling header cells:</strong> Consider visually distinguishing the <code>&lt;th&gt;</code> cells to make them more obvious.</p>
-  </li>
-  <li>
-    <p><strong>Layout tables:</strong> If you’re using a table for layout, rather than as a grid to display data with headers, don’t use any of the structural elements and attributes discussed in this tutorial. Using tables for layout is discouraged, it’s much better to use Cascading Style Sheets (CSS) for layout.</p>
+    <p><strong>Styling header cells:</strong> You should use <code>&lt;th&gt;</code> elements for header cells, not a <code>&lt;td&gt;</code> with different styling. However it makes sense to distinguish <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells visually. On these tutorial pages, for example, header cells have always a dark gray background.</p>
   </li>
 </ul>
 
-<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<div class="notes ">
+<p><strong>A note on layout tables:</strong> You shouldn’t use tables for layout purposes. If you do don’t use any of the structural elements and attributes discussed in this tutorial and add <code>role="presentation"</code> to the <code>&lt;table&gt;</code> element. It’s much better to use Cascading Style Sheets (CSS) for layout.</p>
+
+</div>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
 <ul>
   <li>
-    <p><strong>My site uses a table layout for pages, a complete redesign using CSS layout is planned for next year, is there something I can do right now to make the layout tables more accessible?</strong></p>
+    <p><strong>My site uses a table layout for pages, a complete redesign using CSS layout is planned for next year. Is there something I can do right now to make the layout tables more accessible?</strong></p>
 
-    <p>Yes there is. You can give the <code>&lt;table&gt;</code> element a WAI-ARIA <code>role</code> attribute of <code>presentation</code> (<code>role</code>=<code>"presentation"</code>). This will hide it from most screen readers in most modern browsers.</p>
+    <p>Yes there is. You can give the <code>&lt;table&gt;</code> element a WAI-ARIA <code>role</code> attribute of <code>presentation</code> (<code>role="presentation"</code>). This will hide the table markup from most screen readers and browsers that support WAI-ARIA.</p>
   </li>
   <li>
-    <p><strong>I’ve used CSS to give a different background color for odd and even rows in my tables, is this OK?</strong></p>
+    <p><strong>I’ve used CSS to give a different background color for odd and even rows in my tables. Is this OK?</strong></p>
 
-    <p>It certainly is, this can be a real help to people with reading difficulties or who use screen magnification to enlarge text. It acts as a visual guide, as well as  looking cool. You could even consider highlighting the cell (and row/column) on mouseover or keyboard focus to help people see where they are. Make sure that the color contrast is good for both color combinations though.</p>
+    <p>It certainly is, this can be a real help to people with reading difficulties or who use screen magnification to enlarge text. It acts as a visual guide, as well as looking cool. You could even consider highlighting the cell (and row/column) on mouseover and keyboard focus to help people see where they are. Make sure that the contrast ratio (“color contrast”) is good for both color combinations though. <a href="http://www.w3.org/WAI/eval/preliminary#contrast">Here is how to check your contrast ratio.</a></p>
   </li>
 </ul>
 
@@ -208,7 +216,7 @@ that isn’t answered by this tutorial, you can send it to
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 5 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 6 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
