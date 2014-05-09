@@ -9,7 +9,7 @@
        &bullet; Images
     
   
-  | WAI Web Accessibility Tutorials
+  &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
   <link href="../../stylesheets/wai-act-d205c2cb.css" media="screen" rel="stylesheet" type="text/css" />
@@ -65,16 +65,28 @@
 
 <ul>
   <li>
-    <p><strong>Logos:</strong> Images of text that are used as logos are exempt from some of the accessibility guidance that applies to other images of text, for instance there is no minimum color contrast requirement;</p>
+    <p><strong>Logos:</strong> Logo images with text are exempt from some of the accessibility guidelines for images with text. For instance, there is no minimum color contrast requirement.</p>
   </li>
   <li>
-    <p><strong>Prioritize information in <code>alt</code> values:</strong> Aim to put the most important information at the start of the <code>alt</code> value, as people using high screen magnification may be unable to see more than the first two or three words in the <code>alt</code> “tooltip” and people who can’t read quickly may not be able to read as far as the important part of the text alternative before the "tooltip" disappears.</p>
+    <p><strong>Prioritize information in <code>alt</code> values:</strong> Aim to put the most important information at the start of the <code>alt</code> value. People using high screen magnification may be unable to see more than the first two or three words in the <code>alt</code> “tooltip”. Also people who can’t read quickly may be unable to read as far as the important part of the text alternative before the "tooltip" disappears.</p>
   </li>
   <li>
-    <p><strong>Choosing appropriate text alternatives:</strong> Imagine that you are reading the web page aloud over the phone to someone who needs to understand the page. This should help you decide what (if any) information or function the images have. If they appear to have no informative value and aren’t links or buttons, it is probably safe to treat them as <a href="../decorative/">decorative</a>.</p>
+    <p><strong>Choosing appropriate text alternatives:</strong> Imagine that you’re reading the web page aloud over the phone to someone who needs to understand the page. This should help you decide what (if any) information or function the images have. If they appear to have no informative value and aren’t links or buttons, it’s probably safe to treat them as <a href="../decorative/">decorative</a>.</p>
   </li>
   <li>
-    <p><strong>Punctuation within <code>alt</code> attributes:</strong> As in visible text, using punctuation within the text alternative can make it easier to understand. In addition, a space character may be needed within the <code>alt</code> value if there is no space between the image and adjacent text, to avoid having words run together when read by a screen reader.</p>
+    <p><strong>Punctuation within <code>alt</code> attributes:</strong> As in visible text, using punctuation in the text alternative can make it easier to understand. In addition, to avoid having words run together when read by a screen reader, if there’s no space between the image and adjacent text, a space character may be needed within the <code>alt</code> value.</p>
+  </li>
+  <li>
+    <p><strong>SVG graphics:</strong> </p>
+
+    <ul>
+      <li>
+        <p>SVG graphics can be referenced in the <code>src</code> attribute of an <code>&lt;img&gt;</code> element like other image formats (PNG, JPEG, GIF). In this case the examples of this tutorial apply can be used with SVG as well.</p>
+      </li>
+      <li>
+        <p>As SVG images consists of tags like HTML, their code can also be used in HTML5 directly. In this case you can provide alternative text in a <code>title</code>-Element within the SVG image.</p>
+      </li>
+    </ul>
   </li>
 </ul>
 
@@ -82,24 +94,24 @@
 
 <ul>
   <li>
-    <p><strong>I've been told to remove the <code>alt</code> from most of the images in my template, is that right?</strong></p>
+    <p><strong>I've been told to remove the <code>alt</code> from most of the images in my template. Is that right?</strong></p>
 
-    <p>No that's incorrect, the <code>alt</code> is a required attribute. If the images are part of the page design, and don’t convey information, you can remove any text values, leaving just the quotes (<code>alt=""</code>).</p>
+    <p>No that's incorrect. The <code>alt</code> is a required attribute. If the images are part of the page design and don’t convey information, you can remove any text values, leaving just the quotes (<code>alt=""</code>).</p>
   </li>
   <li>
     <p><strong>I can’t remember – should the alt be a space or null (empty) if a description is not needed?</strong></p>
 
-    <p>It should be null (empty) <code>alt</code> text (<code>alt=""</code>), with no space between the quotes. Having a space between the quotes doesn’t effectively hide the image from all assistive technologies, for instance some screen readers will still announce the presence of an image if a space is put between the quotes.</p>
+    <p>It should be null (empty) <code>alt</code> text (<code>alt=""</code>), with no space between the quotes. Having a space between the quotes doesn’t effectively hide the image from all assistive technologies. For instance, some screen readers will still announce the presence of an image if a space is put between the quotes.</p>
   </li>
   <li>
-    <p><strong>My CMS system puts in a default <code>alt</code> of “image of”, can I just add to that?</strong></p>
+    <p><strong>My CMS system puts in a default <code>alt</code> of “image of”. Can I just add to that?</strong></p>
 
-    <p>It will depend on the function of the image, but default values may result in inappropriate alternative text. Normally there's no need to include words like “image”, “icon” or “picture” in the <code>alt</code> text, people who can see will know this already and screen readers announce the presence of an image. There's a good case for including text that describes the type of image if it is a painting, photograph or illustration, but it's best to avoid the more generic terms.</p>
+    <p>It will depend on the function of the image. However, default values may result in inappropriate alternative text. Normally there's no need to include words like “image”, “icon” or “picture” in the <code>alt</code> text. People who can see will know this already and screen readers announce the presence of an image. If it's a painting, photograph or illustration, that may be a good case for including text that describes the type of image, but it's best to avoid the more generic terms.</p>
   </li>
   <li>
-    <p><strong>How long can the <code>alt</code> text be, is it up to 90 words?</strong></p>
+    <p><strong>How long can the <code>alt</code> text be? Is it up to 90 words?</strong></p>
 
-    <p>The <code>alt</code> text should be the briefest, most concise description of the image's purpose as possible. If anything more than a short phrase or sentence is needed, it would be better to use one of the long description methods discussed on the <a href="../complex/">complex images</a> page. People using high screen magnification may be able to see only two or three short words in their magnified view of the <code>alt</code>: tooltip and screen readers are likely to truncate or break any long <code>alt</code> value.</p>
+    <p>The <code>alt</code> text should be the most concise description possible of the image's purpose. If anything more than a short phrase or sentence is needed, it would be better to use one of the long description methods discussed in <a href="../complex/">complex images</a>. People using high screen magnification may be able to see only two or three words in their magnified view of the <code>alt</code>, and tooltip and screen readers are likely to truncate or break a long <code>alt</code> value.</p>
   </li>
 </ul>
 
@@ -243,7 +255,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 6 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 9 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

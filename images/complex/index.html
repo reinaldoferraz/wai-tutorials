@@ -9,7 +9,7 @@
        &bullet; Images
     
   
-  | WAI Web Accessibility Tutorials
+  &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
   <link href="../../stylesheets/wai-act-d205c2cb.css" media="screen" rel="stylesheet" type="text/css" />
@@ -61,29 +61,21 @@
   
 
 
-    <p>Complex images are those that contain substantial information, more than
-can be conveyed in a short phrase or sentence. These are typically:</p>
+    <p>Complex images contain substantial information – more than can be conveyed in a short phrase or sentence. These are typically:</p>
 
 <ul>
-  <li>Graphs and charts, including flow charts and organizational charts;</li>
-  <li>Diagrams and illustrations where the page text relies on the user
-being able to understand the image;</li>
-  <li>Maps showing locations or other information such as weather systems.</li>
+  <li>graphs and charts, including flow charts and organizational charts;</li>
+  <li>diagrams and illustrations where the page text relies on the user being able to understand the image;</li>
+  <li>maps showing locations or other information such as weather systems.</li>
 </ul>
 
-<p>In these situations a two-part text alternative is required, first the
-short description to identify the image and, where appropriate, indicate
-the location of the second part, which is a long description of the
-image. The long description must be a textual representation of the
-essential information conveyed by the image. In certain situations the
-composition of the image may also be needed as part of the long
-description, but only where it is important that the user understands
-the image construction. This page shows several possible approaches that
-can be used to provide both short and long descriptions.</p>
+<p>In these situations a two-part text alternative is required. The first part is the short description to identify the image and, where appropriate, indicate the location of the long description.  The second part is the long description – a textual representation of the essential information conveyed by the image. </p>
+
+<p>In certain situations the composition of the image may also be needed as part of the long description, but only where it’s important that the user understand the image construction. This page shows several possible approaches that can be used to provide both short and long descriptions.</p>
 
 <h2 class="ex" id="image-containing-substantial-information">Image containing substantial information</h2>
 
-<p>This bar chart of website visitor statistics has the short description “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3” as the <code>alt</code> attribute, identifying the image. The long description details the information, including scales, values, relationships and trends, that are represented visually. For example, the declining values for site 1, consistent values for site 2, and increasing values for site 3 are highlighted through the bar chart representation. This information needs to be made available in the <a href="../examples/2014-first-qtr/">long text description</a> as well.</p>
+<p>This bar chart of website visitor statistics has a short description of “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3”. It’s in the <code>alt</code> attribute and identifies the image. The long description details the information, including scales, values, relationships and trends that are represented visually. For example, since the declining values for site 1, consistent values for site 2, and increasing values for site 3 are highlighted through the bar chart, this information must also be included in the <a href="../examples/2014-first-qtr/">long text description</a>.</p>
 
 
   <figure class="sample ">
@@ -96,30 +88,39 @@ can be used to provide both short and long descriptions.</p>
 
 <h3 class="ap" id="providing-a-link-to-the-long-description-via-longdesc">Providing a link to the long description via <em>longdesc</em></h3>
 
-<p>Here the <code>longdesc</code> attribute contains the URI of the page containing the long description. Where appropriate, the <code>longdesc</code> value could simply contain a hash link to the long description if it is published on the same page as the image.</p>
+<p>Here the <code>longdesc</code> attribute contains the URI of a page containing the long description.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;p&gt;</span>
-	<span class="nt">&lt;img</span>
-		<span class="na">src=</span><span class="s">"chart.png"</span>
-		<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3"</span>
-		<span class="na">longdesc=</span><span class="s">"2014-first-qtr.html"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;img</span>
+	<span class="na">src=</span><span class="s">"chart.png"</span>
+	<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3"</span>
+	<span class="na">longdesc=</span><span class="s">"2014-first-qtr.html"</span><span class="nt">&gt;</span>
+</pre>
+
+</figure>
+<p>If the long description is published on the same page as the image, the <code>longdesc</code> value can simply contain a fragment identifier (“hash link”) to the long description.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;img</span>
+	<span class="na">src=</span><span class="s">"chart.png"</span>
+	<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3"</span>
+	<span class="na">longdesc=</span><span class="s">"#chart-longdesc"</span><span class="nt">&gt;</span>
+[…]
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chart-longdesc"</span><span class="nt">&gt;</span>
+	[…]
+<span class="nt">&lt;/div&gt;</span>
 </pre>
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> Both Firefox and Chrome browsers are working on
-implementations that will make the <em>longdesc linked</em> long description
-location reachable by all users. In older or other browsers it is only
-available to screen reader users.</p>
+<p><strong>Note:</strong> Both Firefox and Chrome browsers are working on implementations that will make the <em>longdesc linked</em> long description location reachable by all users. Currently, and in other browsers, it’s only available to screen reader users.</p>
 
 </div>
 <h3 class="ap" id="a-text-link-to-the-long-description-adjacent-to-the-image">A text link to the long description adjacent to the image</h3>
 
-<p>This approach provides a text link next to the image. The link text
-makes both the destination and the association with the image clear.</p>
+<p>This approach provides a text link next to the image. The link text makes both the destination and the association with the image clear.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -134,16 +135,12 @@ makes both the destination and the association with the image clear.</p>
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> This approach is well supported in all browsers and ensures
-that everyone has access to the data as well as the image, no matter
-what browser or assistive technologies they may use.</p>
+<p><strong>Note:</strong> This approach is well supported in all browsers and ensures that everyone has access to the data as well as the image, no matter what browser or assistive technologies they may use.</p>
 
 </div>
 <h3 class="ap" id="describing-the-location-of-the-long-description-in-the-alt-attribute">Describing the location of the long description in the <code>alt</code> attribute</h3>
 
-<p>If the long description is on the same page as the image and its
-location can be accurately pinpointed by being described, the
-<code>alt</code> attribute can include location information.</p>
+<p>If the long description is on the same page as the image and its location can be accurately pinpointed by being described, the <code>alt</code> attribute can include location information.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -152,6 +149,7 @@ location can be accurately pinpointed by being described, the
 		<span class="na">src=</span><span class="s">"chart.png"</span>
 		<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3. Described under the heading Site visitors full text."</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/p&gt;</span>
+[…]
 <span class="nt">&lt;h4&gt;</span>Site visitors full text<span class="nt">&lt;/h4&gt;</span>
 […]
 </pre>
@@ -160,8 +158,8 @@ location can be accurately pinpointed by being described, the
 <h3 class="ap" id="structurally-associating-the-image-and-its-adjacent-long-description-html5">Structurally associating the image and its adjacent long description (HTML5)</h3>
 
 <p>The HTML5 <code>&lt;figure&gt;</code> element can be used to enclose both the image and
-its long description. The long description, presented as headings, text
-and a table, is explicitly associated to the image by using
+its long description. The long description (presented as headings, text
+and a table) is explicitly associated to the image by using
 <code>role="group"</code> on the containing <code>&lt;figure&gt;</code> element.</p>
 
 <figure class="code ">
@@ -182,7 +180,7 @@ and a table, is explicitly associated to the image by using
 </figure>
 <h3 class="ap" id="structurally-associating-image-and-long-description-with-aria-described-by">Structurally associating image and long description with <code>aria-described-by</code></h3>
 
-<p>The WAI-ARIA <code>aria-described-by</code> attribute can be used to link the description to the image. The value of the attribute is the <code>ID</code> of the element with the description.</p>
+<p>The WAI-ARIA <code>aria-described-by</code> attribute can be used to link the description to the image. The value of the attribute is the <code>id</code> of the element with the description. (This approach is only valid in HTML5.)</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -348,7 +346,7 @@ and a table, is explicitly associated to the image by using
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 6 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 9 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

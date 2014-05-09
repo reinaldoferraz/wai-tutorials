@@ -9,7 +9,7 @@
        &bullet; Images
     
   
-  | WAI Web Accessibility Tutorials
+  &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
   <link href="../../stylesheets/wai-act-d205c2cb.css" media="screen" rel="stylesheet" type="text/css" />
@@ -61,11 +61,11 @@
   
 
 
-    <p>A grouped collection of images is sometimes used to convey a single piece of information, for instance star images to denote a product rating. In this case, the text alternative for one of the images should convey the information conveyed by the entire group, all other images should have null (empty) <code>alt</code> attributes. For instance, as shown in example 1 below, the descriptive text alternative on one image should be “3.5 out of 5 stars”, rather than “1 star”, “Half star” or “Unfilled star” on each image.</p>
+    <p>A grouped collection of images is sometimes used to convey a single piece of information. For instance, five star images are often used to denote a product rating. When images are a grouped collection, the text alternative for one of the images should convey the information for the entire group; all other images should have null (empty) <code>alt</code> attributes. For example, as shown in example 1 below, the descriptive text alternative on one image should be “3.5 out of 5 stars”, rather than “1 star”, “half star” or “unfilled star” on each image.</p>
 
 <h2 class="ex" id="group-of-images-for-rating">Group of images for rating</h2>
 
-<p>This group of five images shows a product rating. There are five images, three filled stars, one half filled star and one empty star, indicating the overall rating. The text alternative for the first image is “Rating: 3.5 out of 5 stars”, all other images have a null (empty) <code>alt</code> attribute (<code>alt=""</code>).</p>
+<p>This group of five images shows a product rating. There are five images (three filled stars, one half-filled star and one empty star) indicating the overall rating. The text alternative for the first image is “Rating: 3.5 out of 5 stars”; all other images have a null (empty) <code>alt</code> attribute (<code>alt=""</code>).</p>
 
 
   <figure class="sample ">
@@ -78,20 +78,18 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;p&gt;</span>
-	Rating:
-	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-full.jpg"</span>  <span class="na">alt=</span><span class="s">"3.5 out of 5 stars"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-full.jpg"</span>  <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-full.jpg"</span>  <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-half.jpg"</span>  <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-empty.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
+<pre class="highlight html">Rating:
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-full.jpg"</span>  <span class="na">alt=</span><span class="s">"3.5 out of 5 stars"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-full.jpg"</span>  <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-full.jpg"</span>  <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-half.jpg"</span>  <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"star-empty.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
 <h2 class="ex" id="captions-for-image-groups">Captions for Image Groups</h2>
 
-<p>If a group of images has a caption, a <code>figure</code> element can be used to group those images. If those images have a caption, <code>figure</code> and <code>figcaption</code> elements can be nested as well:</p>
+<p>If a group of images has a caption, a <code>figure</code> element can be used to group those images. If individual images also have captions, <code>figure</code> and <code>figcaption</code> elements can be nested. (This example is only valid in HTML5.)</p>
 
 
   <figure class="sample ">
@@ -102,15 +100,16 @@
 
 
 <figure role="group">
-<img src="../../img/castle-etching-8b18b4ce.jpg" alt="The castle has one tower, and a tall wall around it." />
+<img src="../../img/castle-etching-8b18b4ce.jpg" alt="The castle has one tower, and a tall wall around it.">
 <figcaption>Charcoal on  wood. Anonymous, circa 1423.</figcaption>
 </figure>
 <figure role="group">
-<img src="../../img/castle-painting-9377b3b1.jpg" alt="The castle now has two towers and two walls." />
+<img src="../../img/castle-painting-9377b3b1.jpg" alt="The castle now has two towers and two walls.">
 <figcaption>Oil-based paint on canvas. Eloisa Faulkner, 1756.</figcaption>
 </figure>
 <figure role="group">
-<img src="../../img/castle-fluro-e530cc68.jpg" alt="The castle lies in ruins, the original tower all that remains in one piece." />
+<img src="../../img/castle-fluro-e530cc68.jpg"
+alt="The castle lies in ruins, the original tower all that remains in one piece.">
 <figcaption>Film photograph. <span lang="fr">Séraphin Médéric Mieusement</span>, 1936.</figcaption>
 </figure>
 
@@ -149,6 +148,10 @@
 </pre>
 
 </figure>
+<div class="notes ">
+<p><strong>Note:</strong> We also use the WAI-ARIA attribute <code>role</code> with the value of <code>group</code> to indicate grouping to assistive technology.</p>
+
+</div>
 <h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
 
 <p>The following WCAG 2.0 techniques were used in the examples above:</p>
@@ -293,7 +296,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 6 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 9 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
