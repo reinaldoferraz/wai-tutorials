@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-70784a2b.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-abc4c817.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -287,7 +287,7 @@
 <h3 class="ap" id="use-aria-describedby-to-provide-a-table-summary">Use <code>aria-describedby</code> to provide a table summary</h3>
 
 <div class="notes ">
-<p><strong>Note: The technique used in this approach is only valid in HTML5.</strong></p>
+<p><strong>Note: The technique used in this approach is only valid in HTML5.</strong> This WAI-ARIA feature may not be as widely supported as other approaches for summaries on this page.</p>
 
 </div>
 
@@ -295,7 +295,7 @@
   <figcaption>Example</figcaption>
   <div class="box-content">
 
-<p id="tblDesc" style="margin: 0 auto; max-width: 25.333333333em; font-size: .75em; lin-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
+<p id="tblDesc" style="max-width: 25.333333333em; font-size: .75em; lin-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
 <table aria-describedby="tblDesc" tabindex="0">
   <caption style="text-align: left;">
     Paris: Availability of holiday accommodation<br>
@@ -351,13 +351,14 @@
 <p><strong>Note: The technique used in this approach is only valid in HTML5.</strong></p>
 
 </div>
+<p>By using an HTML5 <code>&lt;figure&gt;</code> element, the association between the caption/summary is indirectly applied to the table. Screen reader users navigating from table to table probably won’t get the context from the caption/summary. You can explicitly associate the <code>&lt;figcaption&gt;</code> to the table by using the <code>aria-labelledby</code> and/or <code>aria-describedby</code> attributes.</p>
+
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-
 <figure>
-  <figcaption style="max-width: 19em; margin: 0 auto; color: inherit;">
+  <figcaption style="max-width: 19em; color: inherit;">
     <strong>Paris: Availability of holiday accommodation</strong><br>Column one has the location and size of accommodation, other columns show the type and number of properties available.
   </figcaption>
   <table>
@@ -413,15 +414,94 @@
 </pre>
 
 </figure>
-<h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
 
-<p>The following WCAG 2.0 technique was used in the example above:</p>
 
-<ul>
-  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
-  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H73">H73: Using the summary attribute of the table element</a></li>
-</ul>
-
+<div role="techniques">
+  <h2 id="related">Related WCAG2.0 Resources</h2>
+  
+  
+    <p><strong>Techniques:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H39">H39: Using caption elements to associate data table captions with data tables</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H73">H73: Using the summary attribute of the table element</a></li>
+          
+        
+      
+    </ul>
+  
+</div>
 
 <div role="navigation" id="tools">
   <ul>
@@ -525,7 +605,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 12 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 13 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
