@@ -74,7 +74,7 @@
   
 
 
-    <p>Data tables need structural markup to distinguish between header and data cells and define the relationships between them. This tutorial shows you how to apply appropriate structural markup to tables. It includes the following pages:</p>
+    <p>Data tables need special HTML markup that shows the difference between header and data cells and also ties the two together. This tutorial shows you how to apply appropriate structural markup to tables. It includes the following pages:</p>
 
 <ul class="nobullets">
   <li>
@@ -92,7 +92,7 @@
 </ul>
 
 <div class="notes ">
-<p><strong>Note:</strong> The techniques in this tutorial should be applied only when a table is being used to display <em>data</em> in a grid and don’t apply to presentational (layout) tables. You shouldn’t use tables for layout purposes. Instead, use Cascading Style Sheets (CSS) for visual presentation.</p>
+<p><strong>Note:</strong> The techniques in this tutorial should be applied only when a table is being used to display <em>data</em> in a grid; these techniques don’t apply to layout tables. You shouldn’t use tables for layout purposes. Instead, use Cascading Style Sheets (CSS) for visual presentation.</p>
 
 </div>
 <h2 id="why-is-this-important">Why is this important?</h2>
@@ -104,15 +104,15 @@
     <p><strong>People using a screen reader</strong> can have the row and column headers read aloud as they navigate through the table. Screen readers speak one cell at a time and can only distinguish header cells from data cells if they are properly marked up.</p>
   </li>
   <li>
-    <p><strong>People using user stylesheets</strong> can have header cells more prominently styled for easy recognition when there is a difference between the elements used for header and data cells.</p>
+    <p><strong>People using user stylesheets</strong> can style the header cells and data cells differently to make them easier to distinguish.</p>
   </li>
 </ul>
 
 <h2 id="how-to-make-tables-accessible">How to make tables accessible</h2>
 
-<p>Accessible tables have their header cells marked up using <code>&lt;th&gt;</code> and their data cells marked up using <code>&lt;td&gt;</code>. For more complex tables, explicit associations may be needed using <code>scope</code> or <code>id</code> and <code>headers</code> attributes, so that they can be interpreted by assistive technologies.</p>
+<p>Accessible tables have their header cells marked up with <code>&lt;th&gt;</code> and their data cells marked up with <code>&lt;td&gt;</code>. For more complex tables, explicit associations may be needed using <code>scope</code> or <code>id</code> and <code>headers</code> attributes, so that they can be interpreted by assistive technologies.</p>
 
-<p>The structural coding can also be used to represent data in different ways, for example by larger or differently colored text or backgrounds, Braille, speech and symbols. Many web authoring tools and content management systems (CMS) provide functions to define header cells during table creation without having to manually edit the code.</p>
+<p>The structural coding can also be used to represent data in different ways, for example, by larger or different colored text or backgrounds, Braille, speech, and symbols. Many web authoring tools and content management systems (CMS) provide functions to define header cells during table creation without having to manually edit the code.</p>
 
 
 
@@ -124,7 +124,7 @@
       
         
           
-            <li><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">1.3.1: Info and Relationships</a> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level: A)</li>
+            <li><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">1.3.1 Info and Relationships:</a> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level A)</li>
           
         
       
@@ -136,18 +136,6 @@
 <div role="navigation" id="tools">
   <ul>
     
-      
-      
-        
-        
-      
-      
-        
-        
-      
-      
-        
-        
       
       
         
@@ -203,18 +191,6 @@
         
       
       
-      <li class="intro"><a class="" href="index4/">Tables Concepts (alt alt alt)</a></li>
-      
-      
-      
-      <li class="intro"><a class="" href="index2/">Tables Concepts (alt)</a></li>
-      
-      
-      
-      <li class="intro"><a class="" href="index3/">Tables Concepts (alt alt)</a></li>
-      
-      
-      
       <li><a class="" href="simple/">Simple Tables</a></li>
       
       
@@ -254,7 +230,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 16 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 17 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

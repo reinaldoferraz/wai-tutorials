@@ -65,7 +65,7 @@
 
 <ul>
   <li>
-    <p><strong>Keep it simple:</strong> Complex tables are more work for you as well as being more confusing for users. It’s better to <a href="../multi-level/#split-up-multi-level-tables">break them up into simple tables</a>, each containing the data for one sub-topic.</p>
+    <p><strong>Keep it simple:</strong> Complex tables are more work for you as well as being more confusing for users. It’s usually better to <a href="../multi-level/#split-up-multi-level-tables">break up multi-level tables into simple tables</a>, each containing the data for one sub-topic.</p>
   </li>
   <li>
     <p><strong>Table separation:</strong> If several tables follow one another, don’t use a single table and put in an additional row of <code>&lt;th&gt;</code> cells. Screen readers may read aloud all <code>&lt;th&gt;</code> cells in a column, resulting in confusion. <a href="../multi-level/#split-up-multi-level-tables">Start a new <code>&lt;table&gt;</code> when the topic changes.</a></p>
@@ -75,7 +75,7 @@
 
     <ol>
       <li>
-        <p><em>Make sure that each separate piece of data has its own cell.</em> Don’t use headers in one column and all data in a second column as it will make it impossible for screen readers to work out the relationships between data across columns.</p>
+        <p>Make sure that each separate piece of data has its own cell. Don’t use headers in one column and all data in a second column as it will make it impossible for screen readers to work out the relationships between data across columns.</p>
 
         <p><img alt="On the left, a table with two columns is shown. The header for the first column reads “Shirt” and the header for the second column reads “Sizes and amount in stock”. The second row reads “Blue” in the first column and “S: 6; M: 13, XL: 10”. In the second row, Sizes for a “Red” shirt are “M: 2; L: 9; XL: 10; XXL: 1”. On the right the table is split up in “Shirt”, “Size” and “Stock” columns." src="../../img/headers-in-one-column-all-data-in-second-5b95e1bb.png" /></p>
       </li>
@@ -87,22 +87,22 @@
     </ol>
   </li>
   <li>
-    <p><strong>Alignment:</strong> Align text to the left and financial data to the right, so that people using screen magnification, larger text sizes or smaller screens will be able to find it, especially when a cell spans more than one column. It’s  helpful to give column headings the same alignment as the data in the cells below.</p>
+    <p><strong>Alignment:</strong> Align text to the left and financial data to the right, so that people using screen magnification, larger text sizes, or smaller screens will be able to find it, especially when a cell spans more than one column. It’s  helpful to give column headings the same alignment as the data in the cells below.</p>
   </li>
   <li>
-    <p><strong>Styling header cells:</strong> You should use <code>&lt;th&gt;</code> elements for header cells, not a <code>&lt;td&gt;</code> with different styling. However it makes sense to distinguish <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells visually. On these tutorial pages, for example, header cells have always a dark gray background.</p>
+    <p><strong>Styling header cells:</strong> You should use <code>&lt;th&gt;</code> elements for header cells, not a <code>&lt;td&gt;</code> with different styling. However it makes sense to distinguish <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells visually. For example, on these tutorial pages header cells have a dark gray background.</p>
   </li>
 </ul>
 
 <div class="notes ">
-<p><strong>A note on layout tables:</strong> You shouldn’t use tables for layout purposes. If you do don’t use any of the structural elements and attributes discussed in this tutorial and add <code>role="presentation"</code> to the <code>&lt;table&gt;</code> element. It’s much better to use Cascading Style Sheets (CSS) for layout.</p>
+<p><strong>A note on layout tables:</strong> You shouldn’t use tables for layout purposes. It’s much better to use Cascading Style Sheets (CSS) for layout. If you do use layout tables, don’t use any of the structural elements and attributes discussed in this tutorial, and do add <code>role="presentation"</code> to the <code>&lt;table&gt;</code> element.</p>
 
 </div>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
 <ul>
   <li>
-    <p><strong>My site uses a table layout for pages. A complete redesign using CSS layout is planned for next year. Is there something I can do right now to make the layout tables more accessible?</strong></p>
+    <p><strong>My site uses a table layout to position information on pages. A complete redesign using CSS layout is planned for next year. Is there something I can do right now to make the layout tables more accessible?</strong></p>
 
     <p>Yes there is. You can give the <code>&lt;table&gt;</code> element a WAI-ARIA <code>role</code> attribute of <code>presentation</code> (<code>role="presentation"</code>). This will hide the table markup from most screen readers and browsers that support WAI-ARIA.</p>
   </li>
@@ -126,18 +126,6 @@
   <ul>
     
       
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
-        
       
         
         
@@ -193,18 +181,6 @@
         
       
       
-      <li class="intro"><a class="" href="../index4/">Tables Concepts (alt alt alt)</a></li>
-      
-      
-      
-      <li class="intro"><a class="" href="../index2/">Tables Concepts (alt)</a></li>
-      
-      
-      
-      <li class="intro"><a class="" href="../index3/">Tables Concepts (alt alt)</a></li>
-      
-      
-      
       <li><a class="" href="../simple/">Simple Tables</a></li>
       
       
@@ -244,7 +220,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 16 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 17 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

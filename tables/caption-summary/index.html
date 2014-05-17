@@ -76,18 +76,18 @@
   </li>
 </ul>
 
-<p>If both caption and summary are provided in one table, the summary should not duplicate the caption.</p>
+<p>If both caption and summary are provided for one table, the summary should not duplicate the caption.</p>
 
 <h2 class="ex" id="identifying-a-table-using-a-caption">Identifying a table using a caption</h2>
 
-<p>If used, the caption should be a succinct description of the content of the table. In this example “Concert dates” tells users what information the table contains as the table otherwise may be ambiguous and could also apply to an art exhibition, for example.</p>
+<p>If used, the caption should be a succinct description of the content of the table. In this example “Concerts” tells users what information the table contains as the table otherwise may be ambiguous and could also apply to an art exhibition, for example.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <table>
-  <caption>Concert dates</caption>
+  <caption>Concerts</caption>
   <tr>
     <th>Date</th>
     <th>Event</th>
@@ -116,7 +116,7 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-  <span class="nt">&lt;caption&gt;</span>Concert dates<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>Concerts<span class="nt">&lt;/caption&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;td&gt;</span>12 Feb<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;td&gt;</span>Waltz with Strauss<span class="nt">&lt;/td&gt;</span>
@@ -134,7 +134,7 @@
 </figure>
 <h2 class="ex" id="summaries-for-more-complex-tables">Summaries for more complex tables</h2>
 
-<p>In HTML4 (and XHTML 1.x) the description can be marked up using the <code>summary</code> attribute of the <code>&lt;table&gt;</code> element, but as this is made obsolete in HTML5, the approaches in this section show how to put the description within the <code>&lt;caption&gt;</code> element and using the WAI-ARIA <code>aria-describedby</code> attribute or the <code>&lt;figure&gt;</code> element for the summary.</p>
+<p>In HTML4 (and XHTML 1.x) the description can be marked up using the <code>summary</code> attribute of the <code>&lt;table&gt;</code> element. It’s obsolete in HTML5. The other approaches below show how to put the description in the <code>&lt;caption&gt;</code> element, and use the WAI-ARIA <code>aria-describedby</code> attribute or the <code>&lt;figure&gt;</code> element for the summary.</p>
 
 <h3 class="ap" id="using-the-summary-attribute">Using the <code>summary</code> attribute</h3>
 
@@ -142,7 +142,7 @@
 <p><strong>Note: This approach is valid in HTML4 and XHTML 1.x only.</strong></p>
 
 </div>
-<p>This table has an unusual table structure, the days of the week are in the center column, morning times to the left and afternoon times to the right. It has the <code>summary</code> attribute “Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column”, explaining the way the table is laid out.</p>
+<p>This table has an unusual table structure: the days of the week are in the center column, morning times to the left, and afternoon times to the right. It has the <code>summary</code> attribute “Days are in the second column, morning opening hours in the first column, and afternoon opening hours are in the third column”, explaining the way the table is laid out.</p>
 
 <p>The content of the summary attribute is not available to visual users.</p>
 
@@ -518,18 +518,6 @@
       
         
         
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
           <li class="prev">
             <span><a class="" href="../multi-level/"><span class="dir">Previous:</span><span class="title">Complex: Multi-level</span></a></span>
           </li>
@@ -578,18 +566,6 @@
         
       
       
-      <li class="intro"><a class="" href="../index4/">Tables Concepts (alt alt alt)</a></li>
-      
-      
-      
-      <li class="intro"><a class="" href="../index2/">Tables Concepts (alt)</a></li>
-      
-      
-      
-      <li class="intro"><a class="" href="../index3/">Tables Concepts (alt alt)</a></li>
-      
-      
-      
       <li><a class="" href="../simple/">Simple Tables</a></li>
       
       
@@ -629,7 +605,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 16 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 17 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
