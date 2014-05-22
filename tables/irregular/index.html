@@ -63,9 +63,9 @@
 
     <p>Sometimes it is hard for assistive technology to determine which columns or row to associate with a specific header cell.</p>
 
-<p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example, the <code>scope</code> value <code>row</code> denotes that a header cell applies to the entire row. Similarly, a header cell that spans three columns and has the <code>scope</code> value <code>colgroup</code> only applies to the data cells in the three columns that it spans. The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage should be clearly associated.</p>
+<p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example, a <code>scope</code> value <code>row</code> denotes that a header cell applies to the entire row. Similarly, a header cell that spans three columns and has the <code>scope</code> value <code>colgroup</code> only applies to the data cells in the three columns that it spans. </p>
 
-<p>Possible values for the <code>scope</code> attribute are <code>row</code>, <code>col</code>, <code>rowgroup</code> or <code>colgroup</code>.</p>
+<p>The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage should be clearly associated. Possible values for the <code>scope</code> attribute are <code>row</code>, <code>col</code>, <code>rowgroup</code> or <code>colgroup</code>.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
 
@@ -140,76 +140,74 @@
   <caption>
     Holidays taken in the last six months
   </caption >
-
   <thead>
-
-  <tr>
-    <th scope="col"><abbr title="Identification Number">ID</abbr></th>
-    <th scope="col">Name</th>
-    <th scope="col">Jul</th>
-    <th scope="col">Aug</th>
-    <th scope="col">Sept</th>
-    <th scope="col">Oct</th>
-    <th scope="col">Nov</th>
-    <th scope="col">Dec</th>
-  </tr>
+    <tr>
+      <th><abbr title="Identification Number">ID</abbr></th>
+      <th>Name</th>
+      <th>Jul</th>
+      <th>Aug</th>
+      <th>Sept</th>
+      <th>Oct</th>
+      <th>Nov</th>
+      <th>Dec</th>
+    </tr>
   </thead>
 
   <tbody>
-  <tr>
-    <td>215</td>
-    <th scope="row">Abel</th>
-    <td>5</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>3</td>
-  </tr>
+    <tr>
+      <td>215</td>
+      <th scope="row">Abel</th>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
 
-  <tr>
-    <td>231</td>
-    <th scope="row">Annette </th>
-    <td>0</td>
-    <td>5</td>
-    <td>3</td>
-    <td>0</td>
-    <td>0</td>
-    <td>6</td>
-  </tr>
+    <tr>
+      <td>231</td>
+      <th scope="row">Annette </th>
+      <td>0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
 
-  <tr>
-    <td>173</td>
-    <th scope="row">Bernard</th>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>5</td>
-    <td>0</td>
-    <td>0</td>
-  </tr>
+    <tr>
+      <td>173</td>
+      <th scope="row">Bernard</th>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
 
-  <tr>
-    <td>141</td>
-    <th scope="row">Gerald</th>
-    <td>0</td>
-    <td>10</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>8</td>
-  </tr>
+    <tr>
+      <td>141</td>
+      <th scope="row">Gerald</th>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+    </tr>
 
-  <tr>
-    <td>99</td>
-    <th scope="row">Michael</th>
-    <td>8</td>
-    <td>8</td>
-    <td>8</td>
-    <td>8</td>
-    <td>0</td>
-    <td>4</td>
-  </tr>
+    <tr>
+      <td>99</td>
+      <th scope="row">Michael</th>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
   </tbody>
 </table>
 
@@ -237,7 +235,9 @@
 
 <h2 class="ex" id="table-with-headers-spanning-multiple-rows-or-columns">Table with headers spanning multiple rows or columns</h2>
 
-<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns.</p>
+<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns. <code>Colspan</code>, <code>rowspan</code>, and <code>colgroup</code> indicate the headers that span multiple rows and columns.</p>
+
+<p>A <a href="../caption-summary/">summary</a> can be used to explicitly describe the layout of the table.</p>
 
 
   <figure class="sample ">
