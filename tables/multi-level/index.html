@@ -61,7 +61,7 @@
   
 
 
-    <p>Multi-level tables are those that have a structure that is too complex to support strict horizontal or vertical association between header and data cells. In each case, the relationship between header and data cells needs to be defined by giving each <code>&lt;th&gt;</code> cell a unique id attribute, and each <code>&lt;td&gt;</code> a headers attribute that lists related id values, without any comma separation. Table structures that need to be marked up this way include:</p>
+    <p>Multi-level tables are those that have a structure that is too complex to support strict horizontal or vertical association between header and data cells. In each case, the relationship between header and data cells should be defined by giving each <code>&lt;th&gt;</code> cell a unique id attribute, and each <code>&lt;td&gt;</code> a headers attribute that lists related id values, without any comma separation. Table structures that should be marked up this way include:</p>
 
 <ul>
   <li>Where column headers are repeated or changed part-way through the table.</li>
@@ -160,7 +160,7 @@
 <h2 class="ex" id="table-with-three-headers-related-to-each-data-cell">Table with three headers related to each data cell</h2>
 
 <p>This example shows availability of accommodation of a given type and size in two different locations. For the data to be understood, each
-<code>&lt;td&gt;</code> cell needs to be associated to three <code>&lt;td&gt;</code> cells (location, size, and type of accommodation). To define these complex associations, each <code>&lt;th&gt;</code> cell has a unique <code>id</code> attribute and all data cells have a <code>headers</code> attribute listing the related cell <code>id</code> values.</p>
+<code>&lt;td&gt;</code> cell should be associated to three <code>&lt;td&gt;</code> cells (location, size, and type of accommodation). To define these complex associations, each <code>&lt;th&gt;</code> cell has a unique <code>id</code> attribute and all data cells have a <code>headers</code> attribute listing the related cell <code>id</code> values.</p>
 
 
   <figure class="sample ">

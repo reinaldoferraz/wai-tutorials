@@ -63,13 +63,13 @@
 
     <p>Sometimes it is hard for assistive technology to determine which columns or row to associate with a specific header cell.</p>
 
-<p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example, the <code>scope</code> value <code>row</code> denotes that a header cell applies to the entire row. Similarly, a header cell that spans three columns and has the <code>scope</code> value <code>colgroup</code> only applies to the data cells in the three columns that it spans. The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
+<p><code>Scope</code> is the attribute used to define the direction and range of data cells that are covered by a header cell. For example, the <code>scope</code> value <code>row</code> denotes that a header cell applies to the entire row. Similarly, a header cell that spans three columns and has the <code>scope</code> value <code>colgroup</code> only applies to the data cells in the three columns that it spans. The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage should be clearly associated.</p>
 
 <p>Possible values for the <code>scope</code> attribute are <code>row</code>, <code>col</code>, <code>rowgroup</code> or <code>colgroup</code>.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
 
-<p>This example has <code>&lt;th&gt;</code> elements for all cells in the left column of a table. The <code>scope</code> value <code>row</code> is used on each <code>&lt;th&gt;</code> cell to ensure that it cannot be mistaken as a header for other cells in the same column. In the table below, Belgium should not be mistaken as the heading for France, Holland, etc.</p>
+<p>This example has <code>&lt;th&gt;</code> elements for all cells in the left column of a table. Due to how some assistive technology works, the <code>scope</code> attribute with a value of <code>row</code> should be used on each <code>&lt;th&gt;</code> cell to ensure that it cannot be mistaken as a header for other cells in the same column. In the table below, Belgium should not be mistaken as the heading for France, Holland, etc.</p>
 
 
   <figure class="sample ">
