@@ -75,14 +75,14 @@
 
     <ol>
       <li>
-        <p>Make sure that each separate piece of data has its own cell. Don’t use headers in one column and all data in a second column as it will make it impossible for screen readers to work out the relationships between data across columns.</p>
+        <p>Make sure that each separate piece of data has its own cell. Don’t use headers in one column and all data in a second column, because it will make it nearly impossible for screen readers to work out the relationships between data across columns.</p>
 
         <p><img alt="On the left, a table with two columns is shown. The header for the first column reads “Shirt” and the header for the second column reads “Sizes and amount in stock”. The second row reads “Blue” in the first column and “S: 6; M: 13, XL: 10”. In the second row, Sizes for a “Red” shirt are “M: 2; L: 9; XL: 10; XXL: 1”. On the right the table is split up in “Shirt”, “Size” and “Stock” columns." src="../../img/headers-in-one-column-all-data-in-second-934938d6.png" /></p>
       </li>
       <li>
-        <p>You should not use line breaks (<code>&lt;br&gt;</code>) to create table rows as the data in the pseudo-rows may no longer align correctly when resizing the text.</p>
+        <p>Don‘t use line breaks (<code>&lt;br&gt;</code>) to create table rows because the data in the pseudo-rows may no longer align correctly when text is resized.</p>
 
-        <p><img alt="On the top there is a table where the content and header cells are not marked up correctly. Line breaks are usedto make items look like they align correctly. When resizing the text (bottom) the items don’t like up anymore" src="../../img/table-text-resize-5ac670f0.png" /></p>
+        <p><img alt="On the top there is a table where the content and header cells are not marked up correctly. Line breaks are usedto make items look like they align correctly. When resizing the text (bottom) the items don’t line up anymore" src="../../img/table-text-resize-5ac670f0.png" /></p>
       </li>
     </ol>
   </li>
@@ -90,7 +90,7 @@
     <p><strong>Alignment:</strong> Align text to the left and financial data to the right, so that people using screen magnification, larger text sizes, or smaller screens will be able to find it, especially when a cell spans more than one column. It’s  helpful to give column headings the same alignment as the data in the cells below.</p>
   </li>
   <li>
-    <p><strong>Styling header cells:</strong> You should use <code>&lt;th&gt;</code> elements for header cells, not a <code>&lt;td&gt;</code> with different styling. However it makes sense to distinguish <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells visually. For example, on these tutorial pages header cells have a dark gray background.</p>
+    <p><strong>Styling header cells:</strong> You should use <code>&lt;th&gt;</code> elements for header cells, not a <code>&lt;td&gt;</code> with different styling. It is helpful to differentiate <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells visually. For example, on these tutorial pages header cells have a dark gray background.</p>
   </li>
 </ul>
 
@@ -109,14 +109,14 @@
   <li>
     <p><strong>I’ve used CSS to give a different background color for odd and even rows in my tables. Is this OK?</strong></p>
 
-    <p>It certainly is. This can be a real help to people who have reading difficulties or who use screen magnification to enlarge text. It acts as a visual guide, as well as looking cool. You could even consider highlighting the cell (and row/column) on mouseover and keyboard focus to help people see where they are. Make sure that the contrast ratio (“color contrast”) is good for both color combinations though. <a href="http://www.w3.org/WAI/eval/preliminary#contrast">Here is how to check your contrast ratio.</a></p>
+    <p>It certainly is. This can be a real help to people who have reading difficulties or who use screen magnification to enlarge text. It acts as a visual guide. You could even consider highlighting the cell (and row/column) on mouseover and keyboard focus to help people see where they are. Make sure that the contrast ratio (“color contrast”) between the text and background is good for both headers and data cells. <a href="http://www.w3.org/WAI/eval/preliminary#contrast">Here is how to check your contrast ratio.</a></p>
   </li>
 </ul>
 
 <h2 id="other-w3c-resources">Other W3C Resources</h2>
 
 <ul>
-  <li>Further background on <a href="http://www.w3.org/WAI/intro/people-use-web/principles#adaptable">ensuring that information can be presented in different ways</a> in How People with Disabilities Use the Web.</li>
+  <li><a href="http://www.w3.org/WAI/intro/people-use-web/principles#adaptable">Content can be presented in different ways</a> secton of Accessibility Principles in How People with Disabilities Use the Web.</li>
 </ul>
 
 
@@ -220,7 +220,7 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status:</strong> [DRAFT] 22 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
+			<li><strong>Status:</strong> [DRAFT] 23 May 2014 (see <a href="http://www.w3.org/WAI/EO/changelogs/cl-app-notes">changelog</a>)
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/">Attributions</a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
