@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Labels
+  Complex Forms
   
     
        &bullet; Forms
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Labels</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Complex Forms</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Labels
+      Complex Forms
     </h1>
   </header>
 
@@ -61,35 +61,42 @@
   
 
 
-    <p>Form elements need clear, descriptive, well-positioned labels, which should be explicitly associated with the form control. Such a label becomes a clickable area that can be used to put focus into the field either by mouse or by voice input software. It also ensures that screen readers announce the correct text when a field has focus.</p>
+    <figure class="todo">
+  <figcaption>Editor’s Note:</figcaption><div class="figcontent">
+<p>Currently this is content from <em>Form structure</em>, which is now split into <em>Groups of Fields</em> and <em>Complex Forms</em> (this page).</p>
 
-<!--
-- **Conformance:** Providing descriptive, well positioned associated labels is required to meet [SC 1.3.1 Info and Relationships](http://www.w3.org/WAI/WCAG20/quickref/20120103/#content-structure-separation-programmatic), [SC 2.4.6 Headings and Labels](http://www.w3.org/WAI/WCAG20/quickref/20120103/#navigation-mechanisms-descriptive), [SC 3.3.2 Labels and Instructions](http://www.w3.org/WAI/WCAG20/quickref/20120103/#minimize-error-cues) or [SC 4.1.2 Name, Role, Value](http://www.w3.org/WAI/WCAG20/quickref/20120103/#ensure-compat-rsv).
--->
+</div></figure>
+<ul>
+  <li><strong>What to do:</strong> Build a logical structure into your forms. Split long forms over several topic organised pages, and code related groups of controls using structural elements to define the topic they have in common.</li>
+  <li><strong>Why:</strong> Forms that are split into logical stages over several pages can make it easier for people with learning difficulties to concentrate. Grouping related fields can ensure that the topic as well as the individual label can be announced by screen readers.</li>
+  <li><strong>How:</strong> Plan any long form so that, wherever possible, it is presented in logical stages. Use <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements to give the overall topic of groups of form controls.</li>
+  <li><strong>Conformance:</strong> Required to meet <a href="http://www.w3.org/WAI/WCAG20/quickref/20120103/#content-structure-separation-programmatic">SC 1.3.1 Info and Relationships</a> and <a href="http://www.w3.org/WAI/WCAG20/quickref/20120103/#minimize-error-cues">SC 3.3.2 Labels and Instructions</a>.</li>
+</ul>
 
-<p>To maximize predictability, (e.g. for people using high screen magnification), radio button and checkbox labels must be to the right of the field, labels for all other fields must be positioned to the left of the field.</p>
+<h2 id="forms-spanning-multiple-pages">Forms spanning multiple pages</h2>
 
-<p>It’s essential that required field indicators, and any other important information, is kept within the label element: Screen readers will not read out <em>any text</em> that is outside explicitly associated labels.</p>
+<p>Some forms, such as for on-line purchasing are a typical example where topic division is almost essential. It presents fewer challenges when users have manageable stages to complete.</p>
 
-<h2 class="ex" id="explicitly-associated-labels">Explicitly associated labels</h2>
+<ul>
+  <li>Where a form spans several pages, the first stage should explain how many stages will need to be followed, and how users can find any help that may be provided along the way.</li>
+  <li>Within each stage, let users know their current position in the process, what to do for this stage, and provide a reminder about help messages or mandatory fields.</li>
+</ul>
 
-<p>To associate a label and its form control, the <code class="elem">&lt;label&gt;</code> element must have a <code class="attrib">for</code> attribute which exactly matches the value of an <code class="attrib">id</code> attribute in its related field.</p>
+<h2 class="ex" id="grouping-related-fields-with-fieldsets">Grouping related fields with fieldsets</h2>
+
+<p>The fieldset element is needed to establish relationships between groups of form fields, to help users to focus on the particular topic in hand.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<div>All fields marked (required) must be completed.</div>
 <form method="post" action="#">
-	<div>
-		<label for="firstname">First name: </label> <input type="text" name="firstname" id="firstname">
-	</div>
-	<div>
-		<label for="lastname">Last name: (required)</label> <input type="text" name="lastname" id="lastname">
-	</div>
-	<div>
-		<input type="checkbox" id="premium" name="premium"> <label for="premium">Premium Membership</label>
-	</div>
+<fieldset>
+<legend>I want to receive</legend>
+	<input type="checkbox" name="check1" id="check_1"> <label for="check_1">The weekly newsletter</label> <br>
+	<input type="checkbox" name="check2" id="check_2"> <label for="check_2">Offers from the company</label> <br>
+	<input type="checkbox" name="check3" id="check_3"> <label for="check_3">Offers from associated companies</label>
+</fieldset>
 </form>
 
 
@@ -97,75 +104,30 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
-	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span> <span class="na">id=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>Last name: (required)<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"lastname"</span> <span class="na">id=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"premium"</span> <span class="na">name=</span><span class="s">"premium"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"premium"</span><span class="nt">&gt;</span>Premium Membership<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
+<pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;fieldset&gt;</span>
+<span class="nt">&lt;legend&gt;</span>I want to receive<span class="nt">&lt;/legend&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"check1"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;br&gt;</span>
 
-</figure>
-<h2 class="ex" id="implicitly-associated-labels">Implicitly associated labels</h2>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"check2"</span> <span class="na">id=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>Offers from the company<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;br&gt;</span>
 
-<p>If adding an <code class="attrib">id</code> is not feasable (for example a huge amount of form fields and generating unique IDs would be too much effort), it is possible to wrap the <code class="elem">input</code> element into the <code class="elem">label</code> element.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<div>All fields marked (required) must be completed.</div>
-<form method="post" action="#">
-	<div>
-		<label>First name: <input type="text" name="firstname"></label>
-	</div>
-	<div>
-		<label>Last name: (required) <input type="text" name="lastname"></label>
-	</div>
-	<div>
-		<label><input type="checkbox" name="premium"> Premium Membership</label>
-	</div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;div&gt;</span>All fields marked (required) must be completed.<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"#"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label&gt;</span>
-			First name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label&gt;</span>
-			Last name: (required) <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"premium"</span><span class="nt">&gt;</span> Premium Membership
-		<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"check3"</span> <span class="na">id=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>Offers from associated companies<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </pre>
 
 </figure>
-<h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques:</h2>
+<h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques</h2>
+
+<p>The following WCAG 2.0 technique was used in the example above</p>
 
 <ul>
-  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/G131">G131: Providing descriptive labels</a>;</li>
-  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H44.html">H44: Using label elements to associate text labels with form controls;</a></li>
-  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H93">H93: Ensuring that id attributes are unique on a Web page;</a></li>
-  <li><a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/G162">G162: Positioning labels to maximize predictability of relationships</a>.</li>
+  <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H71.html">H71: Providing a description for groups of form controls using fieldset and legend elements</a>.</li>
 </ul>
 
 
@@ -175,10 +137,30 @@
   <ul>
     
       
-        <li class="prev">
-          <span><a class="" href="../"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Forms Concepts</span></span></a></span>
-        </li>
       
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+          <li class="prev">
+            <span><a class="" href="../error-messages/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Error Messages</span></span></a></span>
+          </li>
+        
+        
       
         
         
@@ -188,28 +170,8 @@
         
         
           <li class="next">
-            <span><a class="" href="../groups/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Groups of Fields</span></span></a></span>
+            <span><a class="" href="../tips/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Tips and FAQ</span></span></a></span>
           </li>
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
         
       
     
@@ -221,7 +183,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/labels.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/complex.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -242,7 +204,7 @@
         
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Labels</span></span></li>
+      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labels</span></a></li>
       
       
       
@@ -262,7 +224,7 @@
       
       
       
-      <li><a class="" href="../complex/"><span class="count"></span><span class="txt">Complex Forms</span></a></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Complex Forms</span></span></li>
       
       
       
