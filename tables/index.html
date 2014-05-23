@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../stylesheets/wai-act-eeb28aa1.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../stylesheets/wai-act-62ee1f25.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -94,27 +94,33 @@
 </ul>
 
 <div class="notes ">
-<p><strong>Note:</strong> The techniques in this tutorial should be applied only when a table is being used to display <em>data</em> in a grid; these techniques don’t apply to layout tables. You shouldn’t use tables for layout purposes. Instead, use Cascading Style Sheets (CSS) for visual presentation.</p>
+<p><strong>Note:</strong> This tutorial applies to tables used to display data in a grid. It doesn’t apply to layout tables. Tables shouldn’t be used for layout purposes. Instead, use Cascading Style Sheets (CSS) for visual presentation.</p>
 
 </div>
+<p>Some document formats other than HTML, such as PDF, may provide similar mechanisms to markup table structures. Most word processing applications do not provide such mechanisms to markup tables. Tables markup is also often lost when converting from one format to another, though some programs may provide functionality to assist converting table markup.</p>
+
 <h2 id="why-is-this-important">Why is this important?</h2>
 
-<p>Some people can determine the header cells of tabular data from the visual cues. However, screen reader users and people with user stylesheets might not get those visual cues. Therefore, header cells should be explicitly identified in the markup so that they are clear to everyone. Correctly marked up tables mean that:</p>
+<p>Tables without structural markup to differentiate between header and data cells, and to define the relationship between, them create accessibility barriers. Visual clues only are not sufficient to create an accessible table. With structural markup, headers and data cells can be programmatically determined by software, which means that:</p>
 
 <ul>
   <li>
-    <p><strong>People using a screen reader</strong> can have the row and column headers read aloud as they navigate through the table. Screen readers speak one cell at a time and can only distinguish header cells from data cells if they are properly marked up.</p>
+    <p><strong>People using screen readers</strong> can have the row and column headers read aloud as they navigate through the table. Screen readers speak one cell at a time and reference the associated header cells, so the user never loses context.</p>
   </li>
   <li>
-    <p><strong>People using user stylesheets</strong> can style the header cells and data cells differently to make them easier to distinguish.</p>
+    <p><strong>People using custom stylesheets</strong> can have header cells more prominently styled for easy recognition when there is a difference between the  elements used for header and data cells. People may also use stylesheets to present the information to read the data cells as lists below their corresponding headers rather than in a matrix.</p>
   </li>
 </ul>
+
+<p><div class="todo"></p>
 
 <h2 id="how-to-make-tables-accessible">How to make tables accessible</h2>
 
 <p>Accessible tables have their header cells marked up with <code>&lt;th&gt;</code> and their data cells marked up with <code>&lt;td&gt;</code>. For more complex tables, explicit associations may be needed using <code>scope</code> or <code>id</code> and <code>headers</code> attributes, so that they can be interpreted by assistive technologies.</p>
 
 <p>The structural coding can also be used to represent data in different ways, for example, by larger or different colored text or backgrounds, Braille, speech, and symbols. Many web authoring tools and content management systems (CMS) provide functions to define header cells during table creation without having to manually edit the code.</p>
+
+<p></div></p>
 
 
 
