@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-d30e4a2e.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-6031b7ae.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -63,15 +63,19 @@
 
     <p>A simple table has one header row, or a header row and header column. They are the first row and column of the table.</p>
 
-<p>Use header cell elements (<code>&lt;th&gt;</code>) to markup the header cells so that they are distinguishable from data cells and associated with the correct data cells. For example, in the <a href="#table-with-header-cells-in-the-top-row-and-first-column">second table below</a> “Closed” is meaningless on its own, but makes sense when it’s associated with time (the row header) and day (the column header).</p>
+<p>Use header cell elements (<code>&lt;th&gt;</code>) to markup the header cells so that they are distinguishable from data cells and associated with the correct data cells. For example, in the <a href="#table-with-header-cells-in-the-top-row-and-first-column">third example below</a> “Closed” is meaningless on its own, but makes sense when it’s associated with time (the row header) and day (the column header).</p>
 
-<p>Additionally, you can use the <a href="../caption-summary/"><code>&lt;caption&gt; element</code></a> to identify the table, which in some cases might be a WCAG 2.0 requirement.</p>
+<p>To explicitly associate header cells to data cells, it is usually useful to use the <code>scope</code> attribute. If the <code>scope</code> value is <code>row</code>, the heading is only a heading for other cells in this row, if the value is <code>col</code> it is the heading only for other cells in this column.</p>
 
-<p>If the table has only a header column, see the <a href="../irregular/#table-with-header-cells-in-one-column-only">first example of the Irregular Tables tutorial</a>.</p>
+<p>For more complex examples on the use of <code>scope</code>, see the <a href="../irregular/">Irregular Tables tutorial</a>.</p>
+
+<p>Additionally, you can use the <a href="../caption-summary/"><code>&lt;caption&gt;</code> element</a> to identify the table, which in some cases might be a WCAG 2.0 requirement.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
-<p>This table of concerts only needs the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
+<h3 class="ap" id="using-only-th-elements">Using only <code>&lt;th&gt;</code> elements</h3>
+
+<p>This table of concerts has the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
 
 
   <figure class="sample ">
@@ -124,25 +128,148 @@
 </figure>
 <p><a href="../examples/headertoprow/">Full code for “Table with header cells in the top row only”</a></p>
 
-<h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
+<h3 class="ap" id="explicitly-define-relation-with-the-scope-attribute">Explicitly define relation with the <code>scope</code> attribute</h3>
 
-<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells.</p>
+<p>While this table is looking visually the same as the one above, we have added <code>scope</code> attributes to be more explicit about the relation of the <code>&lt;th&gt;</code> cells. This helps assistive technology to give better instructions for the user.</p>
+
+<p>When a user selects the “Venue” header cell in the example above, some screen readers misinterpret the “Date” and “Event” header cell to be headers for this cell, too. They read “Data – Event – Venue” instead of “Venue”. Using <code>scope="col"</code> leads to the desired outcome.</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<p><strong>Concerts:</strong></p>
+<table>
+	<tr>
+		<th scope="col">Date</th>
+		<th scope="col">Event</th>
+		<th scope="col">Venue</th>
+	</tr>
+	<tr>
+		<td>12 Feb</td>
+		<td>Waltz with Strauss</td>
+		<td>Main Hall</td>
+	</tr>
+	<tr>
+		<td>24 Mar</td>
+		<td>The Obelisks</td>
+		<td>West Wing</td>
+	</tr>
+	<tr>
+		<td>14 Apr</td>
+		<td>The What</td>
+		<td>Main Hall</td>
+	</tr>
+</table>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Date<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Event<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Venue<span class="nt">&lt;/th&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span>12 Feb<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Waltz with Strauss<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Main Hall<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	[…]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+
+</figure>
+<p><a href="../examples/headertoprow/">Full code for “Table with header cells in the top row only”</a></p>
+
+<h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
+
+<p>This example has <code>&lt;th&gt;</code> elements for all cells in the left column of a table. As the heading cells are read in every line, the <code>scope</code> attribute with a value of <code>row</code> should be used on each <code>&lt;th&gt;</code> cell to ensure that it cannot be mistaken as a header for other cells in the same column. In the table below, Belgium should not be mistaken as the heading for France, Holland, etc.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <table>
+  <caption>
+    Capital cities
+  </caption>
+  <tr>
+    <th scope="row">Belgium</th>
+    <td>Brussels</td>
+  </tr>
+  <tr>
+    <th scope="row">France</th>
+    <td>Paris</td>
+  </tr>
+  <tr>
+    <th scope="row">Holland</th>
+    <td>Amsterdam</td>
+  </tr>
+  <tr>
+    <th scope="row">Luxembourg</th>
+    <td>Luxembourg</td>
+  </tr>
+  <tr>
+    <th scope="row">Spain</th>
+    <td>Madrid</td>
+  </tr>
+  <tr>
+    <th scope="row">UK</th>
+    <td>London</td>
+  </tr>
+</table>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>Capital cities<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Belgium<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Brussels<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>France<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Paris<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Holland<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Amsterdam<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  […]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+
+</figure>
+<p><a href="../examples/scope-simple/">Full code Example “Table with header cells in one column only”</a></p>
+
+<h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
+
+<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells, additionally we add <code>scope</code> attributes with the values <code>col</code> (to the top row header cells) and <code>row</code> (to the first column header cells).</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<p><strong>Delivery slots:</strong></p>
+
+<table>
 	<tr>
-		<th>Delivery slots</th>
-		<th>Monday</th>
-		<th>Tuesday</th>
-		<th>Wednesday</th>
-		<th>Thursday</th>
-		<th>Friday</th>
+		<td></td>
+		<th scope="col">Monday</th>
+		<th scope="col">Tuesday</th>
+		<th scope="col">Wednesday</th>
+		<th scope="col">Thursday</th>
+		<th scope="col">Friday</th>
 	</tr>
 	<tr>
-		<th>09:00 - 11:00</th>
+		<th scope="row">09:00 - 11:00</th>
 		<td>Closed</td>
 		<td>Open</td>
 		<td>Open</td>
@@ -150,7 +277,7 @@
 		<td>Closed</td>
 	</tr>
 	<tr>
-		<th>11:00 - 13:00</th>
+		<th scope="row">11:00 - 13:00</th>
 		<td>Open</td>
 		<td>Open</td>
 		<td>Closed</td>
@@ -158,7 +285,7 @@
 		<td>Closed</td>
 	</tr>
 	<tr>
-		<th>13:00 - 15:00</th>
+		<th scope="row">13:00 - 15:00</th>
 		<td>Open</td>
 		<td>Open</td>
 		<td>Open</td>
@@ -166,7 +293,7 @@
 		<td>Closed</td>
 	</tr>
 	<tr>
-		<th>15:00 - 17:00</th>
+		<th scope="row">15:00 - 17:00</th>
 		<td>Closed</td>
 		<td>Closed</td>
 		<td>Closed</td>
@@ -182,15 +309,15 @@
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;table&gt;</span>
 	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Delivery slots<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Delivery slots<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
 	<span class="nt">&lt;/tr&gt;</span>
 	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th&gt;</span>09:00 - 11:00<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>09:00 - 11:00<span class="nt">&lt;/th&gt;</span>
 		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
 		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
 		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
@@ -198,7 +325,7 @@
 		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
 	<span class="nt">&lt;/tr&gt;</span>
 	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th&gt;</span>11:00 - 13:00<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>11:00 - 13:00<span class="nt">&lt;/th&gt;</span>
 		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
 		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
 		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
@@ -406,7 +533,7 @@
         [DRAFT]
       
       
-      23 May 2014
+      11 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

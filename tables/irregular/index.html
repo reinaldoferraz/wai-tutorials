@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-d30e4a2e.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-6031b7ae.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -67,67 +67,6 @@
 
 <p>The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage should be clearly associated. Possible values for the <code>scope</code> attribute are <code>row</code>, <code>col</code>, <code>rowgroup</code> or <code>colgroup</code>.</p>
 
-<h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
-
-<p>This example has <code>&lt;th&gt;</code> elements for all cells in the left column of a table. Due to how some assistive technology works, the <code>scope</code> attribute with a value of <code>row</code> should be used on each <code>&lt;th&gt;</code> cell to ensure that it cannot be mistaken as a header for other cells in the same column. In the table below, Belgium should not be mistaken as the heading for France, Holland, etc.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<table>
-  <caption>
-    Capital cities
-  </caption>
-  <tr>
-    <th scope="row">Belgium</th>
-    <td>Brussels</td>
-  </tr>
-  <tr>
-    <th scope="row">France</th>
-    <td>Paris</td>
-  </tr>
-  <tr>
-    <th scope="row">Holland</th>
-    <td>Amsterdam</td>
-  </tr>
-  <tr>
-    <th scope="row">Luxembourg</th>
-    <td>Luxembourg</td>
-  </tr>
-  <tr>
-    <th scope="row">Spain</th>
-    <td>Madrid</td>
-  </tr>
-  <tr>
-    <th scope="row">UK</th>
-    <td>London</td>
-  </tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-  <span class="nt">&lt;caption&gt;</span>Capital cities<span class="nt">&lt;/caption&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Belgium<span class="nt">&lt;/th&gt;</span> <span class="nt">&lt;td&gt;</span>Brussels<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>France<span class="nt">&lt;/th&gt;</span> <span class="nt">&lt;td&gt;</span>Paris<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Holland<span class="nt">&lt;/th&gt;</span> <span class="nt">&lt;td&gt;</span>Amsterdam<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  […]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<p><a href="../examples/scope-simple/">Full code Example “Table with header cells in one column only”</a></p>
-
 <h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
 
 <p>In this table, the row header cells are in the second column rather than the first. The <code>&lt;th&gt;</code> cells in the second column have <code>scope="row"</code>  to ensure that data cells in the first columnand the data cells to the right of the headers are correctly associated.</p>
@@ -144,12 +83,12 @@
     <tr>
       <th><abbr title="Identification Number">ID</abbr></th>
       <th>Name</th>
-      <th>Jul</th>
-      <th>Aug</th>
-      <th>Sept</th>
-      <th>Oct</th>
-      <th>Nov</th>
-      <th>Dec</th>
+      <th>July</th>
+      <th>August</th>
+      <th>September</th>
+      <th>October</th>
+      <th>November</th>
+      <th>December</th>
     </tr>
   </thead>
 
@@ -233,9 +172,64 @@
 </figure>
 <p><a href="../examples/scope-offset/">Full code for “Table with an offset column of header cells”</a></p>
 
+<h2 class="ex" id="table-with-two-tier-headings">Table with two tier headings</h2>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table width="200" border="1">
+  <tr>
+    <td rowspan="2"></td>
+    <th colspan="2" scope="col">Sales US</th>
+    <th colspan="2" scope="col">Sales Europe</th>
+  </tr>
+  <tr>
+    <th scope="col">Actual</th>
+    <th scope="col">Budget</th>
+    <th scope="col">Actual</th>
+    <th scope="col">Budget</th>
+  </tr>
+  <tr>
+  <th scope="row">Compact&nbsp;cars</th>
+    <td>$30,000</td>
+    <td>$50,000</td>
+    <td>€80,000</td>
+    <td>€100,000</td>
+  </tr>
+  <tr>
+  <th scope="row">SUVs</th>
+    <td>$5,000</td>
+    <td>$10,000</td>
+    <td>€9,000</td>
+    <td>€12,000</td>
+  </tr>
+</table>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html">[…]
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Poster name<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Color<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"3"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Sizes available<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">rowspan=</span><span class="s">"3"</span> <span class="na">scope=</span><span class="s">"rowgroup"</span><span class="nt">&gt;</span>Zodiac<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td&gt;</span>Full color<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>A2<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>A3<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>A4<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+[…]
+</pre>
+
+</figure>
 <h2 class="ex" id="table-with-headers-spanning-multiple-rows-or-columns">Table with headers spanning multiple rows or columns</h2>
 
-<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns. <code>Colspan</code>, <code>rowspan</code>, and <code>colgroup</code> indicate the headers that span multiple rows and columns.</p>
+<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns. <code>Colgroup</code> and <code>rowgroup</code> indicate the headers that span multiple rows and columns.</p>
 
 <p>A <a href="../caption-summary/">summary</a> can be used to explicitly describe the layout of the table.</p>
 
@@ -504,7 +498,7 @@
         [DRAFT]
       
       
-      28 May 2014
+      11 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
