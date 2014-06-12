@@ -76,22 +76,22 @@
 
     <p>Data tables are used to organize data in grids.  Accessible tables need special HTML markup that indicates the difference between header cells and data cells, and also ties the two together. </p>
 
-<p>To make any table accessible, header cells must be marked up with <code>&lt;th&gt;</code> and data cells marked up with <code>&lt;td&gt;</code>. or more complex tables, explicit associations may be needed using <code>scope</code> or <code>id</code> and <code>headers</code> attributes, so that they can be interpreted by assistive technologies.</p>
+<p>To make any table accessible, header cells must be marked up with <code>&lt;th&gt;</code> and data cells marked up with <code>&lt;td&gt;</code>. For more complex tables, explicit associations may be needed using <code>scope</code> or <code>id</code> and <code>headers</code> attributes, so that they can be interpreted by assistive technologies.</p>
 
 <p>This tutorial shows you how to apply appropriate structural markup to tables.  It includes the following pages:</p>
 
 <ul class="withicons nobullets">
   <li>
-    <p><strong><a href="simple/">Simple tables<img alt=" typically have one header row and/or one header column" src="../img/img-simple-ebe2eaf7.png" /></a>:</strong> For simple tables, mark up header cells with <code>&lt;th&gt;</code> elements.</p>
+    <p><strong><a href="simple/">Simple tables<img alt=" typically have one header row and/or one header column" src="../img/img-simple-42bb160e.png" /></a>:</strong> For simple tables, mark up header cells with <code>&lt;th&gt;</code> elements and define their direction with the <code>scope</code> attribute’s <code>col</code> and <code>row</code> values.</p>
   </li>
   <li>
-    <p><strong><a href="irregular/">Irregular tables<img alt=" have some kind of headers that are expected at a different location" src="../img/img-irreg-7dc060a6.png" /></a>:</strong>  For tables where identifying header cells programmatically is ambiguous, markup header cells with the <code>scope</code> attribute.</p>
+    <p><strong><a href="irregular/">Irregular tables<img alt=" have some kind of headers that are expected at a different location" src="../img/img-irreg-61fcb546.png" /></a>:</strong>  For tables where identifying header cells programmatically is ambiguous, define column and row groups and set the range of header cells using the <code>scope</code> attribute with the <code>colgroup</code> and <code>rowgroup</code> values.</p>
   </li>
   <li>
     <p><strong><a href="multi-level/">Multi-level tables<img alt=" have multiple header cells associated per data cell, most of the time header cells need to be associated explicitly to the table cell" src="../img/img-multi-ced9ea68.png" /></a>:</strong>  For multi-level tables where a data cell is related to more than one header cell, markup each header cell with an <code>id</code> and each data cell with a <code>headers</code> attribute that lists all relevant header cell <code>id</code> values.</p>
   </li>
   <li>
-    <p><strong><a href="caption-summary/">Caption &amp; Summary</a>:</strong> Most tables benefit from a header-like caption to identify the overall topic of a table, and a summary to provide orientation or navigation hints in complex tables.</p>
+    <p><strong><a href="caption-summary/">Caption &amp; Summary<img alt="" src="../img/img-caption-103f0dce.png" /></a>:</strong> Most tables benefit from a header-like caption to identify the overall topic of a table, and a summary to provide orientation or navigation hints in complex tables.</p>
   </li>
 </ul>
 
@@ -239,7 +239,7 @@
         [DRAFT]
       
       
-      04 June 2014
+      12 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

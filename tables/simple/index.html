@@ -61,13 +61,9 @@
   
 
 
-    <p>A simple table has one header row, or a header row and header column. They are the first row and column of the table.</p>
+    <p>A simple table has one header row and/or a header column. They are usually in the first row and column of the table.</p>
 
-<p>Use header cell elements (<code>&lt;th&gt;</code>) to markup the header cells so that they are distinguishable from data cells and associated with the correct data cells. For example, in the <a href="#table-with-header-cells-in-the-top-row-and-first-column">third example below</a> “Closed” is meaningless on its own, but makes sense when it’s associated with time (the row header) and day (the column header).</p>
-
-<p>To explicitly associate header cells to data cells, it is usually useful to use the <code>scope</code> attribute. If the <code>scope</code> value is <code>row</code>, the heading is only a heading for other cells in this row, if the value is <code>col</code> it is the heading only for other cells in this column.</p>
-
-<p>For more complex examples on the use of <code>scope</code>, see the <a href="../irregular/">Irregular Tables tutorial</a>.</p>
+<p>Use <code>&lt;th&gt;</code> elements to markup the header cells so that they are distinguishable from the data cells. Due to current interpretation of tables by assistive technologies it is useful to use the <code>scope</code> attribute on simple tables. It’s used to declare the direction of the header cell. A <code>scope</code> value of <code>row</code> or <code>col</code> denotes that the header cell applies to the entire row or column, respectively. </p>
 
 <p>Additionally, you can use the <a href="../caption-summary/"><code>&lt;caption&gt;</code> element</a> to identify the table, which in some cases might be a WCAG 2.0 requirement.</p>
 
@@ -75,7 +71,9 @@
 
 <h3 class="ap" id="using-only-th-elements">Using only <code>&lt;th&gt;</code> elements</h3>
 
-<p>This table of concerts has the cells in the top row marked up as <code>&lt;th&gt;</code> cells. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
+<p>This table of concerts has the cells in the top row marked up as <code>&lt;th&gt;</code> cells without any <code>scope direction</code>. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
+
+<p>Some screen readers will read “Date – Event – Venue” on the “Venue” cell in the table below because the direction of the <code>&lt;th&gt;</code> elements is ambiguous.</p>
 
 
   <figure class="sample ">
@@ -130,9 +128,9 @@
 
 <h3 class="ap" id="explicitly-define-relation-with-the-scope-attribute">Explicitly define relation with the <code>scope</code> attribute</h3>
 
-<p>While this table is looking visually the same as the one above, we have added <code>scope</code> attributes to be more explicit about the relation of the <code>&lt;th&gt;</code> cells. This helps assistive technology to give better instructions for the user.</p>
+<p>While this table is looking visually the same as the one above, it uses  <code>scope</code> attributes to be more explicit about the direction of the <code>&lt;th&gt;</code> cells which helps assistive technology convey the relationship to the user.</p>
 
-<p>When a user selects the “Venue” header cell in the example above, some screen readers misinterpret the “Date” and “Event” header cell to be headers for this cell, too. They read “Data – Event – Venue” instead of “Venue”. Using <code>scope="col"</code> leads to the desired outcome.</p>
+<p>Using <code>scope="col"</code> on the <code>&lt;th&gt;</code> cells associates them to all the data cells in the column. Therefore, when a user selects the “Venue” cell, it is only read out as “Venue” rather than “Date – Event – Venue” as in the previous approach.</p>
 
 
   <figure class="sample ">
@@ -338,6 +336,111 @@
 
 </figure>
 <p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
+
+<h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
+
+<p>In this table, the row header cells are in the second column rather than the first. The <code>&lt;th&gt;</code> cells in the second column have <code>scope="row"</code>  to ensure that data cells on both sides are correctly associated.</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<table>
+  <caption>
+    Holidays taken in the last six months
+  </caption >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">July</th>
+      <th scope="col">August</th>
+      <th scope="col">September</th>
+      <th scope="col">October</th>
+      <th scope="col">November</th>
+      <th scope="col">December</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>215</td>
+      <th scope="row">Abel</th>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+
+    <tr>
+      <td>231</td>
+      <th scope="row">Annette </th>
+      <td>0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+
+    <tr>
+      <td>173</td>
+      <th scope="row">Bernard</th>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>141</td>
+      <th scope="row">Gerald</th>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
+    </tr>
+
+    <tr>
+      <td>99</td>
+      <th scope="row">Michael</th>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html">[…]
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;td&gt;</span>215<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Abel<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+[…]
+</pre>
+
+</figure>
+<p><a href="../examples/scope-offset/">Full code for “Table with an offset column of header cells”</a></p>
 
 
 
