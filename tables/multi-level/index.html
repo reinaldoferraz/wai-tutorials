@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-6031b7ae.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-9381b14c.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,16 +61,20 @@
   
 
 
-    <p>Multi-level tables are too complex to identify a strict horizontal or vertical association between header and data cells. The relationship between those cells should be defined by giving each <code>&lt;th&gt;</code> cell a unique <code>id</code> attribute, and each <code>&lt;td&gt;</code> a <code>headers</code> attribute. That <code>headers</code> attribute lists related <code>id</code> values, separated by spaces. Tables that should be marked up this way include:</p>
+    <p>Multi-level tables are too complex to identify a strict horizontal or vertical association between header and data cells. </p>
+
+<p>To associate a data cell with a header cell, each header cell has an (document-wide) unique <code>id</code>. Data cells that refer to a header cell have a <code>headers</code> attibute that lists the <code>id</code> values of those header cells, separated by spaces. </p>
+
+<p>Tables that should be marked up this way include:</p>
 
 <ul>
-  <li>Where column headers are repeated or changed part-way through the table.</li>
-  <li>Those with three or more header cells related to each data cell.</li>
+  <li>Tables with column headers that repeat or change part-way through the table.</li>
+  <li>Tables with three or more header cells associated to each data cell.</li>
 </ul>
 
-<p>In many cases it is worth considering ways to restructure the information to the tables to make them less complex for all readers, for example by separating the information in smaller, more manageable tables.</p>
+<p>Multi-level tables may also need to have a caption to identify it and a summary to describe the layout of the table, see <a href="../caption-summary/">Caption &amp; Summary</a>.</p>
 
-<p>Multi-level tables should have <a href="../caption-summary/">a caption and a summary</a> to describe the layout of the table.</p>
+<p>In many cases it is worth considering ways to restructure the information in such tables to make them less complex for all readers. For example by splitting the information in smaller, more manageable tables.</p>
 
 <h2 class="ex" id="table-with-multiple-column-headers-in-each-column">Table with multiple column headers in each column</h2>
 
@@ -324,7 +328,7 @@
 
 <h2 class="ex" id="split-up-multi-level-tables">Split up multi-level tables</h2>
 
-<p>It’s often possible to split up a complex table into multiple simple tables, which is usually better for users and easier for coding. The two tables below provide the same information as the mutli-level table in <a href="#table-with-three-headers-related-to-each-data-cell">the example above</a>. Also, simple tables are much better supported by WYSIWYG editors (“What you see is what you get”).</p>
+<p>The two tables below provide the same information as the mutli-level table in <a href="#table-with-three-headers-related-to-each-data-cell">the example above</a>. This makes the information easier to understand by everyone and easier to code, too. Also, simple tables are much better supported by WYSIWYG editors (“What you see is what you get”).</p>
 
 
   <figure class="sample ">
@@ -678,7 +682,7 @@
         [DRAFT]
       
       
-      04 June 2014
+      12 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

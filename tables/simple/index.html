@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-6031b7ae.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-9381b14c.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,19 +61,19 @@
   
 
 
-    <p>A simple table has one header row and/or a header column. They are usually in the first row and column of the table.</p>
+    <p>A simple table has one header row and/or a header column. They are usually in the first row and column of the table and don’t span columns/rows.</p>
 
 <p>Use <code>&lt;th&gt;</code> elements to markup the header cells so that they are distinguishable from the data cells. Due to current interpretation of tables by assistive technologies it is useful to use the <code>scope</code> attribute on simple tables. It’s used to declare the direction of the header cell. A <code>scope</code> value of <code>row</code> or <code>col</code> denotes that the header cell applies to the entire row or column, respectively. </p>
 
-<p>Additionally, you can use the <a href="../caption-summary/"><code>&lt;caption&gt;</code> element</a> to identify the table, which in some cases might be a WCAG 2.0 requirement.</p>
+<p>Additionally, you can use add a <a href="../caption-summary/">caption</a> to identify the table in a document,  which is particularly useful for screen-reader users browsing the web page in “tables mode”. This is a way to meet WCAG 2.0 requirements in specific situations.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
 <h3 class="ap" id="using-only-th-elements">Using only <code>&lt;th&gt;</code> elements</h3>
 
-<p>This table of concerts has the cells in the top row marked up as <code>&lt;th&gt;</code> cells without any <code>scope direction</code>. This is partly because it is such a small table and partly because the data itself is distinctly different in each column.</p>
+<p>This table of concerts has the cells in the first row marked up as <code>&lt;th&gt;</code> cells without any <code>scope</code> direction. Some screen readers will read “Date – Event – Venue” on the “Venue” cell in the table below because the direction of the <code>&lt;th&gt;</code> elements is ambiguous. </p>
 
-<p>Some screen readers will read “Date – Event – Venue” on the “Venue” cell in the table below because the direction of the <code>&lt;th&gt;</code> elements is ambiguous.</p>
+<p>This is acceptable because it is such a small table and the data itself is distinctly different in each column.</p>
 
 
   <figure class="sample ">
@@ -636,7 +636,7 @@
         [DRAFT]
       
       
-      11 June 2014
+      12 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
