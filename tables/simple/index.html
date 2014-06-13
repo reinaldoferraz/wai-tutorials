@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Simple Tables
+  Small Simple Tables
   
     
        &bullet; Tables
@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-9381b14c.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-18cadbc0.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Tables</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Simple Tables</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Small Simple Tables</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Simple Tables
+      Small Simple Tables
     </h1>
   </header>
 
@@ -61,19 +61,15 @@
   
 
 
-    <p>A simple table has one header row and/or a header column. They are usually in the first row and column of the table and don’t span columns/rows.</p>
+    <p>A small simple table has one header row and not more than about 5 columns.</p>
 
-<p>Use <code>&lt;th&gt;</code> elements to markup the header cells so that they are distinguishable from the data cells. Due to current interpretation of tables by assistive technologies it is useful to use the <code>scope</code> attribute on simple tables. It’s used to declare the direction of the header cell. A <code>scope</code> value of <code>row</code> or <code>col</code> denotes that the header cell applies to the entire row or column, respectively. </p>
-
-<p>Additionally, you can use add a <a href="../caption-summary/">caption</a> to identify the table in a document,  which is particularly useful for screen-reader users browsing the web page in “tables mode”. This is a way to meet WCAG 2.0 requirements in specific situations.</p>
+<p>Use <code>&lt;th&gt;</code> elements to markup the header cells so that they are distinguishable from the data cells.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
-<h3 class="ap" id="using-only-th-elements">Using only <code>&lt;th&gt;</code> elements</h3>
-
 <p>This table of concerts has the cells in the first row marked up as <code>&lt;th&gt;</code> cells without any <code>scope</code> direction. Some screen readers will read “Date – Event – Venue” on the “Venue” cell in the table below because the direction of the <code>&lt;th&gt;</code> elements is ambiguous. </p>
 
-<p>This is acceptable because it is such a small table and the data itself is distinctly different in each column.</p>
+<p>This is acceptable because it is such a small table and the data itself is distinctly different in each column. See the first example in <a href="../simple-large/">large simple tables</a> for advice on explicitly defining header directions.</p>
 
 
   <figure class="sample ">
@@ -124,324 +120,6 @@
 </pre>
 
 </figure>
-<p><a href="../examples/headertoprow/">Full code for “Table with header cells in the top row only”</a></p>
-
-<h3 class="ap" id="explicitly-define-relation-with-the-scope-attribute">Explicitly define relation with the <code>scope</code> attribute</h3>
-
-<p>While this table is looking visually the same as the one above, it uses  <code>scope</code> attributes to be more explicit about the direction of the <code>&lt;th&gt;</code> cells which helps assistive technology convey the relationship to the user.</p>
-
-<p>Using <code>scope="col"</code> on the <code>&lt;th&gt;</code> cells associates them to all the data cells in the column. Therefore, when a user selects the “Venue” cell, it is only read out as “Venue” rather than “Date – Event – Venue” as in the previous approach.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<p><strong>Concerts:</strong></p>
-<table>
-	<tr>
-		<th scope="col">Date</th>
-		<th scope="col">Event</th>
-		<th scope="col">Venue</th>
-	</tr>
-	<tr>
-		<td>12 Feb</td>
-		<td>Waltz with Strauss</td>
-		<td>Main Hall</td>
-	</tr>
-	<tr>
-		<td>24 Mar</td>
-		<td>The Obelisks</td>
-		<td>West Wing</td>
-	</tr>
-	<tr>
-		<td>14 Apr</td>
-		<td>The What</td>
-		<td>Main Hall</td>
-	</tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Date<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Event<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Venue<span class="nt">&lt;/th&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;td&gt;</span>12 Feb<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Waltz with Strauss<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Main Hall<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	[…]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<p><a href="../examples/headertoprow/">Full code for “Table with header cells in the top row only”</a></p>
-
-<h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
-
-<p>This example has <code>&lt;th&gt;</code> elements for all cells in the left column of a table. As the heading cells are read in every line, the <code>scope</code> attribute with a value of <code>row</code> should be used on each <code>&lt;th&gt;</code> cell to ensure that it cannot be mistaken as a header for other cells in the same column. In the table below, Belgium should not be mistaken as the heading for France, Holland, etc.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<table>
-  <caption>
-    Capital cities
-  </caption>
-  <tr>
-    <th scope="row">Belgium</th>
-    <td>Brussels</td>
-  </tr>
-  <tr>
-    <th scope="row">France</th>
-    <td>Paris</td>
-  </tr>
-  <tr>
-    <th scope="row">Holland</th>
-    <td>Amsterdam</td>
-  </tr>
-  <tr>
-    <th scope="row">Luxembourg</th>
-    <td>Luxembourg</td>
-  </tr>
-  <tr>
-    <th scope="row">Spain</th>
-    <td>Madrid</td>
-  </tr>
-  <tr>
-    <th scope="row">UK</th>
-    <td>London</td>
-  </tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-  <span class="nt">&lt;caption&gt;</span>Capital cities<span class="nt">&lt;/caption&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Belgium<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Brussels<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>France<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Paris<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Holland<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Amsterdam<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  […]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<p><a href="../examples/scope-simple/">Full code Example “Table with header cells in one column only”</a></p>
-
-<h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
-
-<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells, additionally we add <code>scope</code> attributes with the values <code>col</code> (to the top row header cells) and <code>row</code> (to the first column header cells).</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<p><strong>Delivery slots:</strong></p>
-
-<table>
-	<tr>
-		<td></td>
-		<th scope="col">Monday</th>
-		<th scope="col">Tuesday</th>
-		<th scope="col">Wednesday</th>
-		<th scope="col">Thursday</th>
-		<th scope="col">Friday</th>
-	</tr>
-	<tr>
-		<th scope="row">09:00 - 11:00</th>
-		<td>Closed</td>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th scope="row">11:00 - 13:00</th>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th scope="row">13:00 - 15:00</th>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th scope="row">15:00 - 17:00</th>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Open</td>
-		<td>Open</td>
-	</tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Delivery slots<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>09:00 - 11:00<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>11:00 - 13:00<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	[…]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
-
-<h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
-
-<p>In this table, the row header cells are in the second column rather than the first. The <code>&lt;th&gt;</code> cells in the second column have <code>scope="row"</code>  to ensure that data cells on both sides are correctly associated.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<table>
-  <caption>
-    Holidays taken in the last six months
-  </caption >
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">July</th>
-      <th scope="col">August</th>
-      <th scope="col">September</th>
-      <th scope="col">October</th>
-      <th scope="col">November</th>
-      <th scope="col">December</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>215</td>
-      <th scope="row">Abel</th>
-      <td>5</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-    </tr>
-
-    <tr>
-      <td>231</td>
-      <th scope="row">Annette </th>
-      <td>0</td>
-      <td>5</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>6</td>
-    </tr>
-
-    <tr>
-      <td>173</td>
-      <th scope="row">Bernard</th>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-
-    <tr>
-      <td>141</td>
-      <th scope="row">Gerald</th>
-      <td>0</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>8</td>
-    </tr>
-
-    <tr>
-      <td>99</td>
-      <th scope="row">Michael</th>
-      <td>8</td>
-      <td>8</td>
-      <td>8</td>
-      <td>8</td>
-      <td>0</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html">[…]
-<span class="nt">&lt;tr&gt;</span>
-  <span class="nt">&lt;td&gt;</span>215<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Abel<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;td&gt;</span>0<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
-<span class="nt">&lt;/tr&gt;</span>
-[…]
-</pre>
-
-</figure>
-<p><a href="../examples/scope-offset/">Full code for “Table with an offset column of header cells”</a></p>
-
 
 
 <div role="techniques">
@@ -546,8 +224,12 @@
         
         
           <li class="next">
-            <span><a class="" href="../irregular/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Complex: Irregular</span></span></a></span>
+            <span><a class="" href="../simple-large/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Large Simple Tables</span></span></a></span>
           </li>
+        
+      
+        
+        
         
       
         
@@ -592,11 +274,15 @@
         
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Simple Tables</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Small Simple Tables</span></span></li>
       
       
       
-      <li><a class="" href="../irregular/"><span class="count"></span><span class="txt">Complex: Irregular</span></a></li>
+      <li><a class="" href="../simple-large/"><span class="count"></span><span class="txt">Large Simple Tables</span></a></li>
+      
+      
+      
+      <li><a class="" href="../irregular/"><span class="count"></span><span class="txt">Complex: Single-level</span></a></li>
       
       
       
@@ -636,7 +322,7 @@
         [DRAFT]
       
       
-      12 June 2014
+      13 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
