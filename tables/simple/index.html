@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Small Simple Tables
+  Simple Tables
   
     
        &bullet; Tables
@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-2adca9ba.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-faa0b350.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Tables</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Small Simple Tables</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Simple Tables</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Small Simple Tables
+      Simple Tables
     </h1>
   </header>
 
@@ -61,15 +61,15 @@
   
 
 
-    <p>A small simple table has one header row and not more than about 5 columns.</p>
+    <p>The content of a simple table is so descriptive on its own, that only a header row is needed to give the user an impression of the data in the table. <code>&lt;th&gt;</code> elements are used to markup the header cells so that they are distinguishable from the data cells.</p>
 
-<p>Use <code>&lt;th&gt;</code> elements to markup the header cells so that they are distinguishable from the data cells.</p>
+<p>If the table is larger or its content is more ambiguous, the <code>scope</code> attribute should be used to avoid confusion, see <a href="../multi-directional/">Directional Tables</a>;</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
 <p>This table of concerts has the cells in the first row marked up as <code>&lt;th&gt;</code> cells without any <code>scope</code> direction. Some screen readers will read “Date – Event – Venue” on the “Venue” cell in the table below because the direction of the <code>&lt;th&gt;</code> elements is ambiguous. </p>
 
-<p>This is acceptable because it is such a small table and the data itself is distinctly different in each column. See the first example in <a href="../simple-large/">large simple tables</a> for advice on explicitly defining header directions.</p>
+<p>This is only acceptable because it is such a small table and the data itself is distinctly different in each column.</p>
 
 
   <figure class="sample ">
@@ -83,17 +83,17 @@
 		<th>Venue</th>
 	</tr>
 	<tr>
-		<td>12 Feb</td>
+		<td>12 February</td>
 		<td>Waltz with Strauss</td>
 		<td>Main Hall</td>
 	</tr>
 	<tr>
-		<td>24 Mar</td>
+		<td>24 March</td>
 		<td>The Obelisks</td>
 		<td>West Wing</td>
 	</tr>
 	<tr>
-		<td>14 Apr</td>
+		<td>14 April</td>
 		<td>The What</td>
 		<td>Main Hall</td>
 	</tr>
@@ -224,7 +224,7 @@
         
         
           <li class="next">
-            <span><a class="" href="../simple-large/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Large Simple Tables</span></span></a></span>
+            <span><a class="" href="../multi-directional/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Multi-Directional Tables</span></span></a></span>
           </li>
         
       
@@ -274,19 +274,19 @@
         
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Small Simple Tables</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Simple Tables</span></span></li>
       
       
       
-      <li><a class="" href="../simple-large/"><span class="count"></span><span class="txt">Large Simple Tables</span></a></li>
+      <li><a class="" href="../multi-directional/"><span class="count"></span><span class="txt">Multi-Directional Tables</span></a></li>
       
       
       
-      <li><a class="" href="../irregular/"><span class="count"></span><span class="txt">Complex: Single-level</span></a></li>
+      <li><a class="" href="../irregular/"><span class="count"></span><span class="txt">Complex Irregular Tables</span></a></li>
       
       
       
-      <li><a class="" href="../multi-level/"><span class="count"></span><span class="txt">Complex: Multi-level</span></a></li>
+      <li><a class="" href="../multi-level/"><span class="count"></span><span class="txt">Complex Multi-level Tables</span></a></li>
       
       
       
@@ -322,7 +322,7 @@
         [DRAFT]
       
       
-      13 June 2014
+      18 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
@@ -348,7 +348,7 @@
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-2fb320b2.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-8c7f6003.js" type="text/javascript"></script>
 	</body>
 </html>
 

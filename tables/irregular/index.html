@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Single-level (Irregular) Tables
+  Irregular Tables
   
     
        &bullet; Tables
@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-2adca9ba.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-faa0b350.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Tables</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Single-level (Irregular) Tables</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Irregular Tables</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Single-level (Irregular) Tables
+      Irregular Tables
     </h1>
   </header>
 
@@ -61,11 +61,9 @@
   
 
 
-    <p>MORE CONCEPTUAL TALKING ON TABLES!</p>
+    <p>Irregular tables’ header cells that span multiple columns or rows. The <code>scope</code> attribute can be used to define the range of data cells that are covered by a header cell.</p>
 
-<p>Additionally to the direction (see <a href="../simple/">large simple tables</a>), the <code>scope</code> attribute can be used to define the range of data cells that are covered by a header cell. A header cell that spans three columns and has the <code>scope</code> value <code>colgroup</code> only applies to the data cells in the three columns that it spans. <code>rowgroup</code> works the same way for table headers that span multiple rows.</p>
-
-<p>The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
+<p>For example, a header cell that spans three columns, and has the <code>scope</code> value <code>colgroup</code>, only applies to the data cells in the three columns that it spans. <code>rowgroup</code> works the same way for table headers that span multiple rows.</p>
 
 <p>To be able to associate a table header cell to a column group and/or row group, the groups have to be defined first:</p>
 
@@ -73,12 +71,14 @@
   <li>A column group is defined using the <code>&lt;colgroup&gt;</code> element in the table.</li>
   <li>A row group is defined by the <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code> and <code>&lt;tbody&gt;</code> elements.
     <ul>
-      <li>If no row group is defined in the markup, the whole table is a row group. </li>
       <li><code>&lt;thead&gt;</code> and  <code>&lt;tfoot&gt;</code> elements can be used once.</li>
       <li>Every <code>&lt;tbody&gt;</code> element defines a row group.</li>
     </ul>
   </li>
+  <li>If neither a column nor a row group is defined in the markup, the whole table is grouped.</li>
 </ul>
+
+<p>The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
 
 <h2 class="ex" id="table-with-two-tier-headings">Table with two tier headings</h2>
 
@@ -94,8 +94,8 @@
   <colgroup span="2"></colgroup>
   <tr>
     <td rowspan="2"></td>
-    <th colspan="2" scope="colgroup">Sales US</th>
-    <th colspan="2" scope="colgroup">Sales Europe</th>
+    <th colspan="2" scope="colgroup">Mars</th>
+    <th colspan="2" scope="colgroup">Venus</th>
   </tr>
   <tr>
     <th scope="col">Actual</th>
@@ -104,18 +104,18 @@
     <th scope="col">Budget</th>
   </tr>
   <tr class="numbers">
-    <th scope="row">Compact&nbsp;cars</th>
-    <td>$&nbsp;300,000</td>
-    <td>$&nbsp;500,000</td>
-    <td>€&nbsp;800,000</td>
-    <td>€&nbsp;1,000,000</td>
+    <th scope="row">Teddy&nbsp;Bears</th>
+    <td>¤&nbsp;300,000</td>
+    <td>¤&nbsp;500,000</td>
+    <td>¤&nbsp;800,000</td>
+    <td>¤&nbsp;1,000,000</td>
   </tr>
   <tr class="numbers">
-    <th scope="row">SUVs</th>
-    <td>$&nbsp;50,000</td>
-    <td>$&nbsp;100,000</td>
-    <td>€&nbsp;90,000</td>
-    <td>€&nbsp;120,000</td>
+    <th scope="row">Board&nbsp;Games</th>
+    <td>¤&nbsp;50,000</td>
+    <td>¤&nbsp;100,000</td>
+    <td>¤&nbsp;90,000</td>
+    <td>¤&nbsp;120,000</td>
   </tr>
 </table>
 
@@ -142,11 +142,11 @@
   <span class="nt">&lt;/thead&gt;</span>
   <span class="nt">&lt;tbody&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Compact cars<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;td&gt;</span>$ 300,000<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>$ 500,000<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>€ 800,000<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>€ 1,000,000<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Product 1<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;td&gt;</span>¤ 300,000<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>¤ 500,000<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>¤ 800,000<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>¤ 1,000,000<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
     […]
   <span class="nt">&lt;/tbody&gt;</span>
@@ -156,7 +156,7 @@
 </figure>
 <h2 class="ex" id="table-with-headers-spanning-multiple-rows-or-columns">Table with headers spanning multiple rows or columns</h2>
 
-<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns. <code>Colgroup</code> and <code>rowgroup</code> indicate that the headers belong to their column or row group – defined by the <code>&lt;colgroup&gt;</code> and <code>&lt;tbody&gt;</code> elements.</p>
+<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns. <code>colgroup</code> and <code>rowgroup</code> indicate that the headers belong to their column or row group – defined by the <code>&lt;colgroup&gt;</code> and <code>&lt;tbody&gt;</code> elements.</p>
 
 <p>Due to the complexity of the table a <a href="../caption-summary/">summary technique</a> should be used to explicitly describe the layout of the table.</p>
 
@@ -374,7 +374,7 @@
         
         
           <li class="prev">
-            <span><a class="" href="../simple-large/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Large Simple Tables</span></span></a></span>
+            <span><a class="" href="../multi-directional/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Multi-Directional Tables</span></span></a></span>
           </li>
         
         
@@ -387,7 +387,7 @@
         
         
           <li class="next">
-            <span><a class="" href="../multi-level/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Complex: Multi-level</span></span></a></span>
+            <span><a class="" href="../multi-level/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Complex Multi-level Tables</span></span></a></span>
           </li>
         
       
@@ -429,19 +429,19 @@
         
       
       
-      <li><a class="" href="../simple/"><span class="count"></span><span class="txt">Small Simple Tables</span></a></li>
+      <li><a class="" href="../simple/"><span class="count"></span><span class="txt">Simple Tables</span></a></li>
       
       
       
-      <li><a class="" href="../simple-large/"><span class="count"></span><span class="txt">Large Simple Tables</span></a></li>
+      <li><a class="" href="../multi-directional/"><span class="count"></span><span class="txt">Multi-Directional Tables</span></a></li>
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Complex: Single-level</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Complex Irregular Tables</span></span></li>
       
       
       
-      <li><a class="" href="../multi-level/"><span class="count"></span><span class="txt">Complex: Multi-level</span></a></li>
+      <li><a class="" href="../multi-level/"><span class="count"></span><span class="txt">Complex Multi-level Tables</span></a></li>
       
       
       
@@ -477,7 +477,7 @@
         [DRAFT]
       
       
-      13 June 2014
+      18 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
@@ -503,7 +503,7 @@
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-2fb320b2.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-8c7f6003.js" type="text/javascript"></script>
 	</body>
 </html>
 
