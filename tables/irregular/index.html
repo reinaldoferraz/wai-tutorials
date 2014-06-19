@@ -87,8 +87,7 @@
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
-  <div class="box-content"><style>.numbers td {text-align:right;font-variant-numeric: tabular-nums; whitespace: no-wrap;}</style>
-<table>
+  <div class="box-content"><table class="numbers">
   <colgroup></colgroup>
   <colgroup span="2"></colgroup>
   <colgroup span="2"></colgroup>
@@ -98,24 +97,24 @@
     <th colspan="2" scope="colgroup">Venus</th>
   </tr>
   <tr>
-    <th scope="col">Actual</th>
-    <th scope="col">Budget</th>
-    <th scope="col">Actual</th>
-    <th scope="col">Budget</th>
+    <th scope="col">Produced</th>
+    <th scope="col">Sold</th>
+    <th scope="col">Produced</th>
+    <th scope="col">Sold</th>
   </tr>
-  <tr class="numbers">
+  <tr>
     <th scope="row">Teddy&nbsp;Bears</th>
-    <td>¤&nbsp;300,000</td>
-    <td>¤&nbsp;500,000</td>
-    <td>¤&nbsp;800,000</td>
-    <td>¤&nbsp;1,000,000</td>
+    <td>50,000</td>
+    <td>30,000</td>
+    <td>100,000</td>
+    <td>80,000</td>
   </tr>
-  <tr class="numbers">
+  <tr>
     <th scope="row">Board&nbsp;Games</th>
-    <td>¤&nbsp;50,000</td>
-    <td>¤&nbsp;100,000</td>
-    <td>¤&nbsp;90,000</td>
-    <td>¤&nbsp;120,000</td>
+    <td>10,000</td>
+    <td>5,000</td>
+    <td>12,000</td>
+    <td>9,000</td>
   </tr>
 </table>
 
@@ -127,29 +126,31 @@
   <span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span>
   <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
   <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
-  <span class="nt">&lt;thead&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;td</span> <span class="na">rowspan=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/td&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Sales US<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Sales Europe<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Actual<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Budget<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Actual<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Budget<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;/thead&gt;</span>
-  <span class="nt">&lt;tbody&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Product 1<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;td&gt;</span>¤ 300,000<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>¤ 500,000<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>¤ 800,000<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>¤ 1,000,000<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-    […]
-  <span class="nt">&lt;/tbody&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">rowspan=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Mars<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">scope=</span><span class="s">"colgroup"</span><span class="nt">&gt;</span>Venus<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Produced<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Sold<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Produced<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Sold<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Teddy Bears<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>50,000<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>30,000<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>100,000<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>80,000<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Board Games<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>10,000<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>5,000<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>12,000<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>9,000<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 </pre>
 
@@ -477,7 +478,7 @@
         [DRAFT]
       
       
-      18 June 2014
+      19 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
