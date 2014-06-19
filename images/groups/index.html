@@ -89,7 +89,9 @@
 </figure>
 <h2 class="ex" id="captions-for-image-groups">Captions for Image Groups</h2>
 
-<p>If a group of images has a caption, a <code>figure</code> element can be used to group those images. If individual images also have captions, <code>figure</code> and <code>figcaption</code> elements can be nested.</p>
+<p>If a group of images has a caption, a <code>figure</code> element can be used to group those images. The WAI-ARIA attribute <code>role</code> with the value of <code>group</code> to indicate grouping to assistive technology. If individual images also have captions, <code>figure</code> and <code>figcaption</code> elements can be nested.</p>
+
+<p>The support for this particular WAI-ARIA attribute and value varies.</p>
 
 
   <figure class="sample ">
@@ -148,10 +150,6 @@ alt="The castle lies in ruins, the original tower all that remains in one piece.
 </pre>
 
 </figure>
-<div class="notes ">
-<p><strong>Note:</strong> We also use the WAI-ARIA attribute <code>role</code> with the value of <code>group</code> to indicate grouping to assistive technology. The support for this particular WAI-ARIA attribute and value varies. </p>
-
-</div>
 
 
 <div role="techniques">
