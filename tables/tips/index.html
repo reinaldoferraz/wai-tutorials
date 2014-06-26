@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Tips and Frequently Asked Questions (FAQ)
+  Tips
   
     
        &bullet; Tables
@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-98f27a2a.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-f3cf44ad.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Tables</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and Frequently Asked Questions (FAQ)</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Tips and Frequently Asked Questions (FAQ)
+      Tips
     </h1>
   </header>
 
@@ -93,26 +93,13 @@
     <p><strong>Styling header cells:</strong> You should use <code>&lt;th&gt;</code> elements for header cells, not a <code>&lt;td&gt;</code> with different styling. It is helpful to differentiate <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells visually. For example, on these tutorial pages header cells have a dark gray background.</p>
   </li>
   <li>
-    <p><strong>On mobile:</strong> Due to the layout model of tables, they sometimes don’t fit on small screens. In such circumstances it’s important that the table isn’t cut of (for example by using <code>overflow: hidden</code> in CSS). By using <code>overflow: scroll</code> on an element wrapping a wide table, the table won’t break the layout of the page while being completely accessible.</p>
-  </li>
-</ul>
-
-<div class="notes ">
-<p><strong>A note on layout tables:</strong> You shouldn’t use tables for layout purposes. Use Cascading Style Sheets (CSS) for layout. If you do use layout tables, don’t use any of the structural elements and attributes discussed in this tutorial, and do add <code>role="presentation"</code> to the <code>&lt;table&gt;</code> element.</p>
-
-</div>
-<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
-
-<ul>
-  <li>
-    <p><strong>I’ve used CSS to give a different background color for odd and even rows in my tables. Is this OK?</strong></p>
-
-    <p>It certainly is. This can be a real help to people who have reading difficulties or who use screen magnification to enlarge text. It acts as a visual guide. You could even consider highlighting the cell (and row/column) on mouseover and keyboard focus to help people see where they are. Make sure that the contrast ratio between the text and background is good for both headers and data cells. <a href="http://www.w3.org/WAI/eval/preliminary#contrast">Here is how to check your contrast ratio.</a></p>
+    <p><strong>Zebra tables:</strong> Styling the even and odd rows in a different way can be a real help to people who have reading difficulties or who use screen magnification to enlarge text. It acts as a visual guide. Highlighting the cell (and row/column) on mouseover and keyboard focus to help people see where they are also helps. Make sure that the contrast ratio between the text and background is good for both headers and data cells. <a href="http://www.w3.org/WAI/eval/preliminary#contrast">Here is how to check your contrast ratio.</a></p>
   </li>
   <li>
-    <p><strong>My site uses a table layout to position information on pages. A complete redesign using CSS layout is planned for next year. Is there something I can do right now to make the layout tables more accessible?</strong></p>
-
-    <p>Yes there is. You can give the <code>&lt;table&gt;</code> element a WAI-ARIA <code>role</code> attribute of <code>presentation</code> (<code>role="presentation"</code>). This will hide the table markup from most screen readers and browsers that support WAI-ARIA.</p>
+    <p><strong>Flexibility:</strong> Due to the layout model of tables, they sometimes don’t fit on screens that are small or if the user is using zoom. In such circumstances it’s important that the table isn’t cut off (for example by using <code>overflow: hidden</code> in CSS). In these tutorials <code>overflow: scroll</code> is applied to an element wrapping the table so users can scroll through the table horizontally but there are many more options to display table in such circumstances.</p>
+  </li>
+  <li>
+    <p><strong>Tables for Layout:</strong> You shouldn’t use tables for layout purposes. Use Cascading Style Sheets (CSS) for layout. If you do use layout tables, don’t use any of the structural elements and attributes discussed in this tutorial, and do add <code>role="presentation"</code> to the <code>&lt;table&gt;</code> element.</p>
   </li>
 </ul>
 
@@ -208,7 +195,7 @@
       
       
       
-      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and FAQ</span></span></li>
+      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips</span></span></li>
       
       
       
@@ -236,7 +223,7 @@
         [DRAFT]
       
       
-      19 June 2014
+      26 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
@@ -262,7 +249,7 @@
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-8c7f6003.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-2d77e7bd.js" type="text/javascript"></script>
 	</body>
 </html>
 
