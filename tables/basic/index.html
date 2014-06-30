@@ -61,16 +61,18 @@
   
 
 
-    <p>If content of a simple table is descriptive on its own, only a header row is needed to give the user an impression of the data in the table.</p>
+    <p>When the content of a simple table is descriptive on its own, only a header row or column is needed to give the user an impression of the data in the table.</p>
 
-<p>If the table is larger or its content is more ambiguous, the <code>scope</code> attribute should be used to avoid confusion, see <a href="../multi-directional/">Directional Tables</a>.</p>
+<p>If the table is larger or its content is more ambiguous, the <code>scope</code> attribute should be used to avoid confusion, see <a href="../multi-directional/">Directional Tables</a> for more guidance on such tables.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-only">Table with header cells in the top row only</h2>
 
-<p>This table of concerts has the cells in the first row marked up as <code>&lt;th&gt;</code> cells without any <code>scope</code> direction. Some screen readers will read “Date – Event – Venue” on the “Venue” cell in the table below because the direction of the <code>&lt;th&gt;</code> elements is ambiguous. </p>
+<p>The following table of concerts has the cells in the first row marked up as <code>&lt;th&gt;</code> cells without any <code>scope</code> direction. This is only acceptable because it is such a small table and the data itself is distinctly different in each column.</p>
 
-<p>This is only acceptable because it is such a small table and the data itself is distinctly different in each column.</p>
+<div class="notes ">
+<p><strong>Note:</strong> Some screen readers will read “Date – Event – Venue” on the “Venue” cell  because the direction of the <code>&lt;th&gt;</code> elements is ambiguous. </p>
 
+</div>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -122,7 +124,7 @@
 </figure>
 <h2 class="ex" id="table-with-header-cells-in-the-first-column-only">Table with header cells in the first column only</h2>
 
-<p>In this example the same data is laid out differently, with a header column on the left.</p>
+<p>In the following table the data from the previous example is laid out differently, with a header column on the left. Also in this situation it is acceptable because it is such a small table and the data itself is distinctly different in each row.</p>
 
 
   <figure class="sample ">
@@ -410,7 +412,7 @@
         [DRAFT]
       
       
-      19 June 2014
+      30 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
