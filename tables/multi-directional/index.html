@@ -129,7 +129,9 @@
 </figure>
 <h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
 
-<p>The following tables of countries and their capital cities has the first column marked up as <code>&lt;th&gt;</code> cells. It needs the scope attribute wit the value of <code>row</code> to declare the applicability of the header. Otherwise some screen readers will associate header cells with other header cells because they are in the same column, rather than with the data across the row. For example in the cell marked “Holland” some screen readers will read “Belgium, France, Holland” if the <code>scope</code> attribute is not provided.</p>
+<p>The following tables of countries and their capital cities has the first column with the country names marked up as <code>&lt;th&gt;</code> cells. It needs the <code>scope</code> attribute with the value of <code>row</code> to declare the applicability of each header cell. Otherwise some screen readers will associate header cells with other header cells because they are in the same column. For example in the cell marked “Holland” some screen readers will read “Belgium – France – Holland” if the <code>scope</code> attribute is not provided.</p>
+
+<p>For very simple tables, a scope attribute may not be required, see <a href="../basic/">Basic Tables</a> for such examples.</p>
 
 
   <figure class="sample ">
