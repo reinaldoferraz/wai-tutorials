@@ -63,9 +63,16 @@
 
     <p>Entering a piece of more complex information sometimes requires using multiple form fields. Additionally longer forms should be grouped into groups of logically related form controls to help orientation, using <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements.</p>
 
-<h2 class="ex" id="group-related-fields-with-fieldsets">Group related fields with fieldsets</h2>
+<h2 class="ex" id="using-fieldsets">Using fieldsets</h2>
 
-<p>The fieldset element is needed to establish relationships between groups of form fields. They help users to focus on the particular topic at hand. Depending on browser and assistive technology the legend is read out <em>with every form element</em>, <em>once</em>, or <em>not at all</em>.</p>
+<p>The fieldset element is needed to establish relationships between groups of form fields. They help users to focus on the particular topic at hand. </p>
+
+<p>Depending on browser and assistive technology the legend is read out <em>with every form element</em>, <em>once</em>, or <em>not at all</em>. This means that the content of the legend and the labels of individual field sets is very important:</p>
+
+<ul>
+  <li>The legend should be short as a long legend is very tedious if it is read with every label.</li>
+  <li>The individual labels should be as self-explanatory as possible.</li>
+</ul>
 
 
   <figure class="sample ">
@@ -103,6 +110,63 @@
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"assoc_offers"</span> <span class="na">id=</span><span class="s">"check_3"</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>Offers from associated companies<span class="nt">&lt;/label&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/fieldset&gt;</span>
+</pre>
+
+</figure>
+<h2 class="ex" id="using-multiple-hidden-labels">Using multiple (hidden) labels</h2>
+
+<p>Using multiple lables introduces some flexibility to the layout of field groups and are appropriate for small amounts of clearly related fields.</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+  <div>
+    <label for="day">Date of birth: </label> <label class="visuallyhidden" for="day">Day</label> <input type="text" id="day" maxlength="2" style="width:1.5em;text-align:right;" placeholder="01">
+    <label class="visuallyhidden" for="month">Month: </label> <select name="month" id="month">
+      <option value="01">January</option>
+      <option value="02">Febuary</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <label class="visuallyhidden" for="year">Year: </label> <input type="text" id="year" maxlength="4" style="width:2.5em;text-align:right;" placeholder="1970">
+  </div>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span><span class="nt">&gt;</span>Date of birth: <span class="nt">&lt;/label&gt;</span> 
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Day<span class="nt">&lt;/label&gt;</span> 
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"day"</span> <span class="na">maxlength=</span><span class="s">"2"</span> <span class="na">placeholder=</span><span class="s">"01"</span><span class="nt">&gt;</span>
+    
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"month"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Month: <span class="nt">&lt;/label&gt;</span> 
+    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"month"</span> <span class="na">id=</span><span class="s">"month"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"01"</span><span class="nt">&gt;</span>January<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"02"</span><span class="nt">&gt;</span>Febuary<span class="nt">&lt;/option&gt;</span>
+      […]
+    <span class="nt">&lt;/select&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"year"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Year: <span class="nt">&lt;/label&gt;</span> 
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"year"</span> <span class="na">maxlength=</span><span class="s">"4"</span> <span class="na">placeholder=</span><span class="s">"1970"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 </pre>
 
 </figure>
@@ -381,7 +445,7 @@
       
         [EDITOR’S DRAFT]
       
-      26 June 2014
+      30 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>

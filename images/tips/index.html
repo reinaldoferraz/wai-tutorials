@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Tips and Frequently Asked Questions (FAQ)
+  Tips and Tricks
   
     
        &bullet; Images
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Images</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and Frequently Asked Questions (FAQ)</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and Tricks</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Tips and Frequently Asked Questions (FAQ)
+      Tips and Tricks
     </h1>
   </header>
 
@@ -65,13 +65,32 @@
 
 <ul>
   <li>
-    <p><strong>Prioritize information in <code>alt</code> values:</strong> Aim to put the most important information at the start of the <code>alt</code> value.</p>
+    <p><strong>Choosing appropriate text alternatives:</strong> <br />
+Imagine that you’re reading the web page aloud over the phone to someone who needs to understand the page. This should help you decide what (if any) information or function the images have. If they appear to have no informative value and aren’t links or buttons, it’s probably safe to treat them as <a href="../decorative/">decorative</a>.</p>
   </li>
   <li>
-    <p><strong>Choosing appropriate text alternatives:</strong> Imagine that you’re reading the web page aloud over the phone to someone who needs to understand the page. This should help you decide what (if any) information or function the images have. If they appear to have no informative value and aren’t links or buttons, it’s probably safe to treat them as <a href="../decorative/">decorative</a>.</p>
+    <p><strong>Prioritize information in alternative text:</strong> <br />
+Aim to put the most important information at the beginning of alternative text.</p>
   </li>
   <li>
-    <p><strong>Punctuation within <code>alt</code> attributes:</strong> As in visible text, using punctuation in the text alternative can make it easier to understand. In addition, to avoid having words run together when read by a screen reader, if there’s no space between the image and adjacent text, a space character may be needed within the <code>alt</code> value.</p>
+    <p><strong>Length of alternative text:</strong> <br />
+The <code>alt</code> text should be the most concise description possible of the image’s purpose. If anything more than a short phrase or sentence is needed, it would be better to use one of the long description methods discussed in <a href="../complex/">complex images</a>.</p>
+  </li>
+  <li>
+    <p><strong>Punctuation within <code>alt</code> attributes:</strong></p>
+
+    <ul>
+      <li>
+        <p>As in visible text, using punctuation in the text alternative can make it easier to understand. In addition, to avoid having words run together when read by a screen reader, if there’s no space between the image and adjacent text, a space character may be needed within the <code>alt</code> value.</p>
+      </li>
+      <li>
+        <p>If you use a null alternative (<code>alt=""</code>) text to hide decorative images, make sure that there is no space character in between the quotes. If a space character is present, the image may not be effectivly hidden from assistive technologies. For instance, some screen readers will still announce the presence of an image if a space is put between the quotes.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Superfluous information in alternative text:</strong> <br />
+Usually there’s no need to include words like “image”, “icon” or “picture” in the alt text. People who can see will know this already and screen readers announce the presence of an image. If it’s a painting, photograph or illustration, that may be a good case for including text that describes the type of image, but it’s best to avoid the more generic terms.</p>
   </li>
   <li>
     <p><strong>SVG graphics:</strong> </p>
@@ -86,33 +105,14 @@
     </ul>
   </li>
   <li>
-    <p><strong>Logos:</strong> Logo images with text are exempt from some of the accessibility guidelines for images with text. For instance, there is no minimum contrast requirement.</p>
+    <p><strong>Logos:</strong> <br />
+Logo images with text are exempt from some of the accessibility guidelines for images with text. For instance, there is no minimum contrast requirement.</p>
   </li>
 </ul>
 
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
 <ul>
-  <li>
-    <p><strong>I've been told to remove the <code>alt</code> from most of the images in my template. Is that right?</strong></p>
-
-    <p>No that's incorrect. The <code>alt</code> is a required attribute. If the images are part of the page design and don’t convey information, you can remove any text values, leaving just the quotes (<code>alt=""</code>).</p>
-  </li>
-  <li>
-    <p><strong>I can’t remember – should the alt be a space or null (empty) if a description is not needed?</strong></p>
-
-    <p>It should be null (empty) <code>alt</code> text (<code>alt=""</code>), with no space between the quotes. Having a space between the quotes doesn’t effectively hide the image from all assistive technologies. For instance, some screen readers will still announce the presence of an image if a space is put between the quotes.</p>
-  </li>
-  <li>
-    <p><strong>My CMS system puts in a default <code>alt</code> of “image of”. Can I just add to that?</strong></p>
-
-    <p>It will depend on the function of the image. However, default values may result in inappropriate alternative text. Normally there's no need to include words like “image”, “icon” or “picture” in the <code>alt</code> text. People who can see will know this already and screen readers announce the presence of an image. If it's a painting, photograph or illustration, that may be a good case for including text that describes the type of image, but it's best to avoid the more generic terms.</p>
-  </li>
-  <li>
-    <p><strong>How long can the <code>alt</code> text be? Is it up to 90 words?</strong></p>
-
-    <p>The <code>alt</code> text should be the most concise description possible of the image’s purpose. If anything more than a short phrase or sentence is needed, it would be better to use one of the long description methods discussed in <a href="../complex/">complex images</a>.</p>
-  </li>
   <li>
     <p><strong>I heard that text-only versions are bad? Is that true?</strong></p>
 
@@ -123,10 +123,9 @@
 <h2 id="other-w3c-resources">Other W3C Resources</h2>
 
 <ul>
-  <li>Background information on <a href="http://www.w3.org/WAI/intro/people-use-web/principles#alternatives">providing text alternatives for non-text content</a> in How People with Disabilities Use the Web</li>
-  <li>Further examples and a helpful decision tree: <a href="http://www.w3.org/TR/html-alt-techniques/">HTML5: Techniques for providing useful text alternatives</a></li>
-  <li>Test the accessibility of images on your site: <a href="http://www.w3.org/WAI/EO/Drafts/eval/checks#images">Quick Checks Image text alternatives</a></li>
-  <li>Examples of good and bad practice in selecting text alternatives can be found in the <a href="http://www.w3.org/WAI/demos/bad/">Before and After Demonstration</a> (BAD)</li>
+  <li>Background information on <a href="http://www.w3.org/WAI/intro/people-use-web/principles#alternatives">providing text alternatives for non-text content</a> in How People with Disabilities Use the Web.</li>
+  <li>Test the accessibility of images on your site: <a href="http://www.w3.org/WAI/EO/Drafts/eval/checks#images">Quick Checks Image text alternatives</a>.</li>
+  <li>Examples of good and bad practice in selecting text alternatives can be found in the <a href="http://www.w3.org/WAI/demos/bad/">Before and After Demonstration</a> (BAD).</li>
 </ul>
 
 
@@ -239,7 +238,7 @@
       
       
       
-      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and FAQ</span></span></li>
+      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and Tricks</span></span></li>
       
       
       
@@ -267,7 +266,7 @@
         [DRAFT]
       
       
-      26 June 2014
+      30 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
