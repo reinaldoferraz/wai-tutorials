@@ -75,24 +75,24 @@
   
 
 
-    <p>Data tables are used to organize data in grids. Accessible tables need HTML markup that indicates the difference between header cells and data cells, and that indicates the relationship between them.</p>
+    <p>Data tables are used to organize data in grids. Accessible tables need HTML markup that indicates the difference between header cells and data cells, and indicate the relationship between them.</p>
 
-<p>To make any table accessible, header cells must be marked up with <code>&lt;th&gt;</code> and data cells marked up with <code>&lt;td&gt;</code>. For more complex tables, explicit associations may be needed using <code>scope</code> or <code>id</code> and <code>headers</code> attributes.</p>
+<p>To make tables accessible, header cells must be marked up with <code>&lt;th&gt;</code> and data cells marked up with <code>&lt;td&gt;</code>. For more complex tables, explicit associations may be needed using <code>scope</code>, <code>id</code> and <code>headers</code> attributes.</p>
 
 <p>This tutorial shows you how to apply appropriate structural markup to tables. It includes the following pages:</p>
 
 <ul class="withicons nobullets">
   <li>
-    <p><strong><a href="basic/">Basic tables<img alt=" typically have one header row and/or one header column" src="../img/img-simple-ed4e8563.png" /></a>:</strong> For simple tables with content that is easy to distinguish, mark up header cells with <code>&lt;th&gt;</code> elements.</p>
+    <p><strong><a href="basic/">Basic Tables<img alt=" typically have one header row and/or one header column" src="../img/img-simple-ed4e8563.png" /></a>:</strong> For simple tables with content that is easy to distinguish, mark up header cells with <code>&lt;th&gt;</code> elements.</p>
   </li>
   <li>
-    <p><strong><a href="multi-directional/">Multi-Directional Tables<img alt=" have usually have headers for rows and columns" src="../img/img-multidir-2b1a27a6.png" /></a>:</strong>  For tables with headings in two directions, define their direction by setting the <code>scope</code> attribute to <code>col</code> or <code>row</code>.</p>
+    <p><strong><a href="multi-directional/">Multi-directional Tables<img alt=" usually have headers for rows and columns" src="../img/img-multidir-2b1a27a6.png" /></a>:</strong> For tables with unclear heading directions, define the direction of each heading by setting the <code>scope</code> attribute to <code>col</code> or <code>row</code>.</p>
   </li>
   <li>
-    <p><strong><a href="irregular/">Irregular tables<img alt="" src="../img/img-irreg-3e575375.png" /></a>:</strong>  For tables where header cells span multiple rows or columns, define column and row groups and set the range of header cells using the <code>colgroup</code> and <code>rowgroup</code> values of the <code>scope</code> attribute.</p>
+    <p><strong><a href="irregular/">Irregular Tables<img alt="" src="../img/img-irreg-3e575375.png" /></a>:</strong> For tables where header cells span multiple rows or columns, define column and row groups and set the range of the header cells using the <code>colgroup</code> and <code>rowgroup</code> values of the <code>scope</code> attribute.</p>
   </li>
   <li>
-    <p><strong><a href="multi-level/">Multi-level tables<img alt=" have multiple header cells associated per data cell" src="../img/img-multi-55740f2d.png" /></a>:</strong>  For tables that are so complex that header cells can’t be accociated in a strictly horizontal or vertical way, use <code>headers</code> and <code>id</code> attributes to explicitly associate header and data cells.</p>
+    <p><strong><a href="multi-level/">Multi-level Tables<img alt=" have multiple header cells associated per data cell" src="../img/img-multi-55740f2d.png" /></a>:</strong>  For tables that are so complex that header cells can’t be accociated in a strictly horizontal or vertical way, use <code>id</code> and <code>headers</code> attributes to explicitly associate header and data cells.</p>
   </li>
   <li>
     <p><strong><a href="caption-summary/">Caption &amp; Summary<img alt="" src="../img/img-caption-39debda1.png" /></a>:</strong> A caption identifies the overall topic of a table and is useful in most situations. A summary provides orientation or navigation hints in complex tables.</p>
@@ -106,8 +106,6 @@
 <div class="notes ">
 <p><strong>Notes:</strong> This tutorial provides guidance for creating tables used to display data in a grid. This guidance is not applicable to layout tables. As a general rule, tables aren't meant to be used for layout purposes. Instead, best practice is to use Cascading Style Sheets (CSS) for visual presentation.</p>
 
-<p>Structural coding can also be used to represent data in different ways, for example, by larger or different colored text or backgrounds, Braille, speech, and symbols.</p>
-
 </div>
 <h2 id="why-is-this-important">Why is this important?</h2>
 
@@ -118,7 +116,10 @@
     <p><strong>People using screen readers</strong> can have the row and column headers read aloud as they navigate through the table. Screen readers speak one cell at a time and reference the associated header cells, so the reader doesn’t lose context.</p>
   </li>
   <li>
-    <p><strong>People using custom stylesheets</strong> can have header cells more prominently styled for easer recognition when there is a difference between the  elements used for header and data cells. People may also use stylesheets to present the information to read the data cells as lists below their corresponding headers rather than in a matrix.</p>
+    <p><strong>People using custom stylesheets</strong> can have header cells more prominently styled for easer recognition when there is a difference between the elements used for header and data cells. People may also use stylesheets to present the information to read the data cells as lists below their corresponding headers rather than in a matrix.</p>
+  </li>
+  <li>
+    <p><strong>People using alternate ways to access the data</strong>, for example by using custom stylesheets to display header cells more prominently, to change text size and colors, and to display the information as lists rather than grids. This can be accomplished by ensuring proper structural coding of tables, so that data can be represented in different ways.</p>
   </li>
 </ul>
 
@@ -275,7 +276,7 @@
         [DRAFT]
       
       
-      19 June 2014
+      30 June 2014
 			</li>
       <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
       <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
