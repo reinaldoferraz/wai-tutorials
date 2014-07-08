@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-77b4d7a3.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-106330d4.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,40 +61,38 @@
   
 
 
-    <ul>
+    <ul class="decision-tree">
   <li>Is the complete content of a link or button defined by this image (or multiple images)?
     <ul>
-      <li><strong>Yes</strong>: Use the <code>alt</code> attribute to communicate the destination of the link or action taken. See <a href="../functional/">Functional Images</a>.</li>
-      <li><strong>No</strong>: Continue.</li>
+      <li class="yes"><strong>Yes</strong>: Use the <code>alt</code> attribute to communicate the destination of the link or action taken. See <a href="../functional/">Functional Images</a>. </li>
+      <li class="no"><strong>No</strong>: Continue.</li>
     </ul>
   </li>
   <li>Does this image contain text?
     <ul>
-      <li><strong>Yes</strong>:
-        <ul>
-          <li>If the text in the image is also present as <em>real</em> text nearby, use an empty <code>alt</code> attribute.</li>
-          <li>Otherwise, use the <code>alt</code> attribute to include the text of the image (but not text shown for visual effects only). See <a href="../textual/#image-of-styled-text-with-decorative-effect">Images of Text</a>.</li>
-        </ul>
-      </li>
-      <li><strong>No</strong>: Continue.</li>
+      <li class="yes"><strong>Yes</strong>, and the text in the image is also present as <em>real</em> text nearby. The <code>alt</code> attribute should be empty.</li>
+      <li class="yes"><strong>Yes</strong>, and the text is only shown for visual effects. The <code>alt</code> attribute should be empty.</li>
+      <li class="yes"><strong>Yes</strong>, and the text in the image is not present otherwise. Use the <code>alt</code> attribute to include the text of the image. See <a href="../textual/#image-of-styled-text-with-decorative-effect">Images of Text</a>.</li>
+      <li class="no"><strong>No</strong>: Continue.</li>
     </ul>
   </li>
   <li>Does the image contribute meaning to the current page or context?
     <ul>
-      <li><strong>Yes</strong>, and it’s a simple graphic or photograph. The <code>alt</code> attribute should briefly describe the image in a way that conveys that meaning. See <a href="../informative/">Informative Images</a>.</li>
-      <li><strong>Yes</strong>, and it’s a graph or complex piece of information. Include the information contained in the image elsewhere on the page. See <a href="../complex/">Complex Images</a>.</li>
-      <li><strong>Yes</strong>, and it shows content that is redundant to <em>real</em> text nearby. The <code>alt</code> attribute should be empty. See <a href="../functional/#logo-image-within-link-text">Functional Images</a>.</li>
-      <li><strong>No</strong>: Continue.</li>
+      <li class="yes"><strong>Yes</strong>, and it’s a simple graphic or photograph. The <code>alt</code> attribute should briefly describe the image in a way that conveys that meaning. See <a href="../informative/">Informative Images</a>.</li>
+      <li class="yes"><strong>Yes</strong>, and it’s a graph or complex piece of information. Include the information contained in the image elsewhere on the page. See <a href="../complex/">Complex Images</a>.</li>
+      <li class="yes"><strong>Yes</strong>, and it shows content that is redundant to <em>real</em> text nearby. The <code>alt</code> attribute should be empty. See <a href="../functional/#logo-image-within-link-text">Functional Images</a>.</li>
+      <li class="no"><strong>No</strong>: Continue.</li>
     </ul>
   </li>
   <li>Is the image purely decorative or not intended for the user?
     <ul>
-      <li>Use an empty <code>alt</code> attribute. See <a href="../decorative/">Decorative Images</a>.</li>
+      <li class="yes"><strong>Yes:</strong> Use an empty <code>alt</code> attribute. See <a href="../decorative/">Decorative Images</a>.</li>
+      <li class="no"><strong>No</strong>: Continue.</li>
     </ul>
   </li>
   <li>Is the image’s use not listed above or it’s unclear what <code>alt</code> text to provide?
     <ul>
-      <li>This decision tree <strong>does not</strong> cover all cases. For detailed information on the provision of text alternatives refer to the <a href="../">Image Concepts Page</a>.</li>
+      <li class="yes">This decision tree <strong>does not</strong> cover all cases. For detailed information on the provision of text alternatives refer to the <a href="../">Image Concepts Page</a>.</li>
     </ul>
   </li>
 </ul>
@@ -241,7 +239,7 @@
         [DRAFT]
       
       
-      03 July 2014
+      08 July 2014
 			</li>
       <li>
   <strong>Editors:</strong>
