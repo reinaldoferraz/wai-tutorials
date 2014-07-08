@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-2a25d6d7.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-77b4d7a3.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,9 +61,7 @@
   
 
 
-    <p>Multi-level tables are too complex to identify a strict horizontal or vertical association between header and data cells. </p>
-
-<p>To associate a data cell with a header cell, each header cell has an (document-wide) unique <code>id</code>. Data cells that refer to a header cell have a <code>headers</code> attibute that lists the <code>id</code> values of those header cells, separated by spaces. </p>
+    <p>Multi-level tables are too complex to identify a strict horizontal or vertical association between header and data cells. In such tables, each table header is identified with an (document-wide) unique <code>id</code>. Data cells refer to those <code>id</code>s by listing one or more in their <code>headers</code> attribute, separated by spaces.</p>
 
 <p>Tables that should be marked up this way include:</p>
 
@@ -74,11 +72,11 @@
 
 <p>Multi-level tables may also need to have a caption to identify it and a summary to describe the layout of the table, see <a href="../caption-summary/">Caption &amp; Summary</a>.</p>
 
-<p>In many cases it is worth considering ways to restructure the information in such tables to make them less complex for all readers. For example by splitting the information in smaller, more manageable tables as shown in <a href="#split-up-multi-level-tables">Example 3</a>.</p>
+<p>In many cases it is worth to consider to restructure the information in such tables to make them less complex for all readers, for example by splitting the information in smaller, more manageable tables as shown in <a href="#split-up-multi-level-tables">Example 3</a>.</p>
 
 <h2 class="ex" id="table-with-multiple-column-headers-in-each-column">Table with multiple column headers in each column</h2>
 
-<p>This table shows contact details for six suppliers. To avoid producing an overly wide table, the first row has <code>&lt;th&gt;</code> cells identifying the first three supply firms and the fourth row has the <code>&lt;th&gt;</code> cells identifying the other three. To ensure that data cells are associated with the correct firm, each <code>&lt;th&gt;</code> cell has a unique <code>id</code> and each <code>&lt;td&gt;</code> cell has a headers attribute listing the <code>id</code> values that relate to it.</p>
+<p>In the table below, the headers for the top half of the tables are different to the headers of the bottom half. The header changes halfway through the table which makes the headings in columns ambiguous. To ensure each data cell is associated with the correct heading, each <code>&lt;th&gt;</code> element has an unique <code>id</code> and each <code>&lt;td&gt;</code> cell has a <code>headers</code> attribute that lists the <code>id</code> values of the associated header cells.</p>
 
 
   <figure class="sample ">
@@ -157,8 +155,7 @@
 
 <h2 class="ex" id="table-with-three-headers-related-to-each-data-cell">Table with three headers related to each data cell</h2>
 
-<p>This example shows availability of accommodation of a given type and size in two different locations. For the data to be understood, each
-<code>&lt;td&gt;</code> cell should be associated to three <code>&lt;td&gt;</code> cells (location, size, and type of accommodation). To define these complex associations, each <code>&lt;th&gt;</code> cell has a unique <code>id</code> attribute and all data cells have a <code>headers</code> attribute listing the related cell <code>id</code> values.</p>
+<p>In this example table headers are used as subheadings to describe what the next section of the table is about. Without these headers, the information would be unclear. Using the <code>headers</code> attribute, all three headers can be properly associated with the data cell.</p>
 
 
   <figure class="sample ">
@@ -328,7 +325,7 @@
 
 <h2 class="ex" id="split-up-multi-level-tables">Split up multi-level tables</h2>
 
-<p>The two tables below provide the same information as the mutli-level table in <a href="#table-with-three-headers-related-to-each-data-cell">the example above</a>. This makes the information easier to understand by everyone and easier to code, too. Also, simple tables are much better supported by WYSIWYG editors (“What you see is what you get”).</p>
+<p>The two tables below provide the same information as the mutli-level table in <a href="#table-with-three-headers-related-to-each-data-cell">the example above</a>. This makes the information easier to understand by everyone and easier to code. Also, simple tables are much better supported by tools to create web content, including WYSIWYG (“What you see is what you get”) editors.</p>
 
 
   <figure class="sample ">
@@ -718,10 +715,25 @@
         [DRAFT]
       
       
-      20 June 2014
+      07 July 2014
 			</li>
-      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
-      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+      <li>
+  <strong>Editors:</strong>
+  <ul class="inline">
+    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zhara</a></li>
+  </ul>
+
+  <strong>Contibutors:</strong>
+  <ul class="inline">
+    <li>Anna Belle Leiserson</li><li>the Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>)</li>
+  </ul>
+</li>
+
+<li>
+  <strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.
+</li>
+
+      <li>[<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>]</li>
     </ul>
     <p>
     	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]

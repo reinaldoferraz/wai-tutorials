@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-2a25d6d7.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-77b4d7a3.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,11 +61,11 @@
   
 
 
-    <p>Irregular tables’ header cells that span multiple columns or rows. The <code>scope</code> attribute can be used to define the range of data cells that are covered by a header cell.</p>
+    <p>Irregular tables have header cells that span multiple columns and/or rows. The <code>scope</code> attribute can be used to define the range of data cells covered by a header cell.</p>
 
-<p>For example, a header cell that spans three columns, and has the <code>scope</code> value <code>colgroup</code>, only applies to the data cells in the three columns that it spans. <code>rowgroup</code> works the same way for table headers that span multiple rows.</p>
+<p>For example, a header cell that span0s three columns should be associated to data cells in this column group of three columns using the <code>colgroup</code> value in the <code>scope</code> attribute. The same principle applies to a header cell spanning multiple rows. It is associated with its row group by using the <code>scope</code> value of <code>rowgroup</code>.</p>
 
-<p>To be able to associate a table header cell to a column group and/or row group, the groups have to be defined first:</p>
+<p>To associate a table header cell to a column group and/or row group using <code>scope</code>, the groups have to be explicitly defined in the table markup:</p>
 
 <ul>
   <li>A column group is defined using the <code>&lt;colgroup&gt;</code> element in the table.</li>
@@ -75,20 +75,25 @@
       <li>Every <code>&lt;tbody&gt;</code> element defines a row group.</li>
     </ul>
   </li>
-  <li>If neither a column nor a row group is defined in the markup, the whole table is grouped.</li>
 </ul>
 
-<p>The <code>scope</code> attribute should be used for all <code>&lt;th&gt;</code> cells where either the direction or range of data cell coverage needs to be clearly associated.</p>
+<p>If neither a column nor a row group is defined in the markup, the header cell is not in a group and there will be no or an incorrect association with data cells.</p>
 
 <h2 class="ex" id="table-with-two-tier-headings">Table with two tier headings</h2>
 
-<p>If a table consists of a heading that spans more multiple columns/rows of header cells, <code>scope="colgroup"</code> and <code>scope="rowgroup"</code> should be used, respectively.</p>
+<p>In the table below, header cells span two columns (by using the <code>colspan</code> attribute). They need to be in a column group to associate them to the data cells.</p>
+
+<p>For each column there should be a <code>&lt;col&gt;</code> element (for individual columns) or a <code>&lt;colgroup&gt;</code> element (for columns with headers spanning multiple columns) at the beginning of the table markup. A <code>span</code> attribute defines how many columns are spanned by the column group. </p>
+
+<p>Combined the number of <code>&lt;col&gt;</code> elements and the sum of the numbers in the <code>span</code> attributes of <code>&lt;colgroup&gt;</code> elements should be equal to the columns in the table.</p>
+
+<p>Use the <code>colgroup</code> value of the <code>scope</code> attribute to assign a table header cell (<code>&lt;th&gt;</code>) to all other cells in the column group.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content"><table class="numbers">
-  <colgroup></colgroup>
+  <col></col>
   <colgroup span="2"></colgroup>
   <colgroup span="2"></colgroup>
   <tr>
@@ -123,7 +128,7 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-  <span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span>
+  <span class="nt">&lt;col&gt;&lt;/col&gt;</span>
   <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
   <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
@@ -157,9 +162,11 @@
 </figure>
 <h2 class="ex" id="table-with-headers-spanning-multiple-rows-or-columns">Table with headers spanning multiple rows or columns</h2>
 
-<p>In this example, some of the header cells span multiple rows or columns: the “Zodiac” row header spans 3 rows, and the “Sizes available” column header spans 3 columns. <code>colgroup</code> and <code>rowgroup</code> indicate that the headers belong to their column or row group – defined by the <code>&lt;colgroup&gt;</code> and <code>&lt;tbody&gt;</code> elements.</p>
+<p>In the example below, the table consists of two individual columns and one column group spanning three columns. It’s also subdivided in multiple row groups using <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements which contain table rows. </p>
 
-<p>Due to the complexity of the table a <a href="../caption-summary/">summary technique</a> should be used to explicitly describe the layout of the table.</p>
+<p>The first row, that consists of the column headers, is wrapped in the <code>&lt;thead&gt;</code> (table header) element. The next three rows are wrapped in one <code>&lt;tbody&gt;</code> element to define the second row group. By setting <code>scope</code> of the header cell spanning those three rows to <code>rowgroup</code>, it applies to all other cells in the group.</p>
+
+<p>Due to the complexity of the table a <a href="../caption-summary/">summary technique</a> could be used to describe the layout of the table in detail.</p>
 
 
   <figure class="sample ">
@@ -169,8 +176,8 @@
   <caption>
     Poster availability
   </caption>
-  <colgroup></colgroup>
-  <colgroup></colgroup>
+  <col></col>
+  <col></col>
   <colgroup span="3"></colgroup>
   <thead>
     <tr>
@@ -226,8 +233,8 @@
   <span class="nt">&lt;caption&gt;</span>
     Poster availability
   <span class="nt">&lt;/caption&gt;</span>
-  <span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span>
-  <span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span>
+  <span class="nt">&lt;col&gt;&lt;/col&gt;</span>
+  <span class="nt">&lt;col&gt;&lt;/col&gt;</span>
   <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"3"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
@@ -506,10 +513,25 @@
         [DRAFT]
       
       
-      19 June 2014
+      07 July 2014
 			</li>
-      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
-      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+      <li>
+  <strong>Editors:</strong>
+  <ul class="inline">
+    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zhara</a></li>
+  </ul>
+
+  <strong>Contibutors:</strong>
+  <ul class="inline">
+    <li>The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>)</li>
+  </ul>
+</li>
+
+<li>
+  <strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.
+</li>
+
+      <li>[<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>]</li>
     </ul>
     <p>
     	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]

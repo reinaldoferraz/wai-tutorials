@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-2a25d6d7.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-77b4d7a3.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,24 +61,26 @@
   
 
 
-    <p>Captions and summaries provide information that can help users find, navigate, and understand tables. While they are not required in every case to meet WCAG 2.0, captions and summaries are relatively simple ways to provide information that improves understandability many people.</p>
+    <p>Captions and summaries provide information that can help users find, navigate, and understand tables. While they are not required in every case to meet WCAG 2.0, captions and summaries are relatively simple ways to provide such information if needed.</p>
 
 <ul>
   <li>
-    <p>A <strong>caption</strong> is like a heading for a table. Most screen readers announce the content of captions, which helps users to find a table and understand what it’s about and chose if they want to read it. If the user decides to use “Tables Mode”, captions are the primary mechanism to identify tables. The caption is provided <code>&lt;caption&gt;</code> element.</p>
+    <p>A <strong>caption</strong> is like a heading for a table. Most screen readers announce the content of captions, which helps users to find a table and understand what it’s about and decide if they want to read it. If the user uses “Tables Mode”, captions are the primary mechanism to identify tables. The caption is provided <code>&lt;caption&gt;</code> element.</p>
   </li>
   <li>
-    <p>A <strong>summary</strong> conveys information about the organization of the data in a table and helps users navigate the table. For example, if a table has an unconventional structure (as in the examples below), information about in which row or column content can be found can be provided to the user. A summary is usually needed for complex tables.</p>
+    <p>A <strong>summary</strong> conveys information about the organization of the data in a table and helps users navigate it. For example, if a table has an unconventional structure (as in the examples below), information about in which row or column content can be found can be provided to the user. A summary is usually needed for complex tables.</p>
   </li>
 </ul>
 
-<p>If both caption and summary are provided for one table, the summary should not duplicate the caption.</p>
+<p>If both caption and summary are provided for one table, the summary should not duplicate information present in the caption.</p>
 
 <p>See WCAG 2.0 technique <a href="http://www.w3.org/TR/WCAG20-TECHS/H39">H39: Using caption elements to associate data table captions with data tables</a> for more advice on captions.</p>
 
 <h2 class="ex" id="identifying-a-table-using-a-caption">Identifying a table using a caption</h2>
 
-<p>If used, the caption should be a succinct heading for the table content. In this example “Concerts” tells users what information is in the table (it could be something else such as an art exhibition).</p>
+<p>The caption should be a succinct heading for the table content. In this example “Concerts” tells users what information is in the table (as the table could, for example, also contain art exhibition information).</p>
+
+<p>The <code>&lt;caption&gt;</code> element is placed directly as a child of the <code>&lt;table&gt;</code> element.</p>
 
 
   <figure class="sample ">
@@ -132,13 +134,13 @@
 </figure>
 <h2 class="ex" id="summaries-for-more-complex-tables">Summaries for more complex tables</h2>
 
-<p>There are different ways to provide summaries for tables.</p>
+<p>In the examples below, different techniques are used to provide summaries to users.</p>
 
 <h3 class="ap" id="nesting-summary-inside-the-caption-element">Nesting summary inside the <code>&lt;caption&gt;</code> element</h3>
 
-<p>This complex table shows availability of different types and sizes of accommodation in two different locations. The <code>&lt;caption&gt;</code> element is used to describe the table layout as well as act as a heading for the table.</p>
+<p>This complex table shows availability of different types and sizes of accommodation in two different locations. The <code>&lt;caption&gt;</code> element acts as a heading of the table and provides the summary that describes the composition of the table as well.</p>
 
-<p>The summary is available to visual users as well.</p>
+<p>If implemented this way, the summary is available to visual users as well.</p>
 
 
   <figure class="sample ">
@@ -219,26 +221,29 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;caption&gt;</span>Availability of holiday accommodation <span class="nt">&lt;br&gt;</span>
-	<span class="nt">&lt;span&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/caption&gt;</span>
 </pre>
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> We added a span element to style the summary differently from the caption. This is not required.</p>
+<p><strong>Note:</strong> A <code>span</code> element was added to style the summary differently from the caption. This is not required.</p>
 
 </div>
 <h3 class="ap" id="using-aria-describedby-to-provide-a-table-summary">Using <code>aria-describedby</code> to provide a table summary</h3>
 
+<p>In this approach an element with an <code>id</code> attribute is associated as a summary by using the <code>aria-describedby</code> attribute of the table. Any element with a unique <code>id</code> attribute can be used as a summary for a table in this way. </p>
+
+<p>The element containing the summary doesn’t need to be in front of the table in the document, but it helps users to discover the summary more easily if the summary is in close proximity of the table, especially if they are not using a screen reader.</p>
+
 <div class="notes ">
-<p><strong>Note:</strong> This WAI-ARIA feature may not be as widely supported as other approaches for summaries on this page.</p>
+<p><strong>Note:</strong> This WAI-ARIA feature may not be as widely supported by assistive technology than other approaches for summaries on this page.</p>
 
 </div>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-
 <p id="tblDesc" style="max-width: 25.333333333em; font-size: .75em; lin-height: 1.5;">Column one has the location and size of accommodation, other columns show the type and number of properties available.</p>
 <table aria-describedby="tblDesc" tabindex="0">
   <caption style="text-align: left;">
@@ -291,8 +296,14 @@
 </figure>
 <h3 class="ap" id="using-the-figure-element-to-mark-up-a-table-summary">Using the <code>&lt;figure&gt;</code> element to mark up a table summary</h3>
 
-<p>By using an HTML5 <code>&lt;figure&gt;</code> element, the association between the caption/summary is indirectly applied to the table. Screen reader users navigating from table to table probably won’t get the context from the caption/summary. You can explicitly associate the <code>&lt;figcaption&gt;</code> to the table by using the <code>aria-labelledby</code> and/or <code>aria-describedby</code> attributes.</p>
+<p>In this approach the table is wrapped in a <code>&lt;figure&gt;</code> element. The <code>&lt;figcaption&gt;</code> element contains the caption and summary text. </p>
 
+<p>Screen reader users navigating in “Tables Mode” are usually unable identify a table by a caption applied like this. The caption part of the <code>&lt;figcaption&gt;</code> element can be explicitly associated to the table by using the <code>aria-labelledby</code> attribute and the summary part by using the <code>aria-describedby</code> attributes. This could lead to caption and summary to be read out multiple times.</p>
+
+<div class="notes ">
+<p><strong>Note:</strong> This HTML5 feature may not be as widely supported by assistive technology than other approaches for summaries on this page.</p>
+
+</div>
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
@@ -341,13 +352,27 @@
   </div></figure>
 
 <figure class="code ">
-  <figcaption>Code snippet: </figcaption>
+  <figcaption>Code snippet: Not using WAI-ARIA</figcaption>
 <pre class="highlight html"><span class="nt">&lt;figure&gt;</span>
   <span class="nt">&lt;figcaption&gt;</span>
     <span class="nt">&lt;strong&gt;</span>Paris: Availability of holiday accommodation<span class="nt">&lt;/strong&gt;&lt;br&gt;</span>
-    Column one has the location and size of accommodation, other columns show the type and number of properties available.
+    <span class="nt">&lt;span&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available.<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/figcaption&gt;</span>
   <span class="nt">&lt;table&gt;</span>
+[…]
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</pre>
+
+</figure>
+<figure class="code ">
+  <figcaption>Code snippet: Using WAI-ARIA</figcaption>
+<pre class="highlight html"><span class="nt">&lt;figure&gt;</span>
+  <span class="nt">&lt;figcaption&gt;</span>
+    <span class="nt">&lt;strong</span> <span class="na">id=</span><span class="s">"paris-caption"</span><span class="nt">&gt;</span>Paris: Availability of holiday accommodation<span class="nt">&lt;/strong&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"paris-summary"</span><span class="nt">&gt;</span>Column one has the location and size of accommodation, other columns show the type and number of properties available.<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;table</span> <span class="na">aria-labelledby=</span><span class="s">"paris-caption"</span> <span class="na">aria-describedby=</span><span class="s">"paris-summary"</span><span class="nt">&gt;</span>
 […]
   <span class="nt">&lt;/table&gt;</span>
 <span class="nt">&lt;/figure&gt;</span>
@@ -360,9 +385,7 @@
 <p><strong>Note: The <code>summary</code> attribute is deprecated in HTML5.</strong></p>
 
 </div>
-<p>This table has an unusual table structure: the days of the week are in the center column, morning times to the left, and afternoon times to the right. It has the <code>summary</code> attribute “Days are in the second column, morning opening hours in the first column, and afternoon opening hours are in the third column”, explaining the way the table is laid out.</p>
-
-<p>The content of the summary attribute is not available to sighted users.</p>
+<p>In this approach, the summary text is in the <code>summary</code> attribute of the table. It is not available to sighted users.</p>
 
 <p>See WCAG 2.0 technique <a href="http://www.w3.org/TR/WCAG20-TECHS/H73">H73: Using the summary attribute of the table element to give an overview of data tables</a> for advice on the summary attribute.</p>
 
@@ -370,30 +393,40 @@
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<table summary="Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column">
-  <caption>
-    Surgery opening times
-  </caption>
-  <tr>
-    <th scope="col" id="m"> Morning</th>
-    <th scope="col" id="d">Day</th>
-    <th id="a"> Afternoon</th>
-  </tr>
-  <tr>
-    <td headers="m d1">Closed</td>
-    <th scope="row" id="d1"> Sunday</th>
-    <td headers="a d1"> 14:00 to 15:00</td>
-  </tr>
-  <tr>
-    <td headers="m d2"> 08:00 to 11:30</td>
-    <th id="d2"> Mon to Fri</th>
-    <td headers="a d2">15:00 to 19:00</td>
-  </th>
-  <tr>
-    <td headers="d3 m">09:30 to 12:00</td>
-    <th id="d3">Saturday</th>
-    <td headers="a d3">Closed</td>
-  </tr>
+<table summary="Column one has the location and size of accommodation, other columns show the type and number of properties available.">
+  <caption>Paris: Availability of holiday accommodation</caption>
+  <thead>
+    <tr>
+      <td></td>
+      <th id="stud" scope="col"> Studio </th>
+      <th id="apt" scope="col"> <abbr title="Apartment">Apt</abbr> </th>
+      <th id="chal" scope="col"> Chalet </th>
+      <th id="villa" scope="col"> Villa </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th headers="par" id="pbed1"> 1 bedroom </th>
+      <td headers="par pbed1 stud"> 11 </td>
+      <td headers="par pbed1 apt"> 20 </td>
+      <td headers="par pbed1 chal"> 25 </td>
+      <td headers="par pbed1 villa"> 23 </td>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed2"> 2 bedroom </th>
+      <td headers="par pbed2 stud"> - </td>
+      <td headers="par pbed2 apt"> 43 </td>
+      <td headers="par pbed2 chal"> 52 </td>
+      <td headers="par pbed2 villa"> 32 </td>
+    </tr>
+    <tr>
+      <th headers="par" id="pbed3"> 3 bedroom </th>
+      <td headers="par pbed3 stud"> - </td>
+      <td headers="par pbed3 apt"> 13 </td>
+      <td headers="par pbed3 chal"> 15 </td>
+      <td headers="par pbed3 villa"> 40 </td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -401,8 +434,8 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table</span>
-  <span class="na">summary=</span><span class="s">"Days are shown in the second column, morning opening hours in the first column and afternoon opening hours are in the third column"</span><span class="nt">&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;table</span> 
+  <span class="na">summary=</span><span class="s">"Column one has the location and size of accommodation, other columns show the type and number of properties available."</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
@@ -638,10 +671,25 @@
         [DRAFT]
       
       
-      20 June 2014
+      08 July 2014
 			</li>
-      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
-      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+      <li>
+  <strong>Editors:</strong>
+  <ul class="inline">
+    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zhara</a></li>
+  </ul>
+
+  <strong>Contibutors:</strong>
+  <ul class="inline">
+    <li>Sharron Rush</li><li>the Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>)</li>
+  </ul>
+</li>
+
+<li>
+  <strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.
+</li>
+
+      <li>[<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>]</li>
     </ul>
     <p>
     	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]

@@ -12,7 +12,7 @@
   &bullet; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-2a25d6d7.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-77b4d7a3.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-8ab87436.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -172,7 +172,7 @@
 
 <h3 id="further-improvement">Further improvement</h3>
 
-<p>building on A header row can be used to clarify the table even further:</p>
+<p>Building on the example above, adding a header row can help to make the table even clearer and describe the content of the data cells better.</p>
 
 
   <figure class="sample ">
@@ -244,7 +244,9 @@
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
 
-<p>This table of opening times has header information contained in both the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells, additionally we add <code>scope</code> attributes with the values <code>col</code> (to the top row header cells) and <code>row</code> (to the first column header cells).</p>
+<p>The following table of opening times has header information in both, the top row and the first column. All header cells are marked up as <code>&lt;th&gt;</code> cells with add <code>scope</code> attributes added. </p>
+
+<p>In the header row, the <code>col</code> value for <code>scope</code> associates each heading cell with the data cells in the column. In the header column, the <code>row</code> value associates the individual headings with their rows.</p>
 
 
   <figure class="sample ">
@@ -253,46 +255,46 @@
 <p><strong>Delivery slots:</strong></p>
 
 <table>
-	<tr>
-		<td></td>
-		<th scope="col">Monday</th>
-		<th scope="col">Tuesday</th>
-		<th scope="col">Wednesday</th>
-		<th scope="col">Thursday</th>
-		<th scope="col">Friday</th>
-	</tr>
-	<tr>
-		<th scope="row">09:00 - 11:00</th>
-		<td>Closed</td>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th scope="row">11:00 - 13:00</th>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th scope="row">13:00 - 15:00</th>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Open</td>
-		<td>Closed</td>
-		<td>Closed</td>
-	</tr>
-	<tr>
-		<th scope="row">15:00 - 17:00</th>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Closed</td>
-		<td>Open</td>
-		<td>Open</td>
-	</tr>
+  <tr>
+    <td></td>
+    <th scope="col">Monday</th>
+    <th scope="col">Tuesday</th>
+    <th scope="col">Wednesday</th>
+    <th scope="col">Thursday</th>
+    <th scope="col">Friday</th>
+  </tr>
+  <tr>
+    <th scope="row">09:00 - 11:00</th>
+    <td>Closed</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+  <tr>
+    <th scope="row">11:00 - 13:00</th>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+  <tr>
+    <th scope="row">13:00 - 15:00</th>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+  <tr>
+    <th scope="row">15:00 - 17:00</th>
+    <td>Closed</td>
+    <td>Closed</td>
+    <td>Closed</td>
+    <td>Open</td>
+    <td>Open</td>
+  </tr>
 </table>
 
 
@@ -301,31 +303,31 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;td&gt;&lt;/td&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>09:00 - 11:00<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;tr&gt;</span>
-		<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>11:00 - 13:00<span class="nt">&lt;/th&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-		<span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
-	<span class="nt">&lt;/tr&gt;</span>
-	[…]
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Tuesday<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Wednesday<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Thursday<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Friday<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>09:00 - 11:00<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>11:00 - 13:00<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Open<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Closed<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  […]
 <span class="nt">&lt;/table&gt;</span>
 </pre>
 
@@ -334,7 +336,7 @@
 
 <h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
 
-<p>In this table, the row header cells are in the second column rather than the first. The <code>&lt;th&gt;</code> cells in the second column have <code>scope="row"</code>  to ensure that data cells on both sides are correctly associated.</p>
+<p>In this table, the row header cells are in the second rather than in the first column. The approach is very similar to the examples above: The scope of the heading cells in the top row is set to <code>col</code>. By using the <code>row</code> value for <code>scope</code> assigns the header cells in the second column to data cells on the left and the right of the individual header cell.</p>
 
 
   <figure class="sample ">
@@ -669,10 +671,25 @@
         [DRAFT]
       
       
-      30 June 2014
+      07 July 2014
 			</li>
-      <li><strong>Editors:</strong> <a href="http://www.w3.org/People/yatil/">Eric Eggert</a>, Bim Egan, <a href="http://www.w3.org/People/shadi/">Shadi Abou Zahra</a> and the <a href="http://www.w3.org/WAI/EO/">Education and Outreach Working Group (EOWG)</a> [<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>].</li>
-      <li><strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.</li>
+      <li>
+  <strong>Editors:</strong>
+  <ul class="inline">
+    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zhara</a></li>
+  </ul>
+
+  <strong>Contibutors:</strong>
+  <ul class="inline">
+    <li>The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>)</li>
+  </ul>
+</li>
+
+<li>
+  <strong>Developed with support</strong> from the <a href="http://www.w3.org/WAI/ACT/">WAI-ACT</a> project, co-funded by the European Commission <abbr title="Information Society Technologies">IST</abbr> Programme.
+</li>
+
+      <li>[<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>]</li>
     </ul>
     <p>
     	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
