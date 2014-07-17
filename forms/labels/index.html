@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Labels and Descriptions
+  Labels
   
     
-       &bullet; Forms
+       &bull; Forms
     
   
-  &bullet; WAI Web Accessibility Tutorials
+  &bull; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-9c8ccdc3.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-1974eef1.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -24,7 +24,7 @@
   </header>
   <main role="main" class="with-side-menu">
     <div class="page-title">
-      <a class="" href="../../">Web accessibility tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+      <a class="" href="../../">Web Accessibility Tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
     </div>
     <a href="#nav" class="btn btn-jump">Jump to the navigation</a>
 <div class="content editors-draft">
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Labels and Descriptions</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Labels</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Labels and Descriptions
+      Labels
     </h1>
   </header>
 
@@ -65,11 +65,9 @@
 
 <p>To maximize predictability, labels must be positioned on the right of radio buttons and checkboxes and on the top or left for every other field (in left-to-right languages). For people using high screen magnification and in mobile context labels above form fields are often preferred.</p>
 
-<p>It’s essential that required field indicators and other important information is kept within the label element: Screen readers will not read out <em>any text</em> that is outside labels.</p>
+<p>It’s essential that required field indicators and other important information is kept within the label element: Screen readers will usually not read out <em>any text</em> that is outside labels if in “Forms Mode”.</p>
 
-<h2 id="associating-labels">Associating labels</h2>
-
-<h3 class="ap" id="implicit-labels">Implicit labels</h3>
+<h2 class="ex" id="using-implicit-labels">Using Implicit Labels</h2>
 
 <p>The most basic way to associate a descriptive text to a form field is to wrap them in a <code>label</code> element:</p>
 
@@ -116,7 +114,7 @@
 </pre>
 
 </figure>
-<h3 class="ap" id="explicit-labels">Explicit labels</h3>
+<h2 class="ex" id="using-explicit-labels">Using Explicit Labels</h2>
 
 <p>To explicitly associate a label and its form control, the <code class="elem">&lt;label&gt;</code> element must have a <code class="attrib">for</code> attribute which exactly matches the value of an <code class="attrib">id</code> attribute in its related field.</p>
 
@@ -157,188 +155,6 @@
 </pre>
 
 </figure>
-<h2 class="newap" id="additional-descriptions">Additional descriptions</h2>
-
-<p>Sometimes it is necessary to add additional, auxiliary information to an input field to make it easier for users to enter the correct value into the form field.</p>
-
-<h3 class="ap" id="nest-in-label">Nest in label</h3>
-
-<p>For simple use cases, nesting the description into the label may be enough. This approach limits the possibilities to style the description.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<form method="post" action="#">
-  <div>
-    <label for="expire">Expiry date (MM/YYYY): </label> <input type="text" name="expire" id="expire">
-  </div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date (MM/YYYY): <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span><span class="nt">&gt;</span>
-</pre>
-
-</figure>
-<h3 class="ap" id="using-multiple-labels">Using multiple labels</h3>
-
-<p>For more complex use cases, or when styling is important, it is possible to use multiple labels with their <code>for</code> attributes pointing at the <code>id</code> of the form element.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<style>
-  #ex1 span {
-    display: inline-block;
-    vertical-align: top;
-  }
-  #ex1 span label {
-    display: block;
-    font-size: 0.8em;
-  }
-</style>
-<form method="post" action="#" id="ex1">
-  <div>
-    <label for="expire2">Expiry date:</label> 
-    <span>
-      <input type="text" name="expire" id="expire2"> 
-      <label for="expire2">MM/YYYY</label>
-    </span>
-  </div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span> 
-<span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span><span class="nt">&gt;</span> 
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/span&gt;</span>
-</pre>
-
-</figure>
-<h3 class="ap" id="using-wai-aria">Using WAI-ARIA</h3>
-
-<p>Another approach is to use WAI-ARIA attributes to provide additional information <em>specifically to screen readers</em>.</p>
-
-<p><code>Aria-labelledby</code> produces a result that is similar to the <a href="#multiple-labels">multiple labels approach</a> above: The text is immediately read when the form field gets focus.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<style>
-  #ex2 span {
-    display: inline-block;
-    vertical-align: top;
-  }
-  #ex2 span span {
-    display: block;
-    font-size: 0.8em;
-  }
-</style>
-<form method="post" action="#" id="ex2">
-  <div>
-    <label for="expire3">Expiry date:</label>
-    <span>
-      <input type="text" name="expire" id="expire3" aria-labelledby="expDesc"> 
-      <span id="expDesc">MM/YYYY</span>
-    </span>
-  </div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span> 
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/span&gt;</span>
-</pre>
-
-</figure>
-<p><code>Aria-describedby</code> provides the additional text on demand to the screen reader user.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<style>
-  #ex3 span {
-    display: inline-block;
-    vertical-align: top;
-  }
-  #ex3 span span {
-    display: block;
-    font-size: 0.8em;
-  }
-</style>
-<form method="post" action="#" id="ex3">
-  <div>
-    <label for="expire4">Expiry date:</label>
-    <span>
-      <input type="text" name="expire" id="expire4" aria-describedby="expDesc2"> 
-      <span id="expDesc2">MM/YYYY</span>
-    </span>
-  </div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span> 
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/span&gt;</span>
-</pre>
-
-</figure>
-<h2 id="placeholder-text">Placeholder text</h2>
-
-<p>Placeholder text is a short hint of the kind of data to put into a field. It’s usually shown as low-contrast text inside the form field. <strong>It’s not a replacement for a label</strong>, especially they are not treated as labels by assistive technology.</p>
-
-<p>If the placeholder text is customized, it should have distinctively less contrast than regular text input so it is not mistaken as pre-populated while obeying the contrast ratio rules.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content"><form method="post" action="#">
-  <div>
-    <label for="search">Search:</label> <input type="text" name="search" id="search" placeholder="e.g. Apple Pie">
-  </div>
-  <div>
-    <label for="email">Email: </label> <input type="text" name="email" id="email" placeholder="joe@example.com">
-  </div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span><span class="nt">&gt;</span>Search:<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"e.g. Apple Pie"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"joe@example.com"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-
-</figure>
 
 
 <div role="techniques">
@@ -374,6 +190,10 @@
         
           
             <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-minimize-error-cues">3.3.2 Labels or Instructions:</a> Labels or instructions are provided when content requires user input. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
           
         
       
@@ -529,9 +349,9 @@
         
         
         
-      
-        
-        
+          <li class="next">
+            <span><a class="" href="../instructions/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Instructions</span></span></a></span>
+          </li>
         
       
         
@@ -576,7 +396,7 @@
         
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Labels and Descriptions</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Labels</span></span></li>
       
       
       
@@ -588,11 +408,7 @@
       
       
       
-      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Error Prevention</span></a></li>
-      
-      
-      
-      <li><a class="" href="../error-messages/"><span class="count"></span><span class="txt">Error Messages</span></a></li>
+      <li><a class="" href="../errors/"><span class="count"></span><span class="txt">Error Handling</span></a></li>
       
       
       
@@ -628,7 +444,7 @@
       
         [EDITOR’S DRAFT]
       
-      26 June 2014
+      15 July 2014
 			</li>
       <li>
 <strong>Editors: </strong>
@@ -655,10 +471,9 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
     </p>
     <div class="copyright">
       <p>
-      	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014
+	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©2014
       	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
-				(
-					<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+				(<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
 					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
 					<a href="http://www.keio.ac.jp/">Keio</a>,
          	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
@@ -666,7 +481,7 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-2d77e7bd.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-5177080e.js" type="text/javascript"></script>
 	</body>
 </html>
 
