@@ -65,9 +65,9 @@
 
 <p>The best way to avoid errors in forms is to inform users about potential errors as soon as possible. With HTML5 browsers have implemented a whole range of validation options that notify users instantly and in their language about possible errors. It also prevents the user from submitting the form, so additional server-side roundtrips can be avoided.</p>
 
-<h3 class="ex" id="marking-required-fields">Marking required fields</h3>
+<h3 class="ex" id="marking-up-required-fields">Marking up required fields</h3>
 
-<p>The label of required fields should always show that the field is required. This is the most basic (and very wide supported) way to inform the user about a required field. Additionally in HTML5, we can add the <code>required</code> attribute to the form field to make it clear programmatically that this field is indeed required:</p>
+<p>The label of required fields should always show that the field is required. This is the most broadly supported way to inform the user. Additionally in HTML5, the <code>required</code> attribute can be added to the form field, so browsers can handle required fields accordingly by validating that there is data in the form field.</p>
 
 
   <figure class="sample ">
@@ -92,6 +92,117 @@
 </figure>
 <p>To inform users of assistive technology about required fields, you can use <code>aria-required="true"</code> on the form field. Most browsers set <code>aria-required</code> to <code>true</code> if a HTML5 <code>required</code> attribute is present.</p>
 
+<h3 class="ex" id="specifying-the-format-of-form-fields">Specifying the format of form fields</h3>
+
+<p>HTML5 provides some new input types that require the user to input the correct information, like <code>email</code>, <code>url</code>, <code>number</code>, <code>range</code>, <code>date</code> and <code>time</code>. Capable browsers may show field specific controls or a different on-screen keyboard. If a browser is not capable of displaying one if the controls, it falls back to a simple <code>text</code> input. </p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+  <div>
+    <label for="email">Email: </label> <input type="email" name="email" id="email">
+	</div>
+	<div>
+    <label for="url">Website: </label> <input type="url" name="url" id="url">
+	</div>
+	<div>
+    <label for="number">Number: </label> <input type="number" name="number" id="number" min="0" max="100" step="10" value="0">
+	</div>
+	<div>
+    <label for="range">Range: </label> <input type="range" name="range" id="range" min="0" max="100" step="10" value="0">
+	</div>
+	<div>
+    <label for="date">Date: </label> <input type="date" name="date" id="date">
+	</div>
+	<div>
+    <label for="time">Time: </label> <input type="time" name="time" id="time">
+	</div>
+	<div>
+		<input type="submit" value="Submit">
+	</div>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"url"</span><span class="nt">&gt;</span>Website: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"url"</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">id=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"number"</span><span class="nt">&gt;</span>Number: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">name=</span><span class="s">"number"</span> <span class="na">id=</span><span class="s">"number"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">max=</span><span class="s">"100"</span> <span class="na">step=</span><span class="s">"10"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"range"</span><span class="nt">&gt;</span>Range: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span> <span class="na">name=</span><span class="s">"range"</span> <span class="na">id=</span><span class="s">"range"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">max=</span><span class="s">"100"</span> <span class="na">step=</span><span class="s">"10"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"date"</span><span class="nt">&gt;</span>Date: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">name=</span><span class="s">"date"</span> <span class="na">id=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"time"</span><span class="nt">&gt;</span>Time: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"time"</span> <span class="na">name=</span><span class="s">"time"</span> <span class="na">id=</span><span class="s">"time"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>There are a number of HTML attributes that can help users to prevent errors:</p>
+
+<ul>
+  <li><code>maxlength</code> defines the maximum length of a text field.</li>
+  <li><code>min</code> and <code>max</code> define the minimum and maximum of number and range fields.</li>
+  <li><code>steps</code> defines in what steps number and range fields can be incremented and decremented.</li>
+</ul>
+
+<p>Additionally you can define your own patterns of input with the <code>pattern</code> attribute:</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+  <div>
+    <label for="license">German License Plate (CCC XXXX 9999):</label> <input type="text" id="license" pattern="[A-Z]{1,3}( )[A-Z]{2,4}( )[0-9]{1,4}" />
+  </div>
+  <div>
+  </div>
+</form>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"url"</span><span class="nt">&gt;</span>Website: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"url"</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">id=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"number"</span><span class="nt">&gt;</span>Number: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">name=</span><span class="s">"number"</span> <span class="na">id=</span><span class="s">"number"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">max=</span><span class="s">"100"</span> <span class="na">step=</span><span class="s">"10"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"range"</span><span class="nt">&gt;</span>Range: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span> <span class="na">name=</span><span class="s">"range"</span> <span class="na">id=</span><span class="s">"range"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">max=</span><span class="s">"100"</span> <span class="na">step=</span><span class="s">"10"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"date"</span><span class="nt">&gt;</span>Date: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">name=</span><span class="s">"date"</span> <span class="na">id=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"time"</span><span class="nt">&gt;</span>Time: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"time"</span> <span class="na">name=</span><span class="s">"time"</span> <span class="na">id=</span><span class="s">"time"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
 <p>To help users correct errors, a layer of protection is needed, especially when a form has significant consequences for the user. Those consequences could be some legally binding agreement, like in an online shop, a financial transaction, deleting of data from the database, or submitting responses of a test. Users should have a possibility to correct errors before such submissions are finally accepted, in one or more of the following ways:</p>
 
 <ul>
@@ -328,7 +439,7 @@
       
         [EDITOR’S DRAFT]
       
-      17 July 2014
+      18 July 2014
 			</li>
       <li>
 <strong>Editors: </strong>
