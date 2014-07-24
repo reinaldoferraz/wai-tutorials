@@ -61,15 +61,13 @@
   
 
 
-    <p>Users can interact with functional images, for example if they are used as buttons or within links. The text alternative for the image should convey the action that will be initiated (the purpose of the image), rather than a description of the image. </p>
+    <p>Functional images are used to initiate actions rather than to convey information. They are used in buttons, links, and other interactive elements. The text alternative for the image should convey the action that will be initiated (the purpose of the image), rather than a description of the image. For instance, as shown in examples below, the text alternative should be “print this page” rather than “(image of a) printer”, “search” rather than “magnifying lens” or “Example.com homepage” rather than “Example.com logo”.</p>
 
-<p>For instance, as shown in examples below, the text alternative should be “print this page” rather than “(image of a) printer”, “search” rather than “magnifying lens” or “Example.com homepage” rather than “Example.com logo”.</p>
-
-<p>Images acting as stand alone links should have the appropriate text value in the <code>alt</code> attribute. Missing or empty <code>alt</code> values create real problems for screen reader users as links cannot be ignored. The screen reader will announce the image filepath or the URL for the destination page which is unlikely to help users know where the link leads to.</p>
+<p>Missing or empty <code>alt</code> values create significant problems for screen reader users because functional images are essential to the functionality of the content. Screen readers will typically announce the image filename, the image URL, or the URL for the link destination, which is unlikely to help users understand the action that will be initated by the image.</p>
 
 <h2 class="ex" id="image-used-alone-as-a-linked-logo">Image used alone as a linked logo</h2>
 
-<p>The following image is the only content of a link that leads to the W3C homepage. It has the text alternative “W3C home” to indicate where the link will take the user (see <a href="#logo-image-within-link-text">“Logo image within link text” example</a> if there is other text in the link to identify the destination):</p>
+<p>The following image is the only content of a link that leads to the W3C homepage. It has the text alternative “W3C home” to indicate where the link will take the user. The next example, <a href="#logo-image-within-link-text">“Logo image within link text” example</a>, discusses what to do when there is other text in the link to identify the destination:</p>
 
 
   <figure class="sample ">
@@ -91,12 +89,12 @@
 <div class="notes ">
 <p><strong>Note 1:</strong> In this situation the logo is also an image of the text “W3C” but in this case its primary function is to link to the home page, so the word “home” was added to the text alternative.</p>
 
-<p><strong>Note 2:</strong> Images used as logos are exempt from some of the accessibility guidance that applies to other images of text, for instance there are no minimum color contrast and text size requirements.</p>
+<p><strong>Note 2:</strong> Images used as logos are exempt from some of the accessibility requirements that apply to other images of text, for instance there are no minimum color contrast and text size requirements.</p>
 
 </div>
 <h2 class="ex" id="logo-image-within-link-text">Logo image within link text</h2>
 
-<p>In this example the W3C logo is contained within a text link that leads to the W3C homepage. The image has the same function as the text within the link (to identify where the link will take the user). As the link text already provides this information, it acts as the text alternative. The image must still contain an <code>alt</code> attribute though, so a null (empty) value is applied, (<code>alt=""</code>), to avoid redundancy or repetition. In effect the image is a decorative adjunct to the link text:</p>
+<p>In this example the W3C logo is used to supplement text within a link that leads to the W3C homepage. The image does not represent different functionality or convey other information than that already provided by in the link text, so a null (empty) value is applied, (<code>alt=""</code>), to avoid redundancy and repetition. In effect the image is a decorative adjunct to the link text:</p>
 
 
   <figure class="sample ">
@@ -115,10 +113,6 @@
 </pre>
 
 </figure>
-<div class="notes ">
-<p><strong>Note:</strong> Where an image and text are both contained in a single link anchor, the image should be treated as decorative, although it functions as part of the link, unless it contains additional information that is pertinent to the link (see example 3). Another example of this technique can be found under <a href="../decorative/">decorative images</a>.</p>
-
-</div>
 <h2 class="ex" id="icon-image-conveying-information-within-link-text">Icon image conveying information within link text</h2>
 
 <p>In this example the image follows text within a link to inform users that the link will open in a new window. It has the text alternative “new window” to reflect the representation on the image:</p>
@@ -141,7 +135,7 @@
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> This type of icon is often used to indicate different file formats such as AVI, ODF, MP3, PDF, Word, and many more. In this case the text alternative should equally convey the format represented by each icon.</p>
+<p><strong>Note:</strong> This technique is often used with icons to indicate different file formats such as AVI, ODF, MP3, PDF, Word, and many more. In this case the text alternative should equally convey the format represented by each icon.</p>
 
 </div>
 <h2 class="ex" id="stand-alone-icon-image-that-has-a-function">Stand-alone icon image that has a function</h2>
@@ -165,13 +159,9 @@
 </pre>
 
 </figure>
-<div class="notes ">
-<p><strong>Note:</strong> The same text alternative is applicable when such an icon is used in a button instead of in a link. the next example on this page explains how to code the text alternative for buttons.</p>
-
-</div>
 <h2 class="ex" id="image-used-in-a-button">Image used in a button</h2>
 
-<p>The following image is used to give the button a distinct style. In this case it is the button to initiate a search request and is an icon representing a magnifying lens. The text alternative for the image is “search”:</p>
+<p>The following image is used to give the button a distinct style. In this case it is the button to initiate a search request and is an icon representing a magnifying lens. The text alternative for the image is “search” to convey the purpose of the button:</p>
 
 
   <figure class="sample ">
@@ -450,7 +440,7 @@
         [DRAFT]
       
       
-      03 July 2014
+      24 July 2014
 			</li>
       <li>
   <strong>Editors:</strong>

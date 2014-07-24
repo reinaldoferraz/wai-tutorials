@@ -81,13 +81,21 @@
 
 <h2 class="ex" id="table-with-two-tier-headers">Table with two tier headers</h2>
 
-<p>In the table below, header cells span two columns (by using the <code>colspan</code> attribute). They need to be in a column group to associate them to the data cells.</p>
+<p>In the table below, there are two pairs of column headers. Each pair of column headers, “Produced” and “Sold” is associated with a first-level header that identifies the pair: “Mars” and “Venus”. These first-level headers are made to span two columns by using the <code>colspan</code> attribute with the value of <code>2</code>. The value of the <code>scope</code> attribute in the first-level headers is set to <code>colgroup</code> so that it is associated with the entire group of columns. The second-level headers only apply to the corresponding column so the <code>scope</code> attribute is set to <code>col</code> as shown in previous examples.</p>
 
-<p>For each column there should be a <code>&lt;col&gt;</code> element (for individual columns) or a <code>&lt;colgroup&gt;</code> element (for columns with headers spanning multiple columns) at the beginning of the table markup. A <code>span</code> attribute defines how many columns are spanned by the column group. </p>
+<p>To identify groups of columns properly, they need to be defined at the beginning of the table. A <code>&lt;col&gt;</code> element identifies each column, beginning on the left. If a header spans two or more columns, use a <code>&lt;colgroup&gt;</code> element instead and the number of columns spanned is noted in the <code>span</code> attribute. </p>
 
-<p>Combined the number of <code>&lt;col&gt;</code> elements and the sum of the numbers in the <code>span</code> attributes of <code>&lt;colgroup&gt;</code> elements should be equal to the columns in the table.</p>
+<p>For example, if a table has four columns and a header is spanning column two and three, the columns and column groups would be defined by the following code:</p>
 
-<p>Use the <code>colgroup</code> value of the <code>scope</code> attribute to assign a table header cell (<code>&lt;th&gt;</code>) to all other cells in the column group.</p>
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;col&gt;&lt;/col&gt;</span>
+<span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
+<span class="nt">&lt;col&gt;&lt;/col&gt;</span>
+</pre>
+
+</figure>
+<p>Note: The combined sum of <code>&lt;col&gt;</code> elements and column elements indicated by the <code>span</code> attributes of the <code>&lt;colgroup&gt;</code> elements should be equal to the total number of columns in the table. It is possible to nest a <code>&lt;col&gt;</code> element for each column inside a column group inside the <code>&lt;colgroup&gt;</code> element to be able to add styles to each column.</p>
 
 
   <figure class="sample ">
@@ -162,9 +170,9 @@
 </figure>
 <h2 class="ex" id="table-with-headers-spanning-multiple-rows-or-columns">Table with headers spanning multiple rows or columns</h2>
 
-<p>In the example below, the table consists of two individual columns and one column group spanning three columns. It’s also subdivided in multiple row groups using <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements which contain table rows. </p>
+<p>In the example below, the table consists of two individual columns and one column group spanning three columns. It’s also subdivided in multiple row groups using <code>&lt;thead&gt;</code> (table header) and <code>&lt;tbody&gt;</code> (table body) elements which contain the individual table rows. This makes it possible to assign a header to all cells inside the <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements.</p>
 
-<p>The first row, that consists of the column headers, is wrapped in the <code>&lt;thead&gt;</code> (table header) element. The next three rows are wrapped in one <code>&lt;tbody&gt;</code> element to define the second row group. By setting <code>scope</code> of the header cell spanning those three rows to <code>rowgroup</code>, it applies to all other cells in the group.</p>
+<p>The first row, that consists of the column headers, is wrapped in the <code>&lt;thead&gt;</code> element. The next three rows are wrapped in one <code>&lt;tbody&gt;</code> element to define the second row group which has a header spanning those three rows. By setting <code>scope</code> of this header cell to <code>rowgroup</code>, it applies to all other cells in the group.</p>
 
 <p>Due to the complexity of the table a <a href="../caption-summary/">summary technique</a> could be used to describe the layout of the table in detail.</p>
 
@@ -513,7 +521,7 @@
         [DRAFT]
       
       
-      15 July 2014
+      24 July 2014
 			</li>
       <li>
   <strong>Editors:</strong>

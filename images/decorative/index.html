@@ -63,9 +63,9 @@
 
     <p>Decorative images don’t add information to the content of a page. For example, the information provided by the image might already be given using adjacent text or the image might be included for visual interest only. </p>
 
-<p>In these cases, a null (empty) <code>alt</code> text should be provided (<code>alt=""</code>) so that they can be ignored by assistive technologies such as screen readers. Text values for this type of images would add audible clutter to screen reader output or could distract users if the topic is different from that in adjacent text.</p>
+<p>In these cases, a null (empty) <code>alt</code> text should be provided (<code>alt=""</code>) so that they can be ignored by assistive technologies such as screen readers. Text values for this type of images would add audible clutter to screen reader output or could distract users if the topic is different from that in adjacent text. Leaving out the <code>alt</code> attribute is  also not an option because when it is not provided, some screen readers will announce the image’s file name instead.</p>
 
-<p>If the <code>alt</code> attribute is not used at all some screen readers will announce the image’s file name. Whether to treat an image as decorative or <a href="../informative/">informative</a> is a judgement that only the author can make, based on the reason for including the image on the page. Images may be decorative when they are:</p>
+<p>Whether to treat an image as decorative or <a href="../informative/">informative</a> is a judgement that only the author can make, based on the reason for including the image on the page. Images may be decorative when they are:</p>
 
 <ul>
   <li>Visual styling such as borders, spacers, and corners</li>
@@ -113,9 +113,7 @@ decorative purpose.</p>
 </div>
 <h2 class="ex" id="decorative-image-as-part-of-a-text-link">Decorative image as part of a text link</h2>
 
-<p>This illustration of a crocus bulb is used to make the link easier to
-identify and to increase the clickable area, but doesn’t add to the
-information given in adjacent link text.</p>
+<p>This illustration of a crocus bulb is used to make the link easier to identify and to increase the clickable area, but doesn’t add to the information already provided in the adjacent link text (of the same anchor). In this case a null (empty) <code>alt</code> value should be used for the image.</p>
 
 
   <figure class="sample ">
@@ -135,22 +133,15 @@ information given in adjacent link text.</p>
 </pre>
 
 </figure>
-<div class="notes ">
-<p><strong>Note:</strong> The null or empty <code>alt</code> value can only be used on linked images
-if the image and text are part of a single link anchor and the image
-does not add visual information to the link.</p>
-
-</div>
 <h2 class="ex" id="image-with-adjacent-text-alternative">Image with adjacent text alternative</h2>
 
-<p>This picture of a sleeping dog is already identified by the
-adjacent caption. The caption acts as the text alternative and should not be repeated in the <code>alt</code> attribute.</p>
+<p>This picture of a sleeping dog is already sufficiently described by the adjacent text. There is no need to repeat this information and a null (empty) <code>alt</code> value can be used for this image.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<p><img alt="" style="float:left; margin-right: 1em;" src="../../img/sleeping-7667c554.jpg" /> <strong>Let sleeping dogs lie.</strong> This is a proverb that means: “don’t initiate trouble. If something that could be troublesome is quiet, then leave it alone”.</p>
+<p><img alt="" style="float:left; margin-right: 1em;" src="../../img/sleeping-7667c554.jpg" /> <strong>The sleeping dog:</strong> Let sleeping dogs lie is a proverb that means “don’t initiate trouble. If something that could be troublesome is quiet, then leave it alone”.</p>
 
 
   </div></figure>
@@ -166,13 +157,13 @@ adjacent caption. The caption acts as the text alternative and should not be rep
 </figure>
 <h2 class="ex" id="image-used-for-ambience-eye-candy">Image used for ambience (eye-candy)</h2>
 
-<p>This image is used to add ambience or visual interest to the page.</p>
+<p>This image is used only to add ambience or visual interest to the page.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<p><img alt="" style="float:left; margin-right: 1em;" src="../../img/kew-bd2c2f93.jpg" /> don’t miss the impressive Tropical House – a huge greenhouse that displays examples of exotic plant-life from every tropical environment on the planet.</p>
+<p><img alt="" style="float:left; margin-right: 1em;" src="../../img/kew-bd2c2f93.jpg" /> Don’t miss the impressive Tropical House – a huge greenhouse that displays examples of exotic plant-life from every tropical environment on the planet.</p>
 
 
   </div></figure>
@@ -443,7 +434,7 @@ adjacent caption. The caption acts as the text alternative and should not be rep
         [DRAFT]
       
       
-      21 July 2014
+      24 July 2014
 			</li>
       <li>
   <strong>Editors:</strong>
