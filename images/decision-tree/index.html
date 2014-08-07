@@ -62,20 +62,6 @@
 
 
     <ul class="decision-tree">
-  <li><strong>Is the complete content of a link or button defined by this image (or multiple images)?</strong>
-    <ul>
-      <li class="yes"><strong>Yes:</strong>
-        <ul>
-          <li><em>Use the <code>alt</code> attribute to communicate the destination of the link or action taken. See <a href="../functional/">Functional Images</a>.</em></li>
-        </ul>
-      </li>
-      <li class="no"><strong>No:</strong>
-        <ul>
-          <li>Continue.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
   <li><strong>Does this image contain text?</strong>
     <ul>
       <li class="yes"><strong>Yes:</strong>
@@ -85,6 +71,20 @@
           <li><strong>… and the text is only shown for visual effects.</strong>
 <em>Use an empty <code>alt</code> attribute.</em></li>
           <li><strong>… and the text in the image is not present otherwise.</strong> <em>Use the <code>alt</code> attribute to include the text of the image. See <a href="../textual/#image-of-styled-text-with-decorative-effect">Images of Text</a>.</em></li>
+        </ul>
+      </li>
+      <li class="no"><strong>No:</strong>
+        <ul>
+          <li>Continue.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Is the image used in a link or a button, and would it be hard or impossible to understand what the link or the button does, if the image wasn’t there?</strong>
+    <ul>
+      <li class="yes"><strong>Yes:</strong>
+        <ul>
+          <li><em>Use the <code>alt</code> attribute to communicate the destination of the link or action taken. See <a href="../functional/">Functional Images</a>.</em></li>
         </ul>
       </li>
       <li class="no"><strong>No:</strong>
@@ -244,7 +244,7 @@
       
       
       
-      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span><code>alt</code> Decision Tree</span></span></li>
+      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>An alt decision tree</span></span></li>
       
       
       
@@ -276,7 +276,7 @@
         [DRAFT]
       
       
-      21 July 2014
+      07 August 2014
 			</li>
       <li>
   <strong>Editors:</strong>

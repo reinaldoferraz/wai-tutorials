@@ -75,7 +75,7 @@
 
 <h2 class="ex" id="image-containing-substantial-information">Image containing substantial information</h2>
 
-<p>This bar chart of website visitor statistics has a short description of “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3”. It’s in the <code>alt</code> attribute and identifies the image. The long description details the information, including scales, values, relationships and trends that are represented visually. For example, since the declining values for site 1, consistent values for site 2, and increasing values for site 3 are highlighted through the bar chart, this information must also be included in the <a href="../examples/2014-first-qtr/">long text description</a>.</p>
+<p>This bar chart of website visitor statistics has a short description of “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3” provided through the alt attribute of the image. The long description provides detailed information, including scales, values, relationships and trends that are represented visually. For example, since the declining values for site 1, consistent values for site 2, and increasing values for site 3 are highlighted through the bar chart, this information must also be included in the <a href="../examples/2014-first-qtr/">long text description</a>.</p>
 
 
   <figure class="sample ">
@@ -99,7 +99,7 @@
 </pre>
 
 </figure>
-<p>If the long description is published on the same page as the image, the <code>longdesc</code> value can simply contain a fragment identifier (“hash link”) to the long description.</p>
+<p>If the long description is published within an HTML element on the same page as the image, the <code>longdesc</code> value can simply contain a fragment identifier (“hash link”) to the element containing the long description. This fragment identifier consists of an <code>#</code> and the value of the <code>id</code> attribute of the longdescription element.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -163,7 +163,7 @@
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;figure</span> <span class="na">role=</span><span class="s">"group"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span>
-		<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3, described in full below."</span><span class="nt">&gt;</span>
+		<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3, described in detail below."</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;h2&gt;</span>Trends<span class="nt">&lt;/h2&gt;</span>
 	<span class="nt">&lt;p&gt;</span>Site visitors for the first  ...<span class="nt">&lt;/p&gt;</span>
 	<span class="nt">&lt;h2&gt;</span>Statistics<span class="nt">&lt;/h2&gt;</span>
@@ -426,7 +426,7 @@
       
       
       
-      <li class="tips"><a class="" href="../decision-tree/"><span class="count"></span><span class="txt"><code>alt</code> Decision Tree</span></a></li>
+      <li class="tips"><a class="" href="../decision-tree/"><span class="count"></span><span class="txt">An alt decision tree</span></a></li>
       
       
       
@@ -458,7 +458,7 @@
         [DRAFT]
       
       
-      24 July 2014
+      07 August 2014
 			</li>
       <li>
   <strong>Editors:</strong>
