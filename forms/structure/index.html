@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Instructions
+  Form Structure
   
     
        &bull; Forms
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Instructions</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Form Structure</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Instructions
+      Form Structure
     </h1>
   </header>
 
@@ -61,48 +61,39 @@
   
 
 
-    <p>Sometimes it is necessary to add additional, auxiliary information to a form field to make it easier for users to enter the information correctly or in the correct format.</p>
+    <p>If a form is more complex than just a couple of form fields or the form fields are ambiguous, some more structuring markup is needed to provide the best experience for users.</p>
 
-<p>Screen reader in “Forms Mode” usually only read elements that are form elements (like <code>input</code>, <code>select</code>, and <code>textarea</code>) so the location of instructions is very important.</p>
+<h2 id="structuring-form-content">Structuring form content</h2>
 
-<h2 id="overview-instructions">Overview Instructions</h2>
+<h3 class="ex" id="using-fieldsets">Using fieldsets</h3>
 
-<p>Instructions that are common to several fields should be positioned ahead of the form itself. Examples for such instructions are data format restrictions or how required fields are identified. They can also include help to find in-line format tips.</p>
+<p>Forms should be grouped into groups of logically related form controls to help orientation, using <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements. The <code>&lt;fieldset&gt;</code> element is needed to establish relationships between groups of form fields, the <code>&lt;legend&gt;</code> acts as a heading for this group.</p>
 
+<p>Depending on browser and assistive technology the legend is read out <em>with every form element</em>, <em>once</em>, or <em>not at all</em>. This means that the content of the legend and the labels of individual field sets is very important:</p>
 
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
 <ul>
-  <li>All fields marked (required) must be completed.</li>
-  <li>Dates should all be typed in the format dd/mm/yyyy, (as in 21/07/2013).</li>
-  <li>Passwords must contain at least 8 letters and/or numbers.</li>
-  <li>Extra help can be found immediately after each field.</li>
+  <li>The legend should be short as a long legend is very tedious if it is read with every label.</li>
+  <li>The individual labels should be self-explanatory.</li>
+  <li>If all form fields in a fieldset are optional, consider to add this information to the legend. This enables the user to skip those form fields.</li>
 </ul>
-
-
-  </div></figure>
-
-<div class="notes ">
-<p><strong>Note:</strong> Apart from adding instructions to the form fields, <a href="errors.html">submission errors can be prevented</a> by the browser programatically if the HTML5 form validation markup is used.</p>
-
-</div>
-<h2 id="in-line-instructions">In-line Instructions</h2>
-
-<p>Some in-line instructions, such as required field indicators, must be part of the label itself to be picked immediately by assistive technologies like screen readers.</p>
-
-<h3 class="ex" id="adding-instructions-in-labels">Adding instructions in labels</h3>
-
-<p>For simple use cases, adding the instruction into the label may be enough. This approach might not enable the most styling options but is very reliable across different assistive technologies.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <form method="post" action="#">
+<fieldset>
+<legend>(Optional) I want to receive</legend>
   <div>
-    <label for="expire">Expiry date (MM/YYYY): </label> <input type="text" name="expire" id="expire">
+    <input type="checkbox" name="newsletter" id="check_1"> <label for="check_1">The weekly newsletter</label>
   </div>
+  <div>
+    <input type="checkbox" name="company_offers" id="check_2"> <label for="check_2">Offers from the company</label> <br>
+  </div>
+  <div>
+    <input type="checkbox" name="assoc_offers" id="check_3"> <label for="check_3">Offers from associated companies</label>
+  </div>
+</fieldset>
 </form>
 
 
@@ -110,110 +101,108 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date (MM/YYYY): <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span><span class="nt">&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
+<span class="nt">&lt;legend&gt;</span>(Optional) I want to receive<span class="nt">&lt;/legend&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"company_offers"</span> <span class="na">id=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>Offers from the company<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;br&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"assoc_offers"</span> <span class="na">id=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>Offers from associated companies<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
 </pre>
 
 </figure>
-<h3 class="ex" id="instructions-following-labels">Instructions following labels</h3>
+<h2 class="newex" id="multi-page-forms">Multi-page Forms</h2>
 
-<p>Formatting tips might also be positioned after a field as long as the user gets to know where to find them before entering the form.</p>
+<p>A form that is really long can be split up into several pages to reduce the complexity users have to deal with at once. This makes filling them out easier for everyone, including people with cognitive disabilities.
+Information that is important for the complete form, like <a href="../instructions/#overview-instructions">overview instructions</a>, should be repeated on every page.</p>
+
+<p>Form pages should always be split up by the topic of the form fields on the page. For example, in an online shop, shipping and payment information is on separate pages.</p>
+
+<p>It should be easy to skip (pages of) optional form fields. If a page is optional it makes sense to mention this information in the main heading of the page as well.</p>
+
+<p>Don’t give users a time limit to fill out the form, if possible. If you do need a time limit, provide a checkbox that allows the user to extend the time limit</p>
+
+<h3 id="providing-progress-feedback-">Providing progress feedback …</h3>
+
+<p>The first form page should explain how many pages will follow, and on each page the user should be informed about the progress he is making.</p>
+
+<h4 class="ap" id="in-the-title-element">… in the title element</h4>
+
+<p>The title element is the first item read to a screen reader user. Changing the title of the page to include the progress gives immediate feedback and can even be an indicator for error messages if the progress doesn’t change.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<ul>
-  <li>Extra help can be found immediately after each field.</li>
-</ul>
-
-<form method="post" action="#">
-  <div>
-    <label for="expire2">Expiry date:</label> <input type="text" name="expire" id="expire2"> <span>(MM/YYYY)</span>
-  </div>
-</form>
+Page 2/4: Shipping Address – Complete Purchase – Galactic Teddy Bears Shop
 
 
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span><span class="nt">&gt;</span> <span class="nt">&lt;span&gt;</span>(MM/YYYY)<span class="nt">&lt;/span&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;title&gt;</span>Page 2/4: Shipping Address – Complete Purchase – Galactic Teddy Bears Shop<span class="nt">&lt;/title&gt;</span>
 </pre>
 
 </figure>
-<h3 class="ex" id="using-wai-aria">Using WAI-ARIA</h3>
+<h4 class="ap" id="in-the-main-heading">… in the main heading</h4>
 
-<p>Another approach is to use WAI-ARIA attributes to provide additional information <em>specifically to assistive technologies</em>. This information is interpreted mostly by screen readers at the moment.</p>
-
-<p><code>Aria-describedby</code> can be used to associate auxiliary text to a form field. If supported by assistive technology it is conveyed to the user either immediately when the form field is entered or on demand, usually after the content of the label element is provided.</p>
+<p>Using the main heading to inform users is a very good way to provide an update for people scanning the page visually, as the main heading usually is very prominent in the document.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<style>
-  #ex3 span {
-    display: inline-block;
-    vertical-align: top;
-  }
-  #ex3 span span {
-    display: block;
-    font-size: 0.8em;
-  }
-</style>
-<form method="post" action="#" id="ex3">
-  <div>
-    <label for="expire4">Expiry date:</label>
-    <span>
-      <input type="text" name="expire" id="expire4" aria-describedby="expDesc2">
-      <span id="expDesc2">MM/YYYY</span>
-    </span>
-  </div>
-</form>
+<h1 role="presentation">Shipping Address (Page 2/4)</h1>
 
 
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/span&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;h1&gt;</span>Shipping Address (Page 2/4)<span class="nt">&lt;/h1&gt;</span>
 </pre>
 
 </figure>
-<h3 class="ex" id="placeholder-text">Placeholder text</h3>
+<h4 class="ap" id="using-the-html5-progress-element">… using the HTML5 progress element</h4>
 
-<p>Placeholder text is a short hint of the kind of data to put into a field. It’s usually shown as low-contrast text inside empty form fields and disappears as soon as the user starts typing. <strong>It’s not a replacement for a label</strong>, especially they are not treated as labels by assistive technology. See <a href="../labels/#hidden">Form fields without (visible) labels</a> for more information. Assistive technology may not support placeholder text yet.</p>
-
-<p>If the style of placeholder text is customized, it should have distinctively less contrast than regular text input so it is not mistaken as pre-populated while obeying the WCAG 2.0 contrast ratio rules.</p>
+<p>The HTML5 progress element is a good way to inform users about the progress of the form and is especially suited when it is hard to know how many pages there will be. For example, in a survey pages are skipped when questions are answered in a certain way.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
-  <div class="box-content"><form method="post" action="#">
-  <div>
-    <label for="search">Search:</label> <input type="text" name="search" id="search" placeholder="e.g. Apple Pie">
-  </div>
-  <div>
-    <label for="email">Email: </label> <input type="text" name="email" id="email" placeholder="joe@example.com">
-  </div>
-</form>
+  <div class="box-content">
+Survey <progress max="7" value="1">(Page 2 of approx. 7)</progress><br>
+
+Survey <progress max="7" value="3">(Page 3 of approx. 7)</progress><br>
+
+Survey <progress max="7" value="6">(Page 6 of approx. 7)</progress><br>
+
+Survey <progress max="7" value="7">(Finished)</progress>
 
 
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span><span class="nt">&gt;</span>Search:<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"e.g. Apple Pie"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"joe@example.com"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<pre class="highlight html">
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>(Page 2 of approx. 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>(Page 3 of approx. 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>(Page 6 of approx. 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>(Finished)<span class="nt">&lt;/progress&gt;</span>
 </pre>
+
 
 </figure>
 
@@ -244,11 +233,11 @@
       
         
           
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-time-limits-required-behaviors">2.2.1 Timing Adjustable:</a> For each time limit that is set by the content, at least one of the following is true:<ul><li>Turn off: The user is allowed to turn off the time limit before encountering it; or</li>Adjust: The user is allowed to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting; or</li><li>Extend: The user is warned before time expires and given at least 20 seconds to extend the time limit with a simple action (for example, "press the space bar"), and the user is allowed to extend the time limit at least ten times; or</li><li>Real-time Exception: The time limit is a required part of a real-time event (for example, an auction), and no alternative to the time limit is possible; or</li><li>Essential Exception: The time limit is essential and extending it would invalidate the activity; or</li><li>20 Hour Exception: The time limit is longer than 20 hours. </li></ul> (Level&nbsp;A)</p></li>
+          
         
       
         
-          
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-descriptive">2.4.6 Headings and Labels:</a> Headings and labels describe topic or purpose. (Level&nbsp;AA)</p></li>
           
         
       
@@ -272,8 +261,6 @@
       
         
           
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-qr-ensure-compat-rsv">4.1.2 Name, Role, Value:</a> For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies. (Level&nbsp;A)</p></li>
-          
         
       
     </ul>
@@ -288,66 +275,6 @@
       
         
           
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G17">G17: Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text</a></li>
-          
-        
-      
-        
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G18">G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text</a></li>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G131">G131: Providing descriptive labels</a></li>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G162">G162: Positioning labels to maximize predictability of relationships</a></li>
-          
         
       
         
@@ -392,15 +319,7 @@
       
         
           
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H44">H44: Using label elements to associate text labels with form controls</a></li>
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G133">G133: Providing a checkbox on the first page of a multipart form that allows users to ask for longer session time limit or no session time limit</a></li>
           
         
       
@@ -430,7 +349,13 @@
       
         
           
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H93">H93: Ensuring that id attributes are unique on a Web page</a></li>
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G180">G180: Providing the user with a means to set the time limit to 10 times the default time limit</a></li>
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G198">G198: Providing a way for the user to turn the time limit off</a></li>
           
         
       
@@ -439,6 +364,68 @@
         
       
         
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H71">H71: Providing a description for groups of form controls using fieldset and legend elements</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR1">SCR1: Allowing the user to extend the default time limit</a></li>
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR16">SCR16: Providing a script that warns the user a time limit is about to expire</a></li>
           
         
       
@@ -453,8 +440,12 @@
       
         
         
+        
+      
+        
+        
           <li class="prev">
-            <span><a class="" href="../labels/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Labels</span></span></a></span>
+            <span><a class="" href="../instructions/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Instructions</span></span></a></span>
           </li>
         
         
@@ -467,12 +458,8 @@
         
         
           <li class="next">
-            <span><a class="" href="../structure/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Form Structure</span></span></a></span>
+            <span><a class="" href="../in-disguise/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Forms in Disguise</span></span></a></span>
           </li>
-        
-      
-        
-        
         
       
         
@@ -496,7 +483,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/instructions.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/structure.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -521,11 +508,11 @@
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Instructions</span></span></li>
+      <li><a class="" href="../instructions/"><span class="count"></span><span class="txt">Instructions</span></a></li>
       
       
       
-      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Form Structure</span></a></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Form Structure</span></span></li>
       
       
       
@@ -569,7 +556,7 @@
       
         [EDITOR’S DRAFT]
       
-      18 August 2014
+      19 August 2014
 			</li>
       <li>
 <strong>Editors: </strong>

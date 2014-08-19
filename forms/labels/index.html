@@ -12,7 +12,7 @@
   &bull; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-6d99fa5a.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-9f2de1d7.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -118,42 +118,81 @@
 </figure>
 <h2 class="ex" id="explicit-labels">Explicit labels</h2>
 
-<p>To explicitly associate a label and its form control, the <code>&lt;label&gt;</code>element must have a <code>for</code> attribute which exactly matches the value of an <code>id</code> attribute in its related field.</p>
+<p>To explicitly associate a label and its form control, the <code>&lt;label&gt;</code> element must have a <code>for</code> attribute which exactly matches the value of an <code>id</code> attribute in its related field.</p>
+
+<p>This is especially useful if label and form field are not in the same element, for example because it should be formatted like a table. Also it creates a more direct connection between the fomr field and its label, which means it won’t break easily if the markup changes.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
 <div>All fields marked (required) must be completed.</div>
-<form method="post" action="#">
-	<div>
-		<label for="firstname">First name: </label> <input type="text" name="firstname" id="firstname">
-	</div>
-	<div>
-		<label for="lastname">Last name: (required)</label> <input type="text" name="lastname" id="lastname">
-	</div>
-	<div>
-		<input type="checkbox" id="premium" name="premium"> <label for="premium">Premium Membership</label>
-	</div>
+<form method="post" action="#" id="expl_label_form">
+  <div>
+    <div>
+      <label for="firstname">First name: </label>
+    </div>
+    <div>
+      <input type="text" name="firstname" id="firstname">
+    </div>
+  </div>
+  <div>
+    <div>
+      <label for="lastname">Last name: (required)</label>
+    </div>
+    <div>
+      <input type="text" name="lastname" id="lastname">
+    </div>
+  </div>
+  <div>
+    <div>
+      <input type="checkbox" id="premium" name="premium"> <label for="premium">Premium Membership</label>
+    </div>
+  </div>
 </form>
+
+<style>
+  #expl_label_form {display:table}
+  #expl_label_form>div {display:table-row}
+  #expl_label_form>div>div {display:table-cell;}
+</style>
 
 
   </div></figure>
 
 <figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
-	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span> <span class="na">id=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>Last name: (required)<span class="nt">&lt;/label&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"lastname"</span> <span class="na">id=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"premium"</span> <span class="na">name=</span><span class="s">"premium"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"premium"</span><span class="nt">&gt;</span>Premium Membership<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"expl_label_form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name: <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span> <span class="na">id=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>Last name: (required)<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"lastname"</span> <span class="na">id=</span><span class="s">"lastname"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"premium"</span> <span class="na">name=</span><span class="s">"premium"</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"premium"</span><span class="nt">&gt;</span>Premium Membership<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre>
+
+</figure>
+<figure class="code ">
+  <figcaption>Code snippet: CSS</figcaption>
+<pre class="highlight css"><span class="nf">#expl_label_form</span> <span class="p">{</span><span class="nl">display</span><span class="p">:</span><span class="n">table</span><span class="p">}</span>
+<span class="nf">#expl_label_form</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span><span class="nl">display</span><span class="p">:</span><span class="nb">table-row</span><span class="p">}</span>
+<span class="nf">#expl_label_form</span><span class="o">&gt;</span><span class="nt">div</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span><span class="nl">display</span><span class="p">:</span><span class="nb">table-cell</span><span class="p">;}</span>
 </pre>
 
 </figure>
@@ -173,8 +212,8 @@
   <div class="box-content">
 <form method="post" action="#">
   <div>
-    <label for="search" class="visuallyhidden">Search: </label> 
-    <input type="text" name="search" id="search"> 
+    <label for="search" class="visuallyhidden">Search: </label>
+    <input type="text" name="search" id="search">
     <button type="button">Search</button>
   </div>
 </form>
@@ -184,8 +223,8 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Search: <span class="nt">&lt;/label&gt;</span> 
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span><span class="nt">&gt;</span> 
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Search: <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
 </pre>
 
@@ -224,19 +263,19 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span><span class="nt">&gt;</span>Date of birth: <span class="nt">&lt;/label&gt;</span> 
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span><span class="nt">&gt;</span>Date of birth: <span class="nt">&lt;/label&gt;</span>
 
-<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Day<span class="nt">&lt;/label&gt;</span> 
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Day<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"day"</span> <span class="na">maxlength=</span><span class="s">"2"</span> <span class="na">placeholder=</span><span class="s">"01"</span><span class="nt">&gt;</span>
 
-<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"month"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Month: <span class="nt">&lt;/label&gt;</span> 
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"month"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Month: <span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"month"</span> <span class="na">id=</span><span class="s">"month"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"01"</span><span class="nt">&gt;</span>January<span class="nt">&lt;/option&gt;</span>
   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"02"</span><span class="nt">&gt;</span>Febuary<span class="nt">&lt;/option&gt;</span>
   […]
 <span class="nt">&lt;/select&gt;</span>
 
-<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"year"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Year: <span class="nt">&lt;/label&gt;</span> 
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"year"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Year: <span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"year"</span> <span class="na">maxlength=</span><span class="s">"4"</span> <span class="na">placeholder=</span><span class="s">"1970"</span><span class="nt">&gt;</span>
 </pre>
 
@@ -270,7 +309,7 @@
   <div class="box-content">
 <form method="post" action="#">
   <div>
-    <input title="Search" type="text" name="search" id="search2"> 
+    <input title="Search" type="text" name="search" id="search2">
     <button type="button">Search</button>
   </div>
 </form>
@@ -280,7 +319,7 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">title=</span><span class="s">"Search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span><span class="nt">&gt;</span> 
+<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">title=</span><span class="s">"Search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
 </pre>
 
@@ -300,6 +339,10 @@
         
           
             <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">1.3.1 Info and Relationships:</a> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
           
         
       
@@ -407,7 +450,25 @@
       
         
           
+        
+      
+        
+          
             <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G162">G162: Positioning labels to maximize predictability of relationships</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G167">G167: Using an adjacent button to label the purpose of a field</a></li>
+          
+        
+      
+        
           
         
       
@@ -483,6 +544,14 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
     </ul>
   
 </div>
@@ -506,6 +575,10 @@
           <li class="next">
             <span><a class="" href="../instructions/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Instructions</span></span></a></span>
           </li>
+        
+      
+        
+        
         
       
         
@@ -562,11 +635,7 @@
       
       
       
-      <li><a class="" href="../errors/"><span class="count"></span><span class="txt">Error Handling</span></a></li>
-      
-      
-      
-      <li><a class="" href="../complex/"><span class="count"></span><span class="txt">Complex Forms</span></a></li>
+      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Form Structure</span></a></li>
       
       
       
@@ -574,7 +643,15 @@
       
       
       
-      <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">Tips and FAQ</span></a></li>
+      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Error Prevention</span></a></li>
+      
+      
+      
+      <li><a class="" href="../error-messages/"><span class="count"></span><span class="txt">Error Messages</span></a></li>
+      
+      
+      
+      <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">Tips and Tricks</span></a></li>
       
       
       
@@ -602,7 +679,7 @@
       
         [EDITOR’S DRAFT]
       
-      18 August 2014
+      19 August 2014
 			</li>
       <li>
 <strong>Editors: </strong>
