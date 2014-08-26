@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Instructions
+  Form Instructions
   
     
        &bull; Forms
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Instructions</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Form Instructions</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Instructions
+      Form Instructions
     </h1>
   </header>
 
@@ -61,13 +61,18 @@
   
 
 
-    <p>Sometimes it is necessary to add additional, auxiliary information to a form field to make it easier for users to enter the information correctly or in the correct format.</p>
+    <p>Provide instructions to help users understand how to complete the form and individual form controls. This includes indicating any required and optional input, data formats, and other important aspects of the form.</p>
 
-<p>Screen reader in “Forms Mode” usually only read elements that are form elements (like <code>input</code>, <code>select</code>, and <code>textarea</code>) so the location of instructions is very important.</p>
+<ul>
+  <li>@@optional fields and skipping them (@@needs to be added throughout)</li>
+  <li>@@information about any time limits (@@needs to be added throughout)</li>
+</ul>
 
-<h2 id="overview-instructions">Overview Instructions</h2>
+<p><strong>Note:</strong> Screen readers often switch to “Forms Mode” when they are processing content with a <code>form</code> element. In this mode they usually only read aloud form elements such as <code>input</code>, <code>select</code>, and <code>textarea</code>. It is critical to include form instructions in ways so that they will be read aloud.</p>
 
-<p>Instructions that are common to several fields should be positioned ahead of the form itself. Examples for such instructions are data format restrictions or how required fields are identified. They can also include help to find in-line format tips.</p>
+<h2 class="newex" id="overall-instructions">Overall instructions</h2>
+
+<p>Where relevant, provide overall instructions that apply to the entire form before the <code>form</code> element (to ensure that it is read aloud by screen readers before they switch to “Forms Mode”). In the example below, form instructions indicate how required input is highlighted, the expected format for key data fields of the particular form, and how to get additional help for each input.</p>
 
 
   <figure class="sample ">
@@ -83,17 +88,13 @@
 
   </div></figure>
 
-<div class="notes ">
-<p><strong>Note:</strong> Apart from adding instructions to the form fields, <a href="errors.html">submission errors can be prevented</a> by the browser programatically if the HTML5 form validation markup is used.</p>
+<h2 class="newex" id="in-line-instructions">In-line instructions</h2>
 
-</div>
-<h2 id="in-line-instructions">In-line Instructions</h2>
+<p>In addition to the overall instructions, it is also important to provide relevant instructions within the labels of the form controls. For example, indicating required input and data formats is generally needed as part of the labels.</p>
 
-<p>Some in-line instructions, such as required field indicators, must be part of the label itself to be picked immediately by assistive technologies like screen readers.</p>
+<h3 class="newex" id="providing-instructions-within-labels">Providing instructions within labels</h3>
 
-<h3 class="ex" id="adding-instructions-in-labels">Adding instructions in labels</h3>
-
-<p>For simple use cases, adding the instruction into the label may be enough. This approach might not enable the most styling options but is very reliable across different assistive technologies.</p>
+<p>For simple use cases, providing instructions within the labels may be sufficient. While this approach tends to impact styling options, it is most reliable across different web browsers and assistive technologies.</p>
 
 
   <figure class="sample ">
@@ -114,9 +115,13 @@
 </pre>
 
 </figure>
-<h3 class="ex" id="instructions-following-labels">Instructions following labels</h3>
+<h3 class="newex" id="providing-instructions-outside-labels">Providing instructions outside labels</h3>
 
-<p>Formatting tips might also be positioned after a field as long as the user gets to know where to find them before entering the form.</p>
+<p>Providing instructions outside labels allows more flexible positioning and design but generally has caveats. The two approaches outlined below can be combined to achieve most impact.</p>
+
+<h4 class="ap" id="informing-users">Informing users</h4>
+
+<p>Content outside form elements may be missed by screen readers that are in “Forms Mode”. In the example below, users are informed that extra help is available for each field in the overall instructions before they enter the actual form so that they don't miss it.</p>
 
 
   <figure class="sample ">
@@ -141,11 +146,13 @@
 </pre>
 
 </figure>
-<h3 class="ex" id="using-wai-aria">Using WAI-ARIA</h3>
+<div class="notes ">
+<p><strong>Note:</strong> A caveat of this approach is that users receive the instructions after the form element. This is often non-ideal, especially when the form controls are larg or when they are displayed on mobile devices and using screen magnification. In such cases these instructions may not always be easy to find.</p>
 
-<p>Another approach is to use WAI-ARIA attributes to provide additional information <em>specifically to assistive technologies</em>. This information is interpreted mostly by screen readers at the moment.</p>
+</div>
+<h4 class="ap" id="using-wai-aria">Using WAI-ARIA</h4>
 
-<p><code>Aria-describedby</code> can be used to associate auxiliary text to a form field. If supported by assistive technology it is conveyed to the user either immediately when the form field is entered or on demand, usually after the content of the label element is provided.</p>
+<p>Another approach is to use the WAI-ARIA <code>aria-describedby</code> attribute to associate the instructions with form elements. Currently this approach may not be fully supported by all web browsers and assistive technologies.</p>
 
 
   <figure class="sample ">
@@ -184,11 +191,17 @@
 </pre>
 
 </figure>
-<h3 class="ex" id="placeholder-text">Placeholder text</h3>
+<div class="notes ">
+<p><strong>Note:</strong> A caveat of this approach is that it is mostly interpreted by screen readers, so that non-screen reader users may not get the same benefit. Until such associations are more broadly interpreted it is often useful to position the instructions directly after the form controls.</p>
 
-<p>Placeholder text is a short hint of the kind of data to put into a field. It’s usually shown as low-contrast text inside empty form fields and disappears as soon as the user starts typing. <strong>It’s not a replacement for a label</strong>, especially they are not treated as labels by assistive technology. See <a href="../labels/#hidden">Form fields without (visible) labels</a> for more information. Assistive technology may not support placeholder text yet.</p>
+</div>
+<h3 class="newex" id="placeholder-text">Placeholder text</h3>
 
-<p>If the style of placeholder text is customized, it should have distinctively less contrast than regular text input so it is not mistaken as pre-populated while obeying the WCAG 2.0 contrast ratio rules.</p>
+<p>Placeholder text provides instructions or an example of the required data format inside form fields that have not yet been edited by the user. Placeholder text is usually displayed with lower color contrast than text provided by users, and it disappears from form fields when users start entering text.</p>
+
+<p>While placeholder text provides important guidance for many users, <strong>placeholder text is not a replacement for labels</strong>. Assistive technologies, such as screen readers, do not treat placeholder text as labels. Moreover, placeholder text is currently not broadly supported across assistive technologies.</p>
+
+<p>Refer to the techniques described in <a href="../labels/#hidden">Hidden labels</a> in cases where you want to avoid redudancy of (visible) labels and placeholder text.</p>
 
 
   <figure class="sample ">
@@ -216,6 +229,10 @@
 </pre>
 
 </figure>
+<div class="notes ">
+<p><strong>Note:</strong> To provide more clarity, ensure that the style of placeholder text is distinguishable from regular text. This is commonly done by reducing the color contrast of placeholder text. However, ensure that also placeholder text meets at least the <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">minimum color contrast requirement of WCAG 2.0</a>.</p>
+
+</div>
 
 
 <div role="techniques">
@@ -453,8 +470,12 @@
       
         
         
+        
+      
+        
+        
           <li class="prev">
-            <span><a class="" href="../labels/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Labels</span></span></a></span>
+            <span><a class="" href="../structure/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Grouping Controls</span></span></a></span>
           </li>
         
         
@@ -467,7 +488,7 @@
         
         
           <li class="next">
-            <span><a class="" href="../structure/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Form Structure</span></span></a></span>
+            <span><a class="" href="../error-prevention/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Validating Input</span></span></a></span>
           </li>
         
       
@@ -517,27 +538,31 @@
         
       
       
-      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labels</span></a></li>
+      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labeling Controls</span></a></li>
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Instructions</span></span></li>
+      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
       
       
       
-      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Form Structure</span></a></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Form Instructions</span></span></li>
       
       
       
-      <li><a class="" href="../in-disguise/"><span class="count"></span><span class="txt">Forms in Disguise</span></a></li>
+      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
       
       
       
-      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Error Prevention</span></a></li>
+      <li><a class="" href="../error-messages/"><span class="count"></span><span class="txt">User Interaction</span></a></li>
       
       
       
-      <li><a class="" href="../error-messages/"><span class="count"></span><span class="txt">Error Messages</span></a></li>
+      <li><a class="" href="../multi-step/"><span class="count"></span><span class="txt">Multi-Step Forms</span></a></li>
+      
+      
+      
+      <li><a class="" href="../custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
       
       
       
@@ -569,7 +594,7 @@
       
         [EDITOR’S DRAFT]
       
-      18 August 2014
+      26 August 2014
 			</li>
       <li>
 <strong>Editors: </strong>

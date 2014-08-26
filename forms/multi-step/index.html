@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Grouping Controls
+  Multi-Step Forms
   
     
        &bull; Forms
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Grouping Controls</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Multi-Step Forms</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Grouping Controls
+      Multi-Step Forms
     </h1>
   </header>
 
@@ -61,61 +61,93 @@
   
 
 
-    <p>Group related form controls both visually and within the code. Use the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements to associate related form controls.</p>
+    <p>Where possible, divide long forms into multiple smaller forms that constitute a series of logical steps or stages. This helps make long forms less daunting and easier to understand, in particular for people with less computer skills and people with different types of cognitive disabilities.</p>
 
-<h2 class="newex" id="associating-related-controls">Associating related controls</h2>
+<ul>
+  <li>@@@repeat <a href="../instructions/#overview-instructions">overall instructions</a> on every page</li>
+  <li>@@@Form pages should always be split up by the topic of the form fields on the page. For example, in an online shop, shipping and payment information is on separate pages.</li>
+  <li>@@@It should be easy to skip (pages of) optional form fields. If a page is optional it makes sense to mention this information in the main heading of the page as well.</li>
+  <li>@@@Don’t give users a time limit to fill out the form, if possible. If you do need a time limit, provide a checkbox that allows the user to extend the time limit (@@moved to "instructions" and "user interaction" sections)</li>
+</ul>
 
-<p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group. In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information. The legend for this group of controls highlights the action that is common to all controls, and the fact that they are all optional.</p>
+<h2 class="newex" id="indicating-progress-section-needs-editing">Indicating progress (@@section needs editing)</h2>
+
+<p>The first form page should explain how many pages will follow, and on each page the user should be informed about the progress he is making.</p>
+
+<h3 class="ap" id="using-the-page-title">Using the page title</h3>
+
+<p>The <code>title</code> element is the first item read by many people, such as screen reader users. Changing the title of the page to include the progress gives immediate feedback. This information should precede other information provided in the title, such as the name of the step or any error notifications.</p>
 
 
   <figure class="sample ">
   <figcaption>Example</figcaption>
   <div class="box-content">
-<form method="post" action="#">
-<fieldset>
-<legend>(Optional) I want to receive</legend>
-  <div>
-    <input type="checkbox" name="newsletter" id="check_1"> <label for="check_1">The weekly newsletter</label>
-  </div>
-  <div>
-    <input type="checkbox" name="company_offers" id="check_2"> <label for="check_2">Offers from the company</label>
-  </div>
-  <div>
-    <input type="checkbox" name="assoc_offers" id="check_3"> <label for="check_3">Offers from associated companies</label>
-  </div>
-</fieldset>
-</form>
+Step 2/4: Shipping Address – Complete Purchase – Galactic Teddy Bears Shop
 
 
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
-<span class="nt">&lt;legend&gt;</span>(Optional) I want to receive<span class="nt">&lt;/legend&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"company_offers"</span> <span class="na">id=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>Offers from the company<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"assoc_offers"</span> <span class="na">id=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>Offers from associated companies<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/fieldset&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;title&gt;</span>Step 2/4: Shipping Address – Complete Purchase – Galactic Teddy Bears Shop<span class="nt">&lt;/title&gt;</span>
 </pre>
 
 </figure>
-<p><strong>Note:</strong> Depending on the configuration, some screen readers read out the legend either <em>with every form element</em>, <em>once</em>, or <em>not at all</em>. To accomodate this consider the following:</p>
+<h3 class="ap" id="using-the-main-heading">Using the main heading</h3>
 
-<ul>
-  <li>Make the legend as short as possible for situations in which it is read together with the label each time.</li>
-  <li>Make the individual labels sufficiently self-explanatory for situations in which legends are not read aloud.</li>
-  <li>Hide the legend visually and provide a real heading with the same text (in some cases the same text may be read aloud twice in a row).</li>
-</ul>
+<p>Using the main heading to inform users is a good way to provide the same information for people scanning the page visually, as the main heading usually is very prominent in the document.</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<h1 role="presentation">Shipping Address (Step 2/4)</h1>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;h1&gt;</span>Shipping Address (Step 2/4)<span class="nt">&lt;/h1&gt;</span>
+</pre>
+
+</figure>
+<h3 class="ap" id="using-the-html5-progress-element">Using the HTML5 progress element</h3>
+
+<p>HTML5 provides a <code>progress</code> element that be used to inform users about the progress. This can be particularly useful in situations where the number of steps depends on the user input, such as in a survey where steps are skipped depending on how questions were answered.</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+Survey <progress max="7" value="1">(Step 2 of approx. 7)</progress><br>
+
+Survey <progress max="7" value="3">(Step 3 of approx. 7)</progress><br>
+
+Survey <progress max="7" value="6">(Step 6 of approx. 7)</progress><br>
+
+Survey <progress max="7" value="7">(Finished)</progress>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html">
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>(Step 2 of approx. 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>(Step 3 of approx. 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>(Step 6 of approx. 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+
+Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>(Finished)<span class="nt">&lt;/progress&gt;</span>
+</pre>
+
+
+</figure>
+<h3 class="ap" id="using-step-indicator-section-needs-editing">Using step-indicator (@@section needs editing)</h3>
+
+<p>@@indicator bar, like the one used for the accessibility support database or WCAG-EM report tool</p>
 
 
 
@@ -352,8 +384,24 @@
       
         
         
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
           <li class="prev">
-            <span><a class="" href="../labels/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Labeling Controls</span></span></a></span>
+            <span><a class="" href="../error-messages/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">User Interaction</span></span></a></span>
           </li>
         
         
@@ -366,24 +414,8 @@
         
         
           <li class="next">
-            <span><a class="" href="../instructions/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Form Instructions</span></span></a></span>
+            <span><a class="" href="../custom-controls/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Custom Controls</span></span></a></span>
           </li>
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
         
       
         
@@ -399,7 +431,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/structure.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/multi-step.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -424,7 +456,7 @@
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Grouping Controls</span></span></li>
+      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
       
       
       
@@ -440,7 +472,7 @@
       
       
       
-      <li><a class="" href="../multi-step/"><span class="count"></span><span class="txt">Multi-Step Forms</span></a></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Multi-Step Forms</span></span></li>
       
       
       

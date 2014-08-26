@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Error Messages
+  User Interaction
   
     
        &bull; Forms
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Error Messages</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>User Interaction</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Error Messages
+      User Interaction
     </h1>
   </header>
 
@@ -61,9 +61,27 @@
   
 
 
-    <p>If an error couldn’t be prevented, the resulting error messages should be easy to find and accurately describe which fields are in error and why. The set of error messages should have a descriptive heading, so they are easy to locate for visual and screen reader users alike. Each error should use an in-page link to the respective field using a fragment identifier (“hash link” with the ID of the form field that is erroneous).</p>
+    <p>Provide feedback to users to indicate errors, successes, and so that they can undo or confirm changes. Make error messages clear and easy to understand, and provide guidance to help users correct mistakes.</p>
 
-<h2 id="usage">Usage</h2>
+<h2 class="newex" id="providing-notifications-section-needs-editing">Providing Notifications (@@section needs editing)</h2>
+
+<p>Notifications need to be perceivable to the user, both visually and programmatically @@@.</p>
+
+<h3 class="ex" id="check-mark-and-highlighting-for-successful-input-eg-password-strength-checkers">@@check-mark and highlighting for successful input (eg password-strength checkers)</h3>
+
+<h3 class="ex" id="inline-error-message-or-other-feedback-displayed-near-control-maybe-as-pop-up">@@inline error message or other feedback displayed near control (maybe as pop-up?)</h3>
+
+<h3 class="ex" id="dynamically-generated-output-displayed-anywhere-on-the-page-keyboard-focus">@@dynamically-generated output displayed anywhere on the page (keyboard focus?)</h3>
+
+<h3 class="ex" id="communicating-data-loading-with-or-without-spinner">@@communicating "data loading" (with or without spinner)</h3>
+
+<h3 class="ex" id="communicating-status-in-the-title-element-of-the-page">@@communicating status in the title element of the page</h3>
+
+<h2 class="newex" id="error-messages-section-needs-editing">Error Messages (@@section needs editing)</h2>
+
+<p>Error message should be concise yet descriptive and easy to understand @@@.</p>
+
+<p>If an error couldn’t be prevented, the resulting error messages should be easy to find and accurately describe which fields are in error and why. The set of error messages should have a descriptive heading, so they are easy to locate for visual and screen reader users alike. Each error should use an in-page link to the respective field using a fragment identifier (“hash link” with the ID of the form field that is erroneous).</p>
 
 <p>The error message should consist of the following elements to be as helpful as possible for the user:</p>
 
@@ -73,7 +91,7 @@
   <li>Tell the user <em>how to fix</em> the error, consider using a more elaborate example as there is now more space available than in the labels of the form.</li>
 </ul>
 
-<h2 id="examples">Examples</h2>
+<h3 class="ex" id="error-message-at-page-top-with-in-page-links-to-the-actual-errors">@@error message at page-top (with in-page links to the actual errors)</h3>
 
 
   <figure class="sample ">
@@ -114,6 +132,46 @@
 </pre>
 
 </figure>
+<h3 class="ex" id="in-line-error-message-near-the-control">@@in-line error message near the control</h3>
+
+<h2 class="newex" id="success-messages-section-needs-editing">Success Messages (@@section needs editing)</h2>
+
+<p>Inform users about successes - (1) when form input is correctly entered; (2) when the entire form is correctly completed and ready for submission; (3) when form controls are successfully submitted (eg. "thank you!")</p>
+
+<h2 class="newex" id="allow-users-to-undo-reversible-changes-section-needs-editing">Allow users to undo reversible changes (@@section needs editing)</h2>
+
+<p>If a change by the user can be easily reversible or cancelled, it is useful to provide this functionality. For example:</p>
+
+<ul>
+  <li>
+    <p>A Content Management System (CMS) has the ability to delete unwanted comments. Instead of deleting them right away, they get stored in a ”trash” folder and can be easily restored.</p>
+  </li>
+  <li>
+    <p>A web email application allows users to “undo” sending of an email for a few seconds. This is useful if the user forget to attach a file or wanted to send the email to the wrong recipient.</p>
+  </li>
+  <li>
+    <p>An online shopping website lets users cancel purchases up to 24 hours after the order is submitted. The website explains their policy, and includes a summary of the policy on the purchase receipt emailed to the user. After 24 hours, the purchase will be shipped to the user and can no longer be canceled.</p>
+  </li>
+</ul>
+
+<h2 class="newex" id="allow-users-to-confirm-irreversible-changes-section-needs-editing">Allow users to confirm irreversible changes (@@section needs editing)</h2>
+
+<p>Instant and irreversible transactions, especially if carried out on a single page, can provide users with a checkbox or a confirmation dialog box to confirm that they want the requested action to take place.</p>
+
+<ul>
+  <li>
+    <p>In a Content Management System (CMS) comments can be deleted (for good) from the trash folder. When the user clicks on the “Empty trash”, a confirmation dialog box shows up asking the user “Are you sure to delete 42 comments?” The action is only carried out if the user choses the “OK” button.</p>
+  </li>
+  <li>
+    <p>A bank won’t be able to revert a currency exchange transaction as charges or changes in exchange rates would burden a cost to the user. After collecting the account and amount data, and before the submit button, a checkbox with a label like “I have checked that the amount I wish to transfer is correct” is placed. The form should then fail to validate unless the checkbox is checked.</p>
+  </li>
+  <li>
+    <p>The checkout page on a shopping website includes a form that collects order, shipping and billing information. After submitting the form, the user is taken to another page where the information they have submitted is summarized for review. Below the summary, The user must activate a “complete order” button on the review page to complete the transaction.</p>
+  </li>
+</ul>
+
+<h2 class="newex" id="allow-users-to-supress-or-extend-time-limits-section-needs-editing">Allow users to supress or extend time limits (@@section needs editing)</h2>
+
 
 
 <div role="techniques">
@@ -351,12 +409,8 @@
       
         
         
-        
-      
-        
-        
           <li class="prev">
-            <span><a class="" href="../error-prevention/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Error Prevention</span></span></a></span>
+            <span><a class="" href="../error-prevention/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Validating Input</span></span></a></span>
           </li>
         
         
@@ -369,8 +423,16 @@
         
         
           <li class="next">
-            <span><a class="" href="../tips/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Tips and Tricks</span></span></a></span>
+            <span><a class="" href="../multi-step/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Multi-Step Forms</span></span></a></span>
           </li>
+        
+      
+        
+        
+        
+      
+        
+        
         
       
     
@@ -403,27 +465,31 @@
         
       
       
-      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labels</span></a></li>
+      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labeling Controls</span></a></li>
       
       
       
-      <li><a class="" href="../instructions/"><span class="count"></span><span class="txt">Instructions</span></a></li>
+      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
       
       
       
-      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Form Structure</span></a></li>
+      <li><a class="" href="../instructions/"><span class="count"></span><span class="txt">Form Instructions</span></a></li>
       
       
       
-      <li><a class="" href="../in-disguise/"><span class="count"></span><span class="txt">Forms in Disguise</span></a></li>
+      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
       
       
       
-      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Error Prevention</span></a></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>User Interaction</span></span></li>
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Error Messages</span></span></li>
+      <li><a class="" href="../multi-step/"><span class="count"></span><span class="txt">Multi-Step Forms</span></a></li>
+      
+      
+      
+      <li><a class="" href="../custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
       
       
       
@@ -455,7 +521,7 @@
       
         [EDITOR’S DRAFT]
       
-      19 August 2014
+      26 August 2014
 			</li>
       <li>
 <strong>Editors: </strong>
