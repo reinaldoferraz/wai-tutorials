@@ -12,7 +12,7 @@
   &bull; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-9f2de1d7.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-30bd23bd.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -63,16 +63,13 @@
 
     <p>Provide instructions to help users understand how to complete the form and individual form controls. This includes indicating any required and optional input, data formats, and other important aspects of the form.</p>
 
-<ul>
-  <li>@@optional fields and skipping them (@@needs to be added throughout)</li>
-  <li>@@information about any time limits (@@needs to be added throughout)</li>
-</ul>
-
-<p><strong>Note:</strong> Screen readers often switch to “Forms Mode” when they are processing content with a <code>form</code> element. In this mode they usually only read aloud form elements such as <code>input</code>, <code>select</code>, and <code>textarea</code>. It is critical to include form instructions in ways so that they will be read aloud.</p>
+<p>Screen readers often switch to “Forms Mode” when they are processing content within a <code>&lt;form&gt;</code> element. In this mode they usually only read aloud form elements such as <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;legend&gt;</code>, and <code>&lt;label&gt;</code>. It is critical to include form instructions in ways so that they will be read aloud.</p>
 
 <h2 class="newex" id="overall-instructions">Overall instructions</h2>
 
-<p>Where relevant, provide overall instructions that apply to the entire form before the <code>form</code> element (to ensure that it is read aloud by screen readers before they switch to “Forms Mode”). In the example below, form instructions indicate how required input is highlighted, the expected format for key data fields of the particular form, and how to get additional help for each input.</p>
+<p>Where relevant, provide overall instructions that apply to the entire form before the <code>&lt;form&gt;</code> element (to ensure that it is read aloud by screen readers before they switch to “Forms Mode”). The overall instructions should also tell the user if there are optional fields and how to skip them, if they make up a large portion of the form. Information about time limits that apply should also be mentioned, alongside with information on how to adjust, extend or turn off the limit.</p>
+
+<p>In the example below, form instructions indicate how required input is highlighted, the expected format for key data fields of the particular form, and how to get additional help for each input.</p>
 
 
   <figure class="sample ">
@@ -475,7 +472,7 @@
         
         
           <li class="prev">
-            <span><a class="" href="../structure/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Grouping Controls</span></span></a></span>
+            <span><a class="" href="../grouping/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Grouping Controls</span></span></a></span>
           </li>
         
         
@@ -488,7 +485,7 @@
         
         
           <li class="next">
-            <span><a class="" href="../error-prevention/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Validating Input</span></span></a></span>
+            <span><a class="" href="../validation/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Validating Input</span></span></a></span>
           </li>
         
       
@@ -542,7 +539,7 @@
       
       
       
-      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
+      <li><a class="" href="../grouping/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
       
       
       
@@ -550,11 +547,11 @@
       
       
       
-      <li><a class="" href="../error-prevention/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
+      <li><a class="" href="../validation/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
       
       
       
-      <li><a class="" href="../error-messages/"><span class="count"></span><span class="txt">User Interaction</span></a></li>
+      <li><a class="" href="../user-interaction/"><span class="count"></span><span class="txt">User Interaction</span></a></li>
       
       
       
@@ -594,7 +591,7 @@
       
         [EDITOR’S DRAFT]
       
-      26 August 2014
+      29 August 2014
 			</li>
       <li>
 <strong>Editors: </strong>
