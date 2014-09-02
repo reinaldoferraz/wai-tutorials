@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Controls
+  Controls & Interaction
   
     
-       &bull; Sliders & Carousels
+       &bull; Carousels
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -34,15 +34,15 @@
         <span class="home"><a class="" href="../../"><span class="count"></span><span class="txt">Tutorials home</span></a></span> <span class="icon icon-chevron-right"></span>
         <span class="other">
         
-          <a class="" href="../"><span class="count"></span><span class="txt">Sliders & Carousels</span></a> <span class="icon icon-chevron-right"></span>
+          <a class="" href="../"><span class="count"></span><span class="txt">Carousels</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Controls</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Controls & Interaction</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Controls
+      Controls & Interaction
     </h1>
   </header>
 
@@ -61,7 +61,269 @@
   
 
 
+    <p>After the basic styling was applied to the content, the interaction comes in. In the first steps the slide show is prepared to hide all content but the first slide. Then “left” and “right” arrows are added to the carousel and enabled, so users can skip through the individual slides.</p>
+
+<h2 id="add-styling-when-javascript-is-enabled">Add Styling When Javascript Is Enabled</h2>
+
+<p>When JavaScript is enabled, the carousel wrapper is getting a fixed height. Individual slides are stacked on top of another, with the current slide on top of the others. Additionally, all slides but the current one are hidden by using <code>display: none</code> – a <a href="../../background/hiding/">hiding technique</a> that hides the inactive slides visually as well as from assistive technologies.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: CSS</figcaption>
+<pre class="highlight css"><span class="nc">.carousel.active</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">480px</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span><span class="nb">hidden</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#333</span><span class="p">;</span>
+  <span class="nl">position</span><span class="p">:</span><span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.active</span> <span class="nc">.slide</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">position</span><span class="p">:</span><span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.slide.current</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span><span class="nb">block</span><span class="p">;</span>
+  <span class="nl">z-index</span><span class="p">:</span> <span class="m">500</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+
+</figure>
+<p>Additionally, we add a <code>active</code> class to the carousel wrapper and a <code>current</code> class to the first slide:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: JavaScript</figcaption>
+<pre class="highlight javascript"><span class="kd">var</span> <span class="nx">carousel</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'c1'</span><span class="p">);</span>
+<span class="nx">carousel</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'.slide'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'current slide'</span><span class="p">;</span>
+<span class="nx">carousel</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'active carousel'</span><span class="p">;</span>
+</pre>
+
+</figure>
+<p>The outcome looks like this:</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<h3 role="presentational">Featured Articles:</h3>
+<div id="c1" class="carousel">
     <ul>
+        <li class="slide" style="background-image: url('../../img/ex-teddy1-c457a460.jpg');">
+            <h4>Space Teddy production reaches all-time high</h4>
+            <p>
+                Teddies in Space Inc. has released outstanding numbers for the last solar year.
+                <a href="…">Full Annual Report</a>
+            </p>
+        </li>
+        <li class="slide" style="background-image: url('../../img/ex-teddy2-14b21f95.jpg');">
+            <h4>New Space Teddy Announced!</h4>
+            <p>
+                Space Teddy 6 wears an aluminum space suit. Sapphire glass eyes are first used universe-wide.
+                <a href="…">Everything about the new model</a>
+            </p>
+        </li>
+        <li class="slide" style="background-image: url('../../img/ex-teddy3-c379a886.jpg');">
+            <h4>Adventures of the Space Teddy</h4>
+            <p>
+                Using modern HTML5 technologies, the latest installment of our game performs great on your computer, tablet, or mobile.
+                <a href="…">Play the Game here!</a>
+            </p>
+        </li>
+    </ul>
+</div>
+
+<style>
+  .carousel, .slide {
+    width: 640px;
+    padding:0;
+    margin: 0;
+    /* overflow: hidden; */
+  }
+  .carousel {
+    position: relative;
+  }
+  .carousel ul {
+    margin:0;
+    padding: 0;
+  }
+  .slide {
+    /*position: absolute;*/
+    height: 480px;
+    background-size: cover;
+    position: relative;
+    margin-bottom:1em;
+    border:1px solid #333;
+  }
+  .slide h4 {
+    display:inline-block;
+    float:righ;
+    font-size: 1.25em;
+    margin:0;
+    padding: .25em;
+    text-align: right;
+    background-color: rgba(255,255,255,.8);
+    float:right;
+    border-radius: 0 0 0 .5em;
+  }
+  .slide p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:0;
+    clear:both;
+    padding: 1em 5em 1em 3em;
+    background-color: rgba(255,255,255,.8);
+  }
+  .slide a {
+    display:block;
+    text-align: right;
+  }
+</style>
+
+<style>
+.carousel.active {
+  height: 480px;
+  overflow:hidden;
+  border: 1px solid #333;
+  position:relative;
+}
+
+.active .slide {
+  border: none;
+  display: none;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:200;
+}
+
+.slide.current {
+  display:block;
+  z-index: 500;
+}
+</style>
+
+<script>
+  var carousel = document.getElementById('c1');
+  carousel.querySelectorAll('.slide')[0].className = 'current slide';
+  carousel.className = 'active carousel';
+</script>
+
+
+  </div></figure>
+
+<h2 id="previous-and-next-buttons">Previous and Next Buttons</h2>
+
+<p>First, the previous and next buttons need to be added to the markup via JavaScript and styled accordingly:</p>
+
+
+  <figure class="sample ">
+  <figcaption>Example</figcaption>
+  <div class="box-content">
+<h3 role="presentational">Featured Articles:</h3>
+<div id="c2" class="carousel">
+    <ul>
+        <li class="slide" style="background-image: url('../../img/ex-teddy1-c457a460.jpg');">
+            <h4>Space Teddy production reaches all-time high</h4>
+            <p>
+                Teddies in Space Inc. has released outstanding numbers for the last solar year.
+                <a href="…">Full Annual Report</a>
+            </p>
+        </li>
+        <li class="slide" style="background-image: url('../../img/ex-teddy2-14b21f95.jpg');">
+            <h4>New Space Teddy Announced!</h4>
+            <p>
+                Space Teddy 6 wears an aluminum space suit. Sapphire glass eyes are first used universe-wide.
+                <a href="…">Everything about the new model</a>
+            </p>
+        </li>
+        <li class="slide" style="background-image: url('../../img/ex-teddy3-c379a886.jpg');">
+            <h4>Adventures of the Space Teddy</h4>
+            <p>
+                Using modern HTML5 technologies, the latest installment of our game performs great on your computer, tablet, or mobile.
+                <a href="…">Play the Game here!</a>
+            </p>
+        </li>
+    </ul>
+</div>
+
+<script>
+  function setSlides(newi) {
+    slides[newi.next].className = 'next slide';
+    slides[newi.prev].className = 'prev slide';
+    slides[newi.current].className = 'current slide';
+    index = newi;
+  }
+
+  function nextSlide() {
+    var length = slides.length,
+    newnext = index.next + 1,
+    newprev = index.prev + 1,
+    newcurrent = index.current + 1;
+
+    var newi = {};
+
+    if(newnext === length) {
+      newnext = 0;
+    } else if(newprev === length) {
+      newprev = 0;
+    } else if(newcurrent === length) {
+      newcurrent = 0;
+    }
+
+    newi.current = newcurrent;
+    newi.next = newnext;
+    newi.prev = newprev;
+
+    setSlides(newi);
+
+  }
+
+  function prevSlide() {
+    var length = slides.length,
+    newnext = index.next - 1,
+    newprev = index.prev - 1,
+    newcurrent = index.current - 1;
+
+    var newi = {};
+
+    if(newnext < 0) {
+      newnext = length-1;
+    } else if(newprev < 0) {
+      newprev = length-1;
+    } else if(newcurrent < 0) {
+      newcurrent = length-1;
+    }
+
+    newi.current = newcurrent;
+    newi.next = newnext;
+    newi.prev = newprev;
+
+    setSlides(newi);
+
+  }
+
+  var carousel = document.getElementById('c2');
+  var slides = carousel.querySelectorAll('.slide');
+  var index = {};
+
+  carousel.className = 'active carousel';
+
+  index.current = 0;
+  index.next = 1;
+  index.prev = slides.length-1;
+  setSlides(index);
+</script>
+
+
+  </div></figure>
+
+<hr />
+
+<ul>
   <li><strong>What to do:</strong> Ensure that all slide progression controls can be operated and understood by all users.</li>
   <li><strong>Why:</strong> Some Users may be unable to use a mouse, while others may be unable to see the visual clues to identify the relationship between the current slide and its position in a list of slide controls.</li>
   <li><strong>How:</strong> Ensure that controls can be activated by both keyboard and mouse, be distinguished from one another and that the current slide and focus state of slides is identifiable both visually and by screen readers.</li>
@@ -107,7 +369,7 @@
 </pre>
 
 </figure>
-<h2 id="previous-and-next-buttons">Previous and Next buttons</h2>
+<h2 id="previous-and-next-buttons-1">Previous and Next buttons</h2>
 
 <p>Images of left and right arrows are most commonly used to visually distinguish between “Previous” and “Next” buttons,these need appropriate <code>alt</code> attributes.</p>
 
@@ -174,14 +436,105 @@
 </pre>
 
 </figure>
-<h2 id="related-wcag20-techniques">Related WCAG2.0 Techniques:</h2>
+<h2 id="animations">Animations</h2>
 
 <ul>
-  <li><a href="#">xxx Technique name in full</a></li>
+  <li><strong>What to do:</strong> Provide pause and play controls for any carousel set to auto-scroll.</li>
+  <li><strong>Why:</strong> The scroll speed may be too fast for some users to read its content, while the movement itself can distract other users, preventing them from reading static text on the same page.</li>
+  <li><strong>How:</strong> Ensure that there is a pause function written into the script and that pause/play buttons are device independent.</li>
+  <li><strong>Conformance:</strong> This is an overall conformance requirement as well as being required to meet <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-time-limits-pause">SC 2.2.2: Pause, Stop, Hide</a></li>
 </ul>
 
+<p>Whether or not user controls are available to change slide views, any carousel script that causes slides to scroll, rotate or to change automatically must contain a function that enables the user to stop the movement.</p>
+
+<p>This function could be called from a single “Play/Pause” button, where the script also switches between “play” and “pause” images (and their <code>alt</code> attributes), or two buttons, one to pause the movement , and the other to restart the scrolling.</p>
+
+<p><img alt="Pause" src="../../img/placeholder-2a5b17ca.gif" /> <img alt="Play" src="../../img/placeholder-2a5b17ca.gif" /></p>
+
+<p>The “stop” function should also be called if the user activates any slide selection buttons, to give them time to read or understand the slide.</p>
+
+<p>The carousel should not resume scrolling until and unless the user activates the “play” button.</p>
+
+<div class="notes ">
+<p><strong>Note:</strong> As discussed on the <a href="./">controls</a> page, all buttons in the carousel should be coded as buttons or have a WAI-ARIA <code>role</code> attribute of <code>button</code> to let users know that they are controls, not links.</p>
+
+</div>
 
 
+<div role="techniques">
+  <h2 id="related">Related WCAG2.0 Resources</h2>
+  
+    <p><strong>Success Criteria:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">1.3.1 Info and Relationships:</a> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-keyboard-operation-keyboard-operable">2.1.1 Keyboard:</a> All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user’s movement and not just the endpoints. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-focus-visible">2.4.7 Focus Visible:</a> Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible. (Level&nbsp;AA)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-qr-ensure-compat-rsv">4.1.2 Name, Role, Value:</a> For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies. (Level&nbsp;A)</p></li>
+          
+        
+      
+    </ul>
+  
+  
+</div>
 
 <div role="navigation" id="tools">
   <ul>
@@ -191,7 +544,7 @@
         
         
           <li class="prev">
-            <span><a class="" href="../structure/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Structure</span></span></a></span>
+            <span><a class="" href="../structure/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Structure & Basic Styles</span></span></a></span>
           </li>
         
         
@@ -204,12 +557,8 @@
         
         
           <li class="next">
-            <span><a class="" href="../actions/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Actions</span></span></a></span>
+            <span><a class="" href="../actions/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Actions?Accessibility Prerequisites</span></span></a></span>
           </li>
-        
-      
-        
-        
         
       
         
@@ -236,29 +585,25 @@
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Sliders & Carousels Tutorial
+        Carousels Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
         
-          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Slider/Carousel Concepts</span></a></li>
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Carousel Concepts</span></a></li>
         
       
       
-      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Structure</span></a></li>
+      <li><a class="" href="../structure/"><span class="count"></span><span class="txt">Structure & Basic Styles</span></a></li>
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Controls</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Controls & Interaction</span></span></li>
       
       
       
-      <li><a class="" href="../actions/"><span class="count"></span><span class="txt">Actions</span></a></li>
-      
-      
-      
-      <li><a class="" href="../scrolling/"><span class="count"></span><span class="txt">Scrolling</span></a></li>
+      <li><a class="" href="../actions/"><span class="count"></span><span class="txt">Actions?Accessibility Prerequisites</span></a></li>
       
       
       
@@ -274,7 +619,8 @@
 	<li><a href="../../images/"><span class="count"></span><span class="txt">Images</span></a></li>
 	<li><a href="../../tables/"><span class="count"></span><span class="txt">Tables</span></a></li>
 	<li><a href="../../forms/"><span class="count"></span><span class="txt">Forms</span></a></li>
-	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Sliders/Carousels</span></span></li>
+	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Carousels</span></span></li>
+	<li><a href="../../background/"><span class="count"></span><span class="txt">Background</span></a></li>
 	<li><a href="../../more/"><span class="count"></span><span class="txt">More on the way…</span></a></li>
 </ul>
 
@@ -290,7 +636,7 @@
       
         [EDITOR’S DRAFT]
       
-      26 August 2014
+      02 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
