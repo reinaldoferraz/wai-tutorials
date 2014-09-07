@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  ◊ Keyboard Access
+  Keyboard Access
   
     
        &bull; Fundamentals
@@ -12,7 +12,7 @@
   &bull; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-5627c67f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-03a3291c.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Fundamentals</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>◊ Keyboard Access</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Keyboard Access</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      ◊ Keyboard Access
+      Keyboard Access
     </h1>
   </header>
 
@@ -61,10 +61,378 @@
   
 
 
-    
+    <p>Keyboard access is the foundation of websites that are accessible to assistive technology. For example, screen reader users are only able to navigate the page using the keyboard. Other users use other devices that basically translate the user’s instructions into keyboard commands.</p>
+
+<p>The main concept of keyboard navigation on websites is the <strong>focus</strong>, which describes the element of the page that the user is currently operating. Online, the position of the focus is often shown as dotted outline on links or buttons. On a standard keyboard (and without specialized assistive technology), the focus is controlled by using the tabulator key (<kbd>tab ↹</kbd>) which, when pressed, selects the next element that can receive focus. Similarly <kbd>shift ⇧</kbd> + <kbd>tab ↹</kbd> selects the previous element.</p>
+
+<p>There are a couple of elements that can receive focus:</p>
+
+<ul>
+  <li>Links (<code>&lt;a&gt;</code> elements) with a valid <code>href</code> attribute.</li>
+  <li>Form elements like text fields, buttons and radiobuttons (<code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, and <code>&lt;textarea&gt;</code> elements) if they are not <code>disabled</code>.</li>
+  <li>Other elements with the <code>tabinex</code> attribute.</li>
+</ul>
+
+<p>It is discouraged to use the <code>tabindex</code> attribute with positive integer values as this overrides the natural keyboard navigation on the page, an element with a <code>tabindex</code> of <code>1</code> would always be the first element that would be in focus, no matter of the focusable elements that came before it in the HTML document. This would mean that a keyboard user potentially wouldn’t be able to operate a (large) part of the website which is unacceptable.</p>
+
+<p>Instead using the <code>tabindex</code> attribute with a value of <code>0</code> brings an arbitrary element in the normal tab flow and makes it focusable by using the <kbd>tab ↹</kbd> key. A value of <code>-1</code> makes the element focusable using JavaScript (<code>document.getElementsByTagName('div')[0].focus();</code>) only.</p>
+
+<p>Under some circumstances, there are situations where the focus is not leaving a certain element due to how the website is laid out or programmed. This is called a <strong>keyboard trap</strong> and needs to be avoided as it affects the accessibility of the page as a whole. If there are components, like rich-text editors, where the <kbd>tab ↹</kbd> key is used otherwise (in this instance, to create a tab character), the user needs to be informed of a way to leave that element (usually by hitting the <kbd>esc ⎋</kbd> key).</p>
 
 
 
+
+<div role="techniques">
+  <h2 id="related">Related WCAG2.0 Resources</h2>
+  
+    <p><strong>Success Criteria:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-keyboard-operation-keyboard-operable">2.1.1 Keyboard:</a> All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user’s movement and not just the endpoints. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-keyboard-operation-trapping">2.1.2 No Keyboard Trap:</a> If keyboard focus can be moved to a component of the page using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-focus-visible">2.4.7 Focus Visible:</a> Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible. (Level&nbsp;AA)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+  
+  
+    <p><strong>Techniques:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/FLASH17">FLASH17: Providing keyboard access to a Flash object and avoiding a keyboard trap</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G21">G21: Ensuring that users are not trapped in content</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G90">G90: Providing keyboard-triggered event handlers</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G202">G202: Ensuring keyboard control for all functionality</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H91">H91: Using HTML form controls and links</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR2">SCR2: Using redundant keyboard and mouse event handlers</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR20">SCR20: Using both keyboard and other device-specific functions</a></li>
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR29">SCR29: Adding keyboard-accessible actions to static HTML elements</a></li>
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR35">SCR35: Making actions keyboard accessible by using the onclick event of anchors and buttons</a></li>
+          
+        
+      
+    </ul>
+  
+</div>
 
 <div role="navigation" id="tools">
   <ul>
@@ -82,7 +450,7 @@
         
         
           <li class="prev">
-            <span><a class="" href="../progressive-enhancement/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">◊ Progressive Enhancement</span></span></a></span>
+            <span><a class="" href="../hiding/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Hiding Content</span></span></a></span>
           </li>
         
         
@@ -93,6 +461,10 @@
       
         
         
+        
+          <li class="next">
+            <span><a class="" href="../progressive-enhancement/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Progressive Enhancement</span></span></a></span>
+          </li>
         
       
     
@@ -121,27 +493,27 @@
     <ul aria-labelledby="list-heading-tutorials">
       
         
-          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">◊ Fundamental Information</span></a></li>
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">◊ Fundamental Concepts</span></a></li>
         
       
       
-      <li class="tips"><a class="" href="../hiding/"><span class="count"></span><span class="txt">◊ Hiding Content</span></a></li>
+      <li class="tips"><a class="" href="../color/"><span class="count"></span><span class="txt">Color</span></a></li>
       
       
       
-      <li class="tips"><a class="" href="../headings/"><span class="count"></span><span class="txt">◊ Headings</span></a></li>
+      <li class="tips"><a class="" href="../headings/"><span class="count"></span><span class="txt">Headings</span></a></li>
       
       
       
-      <li class="tips"><a class="" href="../progressive-enhancement/"><span class="count"></span><span class="txt">◊ Progressive Enhancement</span></a></li>
+      <li class="tips"><a class="" href="../hiding/"><span class="count"></span><span class="txt">Hiding Content</span></a></li>
       
       
       
-      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>◊ Keyboard Access</span></span></li>
+      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Keyboard Access</span></span></li>
       
       
       
-      <li class="tips"><a class="" href="../contrast-ratio/"><span class="count"></span><span class="txt">◊ Contrast Ratio</span></a></li>
+      <li class="tips"><a class="" href="../progressive-enhancement/"><span class="count"></span><span class="txt">Progressive Enhancement</span></a></li>
       
       
       
@@ -170,7 +542,7 @@
       
         [EDITOR’S DRAFT]
       
-      05 September 2014
+      07 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>

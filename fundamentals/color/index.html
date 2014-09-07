@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Grouping Controls
+  Color
   
     
-       &bull; Forms
+       &bull; Fundamentals
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -34,15 +34,15 @@
         <span class="home"><a class="" href="../../"><span class="count"></span><span class="txt">Tutorials home</span></a></span> <span class="icon icon-chevron-right"></span>
         <span class="other">
         
-          <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
+          <a class="" href="../"><span class="count"></span><span class="txt">Fundamentals</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Grouping Controls</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Color</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Grouping Controls
+      Color
     </h1>
   </header>
 
@@ -61,61 +61,38 @@
   
 
 
-    <p>Group related form controls both visually and within the code. Use the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements to associate related form controls.</p>
+    <p>Color, especially the lack of contrast, can be a major accessibility barrier.</p>
 
-<h2 class="newex" id="associating-related-controls">Associating related controls</h2>
-
-<p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group. In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information. The legend for this group of controls highlights the action that is common to all controls, and the fact that they are all optional.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<form method="post" action="#">
-<fieldset>
-<legend>(Optional) I want to receive</legend>
-  <div>
-    <input type="checkbox" name="newsletter" id="check_1"> <label for="check_1">The weekly newsletter</label>
-  </div>
-  <div>
-    <input type="checkbox" name="company_offers" id="check_2"> <label for="check_2">Offers from the company</label>
-  </div>
-  <div>
-    <input type="checkbox" name="assoc_offers" id="check_3"> <label for="check_3">Offers from associated companies</label>
-  </div>
-</fieldset>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
-<span class="nt">&lt;legend&gt;</span>(Optional) I want to receive<span class="nt">&lt;/legend&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"company_offers"</span> <span class="na">id=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>Offers from the company<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"assoc_offers"</span> <span class="na">id=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>Offers from associated companies<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/fieldset&gt;</span>
-</pre>
-
-</figure>
-<p><strong>Note:</strong> Depending on the configuration, some screen readers read out the legend either <em>with every form element</em>, <em>once</em>, or <em>not at all</em>. To accomodate this consider the following:</p>
+<h2 id="why-is-this-important">Why is this important?</h2>
 
 <ul>
-  <li>Make the legend as short as possible for situations in which it is read together with the label each time.</li>
-  <li>Make the individual labels sufficiently self-explanatory for situations in which legends are not read aloud.</li>
-  <li>Hide the legend visually and provide a real heading with the same text (in some cases the same text may be read aloud twice in a row).</li>
+  <li><strong>Blind persons</strong> are not able to see color at all.</li>
+  <li>For <strong>people with color blindness</strong>, two colors can look so alike that they can’t tell if it is one or the other.</li>
+  <li><strong>People with low vision</strong> may see content blurry or unreadable if there is not enough enough contrast.</li>
 </ul>
+
+<h2 id="what-to-do">What to do?</h2>
+
+<h3 id="dont-rely-on-color-alone">Don’t rely on color alone.</h3>
+
+<p>If there is some information conveyed through color alone, for example a green circle that shows that an item is in stock and red one that it isn’t, this information will be invisible to a lot of people.</p>
+
+<p>Make sure to <a href="../../images/informative/">add an alternative text</a> if an image is used. Have one of the icons in a different shape to distinguish it from the other. The not-in-stock icon could be a square, for example. Additionally a <code>title</code> attribute can help as well. Note that – because the colors are used in traffic lights – the meaning of the colors red and green may be known, where the meaning of circle and square is not. In such cases, a legend or an explanation will help all users.</p>
+
+<h3 id="contrast-ratio">Use a sufficient contrast ratio.</h3>
+
+<p>Text and the background color need to have a certain contrast ratio to make sure that it is readable for people with low vision or in bad light conditions. The relative luminance contrast should be at least 4.5:1 for normal text and 3:1 for large scale text.</p>
+
+<p>To see if color combinations on websites comply with the contrast ratio, a number of tools are available<!-- , see the [Web Accessibility Evaluation Tools List](…) -->. For example:</p>
+
+<ul>
+  <li><a href="http://www.paciellogroup.com/resources/contrastAnalyser">Contrast Analyser – Application</a></li>
+  <li><a href="https://leaverou.github.io/contrast-ratio/">Contrast Ratio – Online tool</a></li>
+  <li><a href="https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/">WCAG Contrast checker – Firefox Extension</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll">Color Contrast Analyzer – Chrome Extension</a></li>
+</ul>
+
+<p><strong>Note:</strong> Resources are for information purposes only, no endorsement implied.</p>
 
 
 
@@ -131,7 +108,27 @@
       
         
           
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">1.3.1 Info and Relationships:</a> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level&nbsp;A)</p></li>
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color">1.4.1 Use of Color:</a> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">1.4.3 Contrast (Minimum):</a> The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:<ul><li><strong>Large Text: </strong> Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;</li><li><strong>Incidental: </strong> Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li><li><strong>Logotypes: </strong> Text that is part of a logo or brand name has no minimum contrast requirement.</li></ul> (Level&nbsp;AA)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast7">1.4.6 Contrast (Enhanced):</a> The visual presentation of text and images of text has a contrast ratio of at least 7:1, except for the following:<ul><li><strong>Large Text: </strong> Large-scale text and images of large-scale text have a contrast ratio of at least 4.5:1;</li><li><strong>Incidental: </strong> Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li><li><strong>Logotypes: </strong> Text that is part of a logo or brand name has no minimum contrast requirement.</li></ul> (Level&nbsp;AAA)</p></li>
           
         
       
@@ -180,24 +177,6 @@
         
       
         
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-minimize-error-cues">3.3.2 Labels or Instructions:</a> Labels or instructions are provided when content requires user input. (Level&nbsp;A)</p></li>
           
         
       
@@ -297,9 +276,45 @@
       
         
           
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G138">G138: Using semantic markup whenever color cues are used</a></li>
+          
         
       
         
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G183">G183: Using a contrast ratio of 3:1 with surrounding text and providing additional visual cues on focus for links or controls where color alone is used to identify them</a></li>
           
         
       
@@ -368,40 +383,6 @@
         
       
         
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H71">H71: Providing a description for groups of form controls using fieldset and legend elements</a></li>
           
         
       
@@ -457,14 +438,10 @@
   <ul>
     
       
+        <li class="prev">
+          <span><a class="" href="../"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">◊ Fundamental Concepts</span></span></a></span>
+        </li>
       
-        
-        
-          <li class="prev">
-            <span><a class="" href="../labels/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Labeling Controls</span></span></a></span>
-          </li>
-        
-        
       
         
         
@@ -474,16 +451,8 @@
         
         
           <li class="next">
-            <span><a class="" href="../instructions/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Form Instructions</span></span></a></span>
+            <span><a class="" href="../headings/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Headings</span></span></a></span>
           </li>
-        
-      
-        
-        
-        
-      
-        
-        
         
       
         
@@ -507,7 +476,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/grouping.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/fundamentals/color.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -518,45 +487,33 @@
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Forms Tutorial
+        Fundamentals Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
         
-          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Forms Concepts</span></a></li>
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">◊ Fundamental Concepts</span></a></li>
         
       
       
-      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labeling Controls</span></a></li>
+      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Color</span></span></li>
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Grouping Controls</span></span></li>
+      <li class="tips"><a class="" href="../headings/"><span class="count"></span><span class="txt">Headings</span></a></li>
       
       
       
-      <li><a class="" href="../instructions/"><span class="count"></span><span class="txt">Form Instructions</span></a></li>
+      <li class="tips"><a class="" href="../hiding/"><span class="count"></span><span class="txt">Hiding Content</span></a></li>
       
       
       
-      <li><a class="" href="../validation/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
+      <li class="tips"><a class="" href="../keyboard-access/"><span class="count"></span><span class="txt">Keyboard Access</span></a></li>
       
       
       
-      <li><a class="" href="../user-interaction/"><span class="count"></span><span class="txt">User Interaction</span></a></li>
-      
-      
-      
-      <li><a class="" href="../multi-step/"><span class="count"></span><span class="txt">Multi-Step Forms</span></a></li>
-      
-      
-      
-      <li><a class="" href="../custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
-      
-      
-      
-      <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">Tips and Tricks</span></a></li>
+      <li class="tips"><a class="" href="../progressive-enhancement/"><span class="count"></span><span class="txt">Progressive Enhancement</span></a></li>
       
       
       
@@ -567,9 +524,9 @@
 <ul class="topics" aria-labelledby="list-heading-topics">
 	<li><a href="../../images/"><span class="count"></span><span class="txt">Images</span></a></li>
 	<li><a href="../../tables/"><span class="count"></span><span class="txt">Tables</span></a></li>
-	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms</span></span></li>
+	<li><a href="../../forms/"><span class="count"></span><span class="txt">Forms</span></a></li>
 	<li><a href="../../carousels/"><span class="count"></span><span class="txt">Carousels</span></a></li>
-	<li><a href="../../fundamentals/"><span class="count"></span><span class="txt">Fundamentals</span></a></li>
+	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Fundamentals</span></span></li>
 	<li><a href="../../more/"><span class="count"></span><span class="txt">More on the way…</span></a></li>
 </ul>
 
@@ -585,7 +542,7 @@
       
         [EDITOR’S DRAFT]
       
-      05 September 2014
+      07 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
