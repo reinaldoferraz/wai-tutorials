@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  User Interaction
+  User Notifications
   
     
        &bull; Forms
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>User Interaction</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>User Notifications</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      User Interaction
+      User Notifications
     </h1>
   </header>
 
@@ -61,19 +61,175 @@
   
 
 
-    <p>Provide feedback to users to indicate errors, successes, and so that they can undo or confirm changes. Make error messages clear and easy to understand, and provide guidance to help users correct mistakes.</p>
+    <p>Notifications provide feedback to users to indicate that the form sent with or without errors. Users might then be required to fill out parts of the form again. Error messages should be clear and easy to understand, and provide guidance to help users correct mistakes.</p>
 
-<h2 id="providing-notifications">Providing Notifications</h2>
+<p>There are four approaches on how to inform the user about the state of the form, that can work together to provide users the best notifications according to their needs. Notifications can be provided …</p>
 
-<p>Notifications need to be perceivable to the user, both visually and programmatically. They should be visible near the form field and equipped with WAI-ARIA roles that make sure they are discovered by people using assistive technologies.</p>
+<ol>
+  <li>… through the main <a href="#heading-title">heading and/or page title</a>.</li>
+  <li>… through a <a href="#error-list">list of erroneous fields</a>.</li>
+  <li>… trough <a href="#inline">in-line messages</a> near the affected form fields.</li>
+  <li>… <a href="#instant">instantly</a> while entering data into a field.</li>
+</ol>
+
+<h2 id="heading-title">Notifications in the Main Heading and/or Page Title</h2>
+
+<p>It is important that the user gets notified of errors or success as soon as possible after he sent the form. A common place to put this information is the main page <a href="../../fundamentals/headings/">heading</a>, usually a <code>&lt;h1&gt;</code>or <code>&lt;h2&gt;</code> element.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: Error</figcaption><pre class="highlight html"><span class="nt">&lt;h1&gt;</span>3 Errors – Billing Address<span class="nt">&lt;/h1&gt;</span>
+</pre>
+</figure>
+<figure class="code ">
+  <figcaption>Code snippet: Success</figcaption><pre class="highlight html"><span class="nt">&lt;h1&gt;</span>Thank you for submitting your order.<span class="nt">&lt;/h1&gt;</span>
+</pre>
+</figure>
+<p>As shown above, the message doesn’t necessarily include the word “success” to be clear. The word “error” however is probably most easy to recognize for users.</p>
+
+<p>Screen Reader users need to navigate to the main heading first, which means there is no immediate notification for them. A way around this is to place the number of errors or the message of success in the HTML <code>&lt;title&gt;</code> element:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: Error</figcaption><pre class="highlight html"><span class="nt">&lt;title&gt;</span>3 Errors – Billing Address<span class="nt">&lt;/title&gt;</span>
+</pre>
+</figure>
+<figure class="code ">
+  <figcaption>Code snippet: Success</figcaption><pre class="highlight html"><span class="nt">&lt;title&gt;</span>Thank you for submitting your order.<span class="nt">&lt;/title&gt;</span>
+</pre>
+</figure>
+<h2 id="error-list">List of Erroneous Fields</h2>
+
+<p>If errors occur, it is useful to provide a list of error messages on the top of the page, before the form. The list should have a distinctive heading, so they are easy to locate for visual and screen reader users, and provide in-page links to the form with the invalid input.</p>
+
+<p>To help users most efficiently, such notifications should …</p>
+
+<ul>
+  <li>… use the <em>same wording</em> that is used on the label of the erroneous form field as this helps to identify the exact form element that contains the error.</li>
+  <li>… describe the <em>reason for the error message</em>, for example mention that the field was required or that the format was wrong.</li>
+  <li>… tell <em>how to fix</em> the error and may use a more elaborate example, using the additional space.</li>
+</ul>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<h4 role="presentation">2 Errors in this form</h4>
+<ul>
+  <li>
+    <a href="#firstname">
+      The First name field is empty, it is a required field and must be filled in.
+    </a>
+  </li>
+  <li>
+    <a href="#birthdate">
+      The Date field is in the wrong format, it should be similar to 17/09/2013 (use a / to separate day, month, and year).
+    </a>
+  </li>
+</ul>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;h4&gt;</span>2 Errors in this form<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#firstname"</span><span class="nt">&gt;</span>
+      The First name field is empty, it is a required field and must be filled in.
+    <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#birthdate"</span><span class="nt">&gt;</span>
+      The Date field is in the wrong format, it should be similar to 17/09/2013 (use a / to separate day, month, and year).
+    <span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre>
+
+</figure>
+<h2 id="inline">In-line Messages</h2>
+
+<p>In-line messages are basically special <a href="../instructions/">instructions</a>, so the same concepts apply. In addition, they should be clearly distinct from “regular” instructions, if used for successful or erroneous fields. For error messages that can be the word “Error:” in front of the regular label text.</p>
+
+<p>The visual formatting of the field might change as well. An erroneous field could be styled with a wide red border, a verified field could be styled with a green border and a checkmark to show that it’s valid.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<style>
+  #ex3 div {margin-bottom:.75em;}
+  .error {
+    color: #900;
+  }
+  .error input {
+    border: 3px solid #900;
+  }
+  .success {
+    color: #090;
+  }
+  .success input {
+    border: 3px solid #090;
+  }
+</style>
+
+<form method="post" action="#" id="ex3">
+  <div class="success">
+    <label for="username"><strong>OK:</strong> Username:</label>
+      <input type="text" name="username" id="username4" value="spaceteddy13" aria-describedby="userDesc2">
+      <span id="userDesc2">✓</span>
+  </div>
+  <div class="error">
+    <label for="expire4"><strong>Error:</strong> Expiry date:</label>
+      <input type="text" name="expire" id="expire4" value="03.2015" aria-describedby="expDesc2">
+      <span id="expDesc2">Use the format MM/YYYY.</span>
+  </div>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"success"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;strong&gt;</span>OK:<span class="nt">&lt;/strong&gt;</span> Username:
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span>
+    <span class="na">id=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"spaceteddy13"</span>
+    <span class="na">aria-describedby=</span><span class="s">"userDesc"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"userDesc"</span><span class="nt">&gt;</span>✓<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;strong&gt;</span>Error:<span class="nt">&lt;/strong&gt;</span>
+    Expiry date:
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span>
+    <span class="na">id=</span><span class="s">"expire"</span> <span class="na">value=</span><span class="s">"03.2015"</span>
+    <span class="na">aria-describedby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>Use the format MM/YYYY.<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<figure class="code ">
+  <figcaption>Code snippet: CSS</figcaption>
+<pre class="highlight css"><span class="nc">.error</span>   <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#900</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.success</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#090</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.error</span>   <span class="nt">input</span> <span class="p">{</span> <span class="nl">border</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="m">#900</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.success</span> <span class="nt">input</span> <span class="p">{</span> <span class="nl">border</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="m">#090</span><span class="p">;</span> <span class="p">}</span>
+</pre>
+
+</figure>
+<h2 id="instant">Instant Notifications</h2>
+
+<p>Sometimes it makes sense to inform the user instantly if the form can be submitted. This especially affects forms where the user is unable to determine if a certain value is correct, like for usernames or passwords. In those situations, the probability of submitting a form over and over again just to almost certainly receive error messages is frustrating for all users.</p>
 
 <h3 class="ex" id="immediately-inform-user-about-the-validation-of-the-input">Immediately inform user about the validation of the input</h3>
 
-<p>A user can be informed immediately about the availability of a user name while entering a user name into the form field. The JavaScript checks if the user name is in a list of taken user names and updates the notification element with a text. This text is also read by screen readers by using the <code>aria-live</code> attribute which transforms the element to a “live region”. The <code>polite</code> value makes sure that the notification is read out as soon as the user stops typing.</p>
+<p>If users are required to choose a username, they don't know if the username is already taken or not. It makes sense to inform the user immediately about the availability of the username while entering a username. In this example, the notification is done visually (by displaying a checkmark) as well with an ARIA live region: The text is read by screen readers as the <code>aria-live</code> attribute is used. The <code>polite</code> value makes sure that the notification is read out as soon as the user stops typing.</p>
 
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
   <label for="ex1_username">Username:</label>
@@ -89,10 +245,10 @@
     feedback.textContent = '';
     if (val !== "") {
       if (taken_usernames.indexOf(val.trim())+1) {
-        feedback.innerHTML = '&cross; Sorry, this user name is taken.';
+        feedback.innerHTML = '&cross; Sorry, this username is taken.';
         feedback.style.color = "#f00";
       } else {
-        feedback.innerHTML = '&check; You can use this user name.';
+        feedback.innerHTML = '&check; You can use this username.';
         feedback.style.color = "#0a0";
       }
     }
@@ -137,9 +293,8 @@
 
 <p>To help the user to chose a good passwords, strength meters make it visually clear how good the entered password is while typing it in. Additionally to having a visual meter, displaying the text and having it read to the screen reader by using an WAI-ARIA live region has advantages: It is easier to understand what the meter is for, and it can give additional information. In the example, the time to crack the password is displayed to give the user a more human way to understand how strong the password is.</p>
 
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
   <label for="ex2_password">Password:</label>
@@ -270,396 +425,6 @@ document.getElementById('ex2_password').addEventListener('keyup',
 </pre>
 
 </figure>
-<h3 class="ex" id="immediately-display-dynamically-created-output-to-the-user">Immediately display dynamically created output to the user</h3>
-
-<p>Sometimes, user input results in an output on the page immediately, the result of a calculation, for example. In this case, again, an ARIA live region helps to convey the result to users of assistive technologies. Additionally we use a “yellow fade” effect that draws the attention of visual users to the result and helps to discover it easily.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<form method="post" action="#">
-  <fieldset>
-    <legend>Additon</legend>
-    <label for="num1">First Number:</label>
-    <input type="number" value="0" name="num1" id="num1">
-    <label for="num2">+ Second Number:</label>
-    <input type="number" value="0" name="num2" id="num2">
-    <span id="result" aria-atomic="true" aria-live="polite"></span>
-  </fieldset>
-</form>
-
-<style>
-  #result {
-    transition: background-color linear .5s;
-  }
-</style>
-
-<script>
-function calculate(num1, num2) {
-  var res = document.getElementById('result');
-  res.style.backgroundColor = 'rgba(255,255,0,1)';
-  num1 = parseFloat(num1);
-  num2 = parseFloat(num2);
-  if (!(isNaN(num1) || isNaN(num2))) {
-    var add = num1 + num2;
-    var output = 'Result: ' + num1 + ' + ' + num2 + ' = <strong>' + add + '</strong>';
-    res.innerHTML = output;
-  } else {
-    res.innerHTML = '';
-  }
-  setTimeout('document.getElementById("result").style.backgroundColor = "rgba(255,255,0,0)";', 1000)
-}
-
-document.getElementById('num1').addEventListener('keyup',
-    function(){
-     calculate(this.value, document.getElementById('num2').value);
-  });
-
-document.getElementById('num2').addEventListener('keyup',
-    function(){
-     calculate(document.getElementById('num1').value, this.value);
-  });
-
-document.getElementById('num1').addEventListener('change',
-    function(){
-     calculate(this.value, document.getElementById('num2').value);
-  });
-
-document.getElementById('num2').addEventListener('change',
-    function(){
-     calculate(document.getElementById('num1').value, this.value);
-  });
-
-</script>
-
-
-  </div></figure>
-
-<p>The HTML is pretty straight forward, just two labeled number inputs and a span which is going to contain the result. Note that we use <code>aria-atomic</code> (set to <code>true</code>) to make sure the complete result is read. This is necessary as we change the HTML in JavaScript and some assistive technologies have problems picking the change up otherwise.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"num1"</span><span class="nt">&gt;</span>First Number:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="na">name=</span><span class="s">"num1"</span> <span class="na">id=</span><span class="s">"num1"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"num2"</span><span class="nt">&gt;</span>+ Second Number:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">value=</span><span class="s">"0"</span> <span class="na">name=</span><span class="s">"num2"</span> <span class="na">id=</span><span class="s">"num2"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"result"</span> <span class="na">aria-atomic=</span><span class="s">"true"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;&lt;/span&gt;</span>
-</pre>
-
-</figure>
-<p>CSS-wise, a transition of the background color is added to the element. This way we can leave it to the browser to calculate all the color steps in-between, which is a huge performance win.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: CSS</figcaption>
-<pre class="highlight css"><span class="nf">#result</span> <span class="p">{</span> <span class="nl">transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="n">linear</span> <span class="m">.5s</span><span class="p">;</span> <span class="p">}</span>
-</pre>
-
-</figure>
-<p>The JavaScript is pretty straight forward. On <code>keyup</code> and <code>change</code> events, the function calculate is called. The <code>change</code> event is necessary in this example as the buttons that come with the <code>number</code> input type can be operated with the mouse.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: JavaScript</figcaption>
-<pre class="highlight javascript"><span class="kd">function</span> <span class="nx">calculate</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// (1) Select result element.
-</span>  <span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'result'</span><span class="p">);</span>
-
-  <span class="c1">// (2) Set the background color of the result element to yellow (full opacity).
-</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'rgba(255,255,0,1)'</span><span class="p">;</span>
-
-  <span class="c1">// (3) Convert strings to floats.
-</span>  <span class="nx">num1</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">num1</span><span class="p">);</span>
-  <span class="nx">num2</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">num2</span><span class="p">);</span>
-
-  <span class="c1">// (4) Only calculate if both input values are numbers.
-</span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">num1</span><span class="p">)</span> <span class="o">||</span> <span class="nb">isNaN</span><span class="p">(</span><span class="nx">num2</span><span class="p">)))</span> <span class="p">{</span>
-
-    <span class="c1">// (5) Add.
-</span>    <span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
-
-    <span class="c1">// (6) Attach result to the result element.
-</span>    <span class="nx">res</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'Result: '</span> <span class="o">+</span> <span class="nx">num1</span> <span class="o">+</span> <span class="s1">' + '</span> <span class="o">+</span> <span class="nx">num2</span>
-                  <span class="o">+</span> <span class="s1">' = &lt;strong&gt;'</span> <span class="o">+</span> <span class="nx">add</span> <span class="o">+</span> <span class="s1">'&lt;/strong&gt;'</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-
-    <span class="c1">// (7) if one if the input values is not a number, clear the result
-</span>    <span class="nx">res</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">// (8) After one second, set the background color of the element
-</span>  <span class="c1">//     to transparent yellow.
-</span>  <span class="c1">//     The CSS transition will fade the background color out nicely.
-</span>  <span class="nx">setTimeout</span><span class="p">(</span><span class="s1">'document.getElementById("result").style.backgroundColor = "rgba(255,255,0,0)";'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num1'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-     <span class="nx">calculate</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num2'</span><span class="p">).</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">});</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num2'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-     <span class="nx">calculate</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num1'</span><span class="p">).</span><span class="nx">value</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">});</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num1'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'change'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-     <span class="nx">calculate</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num2'</span><span class="p">).</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">});</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num2'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'change'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-     <span class="nx">calculate</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'num1'</span><span class="p">).</span><span class="nx">value</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">});</span>
-</pre>
-
-</figure>
-<h3 class="ex" id="indicate-that-data-is-loading">Indicate that data is loading</h3>
-
-<p>If an action does not result in immediate feedback because data has to be calculated or loaded from the server using AJAX, it is necessary to notify the user that data is loading, and when it finished loading. In the following example, a click on the button simulates loading data from the server.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<button id="loadthis" aria-live="polite">Load</button>
-
-<style>
-  @keyframes fade {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  @-webkit-keyframes fade {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  .indicator>span {
-    -webkit-animation: fade 2s infinite;
-    -webkit-animation-direction: alternate;
-    animation: fade 2s infinite;
-    animation-direction: alternate;
-    opacity:0;
-  }
-  .indicator>span:nth-child(2) {
-    -webkit-animation-delay: .66s;
-    animation-delay: .66s;
-  }
-  .indicator>span:nth-child(3) {
-    -webkit-animation-delay: 1.32s;
-    animation-delay: 1.32s;
-  }
-</style>
-
-<script>
-document.getElementById('loadthis').addEventListener('click',
-    function(){
-      this.innerHTML = 'Loading <span class="indicator"><span>.</span><span>.</span><span>.</span></span>';
-      setTimeout('document.getElementById("loadthis").innerHTML = "Loaded";', 6000)
-  });
-</script>
-
-
-  </div></figure>
-
-<p>A CSS animation is used to animate the dots in the text “Loading…” while the data is loading. That text replaces the text “Load” that is on the button before it is clicked. After a while the loading text itself is replaced by the text “Loaded”. Again a live region is used to announce the changes to assistive technologies.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"loadthis"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;</span>Load<span class="nt">&lt;/button&gt;</span>
-</pre>
-
-</figure>
-<figure class="code ">
-  <figcaption>Code snippet: CSS</figcaption>
-<pre class="highlight css"><span class="k">@keyframes</span> <span class="n">fade</span> <span class="p">{</span>
-  <span class="nt">0</span><span class="o">%</span>   <span class="p">{</span> <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span> <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span>
-<span class="nc">.indicator</span><span class="o">&gt;</span><span class="nt">span</span> <span class="p">{</span>
-  <span class="nl">animation</span><span class="p">:</span> <span class="n">fade</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
-  <span class="nl">animation-direction</span><span class="p">:</span> <span class="n">alternate</span><span class="p">;</span>
-  <span class="nl">opacity</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.indicator</span><span class="o">&gt;</span><span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">.66s</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.indicator</span><span class="o">&gt;</span><span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">1.32s</span><span class="p">;</span>
-<span class="p">}</span>
-</pre>
-
-</figure>
-<figure class="code ">
-  <figcaption>Code snippet: JavaScript</figcaption>
-<pre class="highlight javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'loadthis'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span>
-        <span class="s1">'Loading &lt;span class="indicator"&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;'</span><span class="p">;</span>
-
-      <span class="cm">/* Load data here. To simulate this, the text is just changed
-         to “Loaded” after six seconds. */</span>
-      <span class="nx">setTimeout</span><span class="p">(</span><span class="s1">'document.getElementById("loadthis").innerHTML = "Loaded";'</span><span class="p">,</span> <span class="mi">6000</span><span class="p">)</span>
-  <span class="p">});</span>
-</pre>
-
-</figure>
-<h2 class="newex" id="error-messages">Error Messages</h2>
-
-<p>Error messages should be concise yet descriptive and easy to understand to help users to enter the correct data.</p>
-
-<h3 class="ex" id="notification-of-errors-in-the-page-title">Notification of errors in the page title</h3>
-
-<p>If the submission had errors that weren’t caught by <a href="../validation/">validating input</a> before sending the form, the title of the page can be a good indicator for the user if there are errors. By prefixing the title with the error count, it is immediately clear for the user that there still is something to do. The user should also be notified in the title if the form was <a href="#success-messages">successfully submitted</a>.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;title&gt;</span>3 Errors — Spacebear Onlineshop<span class="nt">&lt;/title&gt;</span>
-</pre>
-
-</figure>
-<h3 class="ex" id="error-messages-on-the-top-of-the-page">Error messages on the top of the page</h3>
-
-<p>A set of error messages on the top of the page should have a distinct heading, so they are easy to locate for visual and screen reader users. Each error should use an in-page link to the respective field. Each error message should consist of the following parts helpful to the user:</p>
-
-<ul>
-  <li>Use the <em>same wording</em> that is used on the label in the error message. This helps users to identify the exact form element that contains the error.</li>
-  <li>Describe the <em>cause of error</em>, for example mention that the field was required or that the format was wrong.</li>
-  <li>Tell the user <em>how to fix</em> the error, consider using a more elaborate example as there is now more space available than in the labels of the form.</li>
-</ul>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<h4>2 Errors in this form</h4>
-<ul>
-  <li>
-    <a href="#firstname">
-      The First name field is empty, it is a required field and must be filled in.
-    </a>
-  </li>
-  <li>
-    <a href="birthdate">
-      The Date field is in the wrong format, it should be similar to 17/09/2013 (use a / to separate day, month, and year)
-    </a>
-  </li>
-</ul>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;h4&gt;</span>2 Errors in this form<span class="nt">&lt;/h4&gt;</span>
-<span class="nt">&lt;ul&gt;</span>
-  <span class="nt">&lt;li&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#firstname"</span><span class="nt">&gt;</span>
-      The First name field is empty, it is a required field and must be filled in.
-    <span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"birthdate"</span><span class="nt">&gt;</span>
-      The Date field is in the wrong format, it should be similar to 17/09/2013 (use a / to separate day, month, and year).
-    <span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre>
-
-</figure>
-<h3 class="ex" id="in-line-error-messages">In-line error messages</h3>
-
-<p>For in-line error messages, the same techniques as for <a href="../instructions/">instructions</a> apply. In addition, the in-line error messages should be clearly distinct from other instructions. Additionally, the label can be prefixed with a symbol or the bold word “Error”. Additionally the color of the label and instruction text should be changed to draw more attention to the field. The field itself can get a wider and also colored border.</p>
-
-
-  <figure class="sample ">
-  <figcaption>Example</figcaption>
-  <div class="box-content">
-<style>
-  .error {
-    color: #900;
-  }
-  .error input {
-    border: 3px solid #900;
-  }
-</style>
-
-<form method="post" action="#" id="ex3">
-  <div class="error">
-    <label for="expire4"><strong>Error:</strong> Expiry date:</label>
-      <input type="text" name="expire" id="expire4" value="03.2015" aria-describedby="expDesc2">
-      <span id="expDesc2">Use the format MM/YYYY.</span>
-  </div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/span&gt;</span>
-</pre>
-
-</figure>
-<h2 class="newex" id="success-messages">Success Messages</h2>
-
-<p>Assuming it is unambiguous that the input is correct, inform users about successful input</p>
-
-<ul>
-  <li>in <strong>one field</strong>, the <a href="#immediately-inform-user-about-the-validation-of-the-input">user can be notified immediately, as shown above</a>.</li>
-  <li>in <strong>all the fields</strong>, an until-then disabled submit button can be enabled.</li>
-</ul>
-
-<p>Regardless if you use one of the above techniques to notify the user, the user also needs a success message after he has sent the form. To make sure the success message is easily findable, it is useful to have the success message in both, the title and the main page heading.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;title&gt;</span>Order successful — Spacebear Onlineshop<span class="nt">&lt;/title&gt;</span>
-(…)
-<span class="nt">&lt;h1&gt;</span>Thank you for submitting your order.<span class="nt">&lt;/h1&gt;</span>
-</pre>
-
-</figure>
-<h2 class="newex" id="allow-users-to-undo-reversible-changes-section-needs-editing">Allow users to undo reversible changes (@@section needs editing)</h2>
-
-<p>If a change by the user can be easily reversible or canceled, it is useful to provide this functionality. For example:</p>
-
-<ul>
-  <li>
-    <p>A Content Management System (CMS) has the ability to delete unwanted comments. Instead of deleting them right away, they get stored in a ”trash” folder and can be easily restored.</p>
-  </li>
-  <li>
-    <p>A web email application allows users to “undo” sending of an email for a few seconds. This is useful if the user forget to attach a file or sent the email to the wrong recipient.</p>
-  </li>
-  <li>
-    <p>An online shopping website lets users cancel purchases up to 24 hours after the order is submitted. The website explains their policy, and includes a summary of the policy on the purchase receipt emailed to the user. After 24 hours, the purchase will be shipped to the user and can no longer be canceled.</p>
-  </li>
-</ul>
-
-<h2 class="newex" id="allow-users-to-confirm-irreversible-changes-section-needs-editing">Allow users to confirm irreversible changes (@@section needs editing)</h2>
-
-<p>Instant and irreversible transactions, especially if carried out on a single page, can provide users with a checkbox or a confirmation dialog box to confirm that they want the requested action to take place.</p>
-
-<ul>
-  <li>
-    <p>In a Content Management System (CMS) comments can be deleted (for good) from the trash folder. When the user clicks on the “Empty trash”, a confirmation dialog box shows up asking the user “Are you sure to delete 42 comments?” The action is only carried out if the user choses the “OK” button.</p>
-  </li>
-  <li>
-    <p>A bank won’t be able to revert a currency exchange transaction as charges or changes in exchange rates would burden a cost to the user. After collecting the account and amount data, and before the submit button, a checkbox with a label like “I have checked that the amount I wish to transfer is correct” is placed. The form should then fail to validate unless the checkbox is checked.</p>
-  </li>
-  <li>
-    <p>The checkout page on a shopping website includes a form that collects order, shipping and billing information. After submitting the form, the user is taken to another page where the information they have submitted is summarized for review. Below the summary, The user must activate a “complete order” button on the review page to complete the transaction.</p>
-  </li>
-</ul>
-
-<h2 class="newex" id="allow-users-to-disable-or-extend-time-limits-section-needs-editing">Allow users to disable or extend time limits (@@section needs editing)</h2>
-
-<p>If possible, forms should not be subject to a time limit to allow users to complete the form in their own pace. If a time limit needs to be in place (for example, for security reasons), the user should have the possibility to turn it off, adjust it, or extend it. This does not apply if the time limit is due to a live event (like an auction or a game) or if the time to complete the form is essential for a valid submission.</p>
-
-
 
 
 <div role="techniques">
@@ -1052,7 +817,7 @@ document.getElementById('loadthis').addEventListener('click',
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/user-interaction.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/notifications.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -1089,7 +854,7 @@ document.getElementById('loadthis').addEventListener('click',
       
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>User Interaction</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>User Notifications</span></span></li>
       
       
       
@@ -1130,7 +895,7 @@ document.getElementById('loadthis').addEventListener('click',
       
         [EDITOR’S DRAFT]
       
-      05 September 2014
+      08 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
