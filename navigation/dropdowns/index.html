@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Tips and Tricks
+  ◊ Drop Downs
   
     
-       &bull; Forms
+       &bull; Navigation
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -34,15 +34,15 @@
         <span class="home"><a class="" href="../../"><span class="count"></span><span class="txt">Tutorials home</span></a></span> <span class="icon icon-chevron-right"></span>
         <span class="other">
         
-          <a class="" href="../"><span class="count"></span><span class="txt">Forms</span></a> <span class="icon icon-chevron-right"></span>
+          <a class="" href="../"><span class="count"></span><span class="txt">Navigation</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and Tricks</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>◊ Drop Downs</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Tips and Tricks
+      ◊ Drop Downs
     </h1>
   </header>
 
@@ -62,51 +62,11 @@
 
 
     <ul>
-  <li>
-    <p><strong>Keep it simple:</strong> Complex forms are more often abandoned by users than simple forms, regardless how accessible they are.</p>
-  </li>
-  <li>
-    <p><strong>Take data gracefully:</strong> Try to interpret data as liberally as possible. Don’t throw error messages at users because they don’t obey the number of parentheses you expect.</p>
-  </li>
-  <li>
-    <p><strong>Be careful with required formats:</strong> Postal codes are not numbers in every country, so using and <code>input</code> of the type <code>number</code> could easily become a problem.</p>
-  </li>
-  <li>
-    <p><strong>Forms are not art:</strong> Be creative with forms but don’t alter them to drastically from the standard operating system look that users are used to.</p>
-  </li>
-  <li>
-    <p><strong>Allow users to disable or extend time limits:</strong> If possible, forms should not be subject to a time limit to allow users to complete the form in their own pace. If a time limit needs to be in place (for example, for security reasons), the user should have the possibility to turn it off, adjust it, or extend it. This does not apply if the time limit is due to a live event (like an auction or a game) or if the time to complete the form is essential for a valid submission.</p>
-  </li>
-  <li>
-    <p><strong>User should be able to undo reversible changes:</strong> If a change by the user can be easily reversed or canceled, it is useful to provide this functionality. Examples:</p>
-
-    <ul>
-      <li>
-        <p>A Content Management System (CMS) has the ability to delete unwanted comments. Instead of deleting them right away, they get stored in a ”trash” folder and can be easily restored.</p>
-      </li>
-      <li>
-        <p>A web email application allows users to “undo” sending of an email for a few seconds. This is useful if the user forgot to attach a file or sent the email to the wrong recipient.</p>
-      </li>
-      <li>
-        <p>A shopping website lets users cancel purchases up to 24 hours after the order is submitted. The website explains their policy, and includes a summary of the policy on the purchase receipt emailed to the user. After 24 hours, the purchase will be shipped to the user and can no longer be canceled.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Users need to confirm irreversible changes:</strong> If a form submission results in the deletion of data, the user should be required to confirm the decision either by using a checkbox or selecting “Yes” or “OK” in a confirmation dialog. Examples:</p>
-
-    <ul>
-      <li>
-        <p>In a Content Management System (CMS) comments can be deleted (for good) from the trash folder. When the user clicks on the “Empty trash” icon, a confirmation dialog box asks “Are you sure to delete 42 comments?” The action is only carried out if the user choses the “OK” or “Yes” button.</p>
-      </li>
-      <li>
-        <p>A bank won’t be able to revert currency exchange transactions, as charges or changes in exchange rates would increase cost for their customers. After collecting the account data and the amount to exchange, and before the submit button, a checkbox with a label “I have checked that the amount I wish to transfer is correct.” is placed. The form can’t be submitted unless the checkbox is checked.</p>
-      </li>
-      <li>
-        <p>The checkout page on a shopping website includes a form that collects order, shipping and billing information. After submitting the form, the user is taken to another page where the information they have submitted is summarized for review. Below the summary, The user must activate a “complete order” button on the review page to complete the transaction.</p>
-      </li>
-    </ul>
-  </li>
+  <li>Basic Concepts</li>
+  <li>Hide hidden items from screen reader &amp; keyboard users -&gt; hiding</li>
+  <li>Indicate drop down functionality</li>
+  <li>Progressive enhancement</li>
+  <li>Leave menu open for a few seconds for mouse user</li>
 </ul>
 
 
@@ -123,34 +83,22 @@
       
         
         
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
-        
-      
-        
-        
           <li class="prev">
-            <span><a class="" href="../custom-controls/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Custom Controls</span></span></a></span>
+            <span><a class="" href="../in-page/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">◊ Skip Links and In-page Navigation</span></span></a></span>
           </li>
         
         
       
         
         
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../tips/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">◊ Tips & Tricks</span></span></a></span>
+          </li>
         
       
     
@@ -162,7 +110,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/tips.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/navigation/dropdowns.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -173,45 +121,29 @@
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Forms Tutorial
+        Navigation Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
         
-          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Forms Concepts</span></a></li>
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Navigation Concepts</span></a></li>
         
       
       
-      <li><a class="" href="../labels/"><span class="count"></span><span class="txt">Labeling Controls</span></a></li>
+      <li><a class="" href="../types/"><span class="count"></span><span class="txt">◊ Navigation Types</span></a></li>
       
       
       
-      <li><a class="" href="../grouping/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
+      <li><a class="" href="../in-page/"><span class="count"></span><span class="txt">◊ Skip Links and In-page Navigation</span></a></li>
       
       
       
-      <li><a class="" href="../instructions/"><span class="count"></span><span class="txt">Form Instructions</span></a></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>◊ Drop Downs</span></span></li>
       
       
       
-      <li><a class="" href="../validation/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
-      
-      
-      
-      <li><a class="" href="../notifications/"><span class="count"></span><span class="txt">User Notifications</span></a></li>
-      
-      
-      
-      <li><a class="" href="../multi-step/"><span class="count"></span><span class="txt">Multi-Step Forms</span></a></li>
-      
-      
-      
-      <li><a class="" href="../custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
-      
-      
-      
-      <li class="tips"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Tips and Tricks</span></span></li>
+      <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">◊ Tips & Tricks</span></a></li>
       
       
       
@@ -222,9 +154,9 @@
 <ul class="topics" aria-labelledby="list-heading-topics">
 	<li><a href="../../images/"><span class="count"></span><span class="txt">Images</span></a></li>
 	<li><a href="../../tables/"><span class="count"></span><span class="txt">Tables</span></a></li>
-	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms</span></span></li>
+	<li><a href="../../forms/"><span class="count"></span><span class="txt">Forms</span></a></li>
 	<li><a href="../../carousels/"><span class="count"></span><span class="txt">Carousels</span></a></li>
-	<li><a href="../../navigation/"><span class="count"></span><span class="txt">Navigation</span></a></li>
+	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation</span></span></li>
 	<li><a href="../../fundamentals/"><span class="count"></span><span class="txt">Fundamentals</span></a></li>
 	<li><a href="../../more/"><span class="count"></span><span class="txt">More on the way…</span></a></li>
 </ul>

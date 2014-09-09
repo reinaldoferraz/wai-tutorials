@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Forms Concepts
+  Navigation Concepts
   
     
-       &bull; Forms
+       &bull; Navigation
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -35,14 +35,14 @@
         <span class="other">
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms</span></span> <span class="icon icon-chevron-right"></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation</span></span> <span class="icon icon-chevron-right"></span>
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms Concepts</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Concepts</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Forms Concepts
+      Navigation Concepts
     </h1>
   </header>
 
@@ -62,46 +62,37 @@
   
 
 
-    <p>Forms are usually the main interaction component in websites and web applications. They’re used to send information to the server or for input and output in client-side JavaScript applications.</p>
+    <p>Navigations are used to navigate around the website and around individual web pages. Usually they consist of a list of links and need to be operable with pointing devices (like a mouse) and keyboards.</p>
+
+<p>A good navigation on a website is not only the programmer’s task. It begins with the overall content organization of the website, which should lead to a coherent and comprehensible page structure of the website, which is the base for the navigation. Additionally, the design of a navigation is very important to ensure the <a href="../fundamentals/color/">contrast ratio</a> is sufficient for all users and fonts are big enough.</p>
+
+<p>This tutorial shows you how to use markup, styling and interaction to website navigation. It includes the following pages:</p>
 
 <ul>
-  <li>
-    <p><strong><a href="labels/">Labeling Controls</a>:</strong> Use the <code>&lt;label&gt;</code> element, and, in rare cases, the <code>title</code> attribute, to indentify each form control.</p>
-  </li>
-  <li>
-    <p><strong><a href="grouping/">Grouping Controls</a>:</strong> Use the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements to group and associate related form controls.</p>
-  </li>
-  <li>
-    <p><strong><a href="instructions/">Form Instructions</a>:</strong> Provide instructions to help users understand how to complete the form and individual form controls.</p>
-  </li>
-  <li>
-    <p><strong><a href="validation/">Validating Input</a>:</strong> Use built-in HTML5 features, and, where needed, custom scripts to validate user input and help users avoid mistakes.</p>
-  </li>
-  <li>
-    <p><strong><a href="notifications/">User Notifications</a>:</strong> Provide feedback to users to indicate errors, successes, and so that they can undo or confirm changes.</p>
-  </li>
-  <li>
-    <p><strong><a href="multi-step/">Multi-Step Forms</a>:</strong> Divide long forms into multiple smaller forms that constitute a series of logical steps or stages.</p>
-  </li>
-  <li>
-    <p><strong><a href="custom-controls/">Custom Controls</a>:</strong> Use stylized form elements and other progressive enhancement techniques to provide custom controls.</p>
-  </li>
+  <li><strong><a href="types/">Navigation Types</a>:</strong> An introduction into the basic HTML structure for horizontal, vertical, and breadcrumb navigations.</li>
+  <li><strong><a href="in-page/">Skip Links and In-page Navigation</a>:</strong> Use (hidden) links to jump to different parts of a web page when using the keyboard.</li>
+  <li><strong><a href="dropdowns/">Dropdowns</a>:</strong> Implement a dropdown menu in an accessible way.</li>
 </ul>
 
 <h2 id="why-is-this-important">Why is this important?</h2>
 
-<p>Forms can be visually and cognitively complex and difficult to use. Accessible forms are easier to use for everyone, including people with disabilities.</p>
+<ul>
+  <li><strong>All users</strong> use the navigation to reach different sections of the website, it is the central way of exploring and point of reference if the user gets lost.</li>
+  <li><strong>Screen reader</strong> and <strong>keyboard users</strong> should be aware which link is currently in focus and about the currently selected item.</li>
+  <li><strong>Mouse</strong> and <strong>touch screen users</strong>, as well as <strong>users with shaky hands</strong> need large targets to tap on.</li>
+</ul>
+
+<hr />
 
 <ul>
-  <li>
-    <p><strong>People using speech input assistive technology</strong> can move the cursor into the fields they need to fill out using voice commands.</p>
+  <li>Navigation Design</li>
+  <li>Navigation Programming
+    <ul>
+      <li>Link to other pages</li>
+    </ul>
   </li>
-  <li>
-    <p><strong>People with shaky hands</strong> use the label as a larger clickable area for selecting small controls such as radio buttons and checkboxes.</p>
-  </li>
-  <li>
-    <p><strong>People using screen readers</strong> can identify the purpose of a form field if a label is properly assigned, including information on the format expected or if the field is required.</p>
-  </li>
+  <li>Why is this important?</li>
+  <li>Resources</li>
 </ul>
 
 
@@ -118,8 +109,6 @@
       
         
           
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-content-structure-separation-programmatic">1.3.1 Info and Relationships:</a> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level&nbsp;A)</p></li>
-          
         
       
         
@@ -164,33 +153,13 @@
       
         
           
-        
-      
-        
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-skip">2.4.1 Bypass Blocks:</a> A mechanism is available to bypass blocks of content that are repeated on multiple Web pages. (Level&nbsp;A)</p></li>
           
         
       
         
           
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-descriptive">2.4.6 Headings and Labels:</a> Headings and labels describe topic or purpose. (Level&nbsp;AA)</p></li>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-minimize-error-cues">3.3.2 Labels or Instructions:</a> Labels or instructions are provided when content requires user input. (Level&nbsp;A)</p></li>
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-focus-order">2.4.3 Focus Order:</a> If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability. (Level&nbsp;A)</p></li>
           
         
       
@@ -204,7 +173,25 @@
       
         
           
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-qr-ensure-compat-rsv">4.1.2 Name, Role, Value:</a> For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies. (Level&nbsp;A)</p></li>
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
           
         
       
@@ -221,24 +208,8 @@
         
         
           <li class="next">
-            <span><a class="" href="labels/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Labeling Controls</span></span></a></span>
+            <span><a class="" href="types/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">◊ Navigation Types</span></span></a></span>
           </li>
-        
-      
-      
-        
-        
-      
-      
-        
-        
-      
-      
-        
-        
-      
-      
-        
         
       
       
@@ -262,7 +233,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/forms/index.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/navigation/index.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -273,45 +244,29 @@
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Forms Tutorial
+        Navigation Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
       
-          <li class="intro"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms Concepts</span></span></li>
+          <li class="intro"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Concepts</span></span></li>
         
       
       
-      <li><a class="" href="labels/"><span class="count"></span><span class="txt">Labeling Controls</span></a></li>
+      <li><a class="" href="types/"><span class="count"></span><span class="txt">◊ Navigation Types</span></a></li>
       
       
       
-      <li><a class="" href="grouping/"><span class="count"></span><span class="txt">Grouping Controls</span></a></li>
+      <li><a class="" href="in-page/"><span class="count"></span><span class="txt">◊ Skip Links and In-page Navigation</span></a></li>
       
       
       
-      <li><a class="" href="instructions/"><span class="count"></span><span class="txt">Form Instructions</span></a></li>
+      <li><a class="" href="dropdowns/"><span class="count"></span><span class="txt">◊ Drop Downs</span></a></li>
       
       
       
-      <li><a class="" href="validation/"><span class="count"></span><span class="txt">Validating Input</span></a></li>
-      
-      
-      
-      <li><a class="" href="notifications/"><span class="count"></span><span class="txt">User Notifications</span></a></li>
-      
-      
-      
-      <li><a class="" href="multi-step/"><span class="count"></span><span class="txt">Multi-Step Forms</span></a></li>
-      
-      
-      
-      <li><a class="" href="custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
-      
-      
-      
-      <li class="tips"><a class="" href="tips/"><span class="count"></span><span class="txt">Tips and Tricks</span></a></li>
+      <li class="tips"><a class="" href="tips/"><span class="count"></span><span class="txt">◊ Tips & Tricks</span></a></li>
       
       
       
@@ -322,9 +277,9 @@
 <ul class="topics" aria-labelledby="list-heading-topics">
 	<li><a href="../images/"><span class="count"></span><span class="txt">Images</span></a></li>
 	<li><a href="../tables/"><span class="count"></span><span class="txt">Tables</span></a></li>
-	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms</span></span></li>
+	<li><a href="../forms/"><span class="count"></span><span class="txt">Forms</span></a></li>
 	<li><a href="../carousels/"><span class="count"></span><span class="txt">Carousels</span></a></li>
-	<li><a href="../navigation/"><span class="count"></span><span class="txt">Navigation</span></a></li>
+	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation</span></span></li>
 	<li><a href="../fundamentals/"><span class="count"></span><span class="txt">Fundamentals</span></a></li>
 	<li><a href="../more/"><span class="count"></span><span class="txt">More on the way…</span></a></li>
 </ul>
@@ -341,7 +296,7 @@
       
         [EDITOR’S DRAFT]
       
-      08 September 2014
+      09 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
