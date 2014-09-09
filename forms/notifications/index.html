@@ -63,13 +63,12 @@
 
     <p>Notifications provide feedback to users to indicate that the form sent with or without errors. Users might then be required to fill out parts of the form again. Error messages should be clear and easy to understand, and provide guidance to help users correct mistakes.</p>
 
-<p>There are four approaches on how to inform the user about the state of the form, that can work together to provide users the best notifications according to their needs. Notifications can be provided …</p>
+<p>There are some approaches on how to inform the user about the state of the form, that can work together to provide users the best notifications according to their needs. Notifications can be provided through …</p>
 
 <ol>
-  <li>… through the main <a href="#heading-title">heading and page title</a>.</li>
-  <li>… through a <a href="#error-list">list of erroneous fields</a>.</li>
-  <li>… through <a href="#inline">in-line messages</a> near the affected form fields.</li>
-  <li>… <a href="#instant">instantly</a> while entering data into a field.</li>
+  <li>… the main <a href="#heading-title">heading and page title</a>.</li>
+  <li>… a <a href="#error-list">list of erroneous fields</a>.</li>
+  <li>… static and dynamic <a href="#inline">in-line messages</a> near the affected form fields.</li>
 </ol>
 
 <h2 id="heading-title">Notifications in the Main Heading and Page Title</h2>
@@ -148,9 +147,17 @@
 </figure>
 <h2 id="inline">In-line Messages</h2>
 
-<p>In-line messages are basically special <a href="../instructions/">instructions</a>, so the same concepts apply. In addition, they should be clearly distinct from “regular” instructions, if used for successful or erroneous fields. For error messages that can be the word “Error:” in front of the regular label text.</p>
+<p>In-line messages are basically special <a href="../instructions/">instructions</a>, so the same concepts apply. They should be clearly distinct from “regular” instructions, if used for successful or erroneous fields. For error messages that can be the word “Error:” in front of the regular label text.</p>
 
 <p>The visual formatting of the field might change as well. An erroneous field could be styled with a wide red border, a verified field could be styled with a green border and a checkmark to show that it’s valid.</p>
+
+<p>Such messages can be presented to the user in a static way after submitting the form, like in the first example below, or dynamically while filling out the form.</p>
+
+<p>Disrupting users with messages is appropriate if it is hard for them to determine if their input is correct or not, for example when entering a username. In those situations, the probability of submitting a form over and over again just to almost certainly receive error messages is frustrating for all users.</p>
+
+<p>Dynamic in-line messages are similar to the messages browsers will give to users if the standard HTML5 form elements are used to <a href="../validation/">validate user input</a>.</p>
+
+<h3 class="ex" id="static-in-line-message">Static in-line message</h3>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -171,9 +178,9 @@
   }
 </style>
 
-<form method="post" action="#" id="ex3">
+<form method="post" action="#ex3" id="ex3">
   <div class="success">
-    <label for="username"><strong>OK:</strong> Username:</label>
+    <label for="username4"><strong>OK:</strong> Username:</label>
       <input type="text" name="username" id="username4" value="spaceteddy13" aria-describedby="userDesc2">
       <span id="userDesc2">✓</span>
   </div>
@@ -182,8 +189,41 @@
       <input type="text" name="expire" id="expire4" value="03.2015" aria-describedby="expDesc2">
       <span id="expDesc2">Use the format MM/YYYY.</span>
   </div>
+  <div class="error">
+    <button type="submit">Submit</button>
+  </div>
 </form>
 
+<script>
+var taken_usernames = ['timbl', 'shadi', 'yatil', 'bim', 'shawn', 'slh', 'spacebear13', 'Obelisks', 'Phoenix', 'Imari', 'Henry', 'Zeki', 'Rome', 'Min', ' Kelly', 'Brynn'];
+document.getElementById('ex3').addEventListener('submit', function(event){
+  function setError(el, msg) {
+    el.parentNode.querySelector('strong').innerHTML = "Error:";
+    el.parentNode.className='error';
+    el.parentNode.querySelector('span').innerHTML = msg;
+  }
+  function setSuccess(el) {
+    el.parentNode.querySelector('strong').innerHTML = "OK:";
+    el.parentNode.className='success';
+    el.parentNode.querySelector('span').innerHTML = "&check;";
+  }
+  var exp = document.getElementById('expire4');
+  if (exp.value.match(new RegExp('[0-9]{2}\/[0-9]{4}'))) {
+    console.log(exp);
+    setSuccess(exp);
+  } else {
+    setError(exp, 'Use the format MM/YYYY.');
+  }
+  var usr = document.getElementById('username4');
+  if (taken_usernames.indexOf(usr.value.trim())+1 == false) {
+    setSuccess(usr);
+  } else {
+    setError(usr, 'Username already taken');
+  }
+  event.preventDefault();
+  return false;
+});
+</script>
 
   </div></figure>
 
@@ -208,6 +248,9 @@
     <span class="na">aria-describedby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>Use the format MM/YYYY.<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre>
 
 </figure>
@@ -220,37 +263,124 @@
 </pre>
 
 </figure>
-<h2 id="instant">Instant Notifications</h2>
+<h3 class="ex" id="dynamic-in-line-message-as-soon-as-the-user-leaves-a-form-field">Dynamic in-line message as soon as the user leaves a form field</h3>
 
-<p>Sometimes it makes sense to inform the user instantly if the form can be submitted. This especially affects forms where the user is unable to determine if a certain value is correct, like for usernames or passwords. In those situations, the probability of submitting a form over and over again just to almost certainly receive error messages is frustrating for all users.</p>
+<p>For form input that can be validated on the client side, like format information, it makes sense to give the user feedback as soon as they leave the form field. The following form fields will be evaluated as soon as the focus leaves the field (“blur”), that is when the user tabs to the next field or clicks somewhere else on the page. In addition to the visual changes, an ARIA live region (<code>aria-live</code>) is added to the instruction to inform users of assistive technologies. The <code>aria-live</code> value is <code>assertive</code> to make sure that screen readers don’t read the label of the next form field instead.</p>
 
-<h3 class="ex" id="immediately-inform-user-about-the-validation-of-the-input">Immediately inform user about the validation of the input</h3>
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<style>
+  #ex4 div {margin-bottom:.75em;}
+</style>
 
-<p>If users are required to choose a username, they don't know if the username is already taken or not. It makes sense to inform the user immediately about the availability of the username while entering a username. In this example, the notification is done visually (by displaying a checkmark) as well with an ARIA live region: The text is read by screen readers as the <code>aria-live</code> attribute is used. The <code>polite</code> value makes sure that the notification is read out as soon as the user stops typing.</p>
+<form method="post" action="#" id="ex4">
+  <div>
+    <label for="username5"><strong></strong> Username:</label>
+    <input type="text" name="username" id="username5" value="spaceteddy13" aria-describedby="userDesc3">
+    <span id="userDesc3" aria-live="assertive"></span>
+  </div>
+  <div>
+    <label for="expire5"><strong></strong> Expiry date:</label>
+    <input type="text" name="expire" id="expire5" value="03.2015" aria-describedby="expDesc3">
+    <span id="expDesc3" aria-live="assertive"></span>
+  </div>
+  <div class="error">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<script>
+inputs = document.querySelectorAll('#ex4 input');
+for (var i = inputs.length - 1; i >= 0; i--) {
+  inputs[i].addEventListener('blur', function(event){
+    console.log('ohai' + this.id);
+    function setError(el, msg) {
+      el.parentNode.querySelector('strong').innerHTML = "Error:";
+      el.parentNode.className='error';
+      el.parentNode.querySelector('span').innerHTML = msg;
+    }
+    function setSuccess(el) {
+      el.parentNode.querySelector('strong').innerHTML = "OK:";
+      el.parentNode.className='success';
+      el.parentNode.querySelector('span').innerHTML = "&check;";
+    }
+    if (this.id == 'expire5') {
+      if (this.value.match(new RegExp('[0-9]{2}\/[0-9]{4}'))) {
+        console.log(this);
+        setSuccess(this);
+      } else {
+        setError(this, 'Use the format MM/YYYY.');
+      }
+    } else if (this.id == 'username5') {
+      if (taken_usernames.indexOf(this.value.trim())+1 == false) {
+        setSuccess(this);
+      } else {
+        setError(this, 'Username already taken.');
+      }
+    }
+    event.preventDefault();
+    return false;
+  });
+};
+
+</script>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption><pre class="highlight html"><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;&lt;strong&gt;&lt;/strong&gt;</span> Username:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"spaceteddy13"</span> <span class="na">aria-describedby=</span><span class="s">"userDesc3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"userDesc3"</span> <span class="na">aria-live=</span><span class="s">"assertive"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;&lt;strong&gt;&lt;/strong&gt;</span> Expiry date:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">value=</span><span class="s">"03.2015"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc3"</span> <span class="na">aria-live=</span><span class="s">"assertive"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+</figure>
+<h3 class="ex" id="dynamic-in-line-message-while-filling-out-the-form">Dynamic in-line message while filling out the form</h3>
+
+<h4 id="simple-messages">Simple messages</h4>
+
+<p>In this example, the notification is done visually as well the live region immediately while typing the text. The error or success message is read by screen readers as the <code>aria-live</code> attribute is used with the <code>polite</code> value. This makes sure that the notification is read out as soon as the user stops typing instead of every time the user types a character.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
-  <label for="ex1_username">Username:</label>
-  <input type="text" name="username" id="ex1_username">
-  <span id="username_feedback" aria-live="polite"></span>
+  <div>
+    <label for="ex1_username"><strong></strong> Username:</label>
+    <input type="text" name="username" id="ex1_username">
+    <span id="username_feedback" aria-live="polite"></span>
+  </div>
 </form>
 
 <script>
   document.getElementById('ex1_username').addEventListener('keyup', function(){
-    var taken_usernames = ['timbl', 'spacebear13', 'Obelisks', 'Phoenix', 'Imari', 'Henry', 'Zeki', 'Rome', 'Min', ' Kelly', 'Brynn'];
+    function setError(el, msg) {
+      el.parentNode.querySelector('strong').innerHTML = "Error:";
+      el.parentNode.className='error';
+      el.parentNode.querySelector('span').innerHTML = msg;
+    }
+    function setSuccess(el) {
+      el.parentNode.querySelector('strong').innerHTML = "OK:";
+      el.parentNode.className='success';
+      el.parentNode.querySelector('span').innerHTML = "&check;";
+    }
     var val = this.value;
-    var feedback = document.getElementById('username_feedback');
-    feedback.textContent = '';
     if (val !== "") {
       if (taken_usernames.indexOf(val.trim())+1) {
-        feedback.innerHTML = '&cross; Sorry, this username is taken.';
-        feedback.style.color = "#f00";
+        setError(this, '&cross; Sorry, this username is taken.');
       } else {
-        feedback.innerHTML = '&check; You can use this username.';
-        feedback.style.color = "#0a0";
+        setSuccess(this, '&check; You can use this username.');
       }
+    } else {
+      document.getElementById('username_feedback').innerHTML = '';
+      document.getElementById('username_feedback').parentNode.className = '';
+      document.querySelector('[for="ex1_username"] strong').innerHTML = '';
     }
   });
 </script>
@@ -260,38 +390,47 @@
 
 <figure class="code ">
   <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;</span>Username:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">id=</span><span class="s">"username"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"username_feedback"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;</span>Username:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">id=</span><span class="s">"username"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"username_feedback"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre>
 
 </figure>
 <figure class="code ">
   <figcaption>Code snippet: JavaScript</figcaption>
-<pre class="highlight javascript">  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'ex1_username'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-      <span class="kd">var</span> <span class="nx">taken_usernames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Obelisks'</span><span class="p">,</span> <span class="s1">'Phoenix'</span><span class="p">,</span> <span class="s1">'Imari'</span><span class="p">,</span>
-                             <span class="s1">'Henry'</span><span class="p">,</span> <span class="s1">'Zeki'</span><span class="p">,</span> <span class="s1">'Rome'</span><span class="p">,</span> <span class="s1">'Min'</span><span class="p">,</span>
-                             <span class="s1">'Kelly'</span><span class="p">,</span> <span class="s1">'Brynn'</span><span class="p">];</span>
-      <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-      <span class="kd">var</span> <span class="nx">feedback</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'username_feedback'</span><span class="p">);</span>
-      <span class="nx">feedback</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">!==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">taken_usernames</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">feedback</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&amp;cross; Sorry, this username is taken.'</span><span class="p">;</span>
-          <span class="nx">feedback</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">"#f00"</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="nx">feedback</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&amp;check; You can use this username.'</span><span class="p">;</span>
-          <span class="nx">feedback</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">"#0a0"</span><span class="p">;</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">});</span>
+<pre class="highlight javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'username'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">function</span> <span class="nx">setError</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'strong'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Error:"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span><span class="o">=</span><span class="s1">'error'</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'span'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">function</span> <span class="nx">setSuccess</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'strong'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"OK:"</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span><span class="o">=</span><span class="s1">'success'</span><span class="p">;</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'span'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"&amp;check;"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">!==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">taken_usernames</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">trim</span><span class="p">())</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setError</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'&amp;cross; Sorry, this username is taken.'</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">setSuccess</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'&amp;check; You can use this username.'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'username_feedback'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'username_feedback'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'[for="username"] strong'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 </pre>
 
 </figure>
-<h3 class="ex" id="immediately-display-the-quality-of-the-input-to-the-user">Immediately display the quality of the input to the user</h3>
+<h4 id="complex-messages">Complex messages</h4>
 
-<p>To help the user to chose a good passwords, strength meters make it visually clear how good the entered password is while typing it in. Additionally to having a visual meter, displaying the text and having it read to the screen reader by using an WAI-ARIA live region has advantages: It is easier to understand what the meter is for, and it can give additional information. In the example, the time to crack the password is displayed to give the user a more human way to understand how strong the password is.</p>
+<p>Such immediate and dynamic feedback can also be helpful if more complex feedback is given back to the user. The following example tells users how good the password is by displaying a visual meter and the time needed to crack the password.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -353,78 +492,8 @@ document.getElementById('ex2_password').addEventListener('keyup',
 
   </div></figure>
 
-<figure class="code ">
-  <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"password"</span><span class="nt">&gt;</span>Password:<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"password"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"passwordmeter"</span><span class="nt">&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"passwordmessage"</span> <span class="na">aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;&lt;/span&gt;</span>
-</pre>
+<p><a href="../examples/password/">See commented example code in full.</a></p>
 
-</figure>
-<figure class="code ">
-  <figcaption>Code snippet: CSS</figcaption>
-<pre class="highlight css"><span class="nf">#passwordmeter</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span><span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span><span class="m">125px</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#666</span><span class="p">;</span>
-  <span class="nl">vertical-align</span><span class="p">:</span><span class="nb">middle</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#passwordmeter</span> <span class="nt">span</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span><span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span><span class="m">1em</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span><span class="m">25px</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-<span class="p">}</span>
-</pre>
-
-</figure>
-<figure class="code ">
-  <figcaption>Code snippet: JavaScript</figcaption>
-<pre class="highlight javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'password'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span>
-    <span class="kd">function</span><span class="p">(){</span>
-      <span class="c1">// (1) Select the password meter and message elements.
-</span>      <span class="kd">var</span> <span class="nx">meter</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#passwordmeter span'</span><span class="p">);</span>
-      <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'passwordmessage'</span><span class="p">);</span>
-
-      <span class="c1">// (2) Calculate the strength of the password.
-</span>      <span class="kd">var</span> <span class="nx">pw</span> <span class="o">=</span> <span class="nx">get_pw_strength</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-
-      <span class="c1">// (3) Set the with of the password meter to a multiple of the score.
-</span>      <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">25</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">;</span>
-
-      <span class="cm">/* (4) Set the color of the meter to
-             a) red if the score &lt; 3
-             b) yellow if the score = 3
-             c) green if the score = 4
-
-         (5) Change the text of the passwort message element accordingly. */</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
-        <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Weak:&lt;/strong&gt; Cracked instantly'</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
-        <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Weak:&lt;/strong&gt; Cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'yellow'</span><span class="p">;</span>
-        <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Okay:&lt;/strong&gt; Cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'green'</span><span class="p">;</span>
-        <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Strong:&lt;/strong&gt; Cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time</span><span class="p">;</span>
-      <span class="p">}</span>
-
-      <span class="cm">/* (6) If the input is empty, there is no text output
-             and the color of the meter is set to gray. */</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'gray'</span><span class="p">;</span>
-        <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">' '</span><span class="p">;</span>
-      <span class="p">}</span>
-  <span class="p">});</span>
-</pre>
-
-</figure>
 
 
 <div role="techniques">
