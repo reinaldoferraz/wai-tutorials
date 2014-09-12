@@ -12,7 +12,7 @@
   &bull; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-609ac8bd.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-10850312.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -61,11 +61,59 @@
   
 
 
-    <p>A sliding animation usually conveys that there is more content in the carousel than only the one piece of content that is shown when the page is opened.</p>
+    <p>Often, a sliding animation conveys that there is more content in the carousel than displayed on the moment the page is accessed.</p>
 
-<p>Animations are challenging for accessibility as they affect people in different ways. A blind person for example may lose the focus if a slide disappears and people who aren’t able to read stationary text quickly might not be able to read the content of a slide. For others, moving content is a severe distraction, making it difficult for them to concentrate on other parts of the page.</p>
+<p>Animations are challenging for accessibility as they affect different people in different ways. A blind person for example may lose the keyboard position if a slide disappears and people who aren’t able to read stationary text quickly might not be able to read the content of a slide at all. For others, moving content is a severe distraction, making it difficult for them to concentrate on other parts of the page.</p>
 
-<p>To avoid problems with moving parts of the page, the user needs to have the ability to stop the animation. In the following example carousel, there is a pause button (next to the list of slides):</p>
+<h2 id="add-a-stop-button">Add a Stop Button</h2>
+
+<p>To avoid the problems outlined aboves, the user needs to have the ability to stop automatic animations. In the following example carousel, there is a pause button next to the list of slides that allows for that.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;button</span> <span class="na">data-action=</span><span class="s">"stop"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Stop Animation <span class="nt">&lt;/span&gt;</span>￭<span class="nt">&lt;/button&gt;</span>
+</pre>
+
+</figure>
+<p>When the button is clicked, the <code>data-action</code> value is changed to a <code>start</code> and the text inside the button changes to <code>&lt;span class="visuallyhidden"&gt;Start Animation &lt;/span&gt;▶</code>. If the button is clicked, the animation is stopped or started, depending on the value. It is important to not replace the whole button, as the focus would be lost and keyboard users would need to start from the top of the page.</p>
+
+<h2 id="stop-animation-while-interacting-with-the-carousel">Stop Animation While Interacting with the Carousel</h2>
+
+<p>Many carousels use a sliding animation which requires to have two slides visible at the same time: the slide that is the current slide and the slide that will become the current slide. The current slide then disappears and is not reachable using the keyboard anymore.</p>
+
+<p>If content suddenly can’t be reachable using the keyboard, and the focus is inside this content, this may lead to users that lose their focus and need to start from the top of the page again, which is very inconvenient and a potential keyboard trap.</p>
+
+<p>To avoid such behavior and make it easier for users to use the mouse to interact with the carousel, the animation should stop when an element inside the carousel receives focus or the mouse is hovering over the carousel. The animation should continue when the focus moves on or the mouse stops hovering.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight javascript"><span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseenter'</span><span class="p">,</span> <span class="nx">suspendAnimation</span><span class="p">);</span>
+<span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseleave'</span><span class="p">,</span> <span class="nx">startAnimation</span><span class="p">);</span>
+
+<span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'focusin'</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span> <span class="s1">'slide'</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">suspendAnimation</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+<span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'focusout'</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span> <span class="s1">'slide'</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">startAnimation</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</pre>
+
+</figure>
+<div class="notes ">
+<p><strong>Note:</strong> The <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusIn"><code>focusin</code></a> and <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusout"><code>focusout</code></a> events are defined in the <a href="http://www.w3.org/TR/DOM-Level-3-Events/">W3C Document Object Model (DOM) Level 3 Events Specification</a> (Working Draft) and implemented in many browsers. Firefox needs <a href="../examples/focusinoutpolyfill-dbb9abfe.js">a short polyfill</a> at the time of publication of this tutorial.</p>
+
+</div>
+<p>As most of the carousels use a sliding animation, it is required to have two slides visible at the same time, the slide that is the current slide and the slide that will become the current slide.</p>
+
+<h2 id="end-result">End Result</h2>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -127,43 +175,6 @@
 
   </div></figure>
 
-<p>But there is more to it: to animate the slide in the way above, some more CSS needs to be added. Instead of hiding the individual slides using <code>display: none</code>, <code>visibility: hidden</code> is used as this works the same way to hide the slides not only visually but from screen readers as well but also allows for CSS3 transitions. The current slide is positioned absolutely to the leftmost point of the container.</p>
-
-<p>The previous and next slides are positioned left and right from the current slide using the values of <code>-100%</code> and <code>100%</code> for the <code>left</code> property. A CSS3 transition of the <code>left</code> property is used to apply the slide animation.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: CSS</figcaption>
-<pre class="highlight css"><span class="nc">.active</span> <span class="nc">.slide</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span> <span class="cp">!important</span><span class="p">;</span>
-  <span class="nl">visibility</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-  <span class="nl">transition</span><span class="p">:</span> <span class="nb">left</span> <span class="m">.6s</span> <span class="n">ease-out</span> <span class="m">0s</span><span class="p">;</span>
-  <span class="nl">z-index</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.active</span> <span class="nc">.slide.current</span> <span class="p">{</span> <span class="nl">left</span><span class="p">:</span>    <span class="m">0</span> <span class="p">;</span> <span class="p">}</span>
-<span class="nc">.active</span> <span class="nc">.slide.next</span>    <span class="p">{</span> <span class="nl">left</span><span class="p">:</span>  <span class="m">100</span><span class="err">%</span><span class="p">;</span> <span class="p">}</span>
-<span class="nc">.active</span> <span class="nc">.slide.prev</span>    <span class="p">{</span> <span class="nl">left</span><span class="p">:</span> <span class="m">-100</span><span class="err">%</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="nc">.active</span> <span class="nc">.slide.current</span><span class="o">,</span>
-<span class="nc">.active</span> <span class="nc">.slide.next.in-transition</span><span class="o">,</span>
-<span class="nc">.active</span> <span class="nc">.slide.prev.in-transition</span> <span class="p">{</span>
-  <span class="nl">visibility</span><span class="p">:</span> <span class="nb">visible</span><span class="p">;</span>
-<span class="p">}</span>
-</pre>
-
-</figure>
-<p>If the next button or the automatic animation is invoked, the script changes the class attribute of the next slide to <code>current slide</code> and of the current slide to <code>prev slide in-transition</code> to keep it visible. The <code>in-transition</code> class is removed after the animation has ended by using the <code>transitionend</code> event.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: JavaScript: Setting slides</figcaption>
-<pre class="highlight javascript"><span class="nx">slides</span><span class="p">[</span><span class="nx">new_current</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'current slide'</span><span class="p">;</span>
-<span class="nx">slides</span><span class="p">[</span><span class="nx">new_next</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span>
-  <span class="s1">'next slide'</span> <span class="o">+</span> <span class="p">((</span><span class="nx">transition</span> <span class="o">==</span> <span class="s1">'next'</span><span class="p">)</span> <span class="p">?</span> <span class="s1">' in-transition'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">);</span>
-<span class="nx">slides</span><span class="p">[</span><span class="nx">new_prev</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span>
-  <span class="s1">'prev slide'</span> <span class="o">+</span> <span class="p">((</span><span class="nx">transition</span> <span class="o">==</span> <span class="s1">'prev'</span><span class="p">)</span> <span class="p">?</span> <span class="s1">' in-transition'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">);</span>
-</pre>
-
-</figure>
 <figure class="code ">
   <figcaption>Code snippet: JavaScript: In initialization</figcaption>
 <pre class="highlight javascript"><span class="kd">var</span> <span class="nx">slidewrapper</span> <span class="o">=</span> <span class="nx">slides</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">parentNode</span><span class="p">;</span>
@@ -180,6 +191,8 @@
 </pre>
 
 </figure>
+<h2 id="stop-animation-while-interacting-with-the-carousel-1">Stop Animation While Interacting with the Carousel</h2>
+
 <p>The slide that is currently active is highlighted in the slide list and a play/pause button is added. Additionally, the animation should stop when an element inside the carousel receives focus or the mouse is hovering over the carousel and continue when the focus is lost or the mouse stops hovering.</p>
 
 <figure class="code ">
@@ -447,9 +460,9 @@ var myCarousel = (function() {
         var li = document.createElement('li');
 
         if (settings.startAnimated) {
-          li.innerHTML = '<button data-stop=true><span class="visuallyhidden">Stop Animation </span>￭</button>';
+          li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Stop Animation </span>￭</button>';
         } else {
-          li.innerHTML = '<button data-start=true><span class="visuallyhidden">Start Animation </span>▶</button>';
+          li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Start Animation </span>▶</button>';
         }
 
         slidenav.appendChild(li);
@@ -472,9 +485,9 @@ var myCarousel = (function() {
           if (button.getAttribute('data-slide')) {
             stopAnimation();
             setSlides(button.getAttribute('data-slide'), true);
-          } else if (button.getAttribute('data-stop')) {
+          } else if (button.getAttribute('data-action') == "stop") {
             stopAnimation();
-          } else if (button.getAttribute('data-start')) {
+          } else if (button.getAttribute('data-action') == "start") {
             startAnimation();
           }
         }
@@ -495,7 +508,11 @@ var myCarousel = (function() {
       });
 
       carousel.addEventListener('mouseenter', suspendAnimation);
-      carousel.addEventListener('mouseleave', startAnimation);
+      carousel.addEventListener('mouseleave', function(event) {
+        if (animationSuspended) {
+          startAnimation();
+        }
+      });
 
       carousel.addEventListener('focusin', function(event) {
         if (!hasClass(event.target, 'slide')) {
@@ -503,7 +520,7 @@ var myCarousel = (function() {
         }
       });
       carousel.addEventListener('focusout', function(event) {
-        if (!hasClass(event.target, 'slide')) {
+        if (!hasClass(event.target, 'slide') && animationSuspended) {
           startAnimation();
         }
       });
@@ -588,20 +605,18 @@ var myCarousel = (function() {
     clearTimeout(timer);
     settings.animate = false;
     animationSuspended = false;
-    _this = carousel.querySelector('[data-stop], [data-start]');
+    _this = carousel.querySelector('[data-action]');
     _this.innerHTML = '<span class="visuallyhidden">Start Animation </span>▶';
-    _this.removeAttribute('data-stop');
-    _this.setAttribute('data-start', 'true');
+    _this.setAttribute('data-action', 'start');
   }
 
   function startAnimation() {
     settings.animate = true;
     animationSuspended = false;
     timer = setTimeout(nextSlide, 5000);
-    _this = carousel.querySelector('[data-stop], [data-start]');
+    _this = carousel.querySelector('[data-action]');
     _this.innerHTML = '<span class="visuallyhidden">Stop Animation </span>￭';
-    _this.setAttribute('data-stop', 'true');
-    _this.removeAttribute('data-start');
+    _this.setAttribute('data-action', 'stop');
   }
 
   function suspendAnimation() {
@@ -836,7 +851,7 @@ c.init({
       
         [EDITOR’S DRAFT]
       
-      10 September 2014
+      12 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
@@ -873,7 +888,7 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-08fd2459.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-31b0ed20.js" type="text/javascript"></script>
 	</body>
 </html>
 
