@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  ◊ Navigation Types
+  Navigation Types
   
     
        &bull; Navigation
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Navigation</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>◊ Navigation Types</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Types</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      ◊ Navigation Types
+      Navigation Types
     </h1>
   </header>
 
@@ -61,7 +61,119 @@
   
 
 
+    <p>Designing a good navigation is not a technical challenge but a content strategy one. Organizing the content of a website is fairly trivial on small websites, but grows into a huge task once the website grows larger. A simple and flat navigation structure makes it easy for the user to find information.</p>
+
+<p>Navigation laid out horizontally should only contain a few items, so they can be easily processed. Horizontal navigation can also be hard to read if there is little space, for example if the user is on a mobile phone or uses text enlargement.</p>
+
+<h2 id="indicating-the-current-page">Indicating the current page</h2>
+
+<p>While the individual navigation links don’t need to be underlined if the navigation is different enough from the rest of the page, the current page should be marked in a way that does not rely on <a href="../../fundamentals/color/">color</a> alone. For example in these tutorials an inverted box is used as well as a small arrow to show the entry of the current page. In most cases, the link to the current page should not be active.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<nav role="navigation" aria-label="Main Navigation" aria-presentation="true" id="samplenav">
     <ul>
+        <li><a href="#samplenav">Home</a></li>
+        <li><a href="#samplenav">Shop</a></li>
+        <li><span class="current"><span class="visuallyhidden">Current Page: </span>SpaceBears</span></li>
+        <li><a href="#samplenav">MarsCars</a></li>
+        <li><a href="#samplenav">Contact</a></li>
+    </ul>
+</nav>
+
+<style>
+  #samplenav {
+      display:table;
+      width:100%;
+  }
+  #samplenav ul {
+      margin: 0;
+      padding: 0;
+      display: table-row;
+      background-color: #036;
+      color: #fff;
+  }
+  #samplenav li {
+      display:table-cell;
+      width: 20%;
+      text-align: center;
+  }
+  #samplenav a,
+  #samplenav .current {
+      display: block;
+      padding: .25em;
+      border-bottom: .25em solid #E8E8E8;
+  }
+  #samplenav a {
+      color: #fff;
+      text-decoration: none;
+  }
+  #samplenav .current {
+      background-color: #bbb;
+      color: #000;
+      border-color: #444;
+  }
+</style>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-label=</span><span class="s">"Main Navigation"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Shop<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">"current"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Current Page: <span class="nt">&lt;/span&gt;</span>SpaceBears<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>MarsCars<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
+<p>Some special elements and attributes were used to further help accessibility: The <code>&lt;nav&gt;</code> element allows HTML5 compatible assistive technology to find navigational elements. The <code>role</code> attribute with the value of <code>navigation</code> does the same for WAI-ARIA compatible browsers. Additionally the <code>aria-label</code> attribute is used to give a name to the navigation that shows up in some means of navigating the site using assistive technology as well as when entering the navigation itself.</p>
+
+<p>Design-wise, a border in the color of the background of the page is used on links to other pages and in a dark color for the current page, which makes the current menu item easy to find.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: CSS</figcaption>
+<pre class="highlight css"><span class="nt">nav</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100</span><span class="err">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">table-row</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">table-cell</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">20</span><span class="err">%</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">a</span><span class="o">,</span>
+<span class="nt">nav</span> <span class="nc">.current</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">.25em</span><span class="p">;</span>
+  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">.25em</span> <span class="nb">solid</span> <span class="m">#E8E8E8</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="nc">.current</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#bbb</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#000</span><span class="p">;</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="m">#444</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+
+</figure>
+<ul>
   <li>Ex: Horizontal</li>
   <li>Ex: Vertical</li>
   <li>Ex: Breadcrumb</li>
@@ -69,6 +181,357 @@
 
 
 
+<div role="techniques">
+  <h2 id="related">Related WCAG2.0 Resources</h2>
+  
+    <p><strong>Success Criteria:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color">1.4.1 Use of Color:</a> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+  
+  
+    <p><strong>Techniques:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G14">G14: Ensuring that information conveyed by color differences is also available in text</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G182">G182: Ensuring that additional visual cues are available when text color differences are used to convey information</a></li>
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G183">G183: Using a contrast ratio of 3:1 with surrounding text and providing additional visual cues on focus for links or controls where color alone is used to identify them</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+  
+</div>
 
 <div role="navigation" id="tools">
   <ul>
@@ -125,7 +588,7 @@
         
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>◊ Navigation Types</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Types</span></span></li>
       
       
       
@@ -167,7 +630,7 @@
       
         [EDITOR’S DRAFT]
       
-      10 September 2014
+      16 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>

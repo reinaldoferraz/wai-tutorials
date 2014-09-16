@@ -63,11 +63,11 @@
 
     <p>Provide instructions to help users understand how to complete the form and individual form controls. This includes indicating any required and optional input, data formats, and other important aspects of the form.</p>
 
-<p>Screen readers often switch to “Forms Mode” when they are processing content within a <code>&lt;form&gt;</code> element. In this mode they usually only read aloud form elements such as <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;legend&gt;</code>, and <code>&lt;label&gt;</code>. It is critical to include form instructions in ways so that they will be read aloud.</p>
+<p><strong>Important:</strong> Screen readers often switch to “Forms Mode” when they are processing content within a <code>&lt;form&gt;</code> element. In this mode they usually only read aloud form elements such as <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;legend&gt;</code>, and <code>&lt;label&gt;</code>. It is critical to include form instructions in ways so that they will be read aloud.</p>
 
 <h2 class="newex" id="overall-instructions">Overall instructions</h2>
 
-<p>Where relevant, provide overall instructions that apply to the entire form before the <code>&lt;form&gt;</code> element (to ensure that it is read aloud by screen readers before they switch to “Forms Mode”). The overall instructions should also tell the user if there are optional fields and how to skip them, if they make up a large portion of the form. Information about time limits that apply should also be mentioned, alongside with information on how to adjust, extend or turn off the limit.</p>
+<p>Where relevant, provide overall instructions that apply to the entire form. For example, indicate any required and optional input, allowable data formats, and timing limitations. Provide such instructions before the <code>&lt;form&gt;</code> element to ensure that it is read aloud by screen readers before they switch to “Forms Mode”.</p>
 
 <p>In the example below, form instructions indicate how required input is highlighted, the expected format for key data fields of the particular form, and how to get additional help for each input.</p>
 
@@ -92,6 +92,8 @@
 
 <p>For simple use cases, providing instructions within the labels may be sufficient. While this approach tends to impact styling options, it is most reliable across different web browsers and assistive technologies.</p>
 
+<p>In the example below, the required format for the “Expiry Date” is indicated by “MM/YYYY” within the same label:</p>
+
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
@@ -112,11 +114,11 @@
 </figure>
 <h3 class="newex" id="providing-instructions-outside-labels">Providing instructions outside labels</h3>
 
-<p>Providing instructions outside labels allows more flexible positioning and design but generally has caveats. The two approaches outlined below can be combined to achieve most impact.</p>
+<p>Providing instructions outside labels allows more flexible positioning and design but sometimes it can be missed. The two approaches outlined below can be combined to achieve most impact.</p>
 
 <h4 class="ap" id="informing-users">Informing users</h4>
 
-<p>Content outside form elements may be missed by screen readers that are in “Forms Mode”. In the example below, users are informed that extra help is available for each field in the overall instructions before they enter the actual form so that they don't miss it.</p>
+<p>Content outside form elements may be missed by screen readers that are in “Forms Mode”. In the example below, users are informed that extra help is available for each field in the overall instructions before they enter the actual form, so that they don't miss it.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -141,7 +143,7 @@
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> A caveat of this approach is that users receive the instructions after the form element. This is often non-ideal, especially when the form controls are larg or when they are displayed on mobile devices and using screen magnification. In such cases these instructions may not always be easy to find.</p>
+<p><strong>Note:</strong> A caveat of this approach is that users receive the instructions after the form element. This is often non-ideal, especially when the form controls are large, or when they are displayed on mobile devices and using screen magnification. In such cases these instructions may not always be easy to find.</p>
 
 </div>
 <h4 class="ap" id="using-wai-aria">Using WAI-ARIA</h4>
@@ -353,6 +355,10 @@
       
         
           
+        
+      
+        
+          
             <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G17">G17: Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text</a></li>
           
         
@@ -436,6 +442,10 @@
         
           
             <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G162">G162: Positioning labels to maximize predictability of relationships</a></li>
+          
+        
+      
+        
           
         
       
@@ -716,7 +726,7 @@
         [DRAFT]
       
       
-      11 September 2014
+      16 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>

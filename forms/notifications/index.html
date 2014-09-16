@@ -61,15 +61,17 @@
   
 
 
-    <p>Notifications provide feedback to users about their form entries. In-line notifications provide feedback at or near the controls, typically input fields, while status notifications are typically provided after forms are submitted.</p>
+    <p>Provide feedback to users about their form entries. This includes in-line feedback at or near the form controls (typically input fields), and overall feedback that is typically provided after forms are submitted.</p>
 
 <p>Notifications need to be concise and clear. In particular error messages should be easy to understand, and to provide simple indications of how to correct mistakes. Success messages are also important to confirm task completion.</p>
 
-<p>When a form is submitted, it is important that the user is notified whether the submission was successful or if errors occurred. Several approaches can be combined.</p>
+<h2 id="overall-feedback">Overall feedback</h2>
 
-<h2 id="using-the-main-heading">Using the Main Heading</h2>
+<p>When a form is submitted, it is important that the user is notified whether the submission was successful or if errors occurred. Several of the following techniques can be combined.</p>
 
-<p>A common way to provide feedback is by using the main heading of a page, usually the most prominently displayed <code>&lt;h1&gt;</code>or <code>&lt;h2&gt;</code> element. This technique is particularly useful when forms are processed by the server, but can also be useful for client-side scripting.</p>
+<h3 id="using-the-main-heading">Using the main heading</h3>
+
+<p>A common way to provide feedback is by using the main heading of the web page, usually the most prominently displayed <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> element. This technique is particularly useful when forms are processed by the server, but can also be useful for client-side scripting.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: Error</figcaption><pre class="highlight html"><span class="nt">&lt;h1&gt;</span>3 Errors – Billing Address<span class="nt">&lt;/h1&gt;</span>
@@ -83,9 +85,9 @@
 <p><strong>Note:</strong> The main purpose of the main heading is still to identify the web page that the user is currently on. When the user is sent back to the same web page because of an error, then a simple indication using the word “error” and possibly the number of errors is sufficient.</p>
 
 </div>
-<h2 id="using-the-page-title">Using the Page Title</h2>
+<h3 id="using-the-page-title">Using the page title</h3>
 
-<p>In addition to using the main heading it is often useful to also use the <code>&lt;title&gt;</code> element to indicate successes and error. In particular screen reader users will get immediate feedback when the web page is loaded, especially when the main heading is placed deeper within the content; for example, after the navigation menus.</p>
+<p>In addition to using the main heading it is often useful to also use the <code>&lt;title&gt;</code> element of the web page to indicate successes and error. In particular screen reader users will receive this feedback immediately when the web page is loaded, especially when the main heading is placed deeper within the content; for example, after the navigation menus.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: Error</figcaption><pre class="highlight html"><span class="nt">&lt;title&gt;</span>3 Errors – Billing Address<span class="nt">&lt;/title&gt;</span>
@@ -95,13 +97,15 @@
   <figcaption>Code snippet: Success</figcaption><pre class="highlight html"><span class="nt">&lt;title&gt;</span>Thank you for submitting your order.<span class="nt">&lt;/title&gt;</span>
 </pre>
 </figure>
-<h2 id="using-pop-up-dialogs">Using Pop-Up Dialogs</h2>
+<h3 id="using-pop-up-dialogs">Using pop-up dialogs</h3>
 
-<p>When the web page is not reloaded or when its content does not change after submission, then using pop-up dialogs may be useful to notify users of the status. For example, “save” or “send” functions might not change the content of the web page, but user still need to be notified about the status. Sometimes simple cues, such as disabling the “save” button, might be sufficient. In other situations more prominent messaging may be necessary. This includes messages indicating that the system is busy “loading”, “saving”, or carrying out another function.</p>
+<p>When the web page is not reloaded or when the content does not change after submission, then using pop-up dialogs may be useful to notify users of the status. For example, “save” or “send” functions might not change the content of the web page, but user still needs to be notified about the status. Sometimes simple cues, such as disabling the “save” button, might be sufficient. In other situations more prominent messaging may be necessary. This includes messages indicating that the system is busy “loading”, “saving”, or carrying out another function.</p>
 
-<h3 class="ap" id="permanent-pop-up">Permanent Pop-Up</h3>
+<h4 class="ap" id="permanent-pop-up">Permanent pop-up</h4>
 
-<p>A permanent pop-up makes sure that the user has seen the confirmation message, as it is impossible for the user to continue to use the web page without confirming the dialog. While this is very effective, it is also interrupting the user and can be quite annoying.</p>
+<p>A permenent pop-up requires the user to confirm the message in order to continue using the web page. This approach is useful because it cannot be missed, but it can also be quite obtrusive and disruptive to the task.</p>
+
+<p>The example below shows a pop-up that is displayed when the user activates the “save” button. A message is displayed in a dialog box, and the web page is disabled until the user selects “OK”.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -126,9 +130,15 @@
   <span class="p">});</span>
 </pre>
 </figure>
-<h3 class="ap" id="temporary-pop-up">Temporary Pop-Up</h3>
+<div class="notes ">
+<p><strong>Note:</strong> In this example the <code>alert()</code> function which uses the standard dialogs of the web browser, including default settings for font-size, colors, and language. After confirming the message in the dialog window, most web browsers will resume the focus back on the “save” button. This functionality would need to be ensured for custom dialog windows.</p>
 
-<p>A temporary pop-up displays a message for a short time before vanishing. It is a more subtle possibility to inform users and interrupt them only for a short moment. The advantages are that the user stays where he was and is not interrupted. On the downside, the user is not in control on how long the pop-up is displayed. Some users might miss some text for that reason, for others the message might displayed for a longer time, annoying them.</p>
+</div>
+<h4 class="ap" id="temporary-pop-up">Temporary pop-up</h4>
+
+<p>A temproary pop-up is displayed for a certain period of time before vanishing. This approach is less obtrusive but it can also be missed. In particular, users generally cannot control how long the message is displayed and may not have enough time to read it.</p>
+
+<p>The example below shows a pop-up that is displayed when the user activates the “save” button. A message is displayed prominently in the center of the screen, and does not block the user from continuing to use the content.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -189,40 +199,19 @@
 <span class="p">}</span>
 </pre>
 </figure>
-<p>In the code below, the pop up is added to the page, including an <code>aria-live</code> attribute with the value <code>assertive</code>. This attribute makes sure that screen reader and other assistive technology users get the message. A CSS3 transition is used to fade out the dialog box, and as soon as the transition finishes, the element gets removed from the page.</p>
+<div class="notes ">
+<p><strong>Note 1:</strong> In the code for this pop-up, the displayed message is coded using a <code>&lt;div&gt;</code> element that has an <code>aria-live</code> attribute with the value <code>assertive</code>. The contents of this so called “live region” is conveyed to screen readers and other assistive technology. The value “assertive” emphasizes the importance of the message and causes screen readers to interrupt their current task to read aloud this message.</p>
 
-<figure class="code ">
-  <figcaption>Code snippet: JavaScript</figcaption><pre class="highlight javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'temporarymessage'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span><span class="s1">'popup'</span><span class="p">);</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'aria-live'</span><span class="p">,</span><span class="s1">'assertive'</span><span class="p">);</span>
-    <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'Thanks for submitting the form!'</span><span class="p">;</span>
+<p><strong>Note 2:</strong> The elements used for the pop-up window are dynamically added to the web page when the button is activated, and later removed when the fading animation is completed. This is to reduce the amount of unneccessary elements on the web page, for example when the web page is displayed using custom styling.</p>
 
-    <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'transitionend'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(){</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'temporarymessage'</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">div</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-
-    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'popup'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
-  <span class="p">});</span>
-</pre>
-</figure>
-<p>Similarly, a loading spinner or busy indicator can be shown while data is saved or loaded.</p>
-
-<h2 id="using-lists-of-errors">Using Lists of Errors</h2>
+</div>
+<h3 id="listing-errors">Listing errors</h3>
 
 <p>When errors occur, it is useful list them at the top of the page, before the form. The list should have a distinctive heading, so that it is easy to identify. Each error listed should:
-* Reference the label of the corresponding form control, to help the user recognize the control;
-* Provide a concise description of the error in a way that is easy to understand by everyone;
-* Provide an indication of how to correct mistakes, and remind users of any format requirements;
-* Include an in-page link to the corresponding form control to facilitate access for the users.</p>
+- Reference the label of the corresponding form control, to help the user recognize the control;
+- Provide a concise description of the error in a way that is easy to understand by everyone;
+- Provide an indication of how to correct mistakes, and remind users of any format requirements;
+- Include an in-page link to the corresponding form control to facilitate access for the users.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -262,19 +251,17 @@
 </pre>
 
 </figure>
-<h2 id="inline">In-line Messages</h2>
+<h2 id="inline">In-line feedback</h2>
 
-<p>In-line messages are basically special <a href="../instructions/">instructions</a>, so the same concepts apply. They should be clearly distinct from “regular” instructions, if used for successful or erroneous fields. For error messages that can be the word “Error:” in front of the regular label text.</p>
+<p>In addition to overall feedback, more specific feedback at or near the form controls can better help users to use your form. This includes feedback to indicate correctly entered input as well as errors in the input.</p>
 
-<p>The visual formatting of the field might change as well. An erroneous field could be styled with a wide red border, a verified field could be styled with a green border and a checkmark to show that it’s valid.</p>
+<p>Typically a combination of messages and visual cues are used to provide in-line feedback. For example, valid input is often indicated by a checkmark and green borders, while errors are often indicated by an exmark and red borders. In both cases brief message should be provided. Error messages should also provide guidance on how to correct mistakes. The concepts for such error messages are essentially the same as for providing <a href="../instructions/">instructions</a>.</p>
 
-<p>Such messages can be presented to the user in a static way after submitting the form, like in the first example below, or dynamically while filling out the form.</p>
+<h3 class="ap" id="after-submit">After submit</h3>
 
-<p>Disrupting users with messages is appropriate if it is hard for them to determine if their input is correct or not, for example when entering a username. In those situations, the probability of submitting a form over and over again just to almost certainly receive error messages is frustrating for all users.</p>
+<p>The example below shows a form with two input fields. The first input field, “username”, is used to register a username. The second input field, “expiry date”, is used to provide a date for when the registration expires.</p>
 
-<p>Dynamic in-line messages are similar to the messages browsers will give to users if the standard HTML5 form elements are used to <a href="../validation/">validate user input</a>.</p>
-
-<h3 class="ex" id="static-in-line-message">Static in-line message</h3>
+<p>When the form is submitted, the entries are checked and feedback is provided to the user. Appropriate success and error messages are displayed for each input field to help the user complete the form.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -380,89 +367,13 @@ document.getElementById('ex3').addEventListener('submit', function(event){
 </pre>
 
 </figure>
-<h3 class="ex" id="dynamic-in-line-message-as-soon-as-the-user-leaves-a-form-field">Dynamic in-line message as soon as the user leaves a form field</h3>
+<h3 class="ap" id="during-typing">During typing</h3>
 
-<p>For form input that can be validated on the client side, like format information, it makes sense to give the user feedback as soon as they leave the form field. The following form fields will be evaluated as soon as the focus leaves the field (“blur”), that is when the user tabs to the next field or clicks somewhere else on the page. In addition to the visual changes, an ARIA live region (<code>aria-live</code>) is added to the instruction to inform users of assistive technologies. The <code>aria-live</code> value is <code>assertive</code> to make sure that screen readers don’t read the label of the next form field instead.</p>
+<p>Providing instant feedback during typing is interactive and can be very helpful. For example, checking the availability of a username in the previous example required the user to resubmit the form possibly multiple times. Providing feedback while users are typing allows them to experiment more easily until they find a suitable username. However, client-side scripting is required for such functionality, and not all situations may be suitable for such feedback.</p>
 
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<style>
-  #ex4 div {margin-bottom:.75em;}
-</style>
+<h4 class="ex" id="binary-messages">Binary messages</h4>
 
-<form method="post" action="#" id="ex4">
-  <div>
-    <label for="username5"><strong></strong> Username:</label>
-    <input type="text" name="username" id="username5" value="spaceteddy13" aria-describedby="userDesc3">
-    <span id="userDesc3" aria-live="assertive"></span>
-  </div>
-  <div>
-    <label for="expire5"><strong></strong> Expiry date:</label>
-    <input type="text" name="expire" id="expire5" value="03.2015" aria-describedby="expDesc3">
-    <span id="expDesc3" aria-live="assertive"></span>
-  </div>
-  <div class="error">
-    <button type="submit">Submit</button>
-  </div>
-</form>
-
-<script>
-inputs = document.querySelectorAll('#ex4 input');
-for (var i = inputs.length - 1; i >= 0; i--) {
-  inputs[i].addEventListener('blur', function(event){
-    console.log('ohai' + this.id);
-    function setError(el, msg) {
-      el.parentNode.querySelector('strong').innerHTML = "Error:";
-      el.parentNode.className='error';
-      el.parentNode.querySelector('span').innerHTML = msg;
-    }
-    function setSuccess(el) {
-      el.parentNode.querySelector('strong').innerHTML = "OK:";
-      el.parentNode.className='success';
-      el.parentNode.querySelector('span').innerHTML = "&check;";
-    }
-    if (this.id == 'expire5') {
-      if (this.value.match(new RegExp('[0-9]{2}\/[0-9]{4}'))) {
-        console.log(this);
-        setSuccess(this);
-      } else {
-        setError(this, 'Use the format MM/YYYY.');
-      }
-    } else if (this.id == 'username5') {
-      if (taken_usernames.indexOf(this.value.trim())+1 == false) {
-        setSuccess(this);
-      } else {
-        setError(this, 'Username already taken.');
-      }
-    }
-    event.preventDefault();
-    return false;
-  });
-};
-
-</script>
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption><pre class="highlight html"><span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;&lt;strong&gt;&lt;/strong&gt;</span> Username:<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"spaceteddy13"</span> <span class="na">aria-describedby=</span><span class="s">"userDesc3"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"userDesc3"</span> <span class="na">aria-live=</span><span class="s">"assertive"</span><span class="nt">&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;&lt;strong&gt;&lt;/strong&gt;</span> Expiry date:<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">value=</span><span class="s">"03.2015"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc3"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc3"</span> <span class="na">aria-live=</span><span class="s">"assertive"</span><span class="nt">&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-</figure>
-<h3 class="ex" id="dynamic-in-line-message-while-filling-out-the-form">Dynamic in-line message while filling out the form</h3>
-
-<h4 id="simple-messages">Simple messages</h4>
-
-<p>In this example, the notification is done visually as well the live region immediately while typing the text. The error or success message is read by screen readers as the <code>aria-live</code> attribute is used with the <code>polite</code> value. This makes sure that the notification is read out as soon as the user stops typing instead of every time the user types a character.</p>
+<p>In the following example, the availability of a username is checked instantly while the user is typing text in the input field. Corresponding success and error messages are displayed without the user needing to submit the form.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -545,9 +456,13 @@ for (var i = inputs.length - 1; i >= 0; i--) {
 </pre>
 
 </figure>
-<h4 id="complex-messages">Complex messages</h4>
+<div class="notes ">
+<p><strong>Note:</strong> The displayed message in this example is coded using a <code>&lt;span&gt;</code> element that has an <code>aria-live</code> attribute with the value <code>polite</code>. The contents of this so called “live region” is conveyed to screen readers and other assistive technology. The value “polite” de-emphasizes the importance of the message and does not cause screen readers to interrupt their current tasks to read aloud this message. Thus the message is only read once when the user stops typing rather than on every keystroke that the user makes.</p>
 
-<p>Such immediate and dynamic feedback can also be helpful if more complex feedback is given back to the user. The following example tells users how good the password is by displaying a visual meter and the time needed to crack the password.</p>
+</div>
+<h4 class="ex" id="scaled-feedback">Scaled feedback</h4>
+
+<p>The example below illustrates the multitude of possible types of feedback in addition to success and error messages. In the example, the strength of the password is checked as it is typed by the user. The feedback indicates a scale of how strong the password is. The feedback is indicated using several cues, including color coding, a barometer, and label “Weak”, “Okay”, and “Strong”, as well as the time that would be needed to crack the password.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -611,6 +526,80 @@ document.getElementById('ex2_password').addEventListener('keyup',
 
 <p><a href="../examples/password/">See commented example code in full.</a></p>
 
+<h3 class="ap" id="on-focus-change">On focus change</h3>
+
+<p>In some cases it does not make sense to check input as it is being typed by the user, because it would display error messages most of the time. This is often the case when data needs to be entered in a particular format, such as a date.</p>
+
+<p>In the example below, the user is expected to provide an expiry date. The input is checked when the user leaves the form field. That is, when the focus is removed from the form field and the “blur” event is triggered for the element, for example when the tab key is used to move to the focus to the submit button.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<style>
+  #ex4 div {margin-bottom:.75em;}
+</style>
+
+<form method="post" action="#" id="ex4">
+  <div>
+    <label for="expire5"><strong></strong> Expiry date:</label>
+    <input type="text" name="expire" id="expire5" value="03.2015" aria-describedby="expDesc3">
+    <span id="expDesc3" aria-live="assertive"></span>
+  </div>
+  <div class="error">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<script>
+inputs = document.querySelectorAll('#ex4 input');
+for (var i = inputs.length - 1; i >= 0; i--) {
+  inputs[i].addEventListener('blur', function(event){
+    console.log('ohai' + this.id);
+    function setError(el, msg) {
+      el.parentNode.querySelector('strong').innerHTML = "Error:";
+      el.parentNode.className='error';
+      el.parentNode.querySelector('span').innerHTML = msg;
+    }
+    function setSuccess(el) {
+      el.parentNode.querySelector('strong').innerHTML = "OK:";
+      el.parentNode.className='success';
+      el.parentNode.querySelector('span').innerHTML = "&check;";
+    }
+    if (this.id == 'expire5') {
+      if (this.value.match(new RegExp('[0-9]{2}\/[0-9]{4}'))) {
+        console.log(this);
+        setSuccess(this);
+      } else {
+        setError(this, 'Use the format MM/YYYY.');
+      }
+    } else if (this.id == 'username5') {
+      if (taken_usernames.indexOf(this.value.trim())+1 == false) {
+        setSuccess(this);
+      } else {
+        setError(this, 'Username already taken.');
+      }
+    }
+    event.preventDefault();
+    return false;
+  });
+};
+
+</script>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption><pre class="highlight html"><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;&lt;strong&gt;&lt;/strong&gt;</span> Expiry date:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">value=</span><span class="s">"03.2015"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc3"</span> <span class="na">aria-live=</span><span class="s">"assertive"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+</figure>
+<div class="notes ">
+<p><strong>Note:</strong> The displayed message in this example is coded using a <code>&lt;span&gt;</code> element that has an <code>aria-live</code> attribute with the value <code>assertive</code>. The contents of this so called “live region” is conveyed to screen readers and other assistive technology. The value “assertive” emphasizes the importance of the message and causes screen readers to interrupt their current tasks to read aloud this message. Thus the message is read aloud before the next element that received the focus is announced to the user.</p>
+
+</div>
 
 
 <div role="techniques">
@@ -759,6 +748,10 @@ document.getElementById('ex2_password').addEventListener('keyup',
       
         
           
+        
+      
+        
+          
             <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G83">G83: Providing text descriptions to identify required fields that were not completed</a></li>
           
         
@@ -766,6 +759,10 @@ document.getElementById('ex2_password').addEventListener('keyup',
         
           
             <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G85">G85: Providing a text description when user input falls outside the required format or values</a></li>
+          
+        
+      
+        
           
         
       
@@ -1090,7 +1087,7 @@ document.getElementById('ex2_password').addEventListener('keyup',
         [DRAFT]
       
       
-      12 September 2014
+      16 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
