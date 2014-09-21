@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Structure & Basic Styles
+  Basic Structure
   
     
        &bull; Carousels
@@ -37,12 +37,12 @@
           <a class="" href="../"><span class="count"></span><span class="txt">Carousels</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Structure & Basic Styles</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Basic Structure</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Structure & Basic Styles
+      Basic Structure
     </h1>
   </header>
 
@@ -61,30 +61,20 @@
   
 
 
-    <p>As with every part of a website, a good markup structure is the base for a carousel to work in an accessible way. This helps the carousel to be easily discovered and also allows non-visual users to interpret the individual slides in a meaningful way.</p>
+    <p>Provide structural markup for the carousel and its items, and later enhance these structures with styling and scripting. This ensures that the content of the carousel has meaning on its own, without styling and scripting, and can be rendered and used in more situations.</p>
 
-<h2 id="carousel-heading">Carousel Heading</h2>
+<p><strong>Note:</strong> A carousel is typically a distinct part of a web page, so that a <a href="/background/headings.html">heading</a> is typically needed to identify and label the carousel.</p>
 
-<p>As a carousel is a set of content pieces, that share some properties, it is useful to add a <a href="/background/headings.html">heading</a> directly in front of the carousel, for example:</p>
+<h2 id="carousel-framework">Carousel Framework</h2>
+
+<p>A carousel is a collection of items that are displayed one at a time. Provide a corresponding structure in the code to represent this collection of items.</p>
+
+<h3 class="ap" id="list-of-items">List of items</h3>
+
+<p>In many situations, the carousel items are fairly brief so that a simple a list (<code>&lt;ul&gt;</code>) with individual list items (<code>&lt;li&gt;</code>) is sufficient to represent the carousel. This approach is robust and is compatible with HTML4 and HTML5. The example below shows the use of a list to represent a carousel.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;h3&gt;</span>Featured articles<span class="nt">&lt;/h3&gt;</span>
-
-<span class="nt">&lt;h3&gt;</span>Editor’s picks<span class="nt">&lt;/h3&gt;</span>
-
-<span class="nt">&lt;h3&gt;</span>Price Winners<span class="nt">&lt;/h3&gt;</span>
-</pre>
-
-</figure>
-<p>The heading has to be in the correct heading structure of the document, for example the heading of the next section of the document should be the same as the one before the carousel.</p>
-
-<h2 id="carousel-skeleton">Carousel Skeleton</h2>
-
-<p>Depending on the content of the individual slides, a there are some possibilities of how the basic skeleton may look like. For a simple list of images or teasers, a list (<code>&lt;ul&gt;</code>) may be perfectly sufficient, if complete articles are the content of the carousel, the use of <code>&lt;article&gt;</code> elements for every slide might be more appropriate.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: Simple content</figcaption>
 <pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"carousel"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>…<span class="nt">&lt;/li&gt;</span>
@@ -95,25 +85,36 @@
 </pre>
 
 </figure>
+<h3 class="ap" id="set-of-articles">Set of articles</h3>
+
+<p>HTML5 provides the <code>&lt;article&gt;</code> element, which is useful for carousels with items that have a lot of content. Make sure to provide headings for each article for older web browsers that do not know the <code>&lt;article&gt;</code> element. The example below shows the use of the HTML5 <code>&lt;article&gt;</code> element to represent a carousel.</p>
+
 <figure class="code ">
-  <figcaption>Code snippet: Complete articles</figcaption>
+  <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"carousel"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>…<span class="nt">&lt;/article&gt;</span>
-    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>…<span class="nt">&lt;/article&gt;</span>
-    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>…<span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;</span>…<span class="nt">&lt;/h4&gt;</span>
+      …
+    <span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;</span>…<span class="nt">&lt;/h4&gt;</span>
+      …
+    <span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;</span>…<span class="nt">&lt;/h4&gt;</span>
+      …
+    <span class="nt">&lt;/article&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre>
 
 </figure>
-<p>To allow semantic flexibility, CSS and JavaScript should be based on the class names of the elements of the various carousel parts. As they wouldn’t work without JavaScript anyway, no buttons to go to other slides are added in the markup. Instead they will be added by the JavaScript that drives them later in this tutorial. This <a href="/background/progressive-enhancement.html">Progressive Enhancement</a> principle will make sure that the content is available even if the JavaScript fails to load and makes sure that there are no controls on the page which don’t work.</p>
+<h2 id="item-structure">Item Structure</h2>
 
-<h2 id="slide-construction">Slide Construction</h2>
+<p>Also provide proper structure for content within the individual carousel items. This makes them independent pieces of content that can be rendered and used in different ways. Refer to prior tutorials on <a href="/fundamentals/heading.html">headings</a> and <a href="../../images/">images tutorial</a> for more background on how to provide these types of content, also in a carousel item.</p>
 
-<p>As described above, the content of slides varies depending on the use of the carousel and can, for example, include text (headings, lists, links, …), images and video. If <a href="/fundamentals/heading.html">headings</a> are used, they should be one level below the slider heading.</p>
+<h3 class="ex" id="brief-content">Brief content</h3>
 
-<h3 class="ex" id="image-content">Image Content</h3>
-
-<p>When using images in a slide show, each image should have an alternative text that describes it, as shown in the <a href="../../images/">images tutorial</a>.</p>
+<p>In the following example, the carousel items only consist of an image each, so that a simple list was used to represent the carousel. The carousel itself is identified using a heading, and the text alternatives are considered for the images of the carousel items. The code provides structure and meaning, even without any styling and scripting added.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -134,9 +135,9 @@
 </pre>
 
 </figure>
-<h3 class="ex" id="complex-content">Complex Content</h3>
+<h3 class="ex" id="complex-content">Complex content</h3>
 
-<p>Complex content should use headings, so the content is easily findable. If used as teasers, links should be descriptive. In the example below, background images are used, as the images are for illustration only and do only visually support the content of the slide. The content of the image itself is not relevant in this case. This more complex example is the base of this tutorial:</p>
+<p>This example also uses a list, even though the carousel items consist of more substantial content than in the previous example. This approach was selected to ensure more compatibility with web browesers that do not yet support the HTML5 <code>&lt;article&gt;</code> element. The individual list items include a heading, text, and links each, which is valide use of HTML.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -169,24 +170,18 @@
 </pre>
 
 </figure>
-<h2 id="basic-styling">Basic Styling</h2>
+<h2 class="newex" id="carousel-styling">Carousel Styling</h2>
 
-<p>This styling makes sure that slides look good on their own, for example if JavaScript fails to load. Additional CSS is used in the other parts of the tutorial while the example is enhanced to a fully-fledged carousel.</p>
+<p>At this stage the carousel does not have any functionality. This is added later, based on the class names of the elements, using scripting, if it is enabled. If scripting is not enabled then the functionality would not work anyway.</p>
 
-<h3 id="contrast-ratio">Contrast Ratio</h3>
+<p>This does not prevent you from providing the basic styling for the carousel so that it looks appropriate even when scripting is not enabled. In many cases carousels are styled with background images and overlayed text, so that <a href="/fundamentals/contrast-ratio.html">color contrast</a> considerations are relevant.</p>
 
-<p>By using semi-transparent backgrounds, the <a href="/fundamentals/contrast-ratio.html">contrast ratio</a> between text and the background-image is sufficient for low vision users and in situation where the contrast of the screen itself is low, like in direct sunlight.</p>
+<h3 class="ex" id="styled-carousel">Styled carousel</h3>
 
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight css"><span class="nc">.slide</span> <span class="nt">h4</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">.8</span><span class="p">);</span>
-<span class="p">}</span>
-</pre>
+<p>The example below shows how the carousel structure from the previous example is styled. It uses semi-transparent backgrounds behind the overlayed text, to ensure sufficient color contrast to the background image.</p>
 
-</figure>
 <div class="notes ">
-<p><strong>Note:</strong> To keep the demo simple, a fixed-width implementation of a carousel is implemented in this tutorial.</p>
+<p><strong>Note:</strong> The carousel demo in this tutorial has a fixed-width implementation to keep the tutorial simple.</p>
 
 </div>
 <figure class="sample ">
@@ -376,6 +371,14 @@
   
     <p><strong>Techniques:</strong></p>
     <ul>
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -644,7 +647,7 @@
         
         
           <li class="next">
-            <span><a class="" href="../controls/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Controls & Interaction</span></span></a></span>
+            <span><a class="" href="../controls/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Functionality</span></span></a></span>
           </li>
         
       
@@ -686,11 +689,11 @@
         
       
       
-      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Structure & Basic Styles</span></span></li>
+      <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Basic Structure</span></span></li>
       
       
       
-      <li><a class="" href="../controls/"><span class="count"></span><span class="txt">Controls & Interaction</span></a></li>
+      <li><a class="" href="../controls/"><span class="count"></span><span class="txt">Functionality</span></a></li>
       
       
       
@@ -728,7 +731,7 @@
       
         [EDITOR’S DRAFT]
       
-      11 September 2014
+      21 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
