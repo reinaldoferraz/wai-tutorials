@@ -63,7 +63,7 @@
 
     <p>Provide structural markup for the carousel and its items, and later enhance these structures with styling and scripting. This ensures that the content of the carousel has meaning on its own, without styling and scripting, and can be rendered and used in more situations.</p>
 
-<p><strong>Note:</strong> A carousel is typically a distinct part of a web page, so that a <a href="/background/headings.html">heading</a> is typically needed to identify and label the carousel.</p>
+<p><strong>Note:</strong> A carousel is typically a distinct part of a web page, so that a heading (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) is typically needed to identify and label the carousel.</p>
 
 <h2 id="carousel-framework">Carousel framework</h2>
 
@@ -71,7 +71,7 @@
 
 <h3 class="ap" id="list-of-items">List of items</h3>
 
-<p>In many situations, the carousel items are fairly brief so that a simple a list (<code>&lt;ul&gt;</code>) with individual list items (<code>&lt;li&gt;</code>) is sufficient to represent the carousel. This approach is robust and is compatible with HTML4 and HTML5. The example below shows the use of a list to represent a carousel.</p>
+<p>In many situations, the carousel items are fairly brief so that a simple a list (<code>&lt;ul&gt;</code>) with individual list items (<code>&lt;li&gt;</code>) is sufficient to represent the carousel. See the example below for a demo of this robust approach:</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -87,7 +87,7 @@
 </figure>
 <h3 class="ap" id="set-of-articles">Set of articles</h3>
 
-<p>HTML5 provides the <code>&lt;article&gt;</code> element, which is useful for carousels with items that have a lot of content. Make sure to provide headings for each article for older web browsers that do not know the <code>&lt;article&gt;</code> element. The example below shows the use of the HTML5 <code>&lt;article&gt;</code> element to represent a carousel.</p>
+<p>If carousel items are have a lot of complex content, other elements can be used for the carousel framework. For example, HTML5 provides the <code>&lt;article&gt;</code> element, which is useful for carousels with items that are independent pieces of content. Make sure to provide headings for each article. The example below shows the use of <code>&lt;article&gt;</code> elements to represent a carousel.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -110,7 +110,7 @@
 </figure>
 <h2 id="item-structure">Item structure</h2>
 
-<p>Also provide proper structure for content within the individual carousel items. This makes them independent pieces of content that can be rendered and used in different ways. Refer to prior tutorials on <a href="/fundamentals/heading.html">headings</a> and <a href="../../images/">images tutorial</a> for more background on how to provide these types of content, also in a carousel item.</p>
+<p>Also provide proper structure for content within individual carousel items. This makes them independent pieces of content that can be rendered and used in different ways. Refer to the tutorials on <a href="/fundamentals/heading.html">headings</a> and <a href="../../images/">images</a> for more background on how to provide these types of content.</p>
 
 <h3 class="ex" id="brief-content">Brief content</h3>
 
@@ -137,7 +137,7 @@
 </figure>
 <h3 class="ex" id="complex-content">Complex content</h3>
 
-<p>This example also uses a list, even though the carousel items consist of more substantial content than in the previous example. This approach was selected to ensure more compatibility with web browesers that do not yet support the HTML5 <code>&lt;article&gt;</code> element. The individual list items include a heading, text, and links each, which is valide use of HTML.</p>
+<p>This example also uses a list, even though the carousel items consist of more substantial content than in the previous example. This approach was selected as the individual carousel items are not independent pieces of content and thus not suitable for the  <code>&lt;article&gt;</code> element. The individual list items include a heading, text, and links each.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -172,13 +172,13 @@
 </figure>
 <h2 class="newex" id="carousel-styling">Carousel styling</h2>
 
-<p>At this stage the carousel does not have any functionality. This is added later, based on the class names of the elements, using scripting, if it is enabled. If scripting is not enabled then the functionality would not work anyway.</p>
+<p>At this stage the carousel does not have any functionality. This is added later using scripting, based on the class names of the elements. If scripting is not enabled for various reasons, including bad network connection or user choice, the functionality would not work anyway.</p>
 
-<p>This does not prevent you from providing the basic styling for the carousel so that it looks appropriate even when scripting is not enabled. In many cases carousels are styled with background images and overlayed text, so that <a href="/fundamentals/contrast-ratio.html">color contrast</a> considerations are relevant.</p>
+<p>This does not prevent you from providing the basic styling for the carousel so that it looks appropriate even when scripting is not enabled. In many cases carousels are styled with background images and overlaid text, so that <a href="../../fundamentals/color/">color contrast ratio</a> considerations are relevant.</p>
 
 <h3 class="ex" id="styled-carousel">Styled carousel</h3>
 
-<p>The example below shows how the carousel structure from the previous example is styled. It uses semi-transparent backgrounds behind the overlayed text, to ensure sufficient color contrast to the background image.</p>
+<p>The example below shows how the carousel structure from the previous example is styled. It uses semi-transparent backgrounds behind the overlaid text, to ensure sufficient color contrast to the background image.</p>
 
 <div class="notes ">
 <p><strong>Note:</strong> The carousel demo in this tutorial has a fixed-width implementation to keep the tutorial simple.</p>
@@ -647,7 +647,7 @@
         
         
           <li class="next">
-            <span><a class="" href="../controls/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Functionality</span></span></a></span>
+            <span><a class="" href="../functionality/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Functionality</span></span></a></span>
           </li>
         
       
@@ -693,7 +693,7 @@
       
       
       
-      <li><a class="" href="../controls/"><span class="count"></span><span class="txt">Functionality</span></a></li>
+      <li><a class="" href="../functionality/"><span class="count"></span><span class="txt">Functionality</span></a></li>
       
       
       
@@ -736,7 +736,7 @@
       <li>
 <strong>Editors: </strong>
 <ul class="inline">
-    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zhara</a></li>
+    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zahra</a></li>
   </ul>
 
 <strong>Contributors:</strong>
