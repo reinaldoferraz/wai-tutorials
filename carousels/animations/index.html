@@ -61,13 +61,11 @@
   
 
 
-    <p>Often, a sliding animation conveys that there is more content in the carousel than displayed on the moment the page is accessed.</p>
+    <p>Provide users with control over any animations in your carousel. Carousels typically periodically rotate the displayed items. Providing different ways for users to stop this animation is essential for people who might find the permanent changes distracting, and for people who need more time to read carousel items.</p>
 
-<p>Animations are challenging for accessibility as they affect different people in different ways. A blind person for example may lose the keyboard position if a slide disappears and people who aren’t able to read stationary text quickly might not be able to read the content of a slide at all. For others, moving content is a severe distraction, making it difficult for them to concentrate on other parts of the page.</p>
+<h2 id="stop-button">Stop Button</h2>
 
-<h2 id="add-a-stop-button">Add a Stop Button</h2>
-
-<p>To avoid the problems outlined aboves, the user needs to have the ability to stop automatic animations. In the following example carousel, there is a pause button next to the list of slides that allows for that.</p>
+<p>One common approach to control carousel animations is to provide a button to allow users to stop and resume the animations. In the example below, such a button is added to the <a href="../controls/#indicating-carousel-items">carousel items indicator bar</a>. The button label and its function alternate, depending on whether the animation is currently on or off:</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -75,15 +73,19 @@
 </pre>
 
 </figure>
-<p>When the button is clicked, the <code>data-action</code> value is changed to a <code>start</code> and the text inside the button changes to <code>&lt;span class="visuallyhidden"&gt;Start Animation &lt;/span&gt;▶</code>. If the button is clicked, the animation is stopped or started, depending on the value. It is important to not replace the whole button, as the focus would be lost and keyboard users would need to start from the top of the page.</p>
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;button</span> <span class="na">data-action=</span><span class="s">"start"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Start Animation <span class="nt">&lt;/span&gt;</span>▶<span class="nt">&lt;/button&gt;</span>
+</pre>
 
-<h2 id="stop-animation-while-interacting-with-the-carousel">Stop Animation While Interacting with the Carousel</h2>
+</figure>
+<div class="notes ">
+<p><strong>Note:</strong> The script only replaces the value of the button rather than to replace the button entirely. If the button is removed, then the focus be lost for keyboard users.</p>
 
-<p>Many carousels use a sliding animation which requires to have two slides visible at the same time: the slide that is the current slide and the slide that will become the current slide. The current slide then disappears and is not reachable using the keyboard anymore.</p>
+</div>
+<h2 id="pause-when-focused">Pause when focused</h2>
 
-<p>If content suddenly can’t be reachable using the keyboard, and the focus is inside this content, this may lead to users that lose their focus and need to start from the top of the page again, which is very inconvenient and a potential keyboard trap.</p>
-
-<p>To avoid such behavior and make it easier for users to use the mouse to interact with the carousel, the animation should stop when an element inside the carousel receives focus or the mouse is hovering over the carousel. The animation should continue when the focus moves on or the mouse stops hovering.</p>
+<p>Another useful approach is to pause the carousel animation when the carousel receives focus by keyboard or is hovered over by mouse. Pausing the animation ensures that keyboard users do not lose focus when the carousel item is changed. It is also useful for people who need more time to read the content and to maneuver the mouse to a link or control inside the carousel item.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -111,9 +113,9 @@
 <p><strong>Note:</strong> The <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusIn"><code>focusin</code></a> and <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusout"><code>focusout</code></a> events are defined in the <a href="http://www.w3.org/TR/DOM-Level-3-Events/">W3C Document Object Model (DOM) Level 3 Events Specification</a> (Working Draft) and implemented in many browsers. Firefox needs <a href="../examples/focusinoutpolyfill-dbb9abfe.js">a short polyfill</a> at the time of publication of this tutorial.</p>
 
 </div>
-<p>As most of the carousels use a sliding animation, it is required to have two slides visible at the same time, the slide that is the current slide and the slide that will become the current slide.</p>
+<h2 id="finalized-carousel">Finalized carousel</h2>
 
-<h2 id="end-result">End Result</h2>
+<p>The sample below is a demo of the final carousel that is built by putting together all examples of this tutorial:</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -191,36 +193,6 @@
 </pre>
 
 </figure>
-<h2 id="stop-animation-while-interacting-with-the-carousel-1">Stop Animation While Interacting with the Carousel</h2>
-
-<p>The slide that is currently active is highlighted in the slide list and a play/pause button is added. Additionally, the animation should stop when an element inside the carousel receives focus or the mouse is hovering over the carousel and continue when the focus is lost or the mouse stops hovering.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: JavaScript: In initialization</figcaption>
-<pre class="highlight javascript"><span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseenter'</span><span class="p">,</span> <span class="nx">suspendAnimation</span><span class="p">);</span>
-<span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseleave'</span><span class="p">,</span> <span class="nx">startAnimation</span><span class="p">);</span>
-
-<span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'focusin'</span><span class="p">,</span>
-  <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span> <span class="s1">'slide'</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">suspendAnimation</span><span class="p">();</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-<span class="nx">carousel</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'focusout'</span><span class="p">,</span>
-  <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span> <span class="s1">'slide'</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">startAnimation</span><span class="p">();</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-</pre>
-
-</figure>
-<div class="notes ">
-<p><strong>Note:</strong> The <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusIn"><code>focusin</code></a> and <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusout"><code>focusout</code></a> events are defined in the <a href="http://www.w3.org/TR/DOM-Level-3-Events/">W3C Document Object Model (DOM) Level 3 Events Specification</a> (Working Draft) and implemented in many browsers. Firefox needs <a href="../examples/focusinoutpolyfill-dbb9abfe.js">a short polyfill</a> at the time of publication of this tutorial.</p>
-
-</div>
 <style>
   .carousel, .slide {
     width: 640px;
@@ -851,7 +823,7 @@ c.init({
       
         [EDITOR’S DRAFT]
       
-      12 September 2014
+      23 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
