@@ -61,11 +61,11 @@
   
 
 
-    <p>Where possible, use stylized form elements to provide custom controls. For example, a social media "share button" and "star rating" widget can be built using standard form controls. Using such progressive enhancement techniques helps keep such widgets usable when they are rendered differently, such as by certain assistive technologies.</p>
+    <p>Where possible, use stylized form elements to provide custom controls. For example, a social media "share button" and "star rating" widget can be built using standard form controls. Using such progressive enhancement techniques helps keep these widgets usable when they are rendered differently, including by some assistive technologies.</p>
 
 <h2 class="ex" id="a-share-button">A Share Button</h2>
 
-<p>The example below shows a social media "share button" that has two functions: It shows how many people have already activated the button ("shared"), and it allows users to press the button to activate the share function.</p>
+<p>The example below shows a social media "share button" that has two functions: it shows how many people have already activated the button ("shared"), and it allows users to press the button to activate the share function.</p>
 
 <p>The custom button relies on CSS to style a regular <code>&lt;button&gt;</code> element, so that the basic functionality remains intact when it is rendered without CSS. For example, most screen readers will announce the button and its contents.</p>
 
@@ -159,7 +159,7 @@ document.getElementById('share-btn').addEventListener('click', function(event){
 
 <p>A star rating usually consists of images of five stars that can be used to rate a particular item. The mouse user hovers over the stars and clicks one to select it. For example, if the user clicks on the third star from the left, the rating of the item is 3 of 5 stars.</p>
 
-<p>To make this as accessible as possible, a form is used but its fields are visually hidden. It contains 6 radio buttons, one for each star and another for 0 stars, which is checked by default. The labels for the radio buttons contain actual text (“1 Star”, “2 Stars”, …), and are also hidden visually. The form also contains a visually hidden submit button so that the form is not automatically submitted when keyboard users browse through the radio buttons.</p>
+<p>To make this as accessible as possible, a form is used with its fields visually hidden. It contains 6 radio buttons, one for each star and another for 0 stars, which is checked by default. The labels for the radio buttons contain actual text (“1 Star”, “2 Stars”, …), and are also hidden visually. The form also contains a visually hidden submit button so that the form is not automatically submitted when keyboard users browse through the radio buttons.</p>
 
 <p>The images of the stars are generated using <abbr title="Scalable Vector Graphics">SVG</abbr>. The coloring animation of these stars is initiated through the CSS <code>:focus</code> and <code>:hover</code> pseudo classes, so that they can be activated using a mouse, keyboard, and other input methods. The <code>:checked</code> pseudo class and the general sibling selector <code>~</code> are used to indicate the selected, active, and inactive stars.</p>
 
@@ -539,7 +539,7 @@ document.querySelector('#star_rating').addEventListener('submit', function(event
         [DRAFT]
       
       
-      11 September 2014
+      26 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
@@ -576,7 +576,7 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-c9410f0a.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-cf7029ba.js" type="text/javascript"></script>
 	</body>
 </html>
 
