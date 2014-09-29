@@ -158,11 +158,11 @@
   .has-submenu > a:after {
     margin-left: 5px;
     line-height: 14px;
-    content: url(/img/ex-dropdown-inactive-63feea50.png);
+    content: url(../../img/ex-dropdown-inactive-63feea50.png);
   }
   .has-submenu:hover > a:hover:after,
   .has-submenu > a:focus:after {
-    content: url(/img/ex-dropdown-active-364145a2.png);
+    content: url(../../img/ex-dropdown-active-364145a2.png);
   }
 </style>
 
@@ -665,6 +665,7 @@ Array.prototype.forEach.call(menuItems1, function(el, i){
     });
     var preventClick = false;
     el.querySelector('a').addEventListener("keydown",  function(event){
+      console.log(event.keyCode);
         if (event.keyCode == 13) {
           if (this.parentNode.className == "has-submenu") {
             this.parentNode.className = "has-submenu open";
