@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Navigation Menu Styling
+  Menu Styling
   
     
-       &bull; Navigation Menus
+       &bull; Menus
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -34,15 +34,15 @@
         <span class="home"><a class="" href="../../"><span class="count"></span><span class="txt">Tutorials home</span></a></span> <span class="icon icon-chevron-right"></span>
         <span class="other">
         
-          <a class="" href="../"><span class="count"></span><span class="txt">Navigation Menus</span></a> <span class="icon icon-chevron-right"></span>
+          <a class="" href="../"><span class="count"></span><span class="txt">Menus</span></a> <span class="icon icon-chevron-right"></span>
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Menu Styling</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Menu Styling</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Navigation Menu Styling
+      Menu Styling
     </h1>
   </header>
 
@@ -61,13 +61,63 @@
   
 
 
-    <p>There are no definitive rules on how a navigation should look like, but a few design patterns have emerged on how and where main navigations appear on the page and how they are styled.</p>
+    <p>There are no definitive rules on how a menu should look like, but a few design patterns have emerged on how and where menus appear on the page, especially for main menus.</p>
 
-<p>While in-text links usually need an underline so that people with low vision or color blindness can distinguish them from the surrounding text, this is not needed for links in navigations <em>if the navigation menu can be clearly identified</em>. If icons or images are used in links, an appropriate alternative text should be provided. See <a href="../../images/functional/">Images Tutorial</a> for further advice.</p>
+<p>While in-text links usually need an underline to help people with low vision or color blindness distinguish them from the surrounding text, this is not needed for links in menus if the menu can be clearly identified as such. If icons or images are used in links, an appropriate alternative text should be provided. See <a href="../../images/functional/">Images Tutorial</a> for more advice.</p>
+
+<h2 id="vertical-menu">Vertical Menu</h2>
+
+<p>A vertical menu provides space for a lot of links as all items can be easily reached by scrolling the page. Vertical menus are often in small columns on the side of the page which may lead to longer words overlapping the menu bar or get cut off, which is a potential accessibility barrier. This often happens when the user increases the font size, or when the website is translated into other languages.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<nav role="navigation" aria-label="Main Navigation" aria-presentation="true" id="verticalnav">
+    <ul>
+        <li><a href="#samplenav">Home</a></li>
+        <li><a href="#samplenav">Shop</a></li>
+        <li><a href="#samplenav">SpaceBears</a></li>
+        <li><a href="#samplenav">MarsCars</a></li>
+        <li><a href="#samplenav">Contact</a></li>
+    </ul>
+</nav>
+
+<style>
+  #verticalnav {
+      display:table;
+  }
+  #verticalnav ul {
+      margin: 0;
+      padding: 0;
+      background-color: #036;
+      color: #fff;
+  }
+  #verticalnav li {
+      display:table-row;
+      width: 20%;
+      text-align: left;
+  }
+  #verticalnav a {
+      display: block;
+      padding: .25em .5em;
+      color: #fff;
+      border-bottom: 1px solid;
+      text-decoration: none;
+  }
+  #verticalnav a:hover,
+  #verticalnav a:focus {
+    color: #036;
+    background-color: #fff;
+    text-decoration: underline;
+  }
+</style>
+
+
+  </div></figure>
 
 <h2 id="horizontal-menu">Horizontal menu</h2>
 
-<p>If a navigation has so few items that they can fit in one row on the screen, a horizontal menu bar may be used to display the links. Such menu bars are usually positioned on the top of the page. While this is a compact way to display a navigation, horizontal space can be limited if users use small-screen devices or increase the font size.</p>
+<p>If a menu has so few items that they can fit in one line on the screen, a horizontal menu bar may be used to display the links. Such menu bars are usually positioned near the top of the page. While this is a compact way to display a menu, horizontal space can be limited if users use small-screen devices or increase the font size. In such cases media queries can help to transform a horizontal into a vertical menu.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -117,59 +167,9 @@
 
   </div></figure>
 
-<h2 id="vertical-menu">Vertical Menu</h2>
-
-<p>If there are many items in the navigation menu, a vertical navigation can be used, as all items can be easily reached by scrolling the page. If vertical menus are used, the designer should be aware that people might increase the font size and that individual menu items might be wider than originally intended in the design.</p>
-
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<nav role="navigation" aria-label="Main Navigation" aria-presentation="true" id="verticalnav">
-    <ul>
-        <li><a href="#samplenav">Home</a></li>
-        <li><a href="#samplenav">Shop</a></li>
-        <li><a href="#samplenav">SpaceBears</a></li>
-        <li><a href="#samplenav">MarsCars</a></li>
-        <li><a href="#samplenav">Contact</a></li>
-    </ul>
-</nav>
-
-<style>
-  #verticalnav {
-      display:table;
-  }
-  #verticalnav ul {
-      margin: 0;
-      padding: 0;
-      background-color: #036;
-      color: #fff;
-  }
-  #verticalnav li {
-      display:table-row;
-      width: 20%;
-      text-align: left;
-  }
-  #verticalnav a {
-      display: block;
-      padding: .25em .5em;
-      color: #fff;
-      border-bottom: 1px solid;
-      text-decoration: none;
-  }
-  #verticalnav a:hover,
-  #verticalnav a:focus {
-    color: #036;
-    background-color: #fff;
-    text-decoration: underline;
-  }
-</style>
-
-
-  </div></figure>
-
 <h2 id="indicating-hover-and-focus">Indicating hover and focus</h2>
 
-<p>When the user focuses a menu item or hovers over one using the mouse pointer, the individual menu item should change so users know where the focus is or if they are hovering the right menu item. In the examples in this tutorial, the menu item is inverted and the words are underlined.</p>
+<p>When the user focuses a menu item or hovers over one using the mouse pointer, the individual menu item should change so users know where the focus is or which menu item is hovered. In the examples in this tutorial, the menu item is inverted and the words are underlined.</p>
 
 <h2 id="indicating-the-current-page">Indicating the current page</h2>
 
@@ -721,13 +721,13 @@
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Navigation Menus Tutorial
+        Menus Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
         
-          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Navigation Concepts</span></a></li>
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Menu Concepts</span></a></li>
         
       
       

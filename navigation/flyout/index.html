@@ -6,7 +6,7 @@
   Fly-out Menus
   
     
-       &bull; Navigation Menus
+       &bull; Menus
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -34,7 +34,7 @@
         <span class="home"><a class="" href="../../"><span class="count"></span><span class="txt">Tutorials home</span></a></span> <span class="icon icon-chevron-right"></span>
         <span class="other">
         
-          <a class="" href="../"><span class="count"></span><span class="txt">Navigation Menus</span></a> <span class="icon icon-chevron-right"></span>
+          <a class="" href="../"><span class="count"></span><span class="txt">Menus</span></a> <span class="icon icon-chevron-right"></span>
         
         
           <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Fly-out Menus</span></span>
@@ -510,7 +510,25 @@ Array.prototype.forEach.call(menuItems1, function(el, i){
 
   </div></figure>
 
-<h4 id="toggle-with-a-special-show-submenu-button">Toggle with a special “show submenu” button</h4>
+<p>The following code iterates through all menu items and adds click event to the first (top-level) link in each menu item. The click event fires regardless of input method as soon as the link gets activated. If the submenu is closed when the link is activated, the script opens the submenu, and vice versa.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: JavaScript</figcaption>
+<pre class="highlight javascript"><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">menuItems</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
+  <span class="nx">el</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'a'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">==</span> <span class="s2">"has-submenu"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"has-submenu open"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"has-submenu"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre>
+
+</figure>
+<h4 id="toggle-submenu-using-a-special-show-submenu-button">Toggle submenu using a special “show submenu” button</h4>
 
 <p>If the top-level menu item should stay a link to a page, adding a separate button that toggles the submenu is the most reliable way to address the issue.</p>
 
@@ -737,6 +755,29 @@ Array.prototype.forEach.call(menuItems1, function(el, i){
 
   </div></figure>
 
+<p>In the following code, a button is attached to every menu item link with a submenu. The click event listener is applied to this button and toggles the menu. The invisible button text is changed from show to hide submenu according to the state of the submenu.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: JavaScript</figcaption>
+<pre class="highlight javascript"><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">menuItems</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="s1">'&lt;button&gt;&lt;span&gt;&lt;span class="visuallyhidden"&gt;show submenu&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">topLevelLink</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'a'</span><span class="p">);</span>
+  <span class="nx">topLevelLink</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">topLevelLink</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">btn</span><span class="p">;</span>
+
+  <span class="nx">el</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'a button'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span>  <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">==</span> <span class="s2">"has-submenu"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"has-submenu open"</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.visuallyhidden'</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s1">'hide submenu'</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"has-submenu"</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.visuallyhidden'</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s1">'show submenu'</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre>
+
+</figure>
 <h2 id="improve-screen-reader-support-using-wai-aria">Improve screen reader support using WAI-ARIA</h2>
 
 <p>Currently, screen reader users are unable to tell if an item has a submenu or not and if it is opened. WAI-ARIA helps to convey this information by adding the following two attributes to the menu’s HTML:</p>
@@ -920,6 +961,18 @@ Array.prototype.forEach.call(menuItems1, function(el, i){
 
 
   </div></figure>
+
+<h2 id="web-application-menus">Web application menus</h2>
+
+<p>There are some WAI-ARIA roles that are helping assistive technology to interpret menus like the ones found in desktop software. When using the following ARIA attributes, the keyboard interaction should be similar to desktop software as well: the tab key is used to iterate through the top-level items only, the up and down arrows are used to navigate the sub menus. The following roles are used in the example:</p>
+
+<ul>
+  <li><strong><code>aria-menubar</code>:</strong> Represents a usually horizontal menu bar.</li>
+  <li><strong><code>aria-menu</code>:</strong> Represents a set of links or commands in a menu bar, it is used for the fly-out menus.</li>
+  <li><strong><code>aria-menuitem</code>:</strong> Represents an individual menu item.</li>
+</ul>
+
+<p>(((Working example will be provided.)))</p>
 
 
 
@@ -1279,13 +1332,13 @@ Array.prototype.forEach.call(menuItems1, function(el, i){
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Navigation Menus Tutorial
+        Menus Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
         
-          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Navigation Concepts</span></a></li>
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Menu Concepts</span></a></li>
         
       
       

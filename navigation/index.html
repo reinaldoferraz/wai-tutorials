@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Navigation Concepts
+  Menu Concepts
   
     
-       &bull; Navigation Menus
+       &bull; Menus
     
   
   &bull; WAI Web Accessibility Tutorials
@@ -35,14 +35,14 @@
         <span class="other">
         
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Menus</span></span> <span class="icon icon-chevron-right"></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Menus</span></span> <span class="icon icon-chevron-right"></span>
         
-          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Concepts</span></span>
+          <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Menu Concepts</span></span>
         </span>
       </p>
     </nav>
     <h1>
-      Navigation Concepts
+      Menu Concepts
     </h1>
   </header>
 
@@ -62,33 +62,40 @@
   
 
 
-    <p>Navigation menus are used to browse around websites. Usually they consist of a list, or nested lists, of links. As they are so vital to access content on websites, they need to be operable with pointing devices (like a mouse) and keyboards.</p>
-
-<p>A good navigation is not only the task of programmers and authors. The overall content organization of the website should lead to a coherent and comprehensible page structure. A navigation that represents such a page structure will help all users to navigate the website. Designers should ensure that contrast ratios are sufficient for all users and fonts are big enough.</p>
-
-<p>This tutorial includes the following pages:</p>
+    <p>Menus are used to browse around websites. As they are vital to access content on websites, they need to be operable with pointing devices (like a mouse) and keyboards. This tutorial includes the following pages:</p>
 
 <ul>
   <li>
-    <p><strong><a href="structure/">Structure</a>:</strong> Mark up navigations to enable easy access to all pages of the website.</p>
+    <p><strong><a href="structure/">Structure</a>:</strong> Mark up menus using (nested) lists to enable easy access to all pages of the website.</p>
   </li>
   <li>
-    <p><strong><a href="styling/">Styling</a>:</strong> Use different types of navigation in different situations and mark the current page in the navigation.</p>
+    <p><strong><a href="styling/">Styling</a>:</strong> Lay out different types of menus, depending on the situation, using commonly recognized design patterns and indicate the current page’s menu item.</p>
   </li>
   <li>
-    <p><strong><a href="dropdowns.html">Fly-out Menus</a>:</strong> When working with large menus with different navigation levels, fly-outs can be used to enable users to quickly access pages in lower hierarchies.</p>
+    <p><strong><a href="flyout/">Fly-out Menus</a>:</strong> Use fly-out menus to give users quick access to pages in lower hierarchies. They are also for application menus.</p>
   </li>
   <li>
-    <p><strong><a href="multiple-ways/">Multiple Ways</a></strong>: Many users benefit from alternative ways to traverse through the content of a website, for example by using sitemaps or breadcrumb trails.</p>
+    <p><strong><a href="multiple-ways/">Multiple Ways</a>:</strong> Many users benefit from alternative ways to traverse through the content of a website, for example by using sitemaps or breadcrumb trails.</p>
   </li>
 </ul>
 
 <h2 id="why-is-this-important">Why is this important?</h2>
 
+<p>Navigation menus reflect the underlying structure of the website’s content. If that content structure is coherent, users will get around the page more easily.</p>
+
 <ul>
-  <li><strong>All users</strong> use the navigation to reach different sections of the website, it is usually the central way of exploring and point of reference if the user gets lost.</li>
-  <li><strong>Screen reader</strong> and <strong>keyboard users</strong> should be aware which link is currently in focus and about the currently selected item.</li>
-  <li><strong>Mouse</strong> and <strong>touch screen users</strong>, as well as <strong>users with shaky hands</strong> need large targets to tap on.</li>
+  <li>
+    <p><strong>Screen reader and keyboard users</strong> should be aware which link is currently in focus. The menu link to the page the user is currently on should be indicated as well.</p>
+  </li>
+  <li>
+    <p><strong>Screen reader users</strong> expect web application menus to work like desktop menus.</p>
+  </li>
+  <li>
+    <p><strong>Mouse and touch screen users</strong> need large targets to click or tap on.</p>
+  </li>
+  <li>
+    <p><strong>Users with shaky hands</strong> need fly-out menus to not disappear immediately after the mouse has left the submenu.</p>
+  </li>
 </ul>
 
 
@@ -573,13 +580,13 @@
   <nav role="navigation" aria-label="Navigation" id="nav">
     <h2 class="list-heading" id="list-heading-tutorials">
       
-        Navigation Menus Tutorial
+        Menus Tutorial
       
     </h2>
     <ul aria-labelledby="list-heading-tutorials">
       
       
-          <li class="intro"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Navigation Concepts</span></span></li>
+          <li class="intro"><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Menu Concepts</span></span></li>
         
       
       
