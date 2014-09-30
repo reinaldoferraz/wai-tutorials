@@ -61,14 +61,16 @@
   
 
 
-    <p>Designing a good navigation is not a technical challenge but a content strategy one. Organizing the content of a website is fairly trivial on small websites, but grows into a huge task once the website grows larger. A simple and flat navigation structure makes it easy for the user to find information.</p>
+    <p>Designing a good navigation is not a technical challenge but a content strategy one. Organizing the content of a website is fairly trivial on small websites, but grows into a huge task once the website grows larger. Simple navigations are usually easier to understand and navigate for all users.</p>
 
-<p>Navigation laid out horizontally should only contain a few items, so they can be easily processed. Horizontal navigation can also be hard to read if there is little space, for example if the user is on a mobile phone or uses text enlargement.</p>
+<h2 id="basic-markup">Basic markup</h2>
 
-<h2 id="basic-markup">Basic Markup</h2>
+<p>By using an <code>&lt;nav&gt;</code> element, non-visual users can access the navigation directly using the screen reader as it carries an explicit WAI-ARIA landmark role of <code>navigation</code>. If multiple <code>&lt;nav&gt;</code> elements (or <code>role="navigation"</code>) attributes can and should be used.</p>
 
-<p>To make people using assistive technology aware of the navigation, an landmark role of <code>navigation</code> should be used. Landmark roles provide much needed orientation on a page. The HTML5 <code>&lt;nav&gt;</code> element provides a simple way of denoting a navigation section on the page. As the accessibility of the <code>&lt;nav&gt;</code> element is not as widely spread as the landmark notation, both can be used to provide maximal coverage for marking up navigations.</p>
+<div class="notes ">
+<p><strong>Note:</strong> To ensure compatibility with slightly older browsers, the navigation role is added to the <code>&lt;nav&gt;</code> element in the code.</p>
 
+</div>
 <figure class="code ">
   <figcaption>Code snippet: HTML</figcaption>
 <pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
@@ -76,13 +78,13 @@
 </pre>
 
 </figure>
-<h2 id="labeling-navigations">Labeling Navigations</h2>
+<h2 id="labeling-navigations">Labeling navigations</h2>
 
-<p>If there are multiple navigational menus on a page, multiple <code>&lt;nav&gt;</code> elements or <code>role="navigation"</code> attributes can and should be used. To make it easier for users of assistive technologies, those menus should be labeled. This helps users to distinguish between them.</p>
-
-<p>Using a heading makes the navigation available for users that don’t use landmarks but headings to navigate the page, and is announced once the user enters the navigation. Using <code>aria-label</code> is very convenient to those who do, as the name can be announced before navigating to the landmark as well as when the user enters the navigation menu.</p>
+<p>To make it easier for users of assistive technologies, menus should be labeled to help users distinguish between them. This is especially important if there are multiple navigational menus on a page.</p>
 
 <h3 class="ap" id="using-a-hidden-heading">Using a (hidden) heading</h3>
+
+<p>If a user is not using the screen reader options to navigate landmarks, headers are often used instead to discover sections of a website.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: HTML</figcaption>
@@ -94,7 +96,7 @@
 </figure>
 <h3 class="ap" id="using-aria-label">Using <code>aria-label</code></h3>
 
-<p>The <code>aria-label</code> attribute works only in browsers and assistive technology that support ARIA in the first place.</p>
+<p>The <code>aria-label</code> provides its content to users that use landmarks to navigate the page but leaves the headings to the content of the page. The label of the navigation is announced when entering the navigation as well as when navigating to the navigation menu, which is especially important if there are multiple menus on the page.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: HTML</figcaption>
@@ -103,9 +105,25 @@
 </pre>
 
 </figure>
+<h3 class="ap" id="using-a-heading-and-aria-labelledby">Using a heading and <code>aria-labelledby</code></h3>
+
+<p>To cover both use cases (navigating by headers and navigating by landmarks), the <code>aria-labelledby</code> attribute can be used to reference the heading inside the menu.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-labelledby=</span><span class="s">"mainmenulabel"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"mainmenulabel"</span><span class="nt">&gt;</span>Main Menu<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
+<div class="notes ">
+<p><strong>Note:</strong> Some browsers and assistive technologies might announce the name of the menu two times, when it is entered using the keyboard.</p>
+
+</div>
 <h2 class="newap" id="list-of-links">List of Links</h2>
 
-<p>If a navigation consists of more than a few links, the links should be wrapped in a list element. This helps people using assistive technologies as those are able announce how long the list of links is.</p>
+<p>If a navigation consists of more than a few links, the links should be wrapped in a list element. This helps people using assistive technologies as those tools are able announce how long the list of links is.</p>
 
 <h3 class="ap" id="unordered-list">Unordered list</h3>
 
@@ -150,108 +168,11 @@
 <div role="techniques">
   <h2 id="related">Related WCAG2.0 Resources</h2>
   
-    <p><strong>Success Criteria:</strong></p>
-    <ul>
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-without-color">1.4.1 Use of Color:</a> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. (Level&nbsp;A)</p></li>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    </ul>
-  
   
     <p><strong>Techniques:</strong></p>
     <ul>
       
         
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA5">ARIA5: Using WAI-ARIA state and property attributes to expose the state of a user interface component</a></li>
           
         
       
@@ -279,8 +200,6 @@
       
         
           
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G14">G14: Ensuring that information conveyed by color differences is also available in text</a></li>
-          
         
       
         
@@ -385,13 +304,41 @@
       
         
           
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G182">G182: Ensuring that additional visual cues are available when text color differences are used to convey information</a></li>
+        
+      
+        
           
         
       
         
           
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G183">G183: Using a contrast ratio of 3:1 with surrounding text and providing additional visual cues on focus for links or controls where color alone is used to identify them</a></li>
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
           
         
       
@@ -586,11 +533,11 @@
       
       
       
-      <li><a class="" href="../flyout/"><span class="count"></span><span class="txt">&bull; Fly-out Menus</span></a></li>
+      <li><a class="" href="../flyout/"><span class="count"></span><span class="txt">Fly-out Menus</span></a></li>
       
       
       
-      <li><a class="" href="../breadcrumbs/"><span class="count"></span><span class="txt">Breadcrumbs</span></a></li>
+      <li><a class="" href="../multiple-ways/"><span class="count"></span><span class="txt">Multiple Ways</span></a></li>
       
       
       
@@ -624,7 +571,7 @@
       
         [EDITOR’S DRAFT]
       
-      21 September 2014
+      29 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>

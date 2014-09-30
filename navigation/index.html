@@ -62,43 +62,33 @@
   
 
 
-    <p>Navigations are used to navigate around the website and around individual web pages. Usually they consist of a list of links and need to be operable with pointing devices (like a mouse) and keyboards.</p>
+    <p>Navigation Menus are used to browse around websites. Usually they consist of a list, or nested lists, of links. As they are so vital to access content on websites, they need to be operable with pointing devices (like a mouse) and keyboards.</p>
 
-<p>A good navigation on a website is not only the programmer’s task. It begins with the overall content organization of the website, which should lead to a coherent and comprehensible page structure of the website, which is the base for the navigation. Additionally, the design of a navigation is very important to ensure the <a href="../fundamentals/color/">contrast ratio</a> is sufficient for all users and fonts are big enough.</p>
+<p>A good navigation is not only the task of programmers and authors. The overall content organization of the website should lead to a coherent and comprehensible page structure. A navigation that represents such a page structure will help all users to navigate the website. Designers should ensure that contrast ratios are sufficient for all users and fonts are big enough.</p>
 
-<p>This tutorial shows you how to use markup, styling and interaction to website navigation. It includes the following pages:</p>
+<p>This tutorial includes the following pages:</p>
 
 <ul>
   <li>
-    <p><strong><a href="types.html">Navigation Types</a>:</strong> An introduction into the basic HTML structure for horizontal, vertical, and breadcrumb navigations.</p>
+    <p><strong><a href="structure/">Structure</a>:</strong> Mark up navigations to enable easy access to all pages of the website.</p>
   </li>
   <li>
-    <p><strong><a href="in-page.html">Skip Links and In-page Navigation</a>:</strong> Use (hidden) links to jump to different parts of a web page when using the keyboard.</p>
+    <p><strong><a href="styling/">Styling</a>:</strong> Use different types of navigation in different situations and mark the current page in the navigation.</p>
   </li>
   <li>
-    <p><strong><a href="dropdowns.html">Dropdowns</a>:</strong> Implement a dropdown menu in an accessible way.</p>
+    <p><strong><a href="dropdowns.html">Fly-out Menus</a>:</strong> When working with large menus with different navigation levels, fly-outs can be used to enable users to quickly access pages in lower hierarchies.</p>
+  </li>
+  <li>
+    <p><strong><a href="multiple-ways/">Multiple Ways</a></strong>: Many users benefit from alternative ways to traverse through the content of a website, for example by using sitemaps or breadcrumb trails.</p>
   </li>
 </ul>
 
 <h2 id="why-is-this-important">Why is this important?</h2>
 
 <ul>
-  <li><strong>All users</strong> use the navigation to reach different sections of the website, it is the central way of exploring and point of reference if the user gets lost.</li>
+  <li><strong>All users</strong> use the navigation to reach different sections of the website, it is usually the central way of exploring and point of reference if the user gets lost.</li>
   <li><strong>Screen reader</strong> and <strong>keyboard users</strong> should be aware which link is currently in focus and about the currently selected item.</li>
   <li><strong>Mouse</strong> and <strong>touch screen users</strong>, as well as <strong>users with shaky hands</strong> need large targets to tap on.</li>
-</ul>
-
-<hr />
-
-<ul>
-  <li>Navigation Design</li>
-  <li>Navigation Programming
-    <ul>
-      <li>Link to other pages</li>
-    </ul>
-  </li>
-  <li>Why is this important?</li>
-  <li>Resources</li>
 </ul>
 
 
@@ -159,13 +149,21 @@
       
         
           
-            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-skip">2.4.1 Bypass Blocks:</a> A mechanism is available to bypass blocks of content that are repeated on multiple Web pages. (Level&nbsp;A)</p></li>
-          
         
       
         
           
             <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-focus-order">2.4.3 Focus Order:</a> If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability. (Level&nbsp;A)</p></li>
+          
+        
+      
+        
+          
+            <li><p><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-mult-loc">2.4.5 Multiple Ways:</a> 2.4.5 More than one way is available to locate a Web page within a set of Web pages except where the Web Page is the result of, or a step in, a process. (Level&nbsp;AA)</p></li>
+          
+        
+      
+        
           
         
       
@@ -203,6 +201,299 @@
       
     </ul>
   
+  
+    <p><strong>Techniques:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H4">H4: Creating a logical tab order through links, form controls, and objects</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR26">SCR26: Inserting dynamic content into the Document Object Model immediately following its trigger element</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
   
 </div>
 
@@ -272,11 +563,11 @@
       
       
       
-      <li><a class="" href="flyout/"><span class="count"></span><span class="txt">&bull; Fly-out Menus</span></a></li>
+      <li><a class="" href="flyout/"><span class="count"></span><span class="txt">Fly-out Menus</span></a></li>
       
       
       
-      <li><a class="" href="breadcrumbs/"><span class="count"></span><span class="txt">Breadcrumbs</span></a></li>
+      <li><a class="" href="multiple-ways/"><span class="count"></span><span class="txt">Multiple Ways</span></a></li>
       
       
       
@@ -310,7 +601,7 @@
       
         [EDITOR’S DRAFT]
       
-      21 September 2014
+      29 September 2014
 			</li>
       <li>
 <strong>Editors: </strong>
