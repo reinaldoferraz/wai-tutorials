@@ -150,7 +150,7 @@
 
 <h3 class="ex" id="single-form-control">Single form control</h3>
 
-<p>In the example below, the search field is positioned directly beside the search button. The purpose of the form field is evident from the context in most situations. A label is provided to identify the form element within the code, but is visually hidden to avoid redundancy for those who don't need it.</p>
+<p>In the example below, the search field is positioned directly beside the search button. The purpose of the form field is evident from the context in most situations.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -166,6 +166,10 @@
 
   </div></figure>
 
+<h4 class="ap" id="hiding-the-label-element">Hiding the label element</h4>
+
+<p>A <code>&lt;label&gt;</code> element is provided to identify the form element within the code, but is visually hidden to avoid redundancy for those who don't need it.</p>
+
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Search: <span class="nt">&lt;/label&gt;</span>
@@ -174,9 +178,22 @@
 </pre>
 
 </figure>
+<h4 class="ap" id="using-aria-label">Using aria-label</h4>
+
+<p><code>aria-label</code> provides the label to assistive technology.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
+</pre>
+
+</figure>
 <h3 class="ex" id="set-of-form-controls">Set of form controls</h3>
 
 <p>In the following example, the user is asked to provide date of birth. There are three form controls, one of which is a pull-down menu with the text “January” visible. The other two form controls are text fields placed just before and after the pull-down menu. They have different sizes that match the 2-digit day of the month and 4-digit year. The controls also use placeholder text to further indicate the purpose of these two fields. A single visible label "Date of birth" is sufficient to explain this related set of form controls in most situations.</p>
+
+<h4 class="ap" id="hiding-the-label-element-1">Hiding the label element</h4>
 
 <p>To make the code more robust and address other situations, such as displaying the form controls individually on a mobile device, hidden labels have been provided for each form element. They are now identified as “Day”, “Month”, and “Year” within the code.</p>
 
@@ -232,6 +249,26 @@
 <p><strong>Note 2:</strong> While the example above works, it is preferable to avoid such compounded groups of form fields where possible. In most situations forms are clearer and easier to understand when form controls are designed to be presented individually and with visible labels for each.</p>
 
 </div>
+<h4 class="ap" id="using-aria-label-1">Using aria-label</h4>
+
+<p>By using <code>aria-label</code>, the code can be simplified with the same outcome as above all users. It is however less flexible if the labels need to be shown or hidden depending on the screen size, for example.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"day"</span><span class="nt">&gt;</span>Date of birth: <span class="nt">&lt;/label&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"day"</span> <span class="na">maxlength=</span><span class="s">"2"</span> <span class="na">placeholder=</span><span class="s">"01"</span> <span class="na">aria-label=</span><span class="s">"Day"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"month"</span> <span class="na">id=</span><span class="s">"month"</span> <span class="na">aria-label=</span><span class="s">"Month"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"01"</span><span class="nt">&gt;</span>January<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"02"</span><span class="nt">&gt;</span>Febuary<span class="nt">&lt;/option&gt;</span>
+  […]
+<span class="nt">&lt;/select&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"year"</span> <span class="na">maxlength=</span><span class="s">"4"</span> <span class="na">placeholder=</span><span class="s">"1970"</span>  <span class="na">aria-label=</span><span class="s">"Year"</span><span class="nt">&gt;</span>
+</pre>
+
+</figure>
 <h3 id="note-on-hiding-elements">Note on hiding elements</h3>
 
 <p>Just like web browsers, screen readers and other assistive technology hide elements from their users when they are styled using <code>display: none;</code> and <code>visibility: hidden;</code>. Use CSS that will display the elements yet make them virtually invisible to hide them visually but keep them active for screen readers and other assistive technology. The CSS code used in the previous examples is provided below:</p>
@@ -834,7 +871,7 @@
         [DRAFT]
       
       
-      26 September 2014
+      02 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
