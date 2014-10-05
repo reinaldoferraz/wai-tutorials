@@ -1,0 +1,799 @@
+<!doctype html>
+<html class="no-js no-svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+  Landmarks
+  
+    
+       &bull; Page Structure
+    
+  
+  &bull; WAI Web Accessibility Tutorials
+  </title>
+  <meta name="viewport" content="width=device-width">
+  <link href="../../stylesheets/wai-act-bcdab410.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
+</head>
+<body class="texts">
+  <header role="banner">
+    <div class="w3c-wai-header">
+      <a href="http://w3.org/"><img alt="W3C" width="90" src="../../img/w3c-796023c4.png" /></a>
+      <a href="http://w3.org/WAI/" class="wai"><img alt="Web Accessibility Initiative" src="../../img/wai-4c28be39.png" /></a>
+    </div>
+    <div class="page-title">
+      <a class="" href="../../">Web Accessibility Tutorials <span class="subheading">Guidance on how to create websites that meet WCAG</span></a>
+    </div>
+  </header>
+  <div class="with-side-menu">
+    <a href="#nav" class="btn btn-jump" role="navigation">Jump to the navigation</a>
+<main role="main" class="content editors-draft">
+  <article role="article">
+    <header class="tutorial-heading">
+      <nav class="breadcrumb" aria-label="Breadcrumbs" role="navigation">
+        <p>
+          <span class="home"><a class="" href="../../"><span class="count"></span><span class="txt">Tutorials home</span></a></span> <span class="icon icon-chevron-right"></span>
+          <span class="other">
+            
+              <a class="" href="../"><span class="count"></span><span class="txt">Page Structure</span></a> <span class="icon icon-chevron-right"></span>
+            
+            
+            <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Landmarks</span></span>
+          </span>
+        </p>
+      </nav>
+      <h1>
+        Landmarks
+      </h1>
+    </header>
+
+    
+    
+      <div class="status">
+        <p><strong>Status:</strong> This is not ready for detailed review. It is an in-progress, unapproved editor’s draft.</p>
+      </div>
+    
+
+
+    <div class="inner">
+
+      
+
+      
+
+
+      <p>Landmark roles (“landmark”) identify sections of a page in a programmatical way which helps assistive technology users orient themselves to various sections of the page. They also provide an easy way to skip sections of the page that are not relevant to the user right now. For example, if there is a navigation section on every page, users can skip it and jump directly to the content of the page. This can save a lot of time navigating around the page, searching for the correct section of the page.</p>
+
+<p>Landmarks are inserted into the document by adding a <code>role</code> attribute to the element that marks the section. Some HTML5 elements should implicitly carry some landmark roles, but as this is not widely supported, it is recommended to additionally provide the <code>role</code> attribute.</p>
+
+<h2 id="commonly-used-landmarks">Commonly used landmarks</h2>
+
+<h3 id="banner">Banner</h3>
+
+<p>Usually the section of the page with the logo, a tag line, and the main page title is marked up as a <code>banner</code> region. It can contain search and navigation sections.</p>
+
+<p>In these tutorialss, the heading with the title “Web Accessibility Tutorials” and the W3C &amp; <abbr title="Web Accessibility Initiative">WAI</abbr> logos on the top of the page. <a href="javascript:toogleHighlight('[role=banner]');">Click here to visually highlight this area.</a> (Scroll to the top.)</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"banner"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/logo.png"</span> <span class="na">alt=</span><span class="s">"SpaceBear Inc."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>In HTML5, the <code>banner</code> role is usually applied to one <code>&lt;header&gt;</code> element:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML5</figcaption>
+<pre class="highlight html"><span class="nt">&lt;header</span> <span class="na">role=</span><span class="s">"banner"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/logo.png"</span> <span class="na">alt=</span><span class="s">"SpaceBear Inc."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre>
+
+</figure>
+<h3 id="complementary">Complementary</h3>
+
+<p>Any section of the document that supports the main content, yet is separate and meaningful on its own, should be marked up as <code>complementary</code>. This could be sidebars or links to related content.</p>
+
+<p>In these tutorials, the call for participation on the bottom of the page is such a piece of content. <a href="javascript:toogleHighlight('[role=complementary]');">Click here to visually highlight this area.</a> (Scroll to the bottom.)</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"complementary"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>Related Articles<span class="nt">&lt;/h3&gt;</span>
+  …
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>In HTML5, the <code>complementary</code> role is often applied to <code>&lt;aside&gt;</code> elements.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML5</figcaption>
+<pre class="highlight html"><span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">"complementary"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>Related Articles<span class="nt">&lt;/h3&gt;</span>
+  …
+<span class="nt">&lt;/aside&gt;</span>
+</pre>
+
+</figure>
+<h3 id="contentinfo">Contentinfo</h3>
+
+<p>A region that contains information about the document such as copyrights and links to privacy statement should be marked up as <code>contentinfo</code>. This information can often be found in the footer section on the end of a page.</p>
+
+<p>In these tutorials, the footer on the bottom of the page is such a piece of content. <a href="javascript:toogleHighlight('[role=contentinfo]');">Click here to visually highlight this area.</a> (Scroll to the bottom.)</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"contentinfo"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> 2014 SpaceBears Inc.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>In HTML5, the <code>contentinfo</code> role is often applied one <code>&lt;footer&gt;</code> element near the end of the page.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML5</figcaption>
+<pre class="highlight html"><span class="nt">&lt;footer</span> <span class="na">role=</span><span class="s">"contentinfo"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> 2014 SpaceBears Inc.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/footer&gt;</span>
+</pre>
+
+</figure>
+<h3 id="main">Main</h3>
+
+<p>The <code>main</code> role marks the main content in a document. In almost all cases a page will have only one instance of this role.</p>
+
+<p>In these tutorials, the footer on the bottom of the page is such a piece of content. <a href="javascript:toogleHighlight('[role=main]');">Click here to visually highlight this area.</a> (Scroll to the bottom.)</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Stellar launch weekend for the SpaceBear 7!<span class="nt">&lt;/h1&gt;</span>
+  …
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>In HTML5, the <code>&lt;main&gt;</code> element carries the same semantics.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML5</figcaption>
+<pre class="highlight html"><span class="nt">&lt;main</span> <span class="na">role=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Stellar launch weekend for the SpaceBear 7!<span class="nt">&lt;/h1&gt;</span>
+  …
+<span class="nt">&lt;/main&gt;</span>
+</pre>
+
+</figure>
+<h3 id="navigation">Navigation</h3>
+
+<p>The <code>navigation</code> role marks navigation menus or other collections of links whose purpose is to navigate inside the page or the website as a whole. See the <a href="../../navigation/">Navigation Menu tutorial</a> for more information on menus.</p>
+
+<p>In these tutorials, there are several possibilities to navigate. The main menu, which is either on the bottom or the top of the page (depending on the viewport), the breadcrumb path (top), the “On this page” in-page navigation, and the previous and next links on the bottom of the article. <a href="javascript:toogleHighlight('[role=navigation]');">Click here to visually highlight those areas.</a></p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+  …
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>In HTML5, the <code>&lt;nav&gt;</code> element carries the same semantics.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML5</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+  …
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
+<h3 id="search">Search</h3>
+
+<p>The <code>search</code> role marks the “search tool” of the website, this means not only the actual input field, but also the search button and options, can be included in this region. The form below contains a <code>&lt;div&gt;</code> element with a <code>search</code> role.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<form action="#search">
+  <div role="search">
+    <input type="search" aria-label="Search"> <button type="submit" style="float:none;">Search</button>
+  </div>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"…"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span> <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">style=</span><span class="s">"float:none;"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre>
+
+</figure>
+<h3 id="a-note-on-the-application-role">A note on the application role</h3>
+
+<p>The role <code>application</code> declares a region as a web application, as opposed to a web document. The role of application should only be <strong>used with caution</strong>, as it gives a signal to screen reading software to turn off normal web navigation controls. Simple widgets should generally not be given the application role, nor should an entire web page be given the application role, unless it is not to be used at all like a web page, and not without much user testing with assistive technology.</p>
+
+<h2 id="labeling-landmarks">Labeling landmarks</h2>
+
+<p>Especially if there are multiple landmarks of the same type, like multiple navigation landmarks or sidebars, it is important to label landmark sections by using one of the techniques shown below. Which one should be used depends on the presence of a (visible) heading.</p>
+
+<h3 id="using-aria-labelledby">Using <code>aria-labelledby</code></h3>
+
+<p>If a heading or some other text is present that can describe the content of the landmark section, it can be referenced by adding an <code>id</code> attribute to the heading and using that <code>id</code> value as a value of the <code>aria-labelledby</code> of the landmark section.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-labelledby=</span><span class="s">"navheading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"navheading"</span><span class="nt">&gt;</span>Main menu<span class="nt">&lt;/h3&gt;</span>
+  …
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
+<h3 id="using-aria-label">Using <code>aria-label</code></h3>
+
+<p>If no other text is present, the <code>aria-label</code> attribute should be used to label the individual landmarks.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML4</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-label=</span><span class="s">"Main menu"</span><span class="nt">&gt;</span>
+  …
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
+<style>
+    .role-highlight, .role-highlight * {
+        background: rgba(237, 236, 63, .5);;
+    }
+    .role-highlight {
+        outline: 4px solid #edec3f;
+    }
+</style>
+
+<script>
+function toogleHighlight(selector) {
+
+    function hasClass(el, className) {
+        if (el.classList)
+          return el.classList.contains(className);
+        else
+          return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+    }
+    function addClass(el, className) {
+        if (el.classList)
+          el.classList.add(className);
+        else
+          el.className += ' ' + className;
+    }
+    function removeClass(el, className) {
+        if (el.classList)
+          el.classList.remove(className);
+        else
+          el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+
+    var elements = document.querySelectorAll(selector);
+    Array.prototype.forEach.call(elements, function(el, i) {
+        if (hasClass(el, 'role-highlight')) {
+            removeClass(el, 'role-highlight')
+        } else {
+            addClass(el, 'role-highlight');
+        }
+    });
+}
+</script>
+
+
+
+
+      <div class="resources">
+  <h2 id="related">Related WCAG2.0 resources</h2>
+  
+  
+    <p><strong>Techniques:</strong></p>
+    <ul>
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA11">ARIA11: Using ARIA landmarks to identify regions of a page</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+  
+</div>
+
+
+      <div role="navigation" id="tools">
+  <ul>
+    
+      
+        <li class="prev">
+          <span><a class="" href="../"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">◊ Page Structure Concepts</span></span></a></span>
+        </li>
+      
+      
+        
+        
+        
+      
+        
+        
+        
+          <li class="next">
+            <span><a class="" href="../headings/"><span class="count"></span><span class="txt"><span class="dir">Next:</span><span class="title">Headings</span></span></a></span>
+          </li>
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+      <aside class="side-box github" role="complementary">
+  <h2 class="heading">We welcome your ideas</h2>
+  <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
+
+	<div class="editpage">
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/page-structure/landmarks.html.erb.md">Fork &amp; edit this page on Github</a>
+	</div>
+
+</aside>
+
+
+    </div>
+  </article>
+</main>
+<div class="navigation">
+  <nav role="navigation" aria-label="Navigation" id="nav">
+    <h2 class="list-heading" id="list-heading-tutorials">
+      
+        Page Structure Tutorial
+      
+    </h2>
+    <ul aria-labelledby="list-heading-tutorials">
+      
+        
+          <li class="intro"><a class="" href="../"><span class="count"></span><span class="txt">Concepts</span></a></li>
+        
+        
+          
+            <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Landmarks</span></span></li>
+          
+        
+          
+            <li><a class="" href="../headings/"><span class="count"></span><span class="txt">Headings</span></a></li>
+          
+        
+          
+            <li><a class="" href="../text-structure/"><span class="count"></span><span class="txt">Text Structure</span></a></li>
+          
+        
+          
+            <li><a class="" href="../styling/"><span class="count"></span><span class="txt">Styling</span></a></li>
+          
+        
+          
+            <li><a class="" href="../in-page-navigation/"><span class="count"></span><span class="txt">In-page Navigation</span></a></li>
+          
+        
+      
+    </ul>
+    <h2 class="list-heading" id="list-heading-topics">
+  All Tutorials
+</h2>
+<ul class="topics" aria-labelledby="list-heading-topics">
+	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Page Structure</span></span></li>
+	<li><a href="../../navigation/"><span class="count"></span><span class="txt">Navigation Menus</span></a></li>
+	<li><a href="../../images/"><span class="count"></span><span class="txt">Images</span></a></li>
+	<li><a href="../../tables/"><span class="count"></span><span class="txt">Tables</span></a></li>
+	<li><a href="../../forms/"><span class="count"></span><span class="txt">Forms</span></a></li>
+	<li><a href="../../carousels/"><span class="count"></span><span class="txt">Carousels</span></a></li>
+	<li><a href="../../more/"><span class="count"></span><span class="txt">More on the way…</span></a></li>
+</ul>
+
+  </nav>
+</div>
+  </div>
+	<footer role="contentinfo">
+    <div>
+		<h2>Document info</h2>
+		<ul>
+			<li><strong>Last Modification:</strong>
+      
+      
+        [EDITOR’S DRAFT]
+      
+      05 October 2014
+			</li>
+      <li>
+<strong>Editors: </strong>
+<ul class="inline">
+    <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zahra</a></li>
+  </ul>
+
+<strong>Contributors:</strong>
+The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>).
+</li>
+
+<li>
+</li>
+
+      <li>[<a class="" href="../../attributions/"><span class="count"></span><span class="txt">Attributions</span></a>]  [<a class="" href="../../changelog/"><span class="count"></span><span class="txt">Changelog</span></a>]</li>
+    </ul>
+    <p>
+    	[<a href="http://www.w3.org/WAI/sitemap.html">WAI Site Map</a>]
+    	[<a href="http://www.w3.org/WAI/sitehelp.html">Help with WAI Website</a>]
+    	[<a href="http://www.w3.org/WAI/search.php">Search</a>]
+    	[<a href="http://www.w3.org/WAI/contacts">Contacting WAI</a>]
+		</p>
+    <p><strong>Feedback welcome to <a href="mailto:wai-eo-editors@w3.org">wai-eo-editors@w3.org</a></strong> (a publicly archived list) or <a href="mailto:wai@w3.org">wai@w3.org</a> (a WAI staff-only list).</p>
+    <div class="copyright">
+      <p>
+	<a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©2014
+      	<a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+				(<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+					<a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+					<a href="http://www.keio.ac.jp/">Keio</a>,
+         	<a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>,               <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>               and <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a>
+               and <a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a>privacy statements.</p>                   </div><!-- ends copyright -->
+    </div>
+	</footer>
+	<script src="../../javascripts/main-9e16c3e8.js" type="text/javascript"></script>
+	</body>
+</html>
