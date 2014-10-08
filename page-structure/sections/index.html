@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Landmarks
+  Page Sections
   
     
        &bull; Page Structure
@@ -38,12 +38,12 @@
               <a class="" href="../"><span class="count"></span><span class="txt">Page Structure</span></a> <span class="icon icon-chevron-right"></span>
             
             
-            <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Landmarks</span></span>
+            <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Page Sections</span></span>
           </span>
         </p>
       </nav>
       <h1>
-        Landmarks
+        Page Sections
       </h1>
     </header>
 
@@ -62,105 +62,44 @@
       
 
 
-      <p>Landmark roles (“landmark”) identify sections of a page in a programmatical way which helps assistive technology users orient themselves to various sections of the page. They also provide an easy way to skip sections of the page that are not relevant to the user right now. For example, if there is a navigation section on every page, users can skip it and jump directly to the content of the page. This can save a lot of time navigating around the page, searching for the correct section of the page.</p>
+      <p>To help people navigate around the page, they need to be able to identify distinctive sections on the page. There are some more important parts of a page that should be marked up on every website, for example navigations. Both, HTML5 and WAI-ARIA, provide mechanisms to mark up such sections in a meaningful way. On this page, common sections on websites are identified and marked up using those mechanisms.</p>
 
-<p>Landmarks are inserted into the document by adding a <code>role</code> attribute to the element that marks the section. Some HTML5 elements should implicitly carry some landmark roles, but as this is not widely supported, it is recommended to additionally provide the <code>role</code> attribute.</p>
+<p>HTML5 provides distinctive elements for certain types of page sections while WAI-ARIA utilizes the <code>role</code> attribute to add such metadata, which is mainly aimed at assistive technologies. Sometimes the so called WAI-ARIA landmark roles map directly to HTML5 elements, but this is not always the case.</p>
 
-<h2 id="commonly-used-landmarks">Commonly used landmarks</h2>
+<p>Some HTML elements are supposed to also carry implicit landmark roles, but this is not broadly supported at the time of writing, so the role should be stated explicitly. If HTML4 is used, <code>&lt;div&gt;</code> elements and/or headings are commonly used to identify page sections.</p>
 
-<h3 id="banner">Banner</h3>
+<h2 id="common-page-sections">Common page sections</h2>
 
-<p>Usually the section of the page with the logo, a tag line, and the main page title is marked up as a <code>banner</code> region. It can contain search and navigation sections.</p>
+<h3 id="main-page-header">Main page header</h3>
 
-<p>In these tutorialss, the heading with the title “Web Accessibility Tutorials” and the W3C &amp; <abbr title="Web Accessibility Initiative">WAI</abbr> logos on the top of the page. <a href="javascript:toogleHighlight('[role=banner]');">Click here to visually highlight this area.</a> (Scroll to the top.)</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
-<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"banner"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/logo.png"</span> <span class="na">alt=</span><span class="s">"SpaceBear Inc."</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-
-</figure>
-<p>In HTML5, the <code>banner</code> role is usually applied to one <code>&lt;header&gt;</code> element:</p>
+<p>Most websites have a logo and some other information about the page at the top of the page. Sometimes a search or navigation can be included. This main page header should be identified by an HTML5 <code>&lt;header&gt;</code> element and an explicit <code>banner</code> role. The banner role is not implicit for <code>&lt;header&gt;</code> elements as there could be several such elements but usually there will only be one <code>banner</code> role.</p>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML5</figcaption>
+  <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;header</span> <span class="na">role=</span><span class="s">"banner"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/logo.png"</span> <span class="na">alt=</span><span class="s">"SpaceBear Inc."</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/header&gt;</span>
 </pre>
 
 </figure>
-<h3 id="complementary">Complementary</h3>
+<h3 id="navigation">Navigation</h3>
 
-<p>Any section of the document that supports the main content, yet is separate and meaningful on its own, should be marked up as <code>complementary</code>. This could be sidebars or links to related content.</p>
-
-<p>In these tutorials, the call for participation on the bottom of the page is such a piece of content. <a href="javascript:toogleHighlight('[role=complementary]');">Click here to visually highlight this area.</a> (Scroll to the bottom.)</p>
+<p>Sections of the page that provide navigation should be marked up using the HTML5 <code>&lt;nav&gt;</code> element which is supposed to carry an implicit <code>role</code> of <code>navigation</code>. It can contain the main navigation menu or other collections of links whose purpose is to navigate inside the page or the website as a whole. See the <a href="../../navigation/">Navigation Menu tutorial</a> for more information on menus. It can be used multiple times on a page.</p>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
-<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"complementary"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h3&gt;</span>Related Articles<span class="nt">&lt;/h3&gt;</span>
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
   …
-<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
 </pre>
 
 </figure>
-<p>In HTML5, the <code>complementary</code> role is often applied to <code>&lt;aside&gt;</code> elements.</p>
+<h3 id="main-content">Main content</h3>
+
+<p>Main content of a document should be wrapped in a <code>&lt;main&gt;</code> element that implicitly carries a <code>main</code> role. In almost all cases a page will have only one instance of this section.</p>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML5</figcaption>
-<pre class="highlight html"><span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">"complementary"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h3&gt;</span>Related Articles<span class="nt">&lt;/h3&gt;</span>
-  …
-<span class="nt">&lt;/aside&gt;</span>
-</pre>
-
-</figure>
-<h3 id="contentinfo">Contentinfo</h3>
-
-<p>A region that contains information about the document such as copyrights and links to privacy statement should be marked up as <code>contentinfo</code>. This information can often be found in the footer section on the end of a page.</p>
-
-<p>In these tutorials, the footer on the bottom of the page is such a piece of content. <a href="javascript:toogleHighlight('[role=contentinfo]');">Click here to visually highlight this area.</a> (Scroll to the bottom.)</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
-<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"contentinfo"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> 2014 SpaceBears Inc.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-
-</figure>
-<p>In HTML5, the <code>contentinfo</code> role is often applied one <code>&lt;footer&gt;</code> element near the end of the page.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML5</figcaption>
-<pre class="highlight html"><span class="nt">&lt;footer</span> <span class="na">role=</span><span class="s">"contentinfo"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> 2014 SpaceBears Inc.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/footer&gt;</span>
-</pre>
-
-</figure>
-<h3 id="main">Main</h3>
-
-<p>The <code>main</code> role marks the main content in a document. In almost all cases a page will have only one instance of this role.</p>
-
-<p>In these tutorials, the footer on the bottom of the page is such a piece of content. <a href="javascript:toogleHighlight('[role=main]');">Click here to visually highlight this area.</a> (Scroll to the bottom.)</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
-<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"main"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h1&gt;</span>Stellar launch weekend for the SpaceBear 7!<span class="nt">&lt;/h1&gt;</span>
-  …
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-
-</figure>
-<p>In HTML5, the <code>&lt;main&gt;</code> element carries the same semantics.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML5</figcaption>
+  <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;main</span> <span class="na">role=</span><span class="s">"main"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h1&gt;</span>Stellar launch weekend for the SpaceBear 7!<span class="nt">&lt;/h1&gt;</span>
   …
@@ -168,33 +107,34 @@
 </pre>
 
 </figure>
-<h3 id="navigation">Navigation</h3>
+<h3 id="page-footer">Page footer</h3>
 
-<p>The <code>navigation</code> role marks navigation menus or other collections of links whose purpose is to navigate inside the page or the website as a whole. See the <a href="../../navigation/">Navigation Menu tutorial</a> for more information on menus.</p>
-
-<p>In these tutorials, there are several possibilities to navigate. The main menu, which is either on the bottom or the top of the page (depending on the viewport), the breadcrumb path (top), the “On this page” in-page navigation, and the previous and next links on the bottom of the article. <a href="javascript:toogleHighlight('[role=navigation]');">Click here to visually highlight those areas.</a></p>
+<p>The term page footer refers to a section on the page that contains auxiliary information like (links to) copyright or privacy statements. In HTML5 it is usually marked up as a <code>&lt;footer&gt;</code> element. It does not carry an implicit role but it makes sense to add <code>contentinfo</code> to distinguish the page <code>&lt;footer&gt;</code> element from other uses of <code>&lt;footer&gt;</code> in the page, for example as the footer of an article.</p>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
-<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-  …
-<span class="nt">&lt;/div&gt;</span>
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;footer</span> <span class="na">role=</span><span class="s">"contentinfo"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> 2014 SpaceBears Inc.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/footer&gt;</span>
 </pre>
 
 </figure>
-<p>In HTML5, the <code>&lt;nav&gt;</code> element carries the same semantics.</p>
+<h3 id="content-complementary-to-the-main-content">Content complementary to the main content</h3>
+
+<p>Any section of the document that supports the main content, yet is separate and meaningful on its own, should be marked up using an <code>&lt;aside&gt;</code> element, which does not carry an implicit role as it can be used in other circumstances as well. A role of <code>complementary</code> can be added to sidebars or links to related content to make the purpose of the section more explicit.</p>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML5</figcaption>
-<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">"complementary"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>Related Articles<span class="nt">&lt;/h3&gt;</span>
   …
-<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;/aside&gt;</span>
 </pre>
 
 </figure>
-<h3 id="search">Search</h3>
+<h3 id="search-section">Search section</h3>
 
-<p>The <code>search</code> role marks the “search tool” of the website, this means not only the actual input field, but also the search button and options, can be included in this region. The form below contains a <code>&lt;div&gt;</code> element with a <code>search</code> role.</p>
+<p>The <code>search</code> role marks the “search tool” of the website, this means not only the actual input field, but also the search button and options, can be included in this section. The form below contains a <code>&lt;div&gt;</code> element with a <code>search</code> role. There is no HTML5 equivalent for this role.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -209,7 +149,7 @@
   </div></figure>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
+  <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"…"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"search"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span> <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">style=</span><span class="s">"float:none;"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
@@ -218,20 +158,24 @@
 </pre>
 
 </figure>
+<h3 id="generic-sections">Generic sections</h3>
+
+<p>Other sections of the page can be marked up as <code>&lt;section&gt;</code> elements which carry an implicit role of <code>region</code> which basically is a generic landmark. Be careful not to overuse it, as it adds a lot of additional “noise” when encountered using a screen reader. Use it to group items together. It should also always be labeled.</p>
+
 <h3 id="a-note-on-the-application-role">A note on the application role</h3>
 
-<p>The role <code>application</code> declares a region as a web application, as opposed to a web document. The role of application should only be <strong>used with caution</strong>, as it gives a signal to screen reading software to turn off normal web navigation controls. Simple widgets should generally not be given the application role, nor should an entire web page be given the application role, unless it is not to be used at all like a web page, and not without much user testing with assistive technology.</p>
+<p>The role <code>application</code> declares a section as a web application, as opposed to a web document. The role of application should only be <strong>used with caution</strong>, as it gives a signal to screen reading software to turn off normal web navigation controls. Simple widgets should generally not be given the application role, nor should an entire web page be given the application role, unless it is not to be used at all like a web page, and not without much user testing with assistive technology.</p>
 
-<h2 id="labeling-landmarks">Labeling landmarks</h2>
+<h2 id="labeling-sections">Labeling sections</h2>
 
-<p>Especially if there are multiple landmarks of the same type, like multiple navigation landmarks or sidebars, it is important to label landmark sections by using one of the techniques shown below. Which one should be used depends on the presence of a (visible) heading.</p>
+<p>Especially if there are multiple sections with the same role, like multiple navigation sections or sidebars, it is important to label them by using one of the techniques shown below.</p>
 
 <h3 id="using-aria-labelledby">Using <code>aria-labelledby</code></h3>
 
-<p>If a heading or some other text is present that can describe the content of the landmark section, it can be referenced by adding an <code>id</code> attribute to the heading and using that <code>id</code> value as a value of the <code>aria-labelledby</code> of the landmark section.</p>
+<p>If a heading or some other text is present that can properly describe the content of a section, it can be referenced by adding an <code>id</code> attribute to the heading and using that <code>id</code> value as a value of the <code>aria-labelledby</code> of the landmark section.</p>
 
 <figure class="code ">
-  <figcaption>Code snippet: HTML4</figcaption>
+  <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-labelledby=</span><span class="s">"navheading"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"navheading"</span><span class="nt">&gt;</span>Main menu<span class="nt">&lt;/h3&gt;</span>
   …
@@ -241,7 +185,7 @@
 </figure>
 <h3 id="using-aria-label">Using <code>aria-label</code></h3>
 
-<p>If no other text is present, the <code>aria-label</code> attribute should be used to label the individual landmarks.</p>
+<p>If no describing text is present, the <code>aria-label</code> attribute should be used to label the individual landmarks.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: HTML4</figcaption>
@@ -251,49 +195,6 @@
 </pre>
 
 </figure>
-<style>
-    .role-highlight, .role-highlight * {
-        background: rgba(237, 236, 63, .5);;
-    }
-    .role-highlight {
-        outline: 4px solid #edec3f;
-    }
-</style>
-
-<script>
-function toogleHighlight(selector) {
-
-    function hasClass(el, className) {
-        if (el.classList)
-          return el.classList.contains(className);
-        else
-          return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
-    }
-    function addClass(el, className) {
-        if (el.classList)
-          el.classList.add(className);
-        else
-          el.className += ' ' + className;
-    }
-    function removeClass(el, className) {
-        if (el.classList)
-          el.classList.remove(className);
-        else
-          el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
-
-    var elements = document.querySelectorAll(selector);
-    Array.prototype.forEach.call(elements, function(el, i) {
-        if (hasClass(el, 'role-highlight')) {
-            removeClass(el, 'role-highlight')
-        } else {
-            addClass(el, 'role-highlight');
-        }
-    });
-}
-</script>
-
-
 
 
       <div class="resources">
@@ -651,7 +552,7 @@ function toogleHighlight(selector) {
     
       
         <li class="prev">
-          <span><a class="" href="../"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">◊ Page Structure Concepts</span></span></a></span>
+          <span><a class="" href="../"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Page Structure Concepts</span></span></a></span>
         </li>
       
       
@@ -689,7 +590,7 @@ function toogleHighlight(selector) {
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/page-structure/landmarks.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/page-structure/sections.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -712,7 +613,7 @@ function toogleHighlight(selector) {
         
         
           
-            <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Landmarks</span></span></li>
+            <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Page Sections</span></span></li>
           
         
           
@@ -720,7 +621,7 @@ function toogleHighlight(selector) {
           
         
           
-            <li><a class="" href="../text-structure/"><span class="count"></span><span class="txt">Text Structure</span></a></li>
+            <li><a class="" href="../content/"><span class="count"></span><span class="txt">Content Structure</span></a></li>
           
         
           
@@ -758,7 +659,7 @@ function toogleHighlight(selector) {
       
         [EDITOR’S DRAFT]
       
-      05 October 2014
+      07 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
