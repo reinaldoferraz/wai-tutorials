@@ -280,103 +280,6 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
 </pre>
 
 </figure>
-<figure class="code ">
-  <figcaption>Code snippet: CSS</figcaption>
-<pre class="highlight css"><span class="nc">.tlwrapper</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span><span class="n">table</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100</span><span class="err">%</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">table-row</span><span class="p">;</span>
-  <span class="nl">counter-reset</span><span class="p">:</span> <span class="n">timeline</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">table-cell</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">20</span><span class="err">%</span><span class="p">;</span>
-  <span class="nl">counter-increment</span><span class="p">:</span> <span class="n">timeline</span><span class="p">;</span>
-  <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">.25em</span> <span class="m">.5em</span><span class="p">;</span>
-  <span class="nl">overflow</span><span class="p">:</span><span class="nb">hidden</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
-  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nd">:first-child</span> <span class="p">{</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nd">:after</span> <span class="p">{</span>
-  <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">50</span><span class="err">%</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">" "</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-  <span class="nl">pointer-events</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="nl">border-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">151</span><span class="p">,</span> <span class="m">204</span><span class="p">,</span> <span class="m">237</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-  <span class="nl">border-left-color</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
-  <span class="nl">border-width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">-20px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nd">:first-child:after</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span> <span class="nt">a</span><span class="o">,</span> <span class="nc">.timeline</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="p">{</span>
-  <span class="nl">z-index</span><span class="p">:</span> <span class="m">100</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#555</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:before</span><span class="o">,</span> <span class="nc">.timeline</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="nd">:before</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#555</span><span class="p">;</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">timeline</span><span class="p">);</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="m">#555</span><span class="p">;</span>
-  <span class="nl">margin-right</span><span class="p">:</span><span class="m">.25em</span><span class="p">;</span>
-  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">.25em</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-current</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="o">,</span> <span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-current</span> <span class="nt">a</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-current</span> <span class="o">&gt;</span> <span class="nt">span</span><span class="nd">:before</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
-  <span class="nl">border-color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-past</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-past</span> <span class="nt">a</span><span class="nd">:before</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">"\2713"</span><span class="p">;</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-  <span class="nl">border-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-past</span> <span class="nt">a</span><span class="nd">:hover:before</span><span class="o">,</span>
-<span class="nc">.timeline</span> <span class="nt">li</span><span class="nc">.timeline-past</span> <span class="nt">a</span><span class="nd">:focus:before</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-<span class="p">}</span>
-</pre>
-
-</figure>
 
 
       <div class="resources">
@@ -986,7 +889,7 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
         [DRAFT]
       
       
-      05 October 2014
+      10 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

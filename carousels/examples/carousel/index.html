@@ -285,10 +285,20 @@
     <span class="p">}</span>
 
     <span class="c1">// Add classes to the previous, next and current slide
-</span>    <span class="nx">slides</span><span class="p">[</span><span class="nx">new_next</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'next slide'</span> <span class="o">+</span> <span class="p">((</span><span class="nx">transition</span> <span class="o">==</span> <span class="s1">'next'</span><span class="p">)</span> <span class="p">?</span> <span class="s1">' in-transition'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">);</span>
-    <span class="nx">slides</span><span class="p">[</span><span class="nx">new_prev</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'prev slide'</span> <span class="o">+</span> <span class="p">((</span><span class="nx">transition</span> <span class="o">==</span> <span class="s1">'prev'</span><span class="p">)</span> <span class="p">?</span> <span class="s1">' in-transition'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">);</span>
+</span>    <span class="nx">slides</span><span class="p">[</span><span class="nx">new_next</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'next slide'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">transition</span> <span class="o">==</span> <span class="s1">'next'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">slides</span><span class="p">[</span><span class="nx">new_next</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'next slide in-transition'</span><span class="p">;</span>
+      <span class="nx">slides</span><span class="p">[</span><span class="nx">new_next</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'aria-hidden'</span><span class="p">,</span> <span class="s1">'true'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">slides</span><span class="p">[</span><span class="nx">new_prev</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'prev slide'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">transition</span> <span class="o">==</span> <span class="s1">'prev'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">slides</span><span class="p">[</span><span class="nx">new_prev</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'prev slide in-transition'</span><span class="p">;</span>
+      <span class="nx">slides</span><span class="p">[</span><span class="nx">new_next</span><span class="p">].</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'aria-hidden'</span><span class="p">,</span> <span class="s1">'true'</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="nx">slides</span><span class="p">[</span><span class="nx">new_current</span><span class="p">].</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'current slide'</span><span class="p">;</span>
+    <span class="nx">slides</span><span class="p">[</span><span class="nx">new_current</span><span class="p">].</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s1">'aria-hidden'</span><span class="p">);</span>
 
     <span class="c1">// Update the slidenav buttons
 </span>    <span class="k">if</span><span class="p">(</span><span class="nx">settings</span><span class="p">.</span><span class="nx">slidenav</span><span class="p">)</span> <span class="p">{</span>
@@ -414,7 +424,7 @@
 			<li><strong>Last Modification:</strong>
       
       
-      10 September 2014
+      13 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

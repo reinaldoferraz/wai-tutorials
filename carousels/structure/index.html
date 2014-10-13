@@ -64,8 +64,6 @@
 
       <p>Provide structural markup for the carousel and its items, and later enhance these structures with styling and scripting. This ensures that the content of the carousel has meaning on its own, without styling and scripting, and can be rendered and used in more situations.</p>
 
-<p><strong>Note:</strong> A carousel is typically a distinct part of a web page, so that a heading (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) is typically needed to identify and label the carousel.</p>
-
 <h2 id="carousel-framework">Carousel framework</h2>
 
 <p>A carousel is a collection of items that are displayed one at a time. Provide a corresponding structure in the code to represent this collection of items.</p>
@@ -105,6 +103,50 @@
       <span class="nt">&lt;h4&gt;</span>…<span class="nt">&lt;/h4&gt;</span>
       …
     <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<h3 id="label-carousels">Label carousels</h3>
+
+<p>For assistive technology users, it is important to add information to the carousel container that informs the user where the carousel starts and ends, as a carousel is typically a distinct part of a web page. A heading (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) or WAI-ARIA attributes can be used to label them.</p>
+
+<h4 class="ex" id="using-headings">Using headings</h4>
+
+<p>In the example below, a heading shows the start of the carousel, the end of the carousel would be marked by the next heading of the same level.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"carousel"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>Recent news<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"slide"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;</span>…<span class="nt">&lt;/h4&gt;</span>
+      …
+    <span class="nt">&lt;/article&gt;</span>
+    …
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<h4 class="ex" id="using-wai-aria-roles-and-labels">Using WAI-ARIA roles and labels</h4>
+
+<p>To group the carousel in a way that is perceivable for assistive technologies, the <code>role</code> attribute with a value of <code>region</code> can be used. To identify the region, the <code>aria-label</code> attribute can be used, as show in the example below:</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"carousel"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-label=</span><span class="s">"Recent news"</span><span class="nt">&gt;</span>
+    …
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
+<p>If there is already some text identifying the carousel in HTML, it is usually more appropriate to use the <code>aria-labelledby</code> attribute to assign that text to the carousel.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"carousel"</span> <span class="na">role=</span><span class="s">"region"</span> <span class="na">aria-labelledby=</span><span class="s">"carouselheading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"carouselheading"</span><span class="nt">&gt;</span>Recent news<span class="nt">&lt;/h3&gt;</span>
+    …
 <span class="nt">&lt;/div&gt;</span>
 </pre>
 
@@ -757,10 +799,6 @@
         
         
       
-        
-        
-        
-      
     
   </ul>
 </div>
@@ -805,10 +843,6 @@
             <li><a class="" href="../animations/"><span class="count"></span><span class="txt">Animations</span></a></li>
           
         
-          
-            <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">Tips and FAQ</span></a></li>
-          
-        
       
     </ul>
     <h2 class="list-heading" id="list-heading-topics">
@@ -836,7 +870,7 @@
       
         [EDITOR’S DRAFT]
       
-      02 October 2014
+      13 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
