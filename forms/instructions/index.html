@@ -149,7 +149,7 @@
 </div>
 <h4 class="ap" id="using-wai-aria">Using WAI-ARIA</h4>
 
-<p>Another approach is to use the WAI-ARIA <code>aria-describedby</code> attribute to associate the instructions with form elements. At the time of writing, this approach may not be fully supported by all web browsers and assistive technologies.</p>
+<p>Another approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate the instructions with form elements. At the time of writing, this approach may not be fully supported by all web browsers and assistive technologies, especially by non-screen readers.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -168,7 +168,7 @@
   <div>
     <label for="expire4">Expiry date:</label>
     <span>
-      <input type="text" name="expire" id="expire4" aria-describedby="expDesc2">
+      <input type="text" name="expire" id="expire4" aria-labelledby="expDesc2">
       <span id="expDesc2">MM/YYYY</span>
     </span>
   </div>
@@ -181,16 +181,12 @@
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-describedby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/span&gt;</span>
 </pre>
 
 </figure>
-<div class="notes ">
-<p><strong>Note:</strong> This technique is mostly interpreted by screen readers, so that non-screen reader users may not gain the information as easily. Until such associations are more broadly used by other assistive technology as well, it is often useful inform the user that instructions directly follow form controls.</p>
-
-</div>
 <h3 class="newex" id="placeholder-text">Placeholder text</h3>
 
 <p>Placeholder text provides instructions or an example of the required data format inside form fields that have not yet been edited by the user. Placeholder text is usually displayed with lower color contrast than text provided by users, and it disappears from form fields when users start entering text. If the placeholder text contains instructional information or examples, having it disappear can make it more difficult for users to check their responses prior to submitting the form.</p>
@@ -225,7 +221,7 @@
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> To provide more clarity, ensure that the style of placeholder text is distinguishable from regular text. This is commonly done by reducing the color contrast of placeholder text. However, if you do reduce the contrast, ensure that the placeholder text also meets the <a href="/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">minimum color contrast requirement of WCAG 2.0</a>.</p>
+<p><strong>Note:</strong> To provide more clarity, ensure that the style of placeholder text is distinguishable from regular text. This is commonly done by reducing the contrast ratio of placeholder text. Usually browsers take care of this. If custom styling of the placeholder text is needed, consider to meet the <a href="/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">minimum color contrast requirement of WCAG 2.0</a>.</p>
 
 </div>
 
@@ -839,7 +835,7 @@
         [DRAFT]
       
       
-      10 October 2014
+      14 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

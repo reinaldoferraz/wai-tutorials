@@ -66,14 +66,16 @@
 
 <h2 class="newex" id="associating-related-controls">Associating related controls</h2>
 
-<p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group. In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information. The legend for this group of controls highlights the action that is common to all controls, and the fact that they are all optional.</p>
+<p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group. In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information.</p>
+
+<p>The legend for a group of controls can also highlight common attributes of all controls, for example state the fact that all fields in the group are required.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
 <fieldset>
-<legend>(Optional) I want to receive</legend>
+<legend>I want to receive</legend>
   <div>
     <input type="checkbox" name="newsletter" id="check_1"> <label for="check_1">The weekly newsletter</label>
   </div>
@@ -92,7 +94,7 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
-<span class="nt">&lt;legend&gt;</span>(Optional) I want to receive<span class="nt">&lt;/legend&gt;</span>
+<span class="nt">&lt;legend&gt;</span>I want to receive<span class="nt">&lt;/legend&gt;</span>
   <span class="nt">&lt;div&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
@@ -713,7 +715,7 @@
         [DRAFT]
       
       
-      05 October 2014
+      14 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
