@@ -153,7 +153,7 @@
 </figure>
 <h2 id="item-structure">Item structure</h2>
 
-<p>Also provide proper structure for content within individual carousel items. This makes them independent pieces of content that can be rendered and used in different ways. Refer to the tutorials on <a href="/fundamentals/heading.html">headings</a> and <a href="../../images/">images</a> for more background on how to provide these types of content.</p>
+<p>Also provide proper structure for content within individual carousel items. This makes them independent pieces of content that can be rendered and used in different ways. Refer to the <a href="../../images/">images tutorial</a> for more information.</p>
 
 <h3 class="ex" id="brief-content">Brief content</h3>
 
@@ -217,11 +217,11 @@
 
 <p>At this stage the carousel does not have any functionality. This is added later using scripting, based on the class names of the elements. If scripting is not enabled for various reasons, including bad network connection or user choice, the functionality would not work anyway.</p>
 
-<p>This does not prevent you from providing the basic styling for the carousel so that it looks appropriate even when scripting is not enabled. In many cases carousels are styled with background images and overlaid text, so that <a href="/fundamentals/color.html">color contrast ratio</a> considerations are relevant.</p>
+<p>This does not prevent you from providing the basic styling for the carousel so that it looks appropriate even when scripting is not enabled. In many cases carousels are styled with background images and overlaid text, so contrast ratio (“color contrast”) requirements need to be met.</p>
 
 <h3 class="ex" id="styled-carousel">Styled carousel</h3>
 
-<p>The example below shows how the carousel structure from the previous example is styled. It uses semi-transparent backgrounds behind the overlaid text, to ensure sufficient color contrast to the background image.</p>
+<p>The example below shows how the carousel structure from the previous example is styled. As the background images can be distracting, using a background color for the overlaying text is a good way to ensure a good ratio even if images change. In this example, a semi-transparent background is used behind the overlaid text. Note that the opacity is high (80%) to make sure that the contrast ratio is met. Testing for contrast ratio conformance needs to be done using the resulting, visible color on the element, not the semi-transparent base color.</p>
 
 <div class="notes ">
 <p><strong>Note:</strong> The carousel demo in this tutorial has a fixed-width implementation to keep the tutorial simple.</p>
@@ -870,7 +870,7 @@
       
         [EDITOR’S DRAFT]
       
-      13 October 2014
+      17 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

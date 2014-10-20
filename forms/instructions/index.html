@@ -197,7 +197,8 @@
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
-  <div class="box-content"><form method="post" action="#">
+  <div class="box-content">
+<form method="post" action="#">
   <div>
     <label for="search">Search:</label> <input type="text" name="search" id="search" placeholder="e.g. Apple Pie">
   </div>
@@ -205,6 +206,28 @@
     <label for="email">Email: </label> <input type="text" name="email" id="email" placeholder="joe@example.com">
   </div>
 </form>
+
+<style>
+::-webkit-input-placeholder {
+   color: #777;
+   opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #777;
+   opacity: 1;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #777;
+   opacity: 1;
+}
+
+:-ms-input-placeholder {
+   color: #777;
+   opacity: 1;
+}
+</style>
 
 
   </div></figure>
@@ -220,10 +243,34 @@
 </pre>
 
 </figure>
-<div class="notes ">
-<p><strong>Note:</strong> To provide more clarity, ensure that the style of placeholder text is distinguishable from regular text. This is commonly done by reducing the contrast ratio of placeholder text. Usually browsers take care of this. If custom styling of the placeholder text is needed, consider to meet the <a href="/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">minimum color contrast requirement of WCAG 2.0</a>.</p>
+<h4 id="styling">Styling</h4>
 
-</div>
+<p>At the time of writing, browsers usually display the placeholder text in too light colors. The <a href="/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">minimum color contrast requirement of WCAG 2.0</a> is not met by those placeholders which means they are really hard to see. Browsers use a combination of color and opacity to achieve the desired look. In most browsers the color of the placeholder can be styled using proprietary CSS selectors. The following code snippet sets the color to a light gray, which has just enough contrast to meet the contrast requirement, assuming the background of the element is white.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight css"><span class="o">:</span><span class="nd">:-webkit-input-placeholder</span> <span class="p">{</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">:-moz-placeholder</span> <span class="p">{</span> <span class="c">/* Firefox 18- */</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">:</span><span class="nd">:-moz-placeholder</span> <span class="p">{</span>  <span class="c">/* Firefox 19+ */</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">:-ms-input-placeholder</span> <span class="p">{</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+
+</figure>
 
 
       <div class="resources">
@@ -835,7 +882,7 @@
         [DRAFT]
       
       
-      14 October 2014
+      16 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

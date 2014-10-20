@@ -66,7 +66,7 @@
 
 <h2 id="displaying-carousel-items">Displaying carousel items</h2>
 
-<p>Carousel items that are visually hidden should also be hidden from assistive technology, to avoid a mismatch between what is visually on the screen and what the user is interacting with. All carousel items that are not displayed visually are hidden by using the CSS <code>display: none</code> declaration. Refer to <a href="/fundamentals/hiding.html">content hiding techniques</a> for more background.</p>
+<p>Carousel items that are visually hidden should also be hidden from assistive technology, to avoid a mismatch between what is visually on the screen and what the user is interacting with. All carousel items that are not displayed visually are hidden by using the CSS <code>display: none</code> declaration.</p>
 
 <h3 class="ex" id="scripted-styling">Scripted styling</h3>
 
@@ -203,7 +203,7 @@
 
 <h2 id="switching-carousel-items">Switching carousel items</h2>
 
-<p>Scripting is further used to add buttons that allow users to switch back and forth between carousel items. While these buttons often have various styles visually, it is useful to code them using <code>&lt;button&gt;</code> elements. This gives them semantic meaning and also makes them more compatible with assistive technology and keyboard use. Refer to <a href="/fundamentals/keyboard-access.html">keyboard accessibility</a> for more background.</p>
+<p>Scripting is further used to add buttons that allow users to switch back and forth between carousel items. While these buttons often have various styles visually, it is useful to code them using <code>&lt;button&gt;</code> elements. This gives them semantic meaning and also makes them more compatible with assistive technology and keyboard use. If the carousel uses <code>&lt;a&gt;</code> elements instead, a <code>href</code> attribute needs to be present to enable keyboard access. Additionally <code>role="button"</code> should be applied to the link so assistive technology users know that they expect an interaction on the page rather than a link to another page.</p>
 
 <h3 id="previous-and-next-buttons">Previous and next buttons</h3>
 
@@ -620,7 +620,7 @@
 
 <p>When users select a carousel item directly through the buttons then the focus needs to be set to the corresponding carousel item. The focus should <em>not</em> be set to the carousel item if the previous or next buttons are used, as the user may want to skip over several carousel items quickly and would use the position otherwise.</p>
 
-<p>Carousel items will often be coded using elements that, by default, are not focusable, such as <code>&lt;li&gt;</code> or  <code>&lt;article&gt;</code> elements. Use the <code>tabindex</code> attribute with its value set to <code>-1</code>, to make such elements capable of receiving focus using JavaScript, then set the focus on them. Refer to <a href="/fundamentals/keyboard-access.html">Keyboard accessibility</a> for more background.</p>
+<p>Carousel items will often be coded using elements that, by default, are not focusable, such as <code>&lt;li&gt;</code> or  <code>&lt;article&gt;</code> elements. Use the <code>tabindex</code> attribute with its value set to <code>-1</code>, to make such elements capable of receiving focus using JavaScript, then set the focus on them.</p>
 
 <h3 class="ex" id="focus-change">Focus change</h3>
 
@@ -1146,7 +1146,7 @@ c3.init({
       
         [EDITOR’S DRAFT]
       
-      14 October 2014
+      17 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

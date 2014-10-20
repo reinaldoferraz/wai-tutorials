@@ -62,11 +62,53 @@
       
 
 
-      <p>The markup of menus is important to convey the structure of the menu to assistive technologies. Most of the time a menu is a list of links, regardless of the visual appearance on the screen.</p>
+      <p>Semantic markup of menus makes them more easily adaptable to different situations such as display on small screens, zoomed in, or for assistive technologies by conveying the menu structure to users. Usually a list of links is the most effective way to structure menus.</p>
 
+<h2 class="newap" id="list-of-links">List of Links</h2>
+
+<p>If a navigation consists of more than a few links, the links should be wrapped in a list element. This helps assistive technologies to announce how many items are in the menu.</p>
+
+<h3 class="ap" id="unordered-list">Unordered list</h3>
+
+<p>For websites where the order in which the user reads the pages doesn’t matter, an unordered list (<code>&lt;ul&gt;</code>) should be used. In the following example, the user is not required to read the home page before advancing to the shop or get information about the products.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-label=</span><span class="s">"Main Menu"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Shop<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>SpaceBears<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>MarsCars<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    …
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
+<h3 class="ap" id="ordered-list">Ordered list</h3>
+
+<p>In some instances, pages need to be read in a certain order. Menus that provides access to chapters in prose or steps to take while building something are examples for this kind of menus. In the example below, following the order is important to properly build the space ship.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-label=</span><span class="s">"Main Menu"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ol&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Unpacking the Space Craft<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Check Contents of Package<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Build Chassis<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Build Engine<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Mount Engine to Chassis<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    …
+  <span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre>
+
+</figure>
 <h2 id="identifying-the-menu">Identifying the menu</h2>
 
-<p>Users of assistive technology should be able to access the menu directly. To enable this functionality, a WAI-ARIA landmark role of <code>navigation</code> needs to be added to the element wrapping the navigation links.</p>
+<p>Users of assistive technology should be able to access the menu directly. To enable this functionality, a WAI-ARIA landmark role of <code>navigation</code> should be added to the element wrapping the navigation links.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: HTML</figcaption>
@@ -130,48 +172,6 @@
 <p><strong>Note:</strong> Some browsers and assistive technologies might announce the name of the menu two times, when the user enters the menu.</p>
 
 </div>
-<h2 class="newap" id="list-of-links">List of Links</h2>
-
-<p>If a navigation consists of more than a few links, the links should be wrapped in a list element. This helps assistive technologies to announce how many items are in the menu.</p>
-
-<h3 class="ap" id="unordered-list">Unordered list</h3>
-
-<p>For websites where the order in which the user reads the pages doesn’t matter, an unordered list (<code>&lt;ul&gt;</code>) should be used. In the following example, the user is not required to read the home page before advancing to the shop or get information about the products.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-label=</span><span class="s">"Main Menu"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Shop<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>SpaceBears<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>MarsCars<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    …
-  <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
-</pre>
-
-</figure>
-<h3 class="ap" id="ordered-list">Ordered list</h3>
-
-<p>In some instances, pages need to be read in a certain order. Menus that provides access to chapters in prose or steps to take while building something are examples for this kind of menus. In the example below, following the order is important to properly build the space ship.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">aria-label=</span><span class="s">"Main Menu"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;ol&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Unpacking the Space Craft<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Check Contents of Package<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Build Chassis<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Build Engine<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Mount Engine to Chassis<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    …
-  <span class="nt">&lt;/ol&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
-</pre>
-
-</figure>
 
 
       <div class="resources">
@@ -638,7 +638,7 @@
       
         [EDITOR’S DRAFT]
       
-      02 October 2014
+      20 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
