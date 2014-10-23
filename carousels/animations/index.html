@@ -62,11 +62,11 @@
       
 
 
-      <p>Provide users with control over any animations in your carousel. Carousels typically periodically rotate the displayed items. Providing different ways for users to stop this animation is essential for people who might find the permanent changes distracting, and for people who need more time to read carousel items.</p>
+      <p>Carousels typically periodically rotate the displayed items. Provide users with control over any animations in your carousel. Providing different ways for users to stop this animation is essential for people who might find the changes distracting, and for people who need more time to read carousel items.</p>
 
 <h2 id="stop-button">Stop button</h2>
 
-<p>One common approach to control carousel animations is to provide a button to allow users to stop and resume the animations. In the example below, such a button is added to the <a href="/carousels/controls.html#indicating-carousel-items">carousel items indicator bar</a>. The button label and its function alternate, depending on whether the animation is currently on or off:</p>
+<p>One common approach to control carousel animations is to provide a button to allow users to stop and resume the animations. The example below, illustrates how such a button might be marked-up. The button label and its function alternate, depending on whether the animation is currently on or off:</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -199,7 +199,7 @@
 
 <style>
   .carousel, .slide {
-    width: 640px;
+    width: 480px;
     padding:0;
     margin: 0;
     overflow: hidden;
@@ -213,7 +213,7 @@
   }
   .slide {
     /*position: absolute;*/
-    height: 480px;
+    height: 360px;
     background-size: cover;
     position: relative;
     margin-bottom:1em;
@@ -246,7 +246,7 @@
   }
 
 .carousel.active {
-  height: 480px;
+  height: 360px;
   /* overflow:hidden; */
   border: 1px solid #333;
   position:relative;
@@ -847,7 +847,7 @@ c.init({
       
         [EDITOR’S DRAFT]
       
-      16 October 2014
+      21 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>

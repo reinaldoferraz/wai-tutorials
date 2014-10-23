@@ -62,7 +62,7 @@
       
 
 
-      <p>Provide functionality to display the carousel items one at a time, and to allow users to browse through them. This functionality is added using scripting, based structure of the elements involved.</p>
+      <p>Provide functionality using scripting to display the carousel items one at a time, and to allow users to browse through them.</p>
 
 <h2 id="displaying-carousel-items">Displaying carousel items</h2>
 
@@ -70,7 +70,7 @@
 
 <h3 class="ex" id="scripted-styling">Scripted styling</h3>
 
-<p>In the example below, JavaScript is used to add the class name <code>.active</code> to the carousel container. The styling for this class positions all carousel items all on top of each other and hides them. The class name <code>.current</code> is added to the one carousel item that is to be displayed, which ensure that it is on top of all other hidden carousel items.</p>
+<p>In the example below, JavaScript is used to add the class name <code>.active</code> to the carousel container. The styling hides all the slides in a stack with only the slide with the class name <code>.current</code> being visible on top.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: CSS</figcaption>
@@ -123,7 +123,7 @@
 
 <style>
   .carousel, .slide {
-    width: 640px;
+    width: 480px;
     padding:0;
     margin: 0;
   }
@@ -136,7 +136,7 @@
   }
   .slide {
     /*position: absolute;*/
-    height: 480px;
+    height: 360px;
     background-size: cover;
     position: relative;
     margin-bottom:1em;
@@ -171,7 +171,7 @@
 
 <style>
 .carousel.active {
-  height: 480px;
+  height: 360px;
   overflow: hidden;
   border: 1px solid #333;
   position:relative;
@@ -203,13 +203,13 @@
 
 <h2 id="switching-carousel-items">Switching carousel items</h2>
 
-<p>Scripting is further used to add buttons that allow users to switch back and forth between carousel items. While these buttons often have various styles visually, it is useful to code them using <code>&lt;button&gt;</code> elements. This gives them semantic meaning and also makes them more compatible with assistive technology and keyboard use. If the carousel uses <code>&lt;a&gt;</code> elements instead, a <code>href</code> attribute needs to be present to enable keyboard access. Additionally <code>role="button"</code> should be applied to the link so assistive technology users know that they expect an interaction on the page rather than a link to another page.</p>
+<p>Scripting is further used to add buttons that allow users to switch back and forth between carousel items. While these buttons have various visual styles, it is useful to code them using <code>&lt;button&gt;</code> elements. This gives them semantic meaning and also makes them more compatible with assistive technology and keyboard use. If the carousel uses <code>&lt;a&gt;</code> elements instead, a <code>href</code> attribute needs to be present to enable keyboard access. Additionally <code>role="button"</code> should be applied to the link so assistive technology users know that they expect an interaction on the page rather than a link to another page.</p>
 
 <h3 id="previous-and-next-buttons">Previous and next buttons</h3>
 
 <p>In the example below, JavaScript is used to generate code for the buttons and insert them onto the carousel. These particular buttons are visually displayed as arrows that overlay the carousel items. The images use the alternative text that reads "Previous Slide" and "Next Slide".</p>
 
-<p>A semi-transparent white background with black arrows was selected to ensure sufficient color contrast between the text and any background images in the carousel items. This is especially important for possibly noisy background images. Also, the buttons increase in size when users hover over them with the mouse to provide more click area for people with reduced dexterity. They also increase in size when they are focused by keyboard to better highlight to keyboard users where the current focus is.</p>
+<p>A semi-transparent white background with black arrows was selected to ensure sufficient color contrast between the text and any background images in the carousel items. This is especially important for noisy background images. Also, the buttons increase in size when users hover over them with the mouse to provide more click area for people with reduced dexterity. They also increase in size when they are focused by keyboard to better highlight where the current focus is.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: JavaScript</figcaption>
@@ -271,7 +271,7 @@
 <span class="p">}</span>
 </pre>
 </figure>
-<p>Additionally, an WAI-ARIA live region should be used to inform screen reader users which slide is now visible. Note that the slide does not receive focus as a user might want to skip several slides without navigating to the controls after every slide change.</p>
+<p>Additionally, a WAI-ARIA live region should be used to inform screen reader users which slide is now visible. Note that the slide does not receive focus as a user might want to skip several slides without navigating to the controls after every slide change.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: Extend event listeners</figcaption>
@@ -528,7 +528,7 @@
 
 <h2 class="newex" id="indicating-carousel-items">Indicating carousel items</h2>
 
-<p>Indicating the total number of carousel items and which one of them is currently being displayed helps users to orient themselves and find any information they need. Ideally this is done by a set of styled buttons that each represent a carousel item in the sequence. Providing these slide representations as buttons that can be activated allows users to browse more freely within the carousel items. Providing these buttons within a list, adds meaning and semantics to the content, such as the number and order of the carousel items.</p>
+<p>Indicating the total number of carousel items and which one of them is currently being displayed helps users to orient themselves. Ideally this is done by a set of styled buttons that each represent a carousel item in the sequence. Providing these buttons within a list, adds meaning and semantics to the content, such as the number and order of the carousel items.</p>
 
 <h3 class="ex" id="carousel-item-indicator">Carousel item indicator</h3>
 
@@ -1146,7 +1146,7 @@ c3.init({
       
         [EDITOR’S DRAFT]
       
-      17 October 2014
+      21 October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
