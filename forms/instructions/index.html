@@ -12,7 +12,7 @@
   &bull; WAI Web Accessibility Tutorials
   </title>
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-bcdab410.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-52696e28.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -27,7 +27,7 @@
   </header>
   <div class="with-side-menu">
     <a href="#nav" class="btn btn-jump" role="navigation">Jump to the navigation</a>
-<main role="main" class="content draft">
+<main role="main" class="content ">
   <article role="article">
     <header class="tutorial-heading">
       <nav class="breadcrumb" aria-label="Breadcrumbs" role="navigation">
@@ -47,10 +47,6 @@
       </h1>
     </header>
 
-    
-      <div class="status">
-        <p><strong>Status:</strong> This is an in-progress, unapproved draft.</p>
-      </div>
     
     
 
@@ -99,9 +95,9 @@
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
-  <div>
-    <label for="expire">Expiry date (MM/YYYY): </label> <input type="text" name="expire" id="expire">
-  </div>
+	<div>
+		<label for="expire">Expiry date (MM/YYYY): </label> <input type="text" name="expire" id="expire">
+	</div>
 </form>
 
 
@@ -125,13 +121,13 @@
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <ul>
-  <li>Extra help can be found immediately after each field.</li>
+	<li>Extra help can be found immediately after each field.</li>
 </ul>
 
 <form method="post" action="#">
-  <div>
-    <label for="expire2">Expiry date:</label> <input type="text" name="expire" id="expire2"> <span>(MM/YYYY)</span>
-  </div>
+	<div>
+		<label for="expire2">Expiry date:</label> <input type="text" name="expire" id="expire2"> <span>(MM/YYYY)</span>
+	</div>
 </form>
 
 
@@ -155,23 +151,23 @@
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <style>
-  #ex3 span {
-    display: inline-block;
-    vertical-align: top;
-  }
-  #ex3 span span {
-    display: block;
-    font-size: 0.8em;
-  }
+	#ex3 span {
+		display: inline-block;
+		vertical-align: top;
+	}
+	#ex3 span span {
+		display: block;
+		font-size: 0.8em;
+	}
 </style>
 <form method="post" action="#" id="ex3">
-  <div>
-    <label for="expire4">Expiry date:</label>
-    <span>
-      <input type="text" name="expire" id="expire4" aria-labelledby="expDesc2">
-      <span id="expDesc2">MM/YYYY</span>
-    </span>
-  </div>
+	<div>
+		<label for="expire4">Expiry date:</label>
+		<span>
+			<input type="text" name="expire" id="expire4" aria-labelledby="expDesc2">
+			<span id="expDesc2">MM/YYYY</span>
+		</span>
+	</div>
 </form>
 
 
@@ -181,8 +177,8 @@
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;span&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/span&gt;</span>
 </pre>
 
@@ -199,33 +195,33 @@
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
-  <div>
-    <label for="search">Search:</label> <input type="text" name="search" id="search" placeholder="e.g. Apple Pie">
-  </div>
-  <div>
-    <label for="email">Email: </label> <input type="text" name="email" id="email" placeholder="joe@example.com">
-  </div>
+	<div>
+		<label for="search">Search:</label> <input type="text" name="search" id="search" placeholder="e.g. Apple Pie">
+	</div>
+	<div>
+		<label for="email">Email: </label> <input type="text" name="email" id="email" placeholder="joe@example.com">
+	</div>
 </form>
 
 <style>
 ::-webkit-input-placeholder {
-   color: #777;
-   opacity: 1;
+	 color: #777;
+	 opacity: 1;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #777;
-   opacity: 1;
+	 color: #777;
+	 opacity: 1;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #777;
-   opacity: 1;
+	 color: #777;
+	 opacity: 1;
 }
 
 :-ms-input-placeholder {
-   color: #777;
-   opacity: 1;
+	 color: #777;
+	 opacity: 1;
 }
 </style>
 
@@ -235,10 +231,10 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span><span class="nt">&gt;</span>Search:<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"e.g. Apple Pie"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"search"</span><span class="nt">&gt;</span>Search:<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"e.g. Apple Pie"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"joe@example.com"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"joe@example.com"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre>
 
@@ -250,23 +246,23 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight css"><span class="o">:</span><span class="nd">:-webkit-input-placeholder</span> <span class="p">{</span>
-   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
-   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+	 <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+	 <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nd">:-moz-placeholder</span> <span class="p">{</span> <span class="c">/* Firefox 18- */</span>
-   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
-   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+	 <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+	 <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">:</span><span class="nd">:-moz-placeholder</span> <span class="p">{</span>  <span class="c">/* Firefox 19+ */</span>
-   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
-   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+	 <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+	 <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nd">:-ms-input-placeholder</span> <span class="p">{</span>
-   <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
-   <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+	 <span class="nl">color</span><span class="p">:</span> <span class="m">#777</span><span class="p">;</span>
+	 <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre>
 
@@ -867,7 +863,6 @@
 	<li><a href="../../tables/"><span class="count"></span><span class="txt">Tables</span></a></li>
 	<li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Forms</span></span></li>
 	<li><a href="../../carousels/"><span class="count"></span><span class="txt">Carousels</span></a></li>
-	<li><a href="../../more/"><span class="count"></span><span class="txt">More on the way…</span></a></li>
 </ul>
 
   </nav>
@@ -877,12 +872,11 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Last Modification:</strong>
+			<li><strong>Status &amp; Last Modification:</strong>
+			
       
-        [DRAFT]
       
-      
-      23 October 2014
+      October 2014
 			</li>
       <li>
 <strong>Editors: </strong>
