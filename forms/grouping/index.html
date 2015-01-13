@@ -60,7 +60,7 @@
 
       <p>Grouping related form controls makes forms more understandable for all users. Group them both visually and within the code. Use the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements to associate related form controls.</p>
 
-<h2 class="newex" id="associating-related-controls">Associating related controls</h2>
+<h2 class="newex" id="associating-related-controls-with-fieldset">Associating related controls with <code>fieldset</code></h2>
 
 <p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group. In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information.</p>
 
@@ -114,6 +114,38 @@
   <li>Make the individual labels sufficiently self-explanatory for situations in which legends are not read aloud, without repeating the legend in every label.</li>
 </ul>
 
+<h2 id="associating-related-controls-with-wai-aria">Associating related controls with WAI-ARIA</h2>
+
+<p>WAI-ARIA provides a grouping role that functions similarly to <code>fieldset</code> and <code>legend</code>.  In this example the <code>div</code> element has <code>role=group</code> to indicate that the contained elements are members of a group and the <code>aria-labelledby</code> attribute references the <code>id</code> for text that will serve as the label for the group.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+<div role="group" aria-labelledby="ssn1">
+   <span id="ssn1">Social Security#</span> 
+   <span style="color: #D90D0D;"> * </span>
+   <input size="3" type="text" aria-required="true" title="First 3 digits" />-
+   <input size="2" type="text" aria-required="true" title="Next 2 digits" />-
+   <input size="4" type="text" aria-required="true" title="Last 4 digits" />
+</div>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"ssn1"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"ssn1"</span><span class="nt">&gt;</span>Social Security#<span class="nt">&lt;/span&gt;</span> 
+   <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"color: #D90D0D;"</span><span class="nt">&gt;</span> * <span class="nt">&lt;/span&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"First 3 digits"</span> <span class="nt">/&gt;</span>-
+   <span class="nt">&lt;input</span> <span class="na">size=</span><span class="s">"2"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"Next 2 digits"</span> <span class="nt">/&gt;</span>-
+   <span class="nt">&lt;input</span> <span class="na">size=</span><span class="s">"4"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"Last 4 digits"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre>
+
+</figure>
 
 
       <div class="resources">
@@ -706,11 +738,11 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status &amp; Last Modification:</strong>
-			
-      
-      
-      December 2014
+			<li><strong>Status:</strong>
+				
+	      	Updated
+	      
+	      13 January 2015
 			</li>
       <li>
 <strong>Editors: </strong>

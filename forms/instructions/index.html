@@ -145,7 +145,7 @@
 </div>
 <h4 class="ap" id="using-wai-aria">Using WAI-ARIA</h4>
 
-<p>Another approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate the instructions with form elements. At the time of writing, this approach may not be fully supported by all web browsers and assistive technologies, especially by non-screen readers.</p>
+<p>Another approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate the instructions with form elements. At the time of writing, this approach may not be fully supported by all web browsers and assistive technologies, especially by non-screen readers. In this example the <code>for</code> and <code>id</code> attributes are used for backward compatibility.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -162,9 +162,9 @@
 </style>
 <form method="post" action="#" id="ex3">
 	<div>
-		<label for="expire4">Expiry date:</label>
+		<label id="expLabel" for="expire4">Expiry date:</label>
 		<span>
-			<input type="text" name="expire" id="expire4" aria-labelledby="expDesc2">
+			<input type="text" name="expire" id="expire4" aria-labelledby="expLabel expDesc2">
 			<span id="expDesc2">MM/YYYY</span>
 		</span>
 	</div>
@@ -175,9 +175,9 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"expLabel"</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;span&gt;</span>
-	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expLabel expDesc"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/span&gt;</span>
 </pre>
@@ -873,11 +873,11 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status &amp; Last Modification:</strong>
-			
-      
-      
-      December 2014
+			<li><strong>Status:</strong>
+				
+	      	Updated
+	      
+	      13 January 2015
 			</li>
       <li>
 <strong>Editors: </strong>

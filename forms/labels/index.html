@@ -64,6 +64,32 @@
 
 <p>Labels and their related form control must be associated with each other either implicitly or explicitly. This allows the browser to do things like use the label as a larger clickable area to access or activate the control, and ensures assistive technology can refer to the correct label when presenting a form control.</p>
 
+<h2 class="newex" id="associating-labels-explicitly">Associating labels explicitly</h2>
+
+<p>Use the <code>for</code> attribute of the <code>&lt;label&gt;</code> element to explicitly associate labels with their form controls. The value of the <code>for</code> attribute must exactly match the value of the <code>id</code> attribute for the referenced form element.</p>
+
+<p>This approach is more robust because it explicitly associates the labels with the form elements within the code. It allows the labels and form controls to be displayed separately, for example on a mobile device when only one of the controls can be displayed at a time. It is also independent of the HTML code structure, which is particularly useful when the label text and form element are not included within the same parent element in the HTML code – for example, when the form is designed to look like a table.</p>
+
+<p>WAI-ARIA provides a way to explicitly associate text on a web page with a form control, using the <code>aria-labelledby</code> attribute. This attribute references the <code>id</code> of an element containing text that can serve as a label for the control. Like other uses of ARIA, support for the use of the <code>aria-labelledby</code> attribute is still developing in user agents.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+	<label for="firstname">First name: </label>
+	<input type="text" name="firstname" id="firstname">
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: HTML</figcaption>
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name: <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span> <span class="na">id=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>
+</pre>
+
+</figure>
 <h2 class="newex" id="associating-labels-implicitly">Associating labels implicitly</h2>
 
 <p>The most basic way to associate labels with form controls is to provide both the label and the form control within the same <code>&lt;label&gt;</code> element. In the following example, the <code>&lt;input&gt;</code> element of type <code>text</code> allows users to provide their first name. This input field is embedded inside a <code>&lt;label&gt;</code> element with the text "First name:", to indicate the purpose of the input field to the user:</p>
@@ -81,59 +107,6 @@
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;label&gt;</span>First name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span><span class="nt">&gt;&lt;/label&gt;</span>
-</pre>
-
-</figure>
-<h2 class="newex" id="associating-labels-explicitly">Associating labels explicitly</h2>
-
-<p>Use the <code>for</code> attribute of the <code>&lt;label&gt;</code> element to explicitly associate labels with their form controls. The value of the <code>for</code> attribute must exactly match the value of the <code>id</code> attribute for the referenced form element.</p>
-
-<p>This approach is more robust because it explicitly associates the labels with the form elements within the code. It allows the labels and form controls to be displayed separately, for example on a mobile device when only one of the controls can be displayed at a time. It is also independent of the HTML code structure, which is particularly useful when the label text and form element are not included within the same parent element in the HTML code – for example, when the form is designed to look like a table.</p>
-
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<div>All fields marked (required) must be completed.</div>
-<form method="post" action="#" id="expl_label_form">
-	<div>
-		<div>
-			<label for="firstname">First name: </label>
-		</div>
-		<div>
-			<input type="text" name="firstname" id="firstname">
-		</div>
-	</div>
-</form>
-
-<style>
-	#expl_label_form {display:table}
-	#expl_label_form>div {display:table-row}
-	#expl_label_form>div>div {display:table-cell;}
-</style>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: HTML</figcaption>
-<pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"expl_label_form"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;div&gt;</span>
-			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name: <span class="nt">&lt;/label&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-		<span class="nt">&lt;div&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"firstname"</span> <span class="na">id=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-</pre>
-
-</figure>
-<figure class="code ">
-  <figcaption>Code snippet: CSS</figcaption>
-<pre class="highlight css"><span class="nf">#expl_label_form</span> <span class="p">{</span><span class="nl">display</span><span class="p">:</span><span class="n">table</span><span class="p">;}</span>
-<span class="nf">#expl_label_form</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span><span class="nl">display</span><span class="p">:</span><span class="nb">table-row</span><span class="p">;}</span>
-<span class="nf">#expl_label_form</span><span class="o">&gt;</span><span class="nt">div</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span><span class="nl">display</span><span class="p">:</span><span class="nb">table-cell</span><span class="p">;}</span>
 </pre>
 
 </figure>
@@ -212,7 +185,7 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
 </pre>
 
@@ -316,7 +289,7 @@
 </pre>
 
 </figure>
-<h2 class="newex" id="using-the-title-attribute">Using the <code>title</code> attribute</h2>
+<h4 class="newex" id="using-the-title-attribute">Using the <code>title</code> attribute</h4>
 
 <p>The <code>title</code> attribute can be used to identify form elements. This approach is generally less reliable and not recommended because some screen readers and assistive technology do not interpret the <code>title</code> attribute as a replacement for the label element, possibly because the <code>title</code> attribute is often used to provide non-essential information. The information of the <code>title</code> attribute is shown to visual users as a tool tip when hovering over the form field with the mouse.</p>
 
@@ -325,7 +298,7 @@
   <div class="box-content">
 <form method="post" action="#">
 	<div>
-		<input title="Search" type="text" name="search" id="search2">
+		<input title="Search" type="text" name="search">
 		<button type="button">Search</button>
 	</div>
 </form>
@@ -335,31 +308,7 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">title=</span><span class="s">"Search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
-</pre>
-
-</figure>
-<h2 class="newex" id="using-the-aria-label-attribute">Using the <code>aria-label</code> attribute</h2>
-
-<p>The <code>aria-label</code> attribute can also be used to identify form elements. This approach is generally well understood by screen readers and other assistive technology, but, unlike the <code>title</code> attribute, does not convey the information to visual users.</p>
-
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<form method="post" action="#">
-	<div>
-		<input aria-label="Search" type="text" name="search" id="search2">
-		<button type="button">Search</button>
-	</div>
-</form>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;input</span>  <span class="na">aria-label=</span><span class="s">"Search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">title=</span><span class="s">"Search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"search"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
 </pre>
 
@@ -658,8 +607,6 @@
         
       
         
-          
-            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G162">G162: Positioning labels to maximize predictability of relationships</a></li>
           
         
       
@@ -974,11 +921,11 @@
     <div>
 		<h2>Document info</h2>
 		<ul>
-			<li><strong>Status &amp; Last Modification:</strong>
-			
-      
-      
-      January 2015
+			<li><strong>Status:</strong>
+				
+	      	Updated
+	      
+	      13 January 2015
 			</li>
       <li>
 <strong>Editors: </strong>
