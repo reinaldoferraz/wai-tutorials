@@ -60,11 +60,15 @@
 
       <p>Grouping related form controls makes forms more understandable for all users. Group them both visually and within the code. Use the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements to associate related form controls.</p>
 
-<h2 class="newex" id="associating-related-controls-with-fieldset">Associating related controls with <code>fieldset</code></h2>
+<h2 class="ap" id="associating-related-controls-with-fieldset">Associating related controls with <code>fieldset</code></h2>
 
-<p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group. In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information.</p>
+<p>The <code>&lt;fieldset&gt;</code> element provides a container for related form elements, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group.</p>
 
 <p>The legend for a group of controls can also highlight common attributes of all controls, for example state the fact that all fields in the group are required.</p>
+
+<h3 class="ex" id="to-group-checkboxes">… to group checkboxes</h3>
+
+<p>In the example below there are three checkboxes that are all part of an opt-in function for receiving different types of information.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -84,7 +88,6 @@
 </fieldset>
 </form>
 
-
   </div></figure>
 
 <figure class="code ">
@@ -92,17 +95,89 @@
 <pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
 <span class="nt">&lt;legend&gt;</span>I want to receive<span class="nt">&lt;/legend&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
+	[…]
+<span class="nt">&lt;/fieldset&gt;</span>
+</pre>
+
+</figure>
+<h3 class="ex" id="to-group-related-fields">… to group related fields</h3>
+
+<p>This example shows form fields to enter shipping and invoice addresses. As the labels in both groups have the same text, a <code>fieldset</code> is added to indicate which fields belong together.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+	<fieldset style="float:left;">
+		<legend>Shipping Address:</legend>
+		<div>
+			<label for="shipping_name">Name:</label><br>
+			<input type="text" name="shipping_name" id="shipping_name">
+		</div>
+		<div>
+			<label for="shipping_street">Street:</label><br>
+			<input type="text" name="shipping_street" id="shipping_street">
+		</div>
+		<div>
+			<label for="shipping_number">Number:</label><br>
+			<input type="text" name="shipping_number" id="shipping_number">
+		</div>
+		<div>
+			<label for="shipping_city">City:</label><br>
+			<input type="text" name="shipping_city" id="shipping_city">
+		</div>
+		<div>
+			<label for="shipping_zip">ZIP code:</label><br>
+			<input type="text" name="shipping_zip" id="shipping_zip">
+			</div>
+	</fieldset>
+	<fieldset style="float:left;">
+		<legend>Invoice Address:</legend>
+		<div>
+			<label for="invoice_name">Name:</label><br>
+			<input type="text" name="invoice_name" id="invoice_name">
+		</div>
+		<div>
+			<label for="invoice_street">Street:</label><br>
+			<input type="text" name="invoice_street" id="invoice_street">
+		</div>
+		<div>
+			<label for="invoice_number">Number:</label><br>
+			<input type="text" name="invoice_number" id="invoice_number">
+		</div>
+		<div>
+			<label for="invoice_city">City:</label><br>
+			<input type="text" name="invoice_city" id="invoice_city">
+		</div>
+		<div>
+			<label for="invoice_zip">ZIP code:</label><br>
+			<input type="text" name="invoice_zip" id="invoice_zip">
+		</div>
+	</fieldset>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
+	<span class="nt">&lt;legend&gt;</span>Shipping Address:<span class="nt">&lt;/legend&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"company_offers"</span> <span class="na">id=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_2"</span><span class="nt">&gt;</span>Offers from the company<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"shipping_name"</span> <span class="na">id=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
+	[…]
+<span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;fieldset&gt;</span>
+	<span class="nt">&lt;legend&gt;</span>Invoice Address:<span class="nt">&lt;/legend&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"assoc_offers"</span> <span class="na">id=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_3"</span><span class="nt">&gt;</span>Offers from associated companies<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"invoice_name"</span> <span class="na">id=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
+	[…]
 <span class="nt">&lt;/fieldset&gt;</span>
 </pre>
 
@@ -114,21 +189,62 @@
   <li>Make the individual labels sufficiently self-explanatory for situations in which legends are not read aloud, without repeating the legend in every label.</li>
 </ul>
 
-<h2 id="associating-related-controls-with-wai-aria">Associating related controls with WAI-ARIA</h2>
+<h2 class="ap" id="associating-related-controls-with-wai-aria">Associating related controls with WAI-ARIA</h2>
 
 <p>WAI-ARIA provides a grouping role that functions similarly to <code>fieldset</code> and <code>legend</code>.  In this example the <code>div</code> element has <code>role=group</code> to indicate that the contained elements are members of a group and the <code>aria-labelledby</code> attribute references the <code>id</code> for text that will serve as the label for the group.</p>
+
+<p>This technique provides additional styling possibilities.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
-<div role="group" aria-labelledby="ssn1">
-   <span id="ssn1">Social Security#</span> 
-   <span style="color: #D90D0D;"> * </span>
-   <input size="3" type="text" aria-required="true" title="First 3 digits" />-
-   <input size="2" type="text" aria-required="true" title="Next 2 digits" />-
-   <input size="4" type="text" aria-required="true" title="Last 4 digits" />
-</div>
+	<div role="group" aria-labelledby="shipping_head" style="float:left; border: 1px solid #333; padding: 0 .5em .5em; margin-right: 1em;">
+		<div id="shipping_head" style="font-weight: bold; padding: .25em 0;">Shipping Address:</div>
+		<div>
+			<label for="aria_shipping_name">Name:</label><br>
+			<input type="text" name="aria_shipping_name" id="aria_shipping_name">
+		</div>
+		<div>
+			<label for="aria_shipping_street">Street:</label><br>
+			<input type="text" name="aria_shipping_street" id="aria_shipping_street">
+		</div>
+		<div>
+			<label for="aria_shipping_number">Number:</label><br>
+			<input type="text" name="aria_shipping_number" id="aria_shipping_number">
+		</div>
+		<div>
+			<label for="aria_shipping_city">City:</label><br>
+			<input type="text" name="aria_shipping_city" id="aria_shipping_city">
+		</div>
+		<div>
+			<label for="aria_shipping_zip">ZIP code:</label><br>
+			<input type="text" name="aria_shipping_zip" id="aria_shipping_zip">
+			</div>
+	</div>
+	<div role="group" aria-labelledby="invoice_head" style="float:left; border: 1px solid #333; padding:0 .5em .5em;">
+		<div id="invoice_head" style="font-weight: bold; padding: .25em 0;">Invoice Address:</div>
+		<div>
+			<label for="aria_invoice_name">Name:</label><br>
+			<input type="text" name="aria_invoice_name" id="aria_invoice_name">
+		</div>
+		<div>
+			<label for="aria_invoice_street">Street:</label><br>
+			<input type="text" name="aria_invoice_street" id="aria_invoice_street">
+		</div>
+		<div>
+			<label for="aria_invoice_number">Number:</label><br>
+			<input type="text" name="aria_invoice_number" id="aria_invoice_number">
+		</div>
+		<div>
+			<label for="aria_invoice_city">City:</label><br>
+			<input type="text" name="aria_invoice_city" id="aria_invoice_city">
+		</div>
+		<div>
+			<label for="aria_invoice_zip">ZIP code:</label><br>
+			<input type="text" name="aria_invoice_zip" id="aria_invoice_zip">
+		</div>
+	</div>
 </form>
 
 
@@ -136,12 +252,21 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"ssn1"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"ssn1"</span><span class="nt">&gt;</span>Social Security#<span class="nt">&lt;/span&gt;</span> 
-   <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"color: #D90D0D;"</span><span class="nt">&gt;</span> * <span class="nt">&lt;/span&gt;</span>
-   <span class="nt">&lt;input</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"First 3 digits"</span> <span class="nt">/&gt;</span>-
-   <span class="nt">&lt;input</span> <span class="na">size=</span><span class="s">"2"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"Next 2 digits"</span> <span class="nt">/&gt;</span>-
-   <span class="nt">&lt;input</span> <span class="na">size=</span><span class="s">"4"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"Last 4 digits"</span> <span class="nt">/&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"shipping_head"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"shipping_head"</span><span class="nt">&gt;</span>Shipping Address:<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"shipping_name"</span> <span class="na">id=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	[…]
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>Invoice Address:<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"invoice_name"</span> <span class="na">id=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	[…]
 <span class="nt">&lt;/div&gt;</span>
 </pre>
 
@@ -742,7 +867,10 @@
 				
 	      	Updated
 	      
-	      13 January 2015
+	      15 January 2015
+	      
+		      
+		    
 			</li>
       <li>
 <strong>Editors: </strong>
@@ -779,6 +907,6 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-9e16c3e8.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-d88511f3.js" type="text/javascript"></script>
 	</body>
 </html>
