@@ -13,7 +13,7 @@
   </title>
   <link rel="canonical" href="http://www.w3.org/WAI/tutorials/forms/grouping/" />
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-9e26cbc5.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-6fbbd3ea.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -272,6 +272,59 @@
 </pre>
 
 </figure>
+<h2 id="group-items-in-select-elements">Group items in <code>select</code> elements</h2>
+
+<p>For <code>select</code> elements with groups of options, the <code>optgroup</code> element can be used to indicate such groups. <code>Optgroup</code>’s <code>label</code> attribute is used to label the group. This is especially useful for lists with many options. In the example below, the user can chose from a lectures in one of three courses.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<form action="#" method="get">
+	<p>
+		Which course would you like to watch today?<br>
+		<label id="course">Course:</label>
+		<select name="course" id="course">
+			<option></option>
+			<optgroup label="8.01 Physics I: Classical Mechanics">
+				<option value="8.01.1">Lecture 01: Powers of Ten</option>
+				<option value="8.01.2">Lecture 02: 1D Kinematics</option>
+				<option value="8.01.3">Lecture 03: Vectors</option>
+			</optgroup>
+			<optgroup label="8.02 Physics II: Electricity and Magnestism">
+				<option value="8.02.1">Lecture 01: What holds our world together?</option>
+				<option value="8.02.2">Lecture 02: Electric Field</option>
+				<option value="8.02.3">Lecture 03: Electric Flux</option>
+			</optgroup>
+			<optgroup label="8.03 Physics III: Vibrations and Waves">
+				<option value="8.03.1">Lecture 01: Periodic Phenomenon</option>
+				<option value="8.03.2">Lecture 02: Beats</option>
+				<option value="8.03.3">Lecture 03: Forced Oscillations with Damping</option>
+			</optgroup>
+		</select>
+		<input type=submit value="▶ Play">
+	</p>
+</form>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;select&gt;</span>
+	<span class="nt">&lt;optgroup</span> <span class="na">label=</span><span class="s">"8.01 Physics I: Classical Mechanics"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8.01.1"</span><span class="nt">&gt;</span>Lecture 01: Powers of Ten<span class="nt">&lt;/option&gt;</span>
+		<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8.01.2"</span><span class="nt">&gt;</span>Lecture 02: 1D Kinematics<span class="nt">&lt;/option&gt;</span>
+		<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8.01.3"</span><span class="nt">&gt;</span>Lecture 03: Vectors<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;/optgroup&gt;</span>
+	<span class="nt">&lt;optgroup</span> <span class="na">label=</span><span class="s">"8.02 Physics II: Electricity and Magnestism"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8.02.1"</span><span class="nt">&gt;</span>Lecture 01: What holds our world together?<span class="nt">&lt;/option&gt;</span>
+		[…]
+	<span class="nt">&lt;/optgroup&gt;</span>
+	[…]
+<span class="nt">&lt;/select&gt;</span>
+</pre>
+
+</figure>
 
 
       <div class="resources">
@@ -405,6 +458,12 @@
 	        
 	      
 	        
+	          
+	        
+	      
+	        
+	          
+	            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/ARIA17">ARIA17: Using grouping roles to identify related form controls</a></li>
 	          
 	        
 	      
@@ -704,6 +763,12 @@
 	      
 	        
 	          
+	            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/H85">H85: Using OPTGROUP to group OPTION elements inside a SELECT</a></li>
+	          
+	        
+	      
+	        
+	          
 	        
 	      
 	        
@@ -789,10 +854,6 @@
         
         
       
-        
-        
-        
-      
     
   </ul>
 </div>
@@ -853,10 +914,6 @@
             <li><a class="" href="../custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
           
         
-          
-            <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">Tips and Tricks</span></a></li>
-          
-        
       
     </ul>
     <h2 class="list-heading" id="list-heading-topics">
@@ -882,7 +939,7 @@
 				
 	      	Updated
 	      
-	      15 January 2015
+	      22 January 2015
 	      
 		      
 		    

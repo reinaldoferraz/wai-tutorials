@@ -13,7 +13,7 @@
   </title>
   <link rel="canonical" href="http://www.w3.org/WAI/tutorials/forms/multi-page/" />
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-9e26cbc5.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-6fbbd3ea.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -123,19 +123,64 @@ Survey <progress max="7" value="6">(Step 6 of circa 7)</progress><br>
 
 Survey <progress max="7" value="7">(Finished)</progress>
 
+<style>
+progress {
+  color: #036;
+  font-size: .6em;
+  line-height: 1.5em;
+  text-indent: .5em;
+  width: 15em;
+  height: 1em;
+  border: 1px solid #036;
+  border-radius: 1em;
+  background: #fff;
+  overflow:hidden;
+}
+
+progress::-webkit-progress-bar {
+	background-color:#036;
+}
+
+progress::-moz-progress-bar {
+	background-color:#036;
+}
+</style>
+
 
   </div></figure>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html">
-Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>(Step 2 of circa 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
+<pre class="highlight html">Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>(Step 2 of circa 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
 
 Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>(Step 3 of circa 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
 
 Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>(Step 6 of circa 7)<span class="nt">&lt;/progress&gt;&lt;br&gt;</span>
 
 Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span class="s">"7"</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>(Finished)<span class="nt">&lt;/progress&gt;</span>
+</pre>
+
+</figure>
+<p>The progress element, like other form elements, is a component from the operating system rendered directly on the web site. Those components are animated in some operating systems which would violate WCAG 2.0’s <a href="http://www.w3.org/TR/WCAG20/#time-limits-pause">2.2.2 Pause, Stop, Hide</a> success criterion that requires that users are able to disable an animation that starts automatically, lasts more than 5 seconds and is presented in parallel with other content.</p>
+
+<p>The animation can be stopped by using custom styling with browser-specific CSS as shown below.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight css"><span class="c">/* Microsoft IE */</span>
+<span class="nt">progress</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Apple Safari and Google Chrome */</span>
+<span class="nt">progress</span><span class="o">:</span><span class="nd">:-webkit-progress-bar</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Mozilla Firefox */</span>
+<span class="nt">progress</span><span class="o">:</span><span class="nd">:-moz-progress-bar</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#036</span><span class="p">;</span>
+<span class="p">}</span>
 </pre>
 
 </figure>
@@ -557,6 +602,10 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
 	      
 	        
 	          
+	        
+	      
+	        
+	          
 	            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/G133">G133: Providing a checkbox on the first page of a multipart form that allows users to ask for longer session time limit or no session time limit</a></li>
 	          
 	        
@@ -729,6 +778,10 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
 	      
 	        
 	          
+	        
+	      
+	        
+	          
 	            <li><a href="http://www.w3.org/TR/WCAG20-TECHS/SCR1">SCR1: Allowing the user to extend the default time limit</a></li>
 	          
 	        
@@ -806,10 +859,6 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
           </li>
         
       
-        
-        
-        
-      
     
   </ul>
 </div>
@@ -870,10 +919,6 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
             <li><a class="" href="../custom-controls/"><span class="count"></span><span class="txt">Custom Controls</span></a></li>
           
         
-          
-            <li class="tips"><a class="" href="../tips/"><span class="count"></span><span class="txt">Tips and Tricks</span></a></li>
-          
-        
       
     </ul>
     <h2 class="list-heading" id="list-heading-topics">
@@ -899,7 +944,7 @@ Survey <span class="nt">&lt;progress</span> <span class="na">max=</span><span cl
 				
 	      	Updated
 	      
-	      09 December 2014
+	      23 January 2015
 	      
 		      
 		    
