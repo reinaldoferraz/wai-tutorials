@@ -13,7 +13,7 @@
   </title>
   <link rel="canonical" href="http://www.w3.org/WAI/tutorials/images/tips/" />
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-0e66a5f6.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-81f4f8a4.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -98,17 +98,15 @@ Usually there’s no need to include words like “image”, “icon” or “pi
         <p>SVG graphics can be referenced in the <code>src</code> attribute of an <code>&lt;img&gt;</code> element like other image formats (PNG, JPEG, GIF). In this case the examples of this tutorial apply can be used with SVG as well.</p>
       </li>
       <li>
-        <p>As SVG images consists of tags like HTML, their code can also be used in HTML5 directly. In this case you can provide alternative text in a <code>&lt;title&gt;</code> element within the SVG image.</p>
+        <p>As SVG images consists of tags like HTML, their code can also be used in HTML5 directly. In this case you can provide alternative text in a <code>&lt;title&gt;</code> element within the SVG image. To improve accessibility support, that title should be referenced from an <code>aria-labelledby</code> attribute of the <code>&lt;svg&gt;</code> element, for example:</p>
+
+        <p><code>&lt;svg aria-labelledby="svgtitle1"&gt; &lt;title id="svgtitle1"&gt;Settings&lt;/title&gt; [other svg code] &lt;/svg&gt;</code></p>
       </li>
     </ul>
   </li>
   <li>
     <p><strong>Logos:</strong> <br />
 Logo images with text are exempt from some of the accessibility requirements. For instance, there is no minimum contrast requirement.</p>
-  </li>
-  <li>
-    <p><strong>Images are important:</strong><br />
-Images and graphics make content more pleasant and easier to understand for everyone, and in particular for people with cognitive and learning disabilities. They serve as cues that visually impaired people who are using screen magnification often use to orient themselves in the content. Also, screen reader users can benefit from these cues and structure that images sometimes add to the content. Make sure that images are properly described with appropriate text alternatives to provide easy access to your content to as many people as possible.</p>
   </li>
 </ul>
 
@@ -262,7 +260,7 @@ Images and graphics make content more pleasant and easier to understand for ever
 				
 	      	Updated
 	      
-	      09 December 2014
+	      29 January 2015
 	      
 		      
 		      (first published September 2013)

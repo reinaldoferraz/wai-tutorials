@@ -13,7 +13,7 @@
   </title>
   <link rel="canonical" href="http://www.w3.org/WAI/tutorials/images/imagemap/" />
   <meta name="viewport" content="width=device-width">
-  <link href="../../stylesheets/wai-act-0e66a5f6.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="../../stylesheets/wai-act-81f4f8a4.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
 </head>
 <body class="texts">
@@ -63,7 +63,7 @@
 
 <h2 class="ex" id="an-organizational-chart-with-links-to-individual-pages">An organizational chart with links to individual pages</h2>
 
-<p>The following organizational chart is used to provide links to each director's home page. The text alternative for the image is “Board of Directors and related staff:”. Each linked <code>&lt;area&gt;</code> has a text alternative to identify the individual – for example, “Davy Jones: Chairman”.</p>
+<p>The following organizational chart is used to provide links to each director's home page. The text alternative for the image is “Board of Directors and related staff:”. Each linked <code>&lt;area&gt;</code> has a text alternative to identify the individual – for example, “Davy Jones: Chairman”. The alternative text for individuals also state their relation in the graph.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -73,9 +73,9 @@
 <map name="Map" id="Map">
 	<area shape="rect" coords="176,14,323,58" href="../res/beyond" alt="Davy Jones: Chairman" />
 	<area shape="rect" coords="81,75,226,114" href="../res/beyond" alt="Carole Brewster: Company Secretary" />
-	<area shape="rect" coords="6,138,155,182" href="../res/beyond" alt="Harry H Brown: Marketing Director" />
-	<area shape="rect" coords="175,138,323,182" href="../res/beyond" alt="Paula Holbein: Sales Director" />
-	<area shape="rect" coords="345,136,496,186" href="../res/beyond" alt="Hugh Howard: Finance Director" />
+	<area shape="rect" coords="6,138,155,182" href="../res/beyond" alt="Harry H Brown: Marketing Director (reports to chairman)" />
+	<area shape="rect" coords="175,138,323,182" href="../res/beyond" alt="Paula Holbein: Sales Director (reports to chairman)" />
+	<area shape="rect" coords="345,136,496,186" href="../res/beyond" alt="Hugh Howard: Finance Director (reports to chairman)" />
 </map>
 
 
@@ -89,8 +89,13 @@
 <span class="nt">&lt;map</span> <span class="na">id=</span><span class="s">"Map"</span> <span class="na">name=</span><span class="s">"Map"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;area</span> <span class="na">shape=</span><span class="s">"rect"</span>
 	      <span class="na">coords=</span><span class="s">"176,14,323,58"</span>
-	      <span class="na">href=</span><span class="s">"…"</span>
+	      <span class="na">href=</span><span class="s">"[…]"</span>
 	      <span class="na">alt=</span><span class="s">"Davy Jones: Chairman"</span><span class="nt">&gt;</span>
+	[…]
+	<span class="nt">&lt;area</span> <span class="na">shape=</span><span class="s">"rect"</span>
+	      <span class="na">coords=</span><span class="s">"6,138,155,182"</span>
+	      <span class="na">href=</span><span class="s">"[…]"</span>
+	      <span class="na">alt=</span><span class="s">"Harry H Brown: Marketing Director (reports to chairman)"</span><span class="nt">&gt;</span>
 	[…]
 <span class="nt">&lt;/map&gt;</span>
 </pre>
@@ -98,11 +103,15 @@
 </figure>
 <p><a href="../examples/imagemap/">Full code for Image map example</a></p>
 
+<p>Browser implementation for image maps varies at the time of writing, see <a href="https://lists.w3.org/Archives/Public/public-html-bugzilla/2015Jan/0020.html">this HTML bug</a>. To accommodate for the different implementations, keep in mind to</p>
+
+<ul>
+  <li>use every image map only once. That means if multiple images with the same map are to be used, the map should be duplicated and have a different <code>id</code>s;</li>
+  <li>place the <code>&lt;map&gt;</code> element as a direct sibling to the image.</li>
+</ul>
+
 <div class="notes ">
-<p><strong>Note:</strong> Image maps may not function correctly on some mobile devices
-if the coordinates for the areas are not scaled using the same proportions
-as the image. To compensate for this you could provide redundant text links on
-the same page.</p>
+<p><strong>Note:</strong> Image maps may not function correctly on some mobile devices if the coordinates for the areas are not scaled using the same proportions as the image. To compensate for this you could provide redundant text links on the same page.</p>
 
 </div>
 
@@ -115,6 +124,10 @@ the same page.</p>
 	  
 	    <p><strong>Techniques:</strong></p>
 	    <ul>
+	      
+	        
+	          
+	        
 	      
 	        
 	          
@@ -624,7 +637,7 @@ the same page.</p>
 				
 	      	Updated
 	      
-	      09 December 2014
+	      29 January 2015
 	      
 		      
 		      (first published September 2013)
