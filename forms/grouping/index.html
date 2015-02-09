@@ -69,6 +69,47 @@
 
 <p>The legend for a group of controls can also highlight common attributes of all controls, for example state the fact that all fields in the group are required.</p>
 
+<h3 class="ex inap" id="to-group-radio-buttons">… to group radio buttons</h3>
+
+<p>In the example below, there are three radio buttons that allows the user to chose an output format. Radio button groups should always be grouped using <code>&lt;fieldset&gt;</code>.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<form method="post" action="#">
+<fieldset>
+<legend>Output format</legend>
+  <div>
+    <input type="radio" name="format" id="txt" value="txt" checked> <label for="txt">Text file</label>
+  </div>
+  <div>
+    <input type="radio" name="format" id="csv" value="csv"> <label for="csv">CSV file</label>
+  </div>
+  <div>
+    <input type="radio" name="format" id="html" value="HTML"> <label for="html">HTML file</label>
+  </div>
+</fieldset>
+</form>
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
+<span class="nt">&lt;legend&gt;</span>Output format<span class="nt">&lt;/legend&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"format"</span> <span class="na">id=</span><span class="s">"txt"</span> <span class="na">value=</span><span class="s">"txt"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"txt"</span><span class="nt">&gt;</span>Text file<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"format"</span> <span class="na">id=</span><span class="s">"csv"</span> <span class="na">value=</span><span class="s">"csv"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"csv"</span><span class="nt">&gt;</span>CSV file<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  […]
+<span class="nt">&lt;/fieldset&gt;</span>
+</pre>
+
+</figure>
 <h3 class="ex inap" id="to-group-checkboxes">… to group checkboxes</h3>
 
 <p>In the example below, there are three checkboxes that are all part of an opt-in function for receiving different types of information.</p>
@@ -98,7 +139,8 @@
 <pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
 <span class="nt">&lt;legend&gt;</span>I want to receive<span class="nt">&lt;/legend&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"newsletter"</span> <span class="na">id=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check_1"</span><span class="nt">&gt;</span>The weekly newsletter<span class="nt">&lt;/label&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 	[…]
 <span class="nt">&lt;/fieldset&gt;</span>
@@ -963,7 +1005,7 @@
 				
 	      	Updated
 	      
-	      06 February 2015
+	      09 February 2015
 	      
 		      
 		    
