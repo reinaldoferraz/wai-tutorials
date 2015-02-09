@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  Multi-directional Tables
+  Regular Tables
   
     
        &bull; Tables
@@ -11,7 +11,7 @@
   
   &bull; WAI Web Accessibility Tutorials
   </title>
-  <link rel="canonical" href="http://www.w3.org/WAI/tutorials/tables/multi-directional/" />
+  <link rel="canonical" href="http://www.w3.org/WAI/tutorials/tables/regular/" />
   <meta name="viewport" content="width=device-width">
   <link href="../../stylesheets/wai-act-81f4f8a4.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../../javascripts/modernizr-a1c597b5.js" type="text/javascript"></script>
@@ -39,12 +39,12 @@
               <a class="" href="../"><span class="count"></span><span class="txt">Tables</span></a> <span class="icon icon-chevron-right"></span><span class="visuallyhidden">»</span>
             
             
-            <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Multi-directional Tables</span></span>
+            <span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Regular Tables</span></span>
           </span>
         </p>
       </nav>
       <h1>
-        Multi-directional Tables
+        Regular Tables
       </h1>
     </header>
 
@@ -59,181 +59,9 @@
       
 
 
-      <p>When a table is more complex or the direction of its headers is not easy to distinguish, it is necessary to mark up the table headers using the <code>&lt;th&gt;</code> element and use the <code>scope</code> attribute to declare the direction of each header. Use the values of <code>row</code> or <code>col</code> of the <code>scope</code> attribute to denote that a header applies to the entire row or column, respectively.</p>
+      <p>It is necessary to indicate what table data cell is labelled by each table heading cell, when a table includes a more complex heading structure than <a href="../simple/">Simple Tables</a>. To accomplish this authors can mark up the table headers using the <code>&lt;th&gt;</code> element and use the <code>scope</code> attribute to declare the direction of each header. Use the values of <code>row</code> or <code>col</code> of the <code>scope</code> attribute to denote that a header applies to the entire row or column, respectively.</p>
 
-<p>Additionally, you can use the <code>&lt;caption&gt;</code> element to identify the table in a document. This is particularly useful for screen-reader users browsing the web page in “tables mode” where they can navigate from table to table. The <a href="../caption-summary/">Caption &amp; Summary</a> page provides more background and guidance on the using <code>&lt;caption&gt;</code> element.</p>
-
-<h2 class="ex" id="table-with-ambiguous-data">Table with ambiguous data</h2>
-
-<p>In this example the first and last names and cities can’t be distinguished from one another without the appropriate header information. By using the <code>scope</code> element with the value <code>col</code>, the data cells are clearly associated with their header cells “Last Name”, “First Name” and “City”.</p>
-
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<table>
-	<caption>Teddy bear collectors:</caption>
-  <tr>
-    <th scope="col">Last Name</th>
-    <th scope="col">First Name</th>
-    <th scope="col">City</th>
-  </tr>
-  <tr>
-    <td>Phoenix</td>
-    <td>Imari</td>
-    <td>Henry</td>
-  </tr>
-  <tr>
-    <td>Zeki</td>
-    <td>Rome</td>
-    <td>Min</td>
-  </tr>
-  <tr>
-    <td>Apirka</td>
-    <td>Kelly</td>
-    <td>Brynn</td>
-  </tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Last Name<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>First Name<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>City<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Phoenix<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Imari<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Henry<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Zeki<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Rome<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Min<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Apirka<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Kelly<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Brynn<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<h2 class="ex" id="table-with-header-cells-in-one-column-only">Table with header cells in one column only</h2>
-
-<p>The following tables of countries and their capital cities has the first column with the country names marked up as <code>&lt;th&gt;</code> cells. It needs the <code>scope</code> attribute with the value of <code>row</code> to declare the applicability of each header cell. Otherwise some screen readers will associate header cells with other header cells because they are in the same column. For example in the cell marked “Holland” some screen readers will read “Belgium – France – Holland” if the <code>scope</code> attribute is not provided.</p>
-
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<table>
-  <caption>
-    Capital cities
-  </caption>
-  <tr>
-    <th scope="row">Belgium</th>
-    <td>Brussels</td>
-  </tr>
-  <tr>
-    <th scope="row">France</th>
-    <td>Paris</td>
-  </tr>
-  <tr>
-    <th scope="row">Holland</th>
-    <td>Amsterdam</td>
-  </tr>
-  <tr>
-    <th scope="row">Luxembourg</th>
-    <td>Luxembourg</td>
-  </tr>
-  <tr>
-    <th scope="row">Spain</th>
-    <td>Madrid</td>
-  </tr>
-  <tr>
-    <th scope="row">UK</th>
-    <td>London</td>
-  </tr>
-</table>
-
-
-  </div></figure>
-
-<h3 id="further-improvement">Further improvement</h3>
-
-<p>Building on the example above, adding a header row can help to make the table even clearer and describe the content of the data cells better.</p>
-
-<figure class="sample ">
-  <figcaption>Example: </figcaption>
-  <div class="box-content">
-<table>
-  <caption>
-    Capital cities
-  </caption>
-  <tr>
-    <th scope="col">Country</th>
-    <th scope="col">Capital city</th>
-  </tr>
-  <tr>
-    <th scope="row">Belgium</th>
-    <td>Brussels</td>
-  </tr>
-  <tr>
-    <th scope="row">France</th>
-    <td>Paris</td>
-  </tr>
-  <tr>
-    <th scope="row">Holland</th>
-    <td>Amsterdam</td>
-  </tr>
-  <tr>
-    <th scope="row">Luxembourg</th>
-    <td>Luxembourg</td>
-  </tr>
-  <tr>
-    <th scope="row">Spain</th>
-    <td>Madrid</td>
-  </tr>
-  <tr>
-    <th scope="row">UK</th>
-    <td>London</td>
-  </tr>
-</table>
-
-
-  </div></figure>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
-  <span class="nt">&lt;caption&gt;</span>Capital cities<span class="nt">&lt;/caption&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Country<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Capital city<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Belgium<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Brussels<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>France<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Paris<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Holland<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;td&gt;</span>Amsterdam<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  […]
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-
-</figure>
-<p><a href="../examples/scope-simple/">Full code Example “Table with header cells in one column only”</a></p>
+<p>Additionally, you can use the <code>&lt;caption&gt;</code> element to identify the table in a document. This is particularly useful for screen-reader users browsing the web page in “tables mode” where they can navigate from table to table. More background and guidance on the using <code>&lt;caption&gt;</code> element is provied on the <a href="../caption-summary/">Caption &amp; Summary page</a>.</p>
 
 <h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column">Table with header cells in the top row and first column</h2>
 
@@ -244,8 +72,9 @@
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
+<p><strong>Delivery slots:</strong></p>
+
 <table>
-	<caption>Delivery slots:</caption>
   <tr>
     <td></td>
     <th scope="col">Monday</th>
@@ -324,6 +153,77 @@
 
 </figure>
 <p><a href="../examples/headertoprowfirstcol/">Full code for “Table with header cells in the top row and first column”</a></p>
+
+<h2 class="ex" id="table-with-header-cells-in-the-top-row-and-first-column-1">Table with header cells in the top row and first column</h2>
+
+<p>The following tables of countries and their capital cities has the first row of cells marked as '&lt;th&gt;' cells and also has the first column with the country names marked up as <code>&lt;th&gt;</code> cells. It needs the <code>scope</code> attribute with the value of <code>row</code> to declare the applicability of each header cell. Otherwise some screen readers will associate header cells with other header cells because they are in the same column. For example in the cell marked “Holland” some screen readers will read “Belgium – France – Holland” if the <code>scope</code> attribute is not provided. The first cell in the table also needs scope to indicte whether it is a heading for the other cells in the same row or for the cells in the same column.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<table>
+  <caption>
+    Capital cities
+  </caption>
+  <tr>
+    <th scope="col">Country</th>
+    <th scope="col">Capital city</th>
+  </tr>
+  <tr>
+    <th scope="row">Belgium</th>
+    <td>Brussels</td>
+  </tr>
+  <tr>
+    <th scope="row">France</th>
+    <td>Paris</td>
+  </tr>
+  <tr>
+    <th scope="row">Holland</th>
+    <td>Amsterdam</td>
+  </tr>
+  <tr>
+    <th scope="row">Luxembourg</th>
+    <td>Luxembourg</td>
+  </tr>
+  <tr>
+    <th scope="row">Spain</th>
+    <td>Madrid</td>
+  </tr>
+  <tr>
+    <th scope="row">UK</th>
+    <td>London</td>
+  </tr>
+</table>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>Capital cities<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Country<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Capital city<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Belgium<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Brussels<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>France<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Paris<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Holland<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Amsterdam<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  […]
+<span class="nt">&lt;/table&gt;</span>
+</pre>
+
+</figure>
+<p><a href="../examples/scope-simple/">Full code Example “Table with header cells in the top row and first column”</a></p>
 
 <h2 class="ex" id="table-with-an-offset-column-of-header-cells">Table with an offset column of header cells</h2>
 
@@ -818,7 +718,7 @@
         
         
           <li class="prev">
-            <span><a rel="prev" class="" href="../basic/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Basic Tables</span></span></a></span>
+            <span><a rel="prev" class="" href="../simple/"><span class="count"></span><span class="txt"><span class="dir">Previous:</span><span class="title">Simple Tables</span></span></a></span>
           </li>
         
         
@@ -857,7 +757,7 @@
   <p>Please send any ideas, suggestions, or comments to the <a href="mailto:wai-eo-editors@w3.org?subject=[Tutorial%20Feedback]">(publicly-archived) mailing list wai-eo-editors@w3.org</a>. You can also contribute to the <a href="https://github.com/w3c/wai-tutorials" rel="nofollow">code directly on Github</a>.</p>
 
 	<div class="editpage">
-  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/tables/multi-directional.html.erb.md">Fork &amp; edit this page on Github</a>
+  	<a class="btn" href="https://github.com/w3c/wai-tutorials/blob/master/source/tables/regular.html.erb.md">Fork &amp; edit this page on Github</a>
 	</div>
 
 </aside>
@@ -880,11 +780,11 @@
         
         
           
-            <li><a class="" href="../basic/"><span class="count"></span><span class="txt">Basic Tables</span></a></li>
+            <li><a class="" href="../simple/"><span class="count"></span><span class="txt">Simple Tables</span></a></li>
           
         
           
-            <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Multi-directional Tables</span></span></li>
+            <li><span class="current-a"><span class="count"></span><span class="txt"><span class="visuallyhidden">Current: </span>Regular Tables</span></span></li>
           
         
           
@@ -928,7 +828,7 @@
 				
 	      	Updated
 	      
-	      06 January 2015
+	      09 February 2015
 	      
 		      
 		      (first published September 2013)
@@ -941,7 +841,7 @@
     <li><a href="http://w3.org/People/yatil/">Eric Eggert</a></li><li><a href="http://w3.org/People/shadi/">Shadi Abou-Zahra</a></li>
   </ul>
 
-  <strong>Contibutors:</strong>
+  <strong>Contributors:</strong>
   <ul class="inline">
     <li>The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EOWG</a>)</li>
   </ul>
@@ -973,6 +873,6 @@
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-e30c217a.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-0197413c.js" type="text/javascript"></script>
 	</body>
 </html>

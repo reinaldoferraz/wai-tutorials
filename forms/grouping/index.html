@@ -107,16 +107,16 @@
 </figure>
 <h3 class="ex inap" id="to-group-related-fields">… to group related fields</h3>
 
-<p>This example shows form fields to enter shipping and invoice addresses. As the labels in both groups have the same text, the <code>fieldset</code> element also helps to distinguish the form fields by their groups.</p>
+<p>This example shows form fields to enter shipping and invoice addresses. As the labels in both groups have the same text, the <code>fieldset</code> element also helps to distinguish the form fields by their groups. In case the <code>&lt;legend&gt;</code> is not read by screen readers (see note below), labels for the first form control in each group should include the group’s name. This name can be hidden visually.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
-	<fieldset style="float:left;">
+	<fieldset style="float: left;">
 		<legend>Shipping Address:</legend>
 		<div>
-			<label for="shipping_name">Name:</label><br>
+			<label for="shipping_name"><span class="visuallyhidden">Shipping </span>Name:</label><br>
 			<input type="text" name="shipping_name" id="shipping_name">
 		</div>
 		<div>
@@ -136,27 +136,27 @@
 			<input type="text" name="shipping_zip" id="shipping_zip">
 			</div>
 	</fieldset>
-	<fieldset style="float:left;">
-		<legend>Invoice Address:</legend>
+	<fieldset style="float: left;">
+		<legend>Billing Address:</legend>
 		<div>
-			<label for="invoice_name">Name:</label><br>
-			<input type="text" name="invoice_name" id="invoice_name">
+			<label for="billing_name"><span class="visuallyhidden">Billing </span>Name:</label><br>
+			<input type="text" name="billing_name" id="billing_name">
 		</div>
 		<div>
-			<label for="invoice_street">Street:</label><br>
-			<input type="text" name="invoice_street" id="invoice_street">
+			<label for="billing_street">Street:</label><br>
+			<input type="text" name="billing_street" id="billing_street">
 		</div>
 		<div>
-			<label for="invoice_number">Number:</label><br>
-			<input type="text" name="invoice_number" id="invoice_number">
+			<label for="billing_number">Number:</label><br>
+			<input type="text" name="billing_number" id="billing_number">
 		</div>
 		<div>
-			<label for="invoice_city">City:</label><br>
-			<input type="text" name="invoice_city" id="invoice_city">
+			<label for="billing_city">City:</label><br>
+			<input type="text" name="billing_city" id="billing_city">
 		</div>
 		<div>
-			<label for="invoice_zip">ZIP code:</label><br>
-			<input type="text" name="invoice_zip" id="invoice_zip">
+			<label for="billing_zip">ZIP code:</label><br>
+			<input type="text" name="billing_zip" id="billing_zip">
 		</div>
 	</fieldset>
 </form>
@@ -169,17 +169,29 @@
 <pre class="highlight html"><span class="nt">&lt;fieldset&gt;</span>
 	<span class="nt">&lt;legend&gt;</span>Shipping Address:<span class="nt">&lt;/legend&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Shipping <span class="nt">&lt;/span&gt;</span>Name:
+    <span class="nt">&lt;/label&gt;&lt;br&gt;</span>
 		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"shipping_name"</span> <span class="na">id=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_street"</span><span class="nt">&gt;</span>Street:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"shipping_street"</span> <span class="na">id=</span><span class="s">"shipping_street"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 	[…]
 <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;fieldset&gt;</span>
-	<span class="nt">&lt;legend&gt;</span>Invoice Address:<span class="nt">&lt;/legend&gt;</span>
+	<span class="nt">&lt;legend&gt;</span>Billing Address:<span class="nt">&lt;/legend&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
-		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"invoice_name"</span> <span class="na">id=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"billing_name"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Billing <span class="nt">&lt;/span&gt;</span>Name:
+    <span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"billing_name"</span> <span class="na">id=</span><span class="s">"billing_name"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"billing_street"</span><span class="nt">&gt;</span>Street:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"billing_street"</span> <span class="na">id=</span><span class="s">"billing_street"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 	[…]
 <span class="nt">&lt;/fieldset&gt;</span>
 </pre>
@@ -202,10 +214,10 @@
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form method="post" action="#">
-	<div role="group" aria-labelledby="shipping_head" style="float:left; border: 1px solid #333; padding: 0 .5em .5em; margin-right: 1em;">
+	<div role="group" aria-labelledby="shipping_head" style="float: left; border: 1px solid #333; padding: 0 .5em .5em; margin-right: 1em;">
 		<div id="shipping_head" style="font-weight: bold; padding: .25em 0;">Shipping Address:</div>
 		<div>
-			<label for="aria_shipping_name">Name:</label><br>
+			<label for="aria_shipping_name"><span class="visuallyhidden">Shipping </span>Name:</label><br>
 			<input type="text" name="aria_shipping_name" id="aria_shipping_name">
 		</div>
 		<div>
@@ -225,27 +237,27 @@
 			<input type="text" name="aria_shipping_zip" id="aria_shipping_zip">
 			</div>
 	</div>
-	<div role="group" aria-labelledby="invoice_head" style="float:left; border: 1px solid #333; padding:0 .5em .5em;">
-		<div id="invoice_head" style="font-weight: bold; padding: .25em 0;">Invoice Address:</div>
+	<div role="group" aria-labelledby="invoice_head" style="float: left; border: 1px solid #333; padding: 0 .5em .5em;">
+		<div id="invoice_head" style="font-weight: bold; padding: .25em 0;">Billing Address:</div>
 		<div>
-			<label for="aria_invoice_name">Name:</label><br>
-			<input type="text" name="aria_invoice_name" id="aria_invoice_name">
+			<label for="aria_billing_name"><span class="visuallyhidden">Billing </span>Name:</label><br>
+			<input type="text" name="aria_billing_name" id="aria_billing_name">
 		</div>
 		<div>
-			<label for="aria_invoice_street">Street:</label><br>
-			<input type="text" name="aria_invoice_street" id="aria_invoice_street">
+			<label for="aria_billing_street">Street:</label><br>
+			<input type="text" name="aria_billing_street" id="aria_billing_street">
 		</div>
 		<div>
-			<label for="aria_invoice_number">Number:</label><br>
-			<input type="text" name="aria_invoice_number" id="aria_invoice_number">
+			<label for="aria_billing_number">Number:</label><br>
+			<input type="text" name="aria_billing_number" id="aria_billing_number">
 		</div>
 		<div>
-			<label for="aria_invoice_city">City:</label><br>
-			<input type="text" name="aria_invoice_city" id="aria_invoice_city">
+			<label for="aria_billing_city">City:</label><br>
+			<input type="text" name="aria_billing_city" id="aria_billing_city">
 		</div>
 		<div>
-			<label for="aria_invoice_zip">ZIP code:</label><br>
-			<input type="text" name="aria_invoice_zip" id="aria_invoice_zip">
+			<label for="aria_billing_zip">ZIP code:</label><br>
+			<input type="text" name="aria_billing_zip" id="aria_billing_zip">
 		</div>
 	</div>
 </form>
@@ -253,21 +265,27 @@
 
   </div></figure>
 
+<p>Due to WAI-ARIA not available in some browsers and screen reader combinations, a group identifier should be added to the first form control in the group.</p>
+
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
 <pre class="highlight html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"shipping_head"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"shipping_head"</span><span class="nt">&gt;</span>Shipping Address:<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Shipping <span class="nt">&lt;/span&gt;</span>Name:
+    <span class="nt">&lt;/label&gt;&lt;br&gt;</span>
 		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"shipping_name"</span> <span class="na">id=</span><span class="s">"shipping_name"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 	[…]
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>Invoice Address:<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>Billing Address:<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
-		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
-		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"invoice_name"</span> <span class="na">id=</span><span class="s">"invoice_name"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"billing_name"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Billing <span class="nt">&lt;/span&gt;</span>Name:
+    <span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+		<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"billing_name"</span> <span class="na">id=</span><span class="s">"billing_name"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 	[…]
 <span class="nt">&lt;/div&gt;</span>
@@ -945,7 +963,7 @@
 				
 	      	Updated
 	      
-	      30 January 2015
+	      06 February 2015
 	      
 		      
 		    
@@ -985,6 +1003,6 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-e30c217a.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-0197413c.js" type="text/javascript"></script>
 	</body>
 </html>

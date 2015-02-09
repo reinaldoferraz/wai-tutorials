@@ -97,11 +97,11 @@
 </figure>
 <h3 class="ex" id="using-a-dialog">Using a dialog</h3>
 
-<p>Dialogs are a pretty prominent way to inform users of changes that can be used if other means of informing the user prove to be easily missed. They are much more obtrusive and distracting which may be the desired effect.</p>
+<p>A dialog is a moderately prominent way to inform users of changes. It can be used if other means of informing the user prove to be easily missed. Dialogs much more obtrusive and distracting which may be the desired effect.</p>
 
-<p>JavaScript provides a very basic alert dialog boxes that provide proper keyboard navigation and respect the user’s default settings, including font size, colors, and language. An custom dialog implementation would need to match that functionality.</p>
+<p>JavaScript provides a very basic alert dialog box that provides proper keyboard navigation and respects the user’s default settings, including font size, colors, and language. A custom dialog implementation would need to match that functionality.</p>
 
-<p>The (very basic) example below shows a pop-up that is displayed when the user activates the “save” button. A message is displayed in a dialog box, and the web page is disabled until the user selects “OK”.</p>
+<p>The basic example below shows a pop-up that is displayed when the user activates the “save” button. A message is displayed in the dialog box, and the web page is disabled until the user selects “OK”.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -164,12 +164,12 @@
 <span class="nt">&lt;ul&gt;</span>
 	<span class="nt">&lt;li&gt;</span>
 		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#firstname"</span><span class="nt">&gt;</span>
-			The First name field is empty, it is a required field and must be filled in.
+			The First name field is empty; it is a required field and must be filled in.
 		<span class="nt">&lt;/a&gt;</span>
 	<span class="nt">&lt;/li&gt;</span>
 	<span class="nt">&lt;li&gt;</span>
 		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#birthdate"</span><span class="nt">&gt;</span>
-			The Date field is in the wrong format, it should be similar to 17/09/2013 (use a / to separate day, month, and year).
+			The Date field is in the wrong format; it should be similar to 17/09/2013 (use a / to separate day, month, and year).
 		<span class="nt">&lt;/a&gt;</span>
 	<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
@@ -381,13 +381,17 @@ document.getElementById('ex3').addEventListener('submit', function(event){
 
 </figure>
 <div class="notes ">
-<p><strong>Note:</strong> The displayed message in this example is coded using a <code>&lt;span&gt;</code> element that has an <code>aria-live</code> attribute with the value <code>polite</code>. The contents of this so called “live region” is conveyed to screen readers and other assistive technology. The value “polite” de-emphasizes the importance of the message and does not cause screen readers to interrupt their current tasks to read aloud this message. Thus the message is only read once when the user stops typing rather than on every keystroke that the user makes.</p>
+<p><strong>Note:</strong> The displayed message in this example is coded using a <code>&lt;span&gt;</code> element that has an <code>aria-live</code> attribute with the value <code>polite</code>. The contents of this so called “live region” are conveyed to screen readers and other assistive technology. The value “polite” de-emphasizes the importance of the message and does not cause screen readers to interrupt their current tasks to read aloud this message. Thus the message is only read once when the user stops typing rather than on every keystroke that the user makes.</p>
 
 </div>
 <h4 class="ex inap" id="scaled-feedback">Scaled feedback</h4>
 
 <p>The example below illustrates a range of possible types of feedback in addition to success and error messages. In the example, the strength of the password is checked as it is typed by the user. The feedback indicates a scale of how strong the password is. The feedback is indicated using several cues, including color coding, a barometer, and label “Weak”, “Okay”, and “Strong”, as well as the time that would be needed to crack the password.</p>
 
+<div class="notes ">
+<p>The password is shown in plain text for demonstration purposes.</p>
+
+</div>
 <figure class="sample ">
   <figcaption>Example: </figcaption>
   <div class="box-content">
@@ -426,16 +430,16 @@ document.getElementById('ex2_password').addEventListener('keyup',
 			meter.style.width = (pw.score+1) * 25 + 'px';
 			if (pw.score == 0) {
 				meter.style.backgroundColor = 'red';
-				msg.innerHTML = '<strong>Weak:</strong> Cracked instantly';
+				msg.innerHTML = '<strong>Really Weak</strong> Password';
 			} else if (pw.score < 3) {
 				meter.style.backgroundColor = 'red';
-				msg.innerHTML = '<strong>Weak:</strong> Cracked in ' + pw.crack_time_display;
+				msg.innerHTML = '<strong>Weak</strong> Password (cracked in ' + pw.crack_time_display + ')';
 			} else if (pw.score == 3) {
 				meter.style.backgroundColor = 'yellow';
-				msg.innerHTML = '<strong>Okay:</strong> Cracked in ' + pw.crack_time_display;
+				msg.innerHTML = '<strong>Good</strong> Password (cracked in ' + pw.crack_time_display + ')';
 			} else {
 				meter.style.backgroundColor = 'green';
-				msg.innerHTML = '<strong>Strong:</strong> Cracked in ' + pw.crack_time_display;
+				msg.innerHTML = '<strong>Strong</strong> Password (cracked in ' + pw.crack_time_display + ')';
 			}
 			if (this.value == "") {
 				meter.style.backgroundColor = 'gray';
@@ -1144,7 +1148,7 @@ for (var i = inputs.length - 1; i >= 0; i--) {
 				
 	      	Updated
 	      
-	      28 January 2015
+	      06 February 2015
 	      
 		      
 		    
@@ -1184,6 +1188,6 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-e30c217a.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-0197413c.js" type="text/javascript"></script>
 	</body>
 </html>

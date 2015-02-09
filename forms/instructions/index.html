@@ -59,9 +59,9 @@
       
 
 
-      <p>Provide instructions to help users understand how to complete the form and individual form controls. This includes indicating any required and optional input, data formats, and other important information.</p>
+      <p>Provide instructions to help users understand how to complete the form and use individual form controls. This includes indicating any required and optional input, data formats, and other important information.</p>
 
-<p><strong>Important:</strong> Screen readers often switch to “Forms Mode” when they are processing content within a <code>&lt;form&gt;</code> element. In this mode they usually only read aloud form elements such as <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;legend&gt;</code>, and <code>&lt;label&gt;</code>. It is critical to include form instructions in ways that they will be read aloud.</p>
+<p><strong>Important:</strong> Screen readers often switch to “Forms Mode” when they are processing content within a <code>&lt;form&gt;</code> element. In this mode they usually only read aloud form elements such as <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;legend&gt;</code>, and <code>&lt;label&gt;</code>. It is critical to include form instructions in ways that can be read aloud.</p>
 
 <h2 class="newex" id="overall-instructions">Overall instructions</h2>
 
@@ -112,11 +112,11 @@
 </figure>
 <h3 class="newex" id="providing-instructions-outside-labels">Providing instructions outside labels</h3>
 
-<p>Providing instructions outside labels allows more flexible positioning and design but sometimes it can be missed. It is also not supported by (older) web browsers and assistive technologies that don’t implement WAI-ARIA.</p>
+<p>Providing instructions outside labels allows more flexible positioning and design but sometimes it can be missed. It is also not supported by some web browsers (typically older versions) and assistive technologies that don’t implement WAI-ARIA.</p>
 
 <h4 class="ap" id="using-aria-labelledby">Using <code>aria-labelledby</code></h4>
 
-<p>One approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate instructions with form controls. At the time of writing this tutorial, this approach is not fully supported by all web browsers and assistive technologies, especially by non-screen readers. To ensure backward compatibility, the <code>for</code> and <code>id</code> attributes are used in this example.</p>
+<p>One approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate instructions with form controls. At the time of writing this tutorial, this approach is not fully supported by all web browsers and assistive technologies, for example Braille displays. To ensure backward compatibility, the <code>for</code> and <code>id</code> attributes are used in this example.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -172,7 +172,7 @@
 
 <p>Placeholder text provides instructions or an example of the required data format inside form fields that have not yet been edited by the user. Placeholder text is usually displayed with lower color contrast than text provided by users, and it disappears from form fields when users start entering text. If the placeholder text contains instructional information or examples, having it disappear can make it more difficult for users to check their responses prior to submitting the form.</p>
 
-<p>While placeholder text provides important guidance for many users, <strong>placeholder text is not a replacement for labels</strong>. Assistive technologies, such as screen readers, do not treat placeholder text as labels. Moreover, at the time of writing this tutorial, placeholder text is not broadly supported across assistive technologies.</p>
+<p>While placeholder text provides important guidance for many users, <strong>placeholder text is not a replacement for labels</strong>. Assistive technologies, such as screen readers, do not treat placeholder text as labels. Moreover, at the time of writing this tutorial, placeholder text is not broadly supported across assistive technologies and not displayed in older web browsers.</p>
 
 <p>Note: Section <a href="../labels/#hidden">Hidden labels</a> of this tutorial describes how to hide information visually but keep it available to assistive technology. This same approach can be used to avoid redundancy of displaying both labels and placeholder text.</p>
 
@@ -880,7 +880,7 @@
 				
 	      	Updated
 	      
-	      30 January 2015
+	      06 February 2015
 	      
 		      
 		    
@@ -920,6 +920,6 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-e30c217a.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-0197413c.js" type="text/javascript"></script>
 	</body>
 </html>

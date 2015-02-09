@@ -144,20 +144,20 @@ document.getElementById('ex2_password').addEventListener('keyup',
 						 b) yellow if the score = 3
 						 c) green if the score = 4
 
-				 (5) Change the text of the passwort message element accordingly. */</span>
-			<span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-				<span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
-				<span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Weak:&lt;/strong&gt; Cracked instantly'</span><span class="p">;</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-				<span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
-				<span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Weak:&lt;/strong&gt; Cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time</span><span class="p">;</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-				<span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'yellow'</span><span class="p">;</span>
-				<span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Okay:&lt;/strong&gt; Cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time</span><span class="p">;</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-				<span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'green'</span><span class="p">;</span>
-				<span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Strong:&lt;/strong&gt; Cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time</span><span class="p">;</span>
-			<span class="p">}</span>
+				(5) Change the text of the password message element accordingly. */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Really Weak&lt;/strong&gt; Password'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Weak&lt;/strong&gt; Password (cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time_display</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pw</span><span class="p">.</span><span class="nx">score</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'yellow'</span><span class="p">;</span>
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Good&lt;/strong&gt; Password (cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time_display</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">meter</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'green'</span><span class="p">;</span>
+          <span class="nx">msg</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;strong&gt;Strong&lt;/strong&gt; Password (cracked in '</span> <span class="o">+</span> <span class="nx">pw</span><span class="p">.</span><span class="nx">crack_time_display</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">;</span>
+        <span class="p">}</span>
 
 			<span class="cm">/* (6) If the input is empty, there is no text output
 						 and the color of the meter is set to gray. */</span>
@@ -169,7 +169,6 @@ document.getElementById('ex2_password').addEventListener('keyup',
 </pre>
 
 </figure>
-
   </div>
 </div>
 <div class="navigation" id="nav">
@@ -186,7 +185,7 @@ document.getElementById('ex2_password').addEventListener('keyup',
 				
 	      	Updated
 	      
-	      09 December 2014
+	      06 February 2015
 	      
 			</li>
       <li>
@@ -224,6 +223,6 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../../javascripts/main-e30c217a.js" type="text/javascript"></script>
+	<script src="../../../javascripts/main-0197413c.js" type="text/javascript"></script>
 	</body>
 </html>
