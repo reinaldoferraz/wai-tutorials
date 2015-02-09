@@ -163,16 +163,25 @@
 <pre class="highlight html"><span class="nt">&lt;h4&gt;</span>There are 2 errors in this form<span class="nt">&lt;/h4&gt;</span>
 <span class="nt">&lt;ul&gt;</span>
 	<span class="nt">&lt;li&gt;</span>
-		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#firstname"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#firstname"</span> <span class="na">id=</span><span class="s">"firstname_error"</span><span class="nt">&gt;</span>
 			The First name field is empty; it is a required field and must be filled in.
 		<span class="nt">&lt;/a&gt;</span>
 	<span class="nt">&lt;/li&gt;</span>
 	<span class="nt">&lt;li&gt;</span>
-		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#birthdate"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#birthdate"</span> <span class="na">id=</span><span class="s">"birthdate_error"</span><span class="nt">&gt;</span>
 			The Date field is in the wrong format; it should be similar to 17/09/2013 (use a / to separate day, month, and year).
 		<span class="nt">&lt;/a&gt;</span>
 	<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
+</pre>
+
+</figure>
+<p>In addition, form fields can be associated with the corresponding error message using aria-describedby.</p>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First Name:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"firstname"</span> <span class="na">aria-describedby=</span><span class="s">"firstname_error"</span><span class="nt">&gt;</span>
 </pre>
 
 </figure>
@@ -1148,7 +1157,7 @@ for (var i = inputs.length - 1; i >= 0; i--) {
 				
 	      	Updated
 	      
-	      06 February 2015
+	      09 February 2015
 	      
 		      
 		    
