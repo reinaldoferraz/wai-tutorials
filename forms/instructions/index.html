@@ -116,7 +116,7 @@
 
 <h4 class="ap" id="using-aria-labelledby">Using <code>aria-labelledby</code></h4>
 
-<p>One approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate instructions with form controls. At the time of writing this tutorial, this approach is not fully supported by all web browsers and assistive technologies, for example Braille displays. To ensure backward compatibility, the <code>for</code> and <code>id</code> attributes are used in this example.</p>
+<p>One approach is to use the WAI-ARIA <code>aria-labelledby</code> attribute to associate instructions with form controls. At the time of writing this tutorial, this approach is not fully supported by all web browsers and assistive technologies, for example Braille displays. To ensure backward compatibility, the <code>for</code> and <code>id</code> attributes are also used in this example.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -133,10 +133,10 @@
 </style>
 <form method="post" action="#" id="ex3">
 	<div>
-		<label id="expLabel" for="expire4">Expiry date:</label>
+		<label id="expLabel" for="expire4" tabindex="-1">Expiry date:</label>
 		<span>
 			<input type="text" name="expire" id="expire4" aria-labelledby="expLabel expDesc2">
-			<span id="expDesc2">MM/YYYY</span>
+			<span id="expDesc2" tabindex="-1">MM/YYYY</span>
 		</span>
 	</div>
 </form>
@@ -146,14 +146,18 @@
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"expLabel"</span> <span class="na">for=</span><span class="s">"expire"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
+<pre class="highlight html"><span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">"expLabel"</span> <span class="na">for=</span><span class="s">"expire"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>Expiry date:<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;span&gt;</span>
 	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"expire"</span> <span class="na">id=</span><span class="s">"expire"</span> <span class="na">aria-labelledby=</span><span class="s">"expLabel expDesc"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
+	<span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"expDesc"</span> <span class="na">tabindex=</span><span class="s">"-1"</span><span class="nt">&gt;</span>MM/YYYY<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/span&gt;</span>
 </pre>
 
 </figure>
+<div class="notes ">
+<p><strong>Note:</strong> At the time of writing those tutorials, it is necessary to add <code>tabindex="-1"</code> to elements that are referenced by <code>aria-labelledby</code> or <code>aria-describedby</code> if those attributes point to <em>two or more</em> elements to make this technique work in Internet Explorer.</p>
+
+</div>
 <h4 class="ap" id="using-aria-describedby">Using <code>aria-describedby</code></h4>
 
 <p>By using <code>aria-describedby</code> to reference the format of the field, this information is made available to the users on request. That is, it is not automatically displayed or read aloud. This makes sense if the user has been informed of the format before, or when there are lots of input fields with the same format, for example.</p>
@@ -174,7 +178,7 @@
 
 <p>While placeholder text provides important guidance for many users, <strong>placeholder text is not a replacement for labels</strong>. Assistive technologies, such as screen readers, do not treat placeholder text as labels. Moreover, at the time of writing this tutorial, placeholder text is not broadly supported across assistive technologies and not displayed in older web browsers.</p>
 
-<p>Note: Section <a href="../labels/#hidden">Hidden labels</a> of this tutorial describes how to hide information visually but keep it available to assistive technology. This same approach can be used to avoid redundancy of displaying both labels and placeholder text.</p>
+<p>Note: Section <a href="../labels/#hidden">Hidden labels</a> of this tutorial describes how to hide information visually but keep it available to assistive technology. This same approach can be used to avoid visual redundancy of displaying both labels and placeholder text. Be aware that this makes it very hard for users to review the form. To avoid this problem JavaScript can be used to make a visual label appear visually (in the associated label element) above or beside the input that has focus.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -880,7 +884,7 @@
 				
 	      	Updated
 	      
-	      06 February 2015
+	      10 February 2015
 	      
 		      
 		    
