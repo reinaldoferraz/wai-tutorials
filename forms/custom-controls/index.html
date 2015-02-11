@@ -416,14 +416,17 @@ document.querySelector('#star_rating').addEventListener('submit', function(event
 </span>	<span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">stars</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">radios</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
+<span class="c1">// Iterate through all radio buttons and add a click
+// event listener to the labels
+</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">radios</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span>
 	<span class="kd">var</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">;</span>
 	<span class="nx">label</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
 		<span class="nx">do_something</span><span class="p">(</span><span class="nx">label</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'span'</span><span class="p">).</span><span class="nx">textContent</span><span class="p">);</span>
 	<span class="p">});</span>
 <span class="p">});</span>
 
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#star_rating'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+<span class="c1">// If the form gets submitted, do_something
+</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#star_rating'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
 	<span class="nx">do_something</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#star_rating :checked ~ label span'</span><span class="p">).</span><span class="nx">textContent</span><span class="p">);</span>
 	<span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 	<span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
@@ -557,7 +560,7 @@ document.querySelector('#star_rating').addEventListener('submit', function(event
 				
 	      	Updated
 	      
-	      06 February 2015
+	      11 February 2015
 	      
 		      
 		    
