@@ -73,11 +73,11 @@
 
 <p>It is also good practice to refer to more complex images from the accompanying text to describe the overall data, for example: “The following graph shows that visitors were lost in the first quarter, but the numbers recovered in the second quarter”.</p>
 
-<p>Complex images can be hard to understand for a variety of users, such as people who have learning disabilities or who use screen magnification. Long descriptions benefit many people and it is good practice to make it available to everyone as part of the main content. Consider making images less complex where possible to make them easier to understand for everyone.</p>
+<p>Complex images can be hard to understand for a variety of users, such as people who have learning disabilities or who use screen magnification. Long descriptions benefit many people and it is good practice to make them available to everyone as part of the main content. Consider making images less complex where possible to make them easier to understand for everyone.</p>
 
 <h2 class="ex" id="image-containing-substantial-information">Image containing substantial information</h2>
 
-<p>This bar chart of website visitor statistics has a short description of “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3” provided through the <code>alt</code> attribute of the image. The long description provides detailed information, including scales, values, relationships and trends that are represented visually. For example, since the declining values for site 1, consistent values for site 2, and increasing values for site 3 are highlighted through the bar chart. The following example shows a complex image using the <a href="#providing-a-link-to-the-long-description-via-longdesc">longdesc approach, described below</a>.</p>
+<p>This bar chart of website visitor statistics has the short description “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3”, provided through the <code>alt</code> attribute of the image. The long description provides detailed information, including scales, values, relationships and trends that are represented visually. For example, to point out the declining values for site 1, consistent values for site 2, and increasing values for site 3 that are encoded in the bar chart. The <a href="#providing-a-link-to-the-long-description-via-longdesc">longdesc approach</a> used in the following example is described later in thie secion.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -87,23 +87,23 @@
 
   </div></figure>
 
-<p>From the approaches below, the first and second one make the information available to other programs such as web browsers and search engines.</p>
+<p>From the approaches below, the first and second one make the information available to other programs, such as web browsers and search engines.</p>
 
 <h3 class="ap" id="providing-a-link-to-the-long-description-via-longdesc">Providing a link to the long description via <code>longdesc</code></h3>
 
 <aside class="annotation">
   <h4 class="annotation-header"><span class="subhead">Accessibility Support:</span> <code>Longdesc</code>, Web Browsers, and Assistive Technologies</h4>
   <div class="annotation-content">
-    <p>The long description linked by <code>longdesc</code> is reachable by all users in Firefox. There is an <a href="https://chrome.google.com/webstore/detail/long-descriptions-in-cont/ohbmencljkleiedahijfkagnmmhbilgp">official Chrome Extension</a> that adds long description access. Safari has no support for <code>longdesc</code>. In other web browsers, <code>longdesc</code> is only available to screen reader users at the moment. There is currently no support on mobile platforms.</p>
+    <p>In Firefox, long descriptions linked by <code>longdesc</code> are availablke to all users through "View description" in the image's context menu. There is an <a href="https://chrome.google.com/webstore/detail/long-descriptions-in-cont/ohbmencljkleiedahijfkagnmmhbilgp">official Chrome Extension</a> that adds long description access. Safari has no support for <code>longdesc</code>. In other web browsers, <code>longdesc</code> is currently available only to screen reader users. Mobile platforms currently do not support <code>longdesc</code>.</p>
     <p>No browser indicates the presence of the <code>longdesc</code> attribute visually.</p>
   </div>
 </aside>
 
-<p>The <code>longdesc</code> attribute can contain the URI of a page containing the long description, or an fragment identifier.</p>
+<p>The <code>longdesc</code> attribute can contain the URI of a page containing the long description, or a fragment identifier.</p>
 
-<p><code>Longdesc</code> is used primarily if the content of the image needs to be described primarily to people that are unable to see the image. For example, an author might decide that it is necessary to go into greater details on the brush strokes or what meaning a certain color has, describing not only the content of the image but also details of the visual appearance. In the example above that would mean describing how the bar chart looks like.</p>
+<p><code>Longdesc</code> is primarily used to describe the visual properties of an image. For example, visual aspects such as the colors used and relative hights of the columns in a bar chart, or the brush strokes in painting may be relevant, so that it may be necessary to describe them in greater detail. In the example above, this would mean describing how the bar chart looks like in addition to the information it represents.</p>
 
-<p>If the <code>longdesc</code> attributes refers to another page, it is recommended to also apply <a href="#a-text-link-to-the-long-description-adjacent-to-the-image">Approach 3 (A text link to the long description adjacent to the image)</a> to make sure that the long description is visible to visual users and in browsers and assistive technologies that don’t fully support <code>longdesc</code>.</p>
+<p>If the <code>longdesc</code> attributes contains a URI to refer to another page with the long description, it is recommended to also apply <a href="#a-text-link-to-the-long-description-adjacent-to-the-image">Approach 3 (A text link to the long description adjacent to the image)</a> so that the long description is available to visual users, and in browsers and assistive technologies that don’t fully support <code>longdesc</code>.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -115,9 +115,7 @@
 </pre>
 
 </figure>
-<p>If the long description is published within an HTML element on the same page as the image, the <code>longdesc</code> value can simply contain a fragment identifier (“hash link”) to the element containing the long description. This fragment identifier consists of an <code>#</code> and the value of the <code>id</code> attribute of the long description element.</p>
-
-<p>Usually this approach doesn’t need an additional link, if the description is in close proximity to the image. If this isn’t the case a visible link helps users to find the long description.</p>
+<p>The <code>longdesc</code> attribute can also contain a fragment identifier (<code>#</code> followed by the <code>id</code> an the element on the same page - a “hash link”), to refer to an element containing the long description that is available on the same page as the image. This approach doesn’t need an additional link (by applying <a href="#a-text-link-to-the-long-description-adjacent-to-the-image">Approach 3</a>) when the description is in close proximity to the image.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -134,7 +132,7 @@
 </figure>
 <h3 class="ap" id="structurally-associating-image-and-long-description-with-aria-describedby">Structurally associating image and long description with <code>aria-describedby</code></h3>
 
-<p>The WAI-ARIA <code>aria-describedby</code> attribute can be used to link the description to the image. The value of the attribute is the <code>id</code> of the element with the description.</p>
+<p>The WAI-ARIA <code>aria-describedby</code> attribute can be used to link to a description of the image that is provided on the same page. The value of the attribute is the <code>id</code> of the element with the description.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -175,7 +173,7 @@
 </div>
 <h3 class="ap" id="describing-the-location-of-the-long-description-in-the-alt-attribute">Describing the location of the long description in the <code>alt</code> attribute</h3>
 
-<p>If the long description is on the same page as the image and its location can be accurately pinpointed by being described, the <code>alt</code> attribute can include location information.</p>
+<p>If the long description is on the same page as the image, its location can be described using the <code>alt</code> attribute. The location information needs to be clear and accurate to help users locate the content.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -739,7 +737,7 @@
 				
 	      	Updated
 	      
-	      10 February 2015
+	      11 February 2015
 	      
 		      
 		      (first published September 2013)

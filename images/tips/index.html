@@ -67,11 +67,11 @@
 Imagine that you’re reading the web page aloud over the phone to someone who needs to understand the page. This should help you decide what (if any) information or function the images have. If they appear to have no informative value and aren’t links or buttons, it’s probably safe to treat them as <a href="../decorative/">decorative</a>.</p>
   </li>
   <li>
-    <p><strong>Prioritize information in alternative text:</strong> <br />
-Aim to put the most important information at the beginning of alternative text.</p>
+    <p><strong>Prioritize information in text alternative:</strong> <br />
+Aim to put the most important information at the beginning.</p>
   </li>
   <li>
-    <p><strong>Length of alternative text:</strong> <br />
+    <p><strong>Length of the text alternative:</strong> <br />
 The <code>alt</code> text should be the most concise description possible of the image’s purpose. If anything more than a short phrase or sentence is needed, it would be better to use one of the long description methods discussed in <a href="../complex/">complex images</a>.</p>
   </li>
   <li>
@@ -87,7 +87,7 @@ The <code>alt</code> text should be the most concise description possible of the
     </ul>
   </li>
   <li>
-    <p><strong>Superfluous information in alternative text:</strong> <br />
+    <p><strong>Superfluous information in the text alternative:</strong> <br />
 Usually there’s no need to include words like “image”, “icon”, or “picture” in the alt text. People who can see will know this already, and screen readers announce the presence of an image. In some situations it may be important to distinguish between a painting, photograph, or illustration etc., but it’s best to avoid the more generic use of the terms.</p>
   </li>
   <li>
@@ -98,7 +98,7 @@ Usually there’s no need to include words like “image”, “icon”, or “p
         <p>SVG graphics can be referenced in the <code>src</code> attribute of an <code>&lt;img&gt;</code> element like other image formats (PNG, JPEG, GIF). In this case the examples of this tutorial can be used with SVG as well.</p>
       </li>
       <li>
-        <p>As SVG images consist of tags like HTML, their code can also be used in HTML5 directly. In this case you can provide alternative text in a <code>&lt;title&gt;</code> element within the SVG image. To improve accessibility support, that title should be referenced from an <code>aria-labelledby</code> attribute of the <code>&lt;svg&gt;</code> element, for example:</p>
+        <p>As SVG images consist of tags like HTML, their code can also be used in HTML5 directly. In this case you can provide a text alternative in a <code>&lt;title&gt;</code> element within the SVG image. To improve accessibility support, that title should be referenced from an <code>aria-labelledby</code> attribute of the <code>&lt;svg&gt;</code> element, for example:</p>
 
         <p><code>&lt;svg aria-labelledby="svgtitle1"&gt; &lt;title id="svgtitle1"&gt;Settings&lt;/title&gt; [other svg code] &lt;/svg&gt;</code></p>
       </li>
@@ -260,7 +260,7 @@ Logo images with text are exempt from some of the accessibility requirements. Fo
 				
 	      	Updated
 	      
-	      04 February 2015
+	      11 February 2015
 	      
 		      
 		      (first published September 2013)
