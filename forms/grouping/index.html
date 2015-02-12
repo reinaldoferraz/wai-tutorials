@@ -67,11 +67,11 @@
 
 <p>The <code>&lt;fieldset&gt;</code> element provides a container for related form controls, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group.</p>
 
-<p>The legend for a group of controls can also highlight common attributes of all controls, for example state the fact that all fields in the group are required.</p>
+<p>The legend for a group of controls can also highlight common attributes of all controls, for example to advise that all fields in the group are required.</p>
 
-<h3 class="ex inap" id="to-group-radio-buttons">… to group radio buttons</h3>
+<h3 class="ex inap" id="radio-buttons">Radio buttons</h3>
 
-<p>In the example below, there are three radio buttons that allows the user to chose an output format. Radio button groups should always be grouped using <code>&lt;fieldset&gt;</code>.</p>
+<p>In the example below, there are three radio buttons that allow the user to chose an output format. Radio button groups should always be grouped using <code>&lt;fieldset&gt;</code>.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -110,7 +110,7 @@
 </pre>
 
 </figure>
-<h3 class="ex inap" id="to-group-checkboxes">… to group checkboxes</h3>
+<h3 class="ex inap" id="checkboxes">Checkboxes</h3>
 
 <p>In the example below, there are three checkboxes that are all part of an opt-in function for receiving different types of information.</p>
 
@@ -147,7 +147,7 @@
 </pre>
 
 </figure>
-<h3 class="ex inap" id="to-group-related-fields">… to group related fields</h3>
+<h3 class="ex inap" id="related-fields">Related fields</h3>
 
 <p>This example shows form fields to enter shipping and invoice addresses. As the labels in both groups have the same text, the <code>fieldset</code> element also helps to distinguish the form fields by their groups. In case the <code>&lt;legend&gt;</code> is not read by screen readers (see note below), labels for the first form control in each group should include the group’s name. This name can be hidden visually.</p>
 
@@ -307,7 +307,7 @@
 
   </div></figure>
 
-<p>Due to WAI-ARIA not available in some browsers and screen reader combinations, a group identifier should be added to the first form control in the group.</p>
+<p>Because WAI-ARIA not fully supported in all web browser and screen reader combinations, a group identifier should be added to the first form control in the group.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -342,8 +342,8 @@
   <figcaption>Example: </figcaption>
   <div class="box-content">
 <form action="#" method="get">
-	<p>
-		Which course would you like to watch today?<br>
+	<fieldset>
+		<legend>Which course would you like to watch today?</legend>
 		<label id="course">Course:</label>
 		<select name="course" id="course">
 			<option></option>
@@ -364,7 +364,7 @@
 			</optgroup>
 		</select>
 		<input type=submit value="▶ Play">
-	</p>
+	</fieldset>
 </form>
 
 
@@ -1005,7 +1005,7 @@
 				
 	      	Updated
 	      
-	      09 February 2015
+	      12 February 2015
 	      
 		      
 		    
@@ -1045,6 +1045,6 @@ The Education and Outreach Working Group (<a href="http://www.w3.org/WAI/EO/">EO
                </div><!-- ends copyright -->
     </div>
 	</footer>
-	<script src="../../javascripts/main-0197413c.js" type="text/javascript"></script>
+	<script src="../../javascripts/main-99430be9.js" type="text/javascript"></script>
 	</body>
 </html>
