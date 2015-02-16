@@ -149,7 +149,7 @@
 </figure>
 <h3 class="ex inap" id="related-fields">Related fields</h3>
 
-<p>This example shows form fields to enter shipping and invoice addresses. As the labels in both groups have the same text, the <code>fieldset</code> element also helps to distinguish the form fields by their groups. In case the <code>&lt;legend&gt;</code> is not read by screen readers (see note below), labels for the first form control in each group should include the group’s name. This name can be hidden visually.</p>
+<p>This example shows form fields to enter shipping and billing addresses. As the labels in both groups have the same text, the <code>fieldset</code> element also helps to distinguish the form fields by their groups. In case the <code>&lt;legend&gt;</code> is not read by screen readers (see note below), labels for the first form control in each group should include the group’s name. This name can be hidden visually.</p>
 
 <figure class="sample ">
   <figcaption>Example: </figcaption>
@@ -279,8 +279,8 @@
 			<input type="text" name="aria_shipping_zip" id="aria_shipping_zip">
 			</div>
 	</div>
-	<div role="group" aria-labelledby="invoice_head" style="float: left; border: 1px solid #333; padding: 0 .5em .5em;">
-		<div id="invoice_head" style="font-weight: bold; padding: .25em 0;">Billing Address:</div>
+	<div role="group" aria-labelledby="billing_head" style="float: left; border: 1px solid #333; padding: 0 .5em .5em;">
+		<div id="billing_head" style="font-weight: bold; padding: .25em 0;">Billing Address:</div>
 		<div>
 			<label for="aria_billing_name"><span class="visuallyhidden">Billing </span>Name:</label><br>
 			<input type="text" name="aria_billing_name" id="aria_billing_name">
@@ -321,8 +321,8 @@
 	<span class="nt">&lt;/div&gt;</span>
 	[…]
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"invoice_head"</span><span class="nt">&gt;</span>Billing Address:<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"billing_head"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"billing_head"</span><span class="nt">&gt;</span>Billing Address:<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;div&gt;</span>
 		<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"billing_name"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"visuallyhidden"</span><span class="nt">&gt;</span>Billing <span class="nt">&lt;/span&gt;</span>Name:
@@ -1005,7 +1005,7 @@
 				
 	      	Updated
 	      
-	      12 February 2015
+	      16 February 2015
 	      
 		      
 		    

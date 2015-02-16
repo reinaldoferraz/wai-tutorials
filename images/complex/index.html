@@ -77,7 +77,7 @@
 
 <p>It is also good practice to refer to and summarize more complex images from the accompanying text. For example, a reference like “The following graph shows that visitors were lost in the first quarter, but the numbers recovered in the second quarter” helps to point out the relevant information that the image is intended to present.</p>
 
-<h2 class="ex" id="image-containing-substantial-information">Image containing substantial information</h2>
+<h2 class="ex" id="description-containing-structured-information">Description containing structured information</h2>
 
 <p>In this example, a bar chart of website visitor statistics has the short description “Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3”, provided through the <code>alt</code> attribute of the image. The long description provides detailed information, including scales, values, relationships and trends that are represented visually. For example, to point out the declining values for site 1, consistent values for site 2, and increasing values for site 3 that are encoded in the bar chart. The <a href="#providing-a-link-to-the-long-description-via-longdesc">longdesc approach</a> used in the following example is described later in the section.</p>
 
@@ -119,7 +119,7 @@
 </pre>
 
 </figure>
-<p>When the <code>longdesc</code> attribute contains a fragment identifier (<code>#</code> followed by the <code>id</code> an the element on the same web page - a “hash link”), it refers to an element on the same web page that provides the long description. It addresses the same use case as for <a href="#structurally-associating-image-and-long-description-with-aria-describedby">Approach 2</a>, though the support by web browsers and assistive technologies may vary. An additional link (by applying <a href="#a-text-link-to-the-long-description-adjacent-to-the-image">Approach 3</a>) is not needed when the long description is in close proximity to the image.</p>
+<p>When the <code>longdesc</code> attribute contains a fragment identifier (<code>#</code> followed by the <code>id</code> an the element on the same web page - a “hash link”), it refers to an element on the same web page that provides the long description. It addresses the a similar same use case as for <a href="#structurally-associating-image-and-long-description-with-aria-describedby">Example 2, Approach 1</a>, though the support by web browsers and assistive technologies may vary. An additional link (by applying <a href="#a-text-link-to-the-long-description-adjacent-to-the-image">Approach 2</a>) is not needed when the long description is in close proximity to the image.</p>
 
 <figure class="code ">
   <figcaption>Code snippet: </figcaption>
@@ -130,27 +130,6 @@
 […]
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chart-longdesc"</span><span class="nt">&gt;</span>
 	[…]
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-
-</figure>
-<h3 class="ap" id="structurally-associating-image-and-long-description-with-aria-describedby">Structurally associating image and long description with <code>aria-describedby</code></h3>
-
-<p>Similarly to the <a href="#providing-a-link-to-the-long-description-via-longdesc">longdesc approach</a>, the WAI-ARIA <code>aria-describedby</code> attribute can be used to link to a description of the image that is provided on the same web page. The value of the attribute is the <code>id</code> of the element that provides the long description.</p>
-
-<figure class="code ">
-  <figcaption>Code snippet: </figcaption>
-<pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span>
-	<span class="na">aria-describedby=</span><span class="s">"image-description"</span>
-	<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3."</span><span class="nt">&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"image-description"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Trends:<span class="nt">&lt;/strong&gt;</span> Site visitors for the first  ...<span class="nt">&lt;/p&gt;</span>
-	<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Statistics:<span class="nt">&lt;/strong&gt;</span>
-	<span class="nt">&lt;table&gt;</span>
-		<span class="nt">&lt;caption&gt;</span>Example.com Site visitors Jan to March 2014<span class="nt">&lt;/caption&gt;</span>
-		<span class="nt">&lt;tr&gt;</span>…<span class="nt">&lt;/tr&gt;</span>
-	<span class="nt">&lt;/table&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre>
 
@@ -209,6 +188,36 @@
 		<span class="nt">&lt;tr&gt;</span>…<span class="nt">&lt;/tr&gt;</span>
 	<span class="nt">&lt;/table&gt;</span>
 <span class="nt">&lt;/figure&gt;</span>
+</pre>
+
+</figure>
+<h2 class="ex" id="description-containing-textual-information">Description containing textual information</h2>
+
+<p>The WAI-ARIA <code>aria-describedby</code> attribute can be used to link to a description of the image that is provided on the same web page, in a similar way to the <a href="#providing-a-link-to-the-long-description-via-longdesc">longdesc approach</a>. The value of the attribute is the <code>id</code> of the element that provides the long description.</p>
+
+<p>When using <code>aria-describedby</code>, the content of the description is read out like one continuous paragraph. Every structural information is removed from the text. This means the user is not informed about the type of content in the description and has no way to navigate the headings or the table in the <a href="#description-containing-structured-information">example above</a>. As a result, this approach works best for text-only descriptions without structural informations.</p>
+
+<p>In this example, the head of the peacock is described using a paragraph of text that is on the web page.</p>
+
+<figure class="sample ">
+  <figcaption>Example: </figcaption>
+  <div class="box-content">
+<img src="../../img/peafowl-1a57a217.jpg" alt="Neck of a male peacock" aria-describedby="description">
+<p id="description">
+  The male is metallic blue on the crown, the feathers of the head being short and curled. The fan-shaped crest on the head is made of feathers with bare black shafts and tipped with blush-green webbing. A white stripe above the eye and a crescent shaped white patch below the eye are formed by bare white skin. The sides of the head have iridescent greenish blue feathers. The back has scaly bronze-green feathers with black and copper markings.
+</p>
+
+
+  </div></figure>
+
+<figure class="code ">
+  <figcaption>Code snippet: </figcaption>
+<pre class="highlight html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"peacock.jpg"</span>
+     <span class="na">alt=</span><span class="s">"Neck of a male peacock"</span>
+     <span class="na">aria-describedby=</span><span class="s">"description"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"description"</span><span class="nt">&gt;</span>
+  The male is metallic blue on the crown, the feathers of the head being short and curled. The fan-shaped crest on the head is made of feathers with bare black shafts and tipped with blush-green webbing. A white stripe above the eye and a crescent shaped white patch below the eye are formed by bare white skin. The sides of the head have iridescent greenish blue feathers. The back has scaly bronze-green feathers with black and copper markings.
+<span class="nt">&lt;/p&gt;</span>
 </pre>
 
 </figure>
@@ -741,7 +750,7 @@
 				
 	      	Updated
 	      
-	      15 February 2015
+	      16 February 2015
 	      
 		      
 		      (first published September 2013)
