@@ -180,9 +180,9 @@
 <pre class="highlight html"><span class="nt">&lt;figure</span> <span class="na">role=</span><span class="s">"group"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span>
 		<span class="na">alt=</span><span class="s">"Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3, described in detail below."</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;h2&gt;</span>Trends<span class="nt">&lt;/h2&gt;</span>
-	<span class="nt">&lt;p&gt;</span>Site visitors for the first  ...<span class="nt">&lt;/p&gt;</span>
-	<span class="nt">&lt;h2&gt;</span>Statistics<span class="nt">&lt;/h2&gt;</span>
+	<span class="nt">&lt;h2&gt;</span>Overview<span class="nt">&lt;/h2&gt;</span>
+	<span class="nt">&lt;p&gt;</span>The chart shows the website hits for the first quarter of 2014 …<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;h2&gt;</span>Values<span class="nt">&lt;/h2&gt;</span>
 	<span class="nt">&lt;table&gt;</span>
 		<span class="nt">&lt;caption&gt;</span>Example.com Site visitors Jan to March 2014<span class="nt">&lt;/caption&gt;</span>
 		<span class="nt">&lt;tr&gt;</span>…<span class="nt">&lt;/tr&gt;</span>
@@ -195,7 +195,7 @@
 
 <p>The WAI-ARIA <code>aria-describedby</code> attribute can be used to link to a description of the image that is provided on the same web page, in a similar way to the <a href="#providing-a-link-to-the-long-description-via-longdesc">longdesc approach</a>. The value of the attribute is the <code>id</code> of the element that provides the long description.</p>
 
-<p>When using <code>aria-describedby</code>, the content of the description is read out like one continuous paragraph. Every structural information is removed from the text. This means the user is not informed about the type of content in the description and has no way to navigate the headings or the table in the <a href="#description-containing-structured-information">example above</a>. As a result, this approach works best for text-only descriptions without structural informations.</p>
+<p>Important: The element referenced by <code>aria-describedby</code> is treated like one continuous paragraph of text. Screen readers and other assistive technology do not have access to structural information, such as any headings and tables. They will read out or provide the text of any contained elements without indicating their structural relationships, and without the corresponding navigation mechanisms. As a result, this approach only works for long descriptions that are text-only, without needing structural information as was needed in the previous example.</p>
 
 <p>In this example, the head of the peacock is described using a paragraph of text that is on the web page.</p>
 
